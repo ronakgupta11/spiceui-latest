@@ -1,0 +1,113 @@
+{
+  "component_name": "Menu",
+  "metadata": {
+    "component_name": "Menu",
+    "description": "`Menu` is a container that presents a selection of choices or actions for a user to choose from. The user opens it with a customizable trigger, e.g., an interactive element such as a button, or an interaction, such as right mouse click or keyboard shortcut.",
+    "props": {
+      "open": {
+        "type": "boolean",
+        "required": false,
+        "description": "Display or hide the component."
+      },
+      "defaultOpen": {
+        "type": "boolean",
+        "required": false,
+        "description": "If true, the menu will be open by default."
+      },
+      "onOpenChange": {
+        "type": "(newOpen: boolean) => void",
+        "required": false,
+        "description": "Callback function triggered when open state changes."
+      },
+      "placement": {
+        "type": "enum",
+        "required": false,
+        "description": "Set the placement of the Menu component relative to the trigger element. Defaults to `bottom-start` if it's the root menu or `right-start` if it's nested."
+      },
+      "getVirtualElement": {
+        "type": "() => ReferenceType",
+        "required": false,
+        "description": "Function that returns a [virtual element](https://floating-ui.com/docs/virtual-elements). If this is provided, it will override MenuTrigger."
+      }
+    },
+    "examples": [
+      {
+        "name": "Descriptions",
+        "description": "You can add descriptions to provide extra context using the [`Text`](../text) and [`Stack Layout`](../stack-layout) components.",
+        "code": "import {\n  Button,\n  Menu,\n  MenuItem,\n  MenuPanel,\n  MenuTrigger,\n  StackLayout,\n  Text,\n} from \"@salt-ds/core\";\nimport { MicroMenuIcon } from \"@salt-ds/icons\";\nimport type { ReactElement } from \"react\";\n\nconst features = [\n  {\n    name: \"Account overview\",\n    id: \"account_overview\",\n    description: \" Your financial summary.\",\n  },\n  {\n    name: \"Investment portfolio\",\n    id: \"investment_portfolio\",\n    description: \"Track and manage your investments.\",\n  },\n  {\n    name: \"Budget planner\",\n    id: \"budget_planner\",\n    description: \"Create and monitor your financial goals.\",\n  },\n];\n\nexport const Descriptions = (): ReactElement => {\n  return (\n    <Menu>\n      <MenuTrigger>\n        <Button appearance=\"transparent\" aria-label=\"Open Menu\">\n          <MicroMenuIcon aria-hidden />\n        </Button>\n      </MenuTrigger>\n      <MenuPanel>\n        {Object.values(features).map(({ name, description, id }) => (\n          <MenuItem id={id} key={id}>\n            <StackLayout gap={0.5}>\n              <Text>{name}</Text>\n              <Text styleAs=\"label\" color=\"secondary\">\n                {description}\n              </Text>\n            </StackLayout>\n          </MenuItem>\n        ))}\n      </MenuPanel>\n    </Menu>\n  );\n};\n"
+      },
+      {
+        "name": "GroupedItems",
+        "description": "",
+        "code": "import {\n  Button,\n  Menu,\n  MenuGroup,\n  MenuItem,\n  MenuPanel,\n  MenuTrigger,\n} from \"@salt-ds/core\";\nimport { MicroMenuIcon } from \"@salt-ds/icons\";\nimport type { ReactElement } from \"react\";\n\nexport const GroupedItems = (): ReactElement => {\n  return (\n    <Menu>\n      <MenuTrigger>\n        <Button appearance=\"transparent\" aria-label=\"Open Menu\">\n          <MicroMenuIcon aria-hidden />\n        </Button>\n      </MenuTrigger>\n      <MenuPanel>\n        <MenuGroup label=\"Actions\">\n          <MenuItem>Copy</MenuItem>\n          <MenuItem>Paste</MenuItem>\n        </MenuGroup>\n        <MenuGroup label=\"Configurations\">\n          <MenuItem>Export</MenuItem>\n          <MenuItem>Settings</MenuItem>\n        </MenuGroup>\n      </MenuPanel>\n    </Menu>\n  );\n};\n"
+      },
+      {
+        "name": "GroupedWithIcon",
+        "description": "",
+        "code": "import {\n  Button,\n  Menu,\n  MenuGroup,\n  MenuItem,\n  MenuPanel,\n  MenuTrigger,\n} from \"@salt-ds/core\";\nimport {\n  CopyIcon,\n  ExportIcon,\n  MicroMenuIcon,\n  PasteIcon,\n  SettingsIcon,\n} from \"@salt-ds/icons\";\nimport type { ReactElement } from \"react\";\n\nfunction EditStylingMenu() {\n  return (\n    <Menu>\n      <MenuTrigger>\n        <MenuItem>Edit styling</MenuItem>\n      </MenuTrigger>\n      <MenuPanel>\n        <MenuItem>Column</MenuItem>\n        <MenuItem>Cell</MenuItem>\n        <MenuItem>Row</MenuItem>\n      </MenuPanel>\n    </Menu>\n  );\n}\n\nfunction ClearStylingMenu() {\n  return (\n    <Menu>\n      <MenuTrigger>\n        <MenuItem>Clear styling</MenuItem>\n      </MenuTrigger>\n      <MenuPanel>\n        <MenuItem>Column</MenuItem>\n        <MenuItem>Cell</MenuItem>\n        <MenuItem>Row</MenuItem>\n      </MenuPanel>\n    </Menu>\n  );\n}\n\nexport const GroupedWithIcon = (): ReactElement => {\n  return (\n    <Menu>\n      <MenuTrigger>\n        <Button appearance=\"transparent\" aria-label=\"Open Menu\">\n          <MicroMenuIcon aria-hidden />\n        </Button>\n      </MenuTrigger>\n      <MenuPanel>\n        <MenuGroup>\n          <MenuItem>\n            <CopyIcon aria-hidden />\n            Copy\n          </MenuItem>\n          <MenuItem disabled>\n            <PasteIcon aria-hidden />\n            Paste\n          </MenuItem>\n        </MenuGroup>\n        <MenuGroup label=\"Styling\">\n          <EditStylingMenu />\n          <ClearStylingMenu />\n        </MenuGroup>\n        <MenuGroup label=\"Configurations\">\n          <MenuItem>\n            <ExportIcon aria-hidden />\n            Export\n          </MenuItem>\n          <MenuItem>\n            <SettingsIcon aria-hidden />\n            Settings\n          </MenuItem>\n        </MenuGroup>\n      </MenuPanel>\n    </Menu>\n  );\n};\n"
+      },
+      {
+        "name": "Multilevel",
+        "description": "Menus can contain submenus which present the user with a set of items to interact with, creating a cascading effect.\n\n#",
+        "code": "import { Button, Menu, MenuItem, MenuPanel, MenuTrigger } from \"@salt-ds/core\";\nimport { MicroMenuIcon } from \"@salt-ds/icons\";\nimport type { ReactElement } from \"react\";\n\nfunction EditStylingMenu() {\n  return (\n    <Menu>\n      <MenuTrigger>\n        <MenuItem>Edit styling</MenuItem>\n      </MenuTrigger>\n      <MenuPanel>\n        <MenuItem>Column</MenuItem>\n        <MenuItem>Cell</MenuItem>\n        <MenuItem>Row</MenuItem>\n      </MenuPanel>\n    </Menu>\n  );\n}\n\nfunction ClearStylingMenu() {\n  return (\n    <Menu>\n      <MenuTrigger>\n        <MenuItem>Clear styling</MenuItem>\n      </MenuTrigger>\n      <MenuPanel>\n        <MenuItem>Column</MenuItem>\n        <MenuItem>Cell</MenuItem>\n        <MenuItem>Row</MenuItem>\n      </MenuPanel>\n    </Menu>\n  );\n}\n\nexport const Multilevel = (): ReactElement => {\n  return (\n    <Menu>\n      <MenuTrigger>\n        <Button appearance=\"transparent\" aria-label=\"Open Menu\">\n          <MicroMenuIcon aria-hidden />\n        </Button>\n      </MenuTrigger>\n      <MenuPanel>\n        <MenuItem>Copy</MenuItem>\n        <EditStylingMenu />\n        <ClearStylingMenu />\n        <MenuItem>Export</MenuItem>\n        <MenuItem>Settings</MenuItem>\n      </MenuPanel>\n    </Menu>\n  );\n};\n"
+      },
+      {
+        "name": "Placement",
+        "description": "Placement of the menu can be specified using `placement` prop. The menu will be positioned relative to child of the `MenuTrigger` component.\nBy default, the root menu is aligned to the \"bottom-start\" of the trigger element and submenus to the \"right-start\" of the parent menu item.",
+        "code": "import { Button, Menu, MenuItem, MenuPanel, MenuTrigger } from \"@salt-ds/core\";\nimport { MicroMenuIcon } from \"@salt-ds/icons\";\nimport type { ReactElement } from \"react\";\n\nexport const Placement = (): ReactElement => {\n  return (\n    <Menu placement=\"right\">\n      <MenuTrigger>\n        <Button appearance=\"transparent\" aria-label=\"Open Menu\">\n          <MicroMenuIcon aria-hidden />\n        </Button>\n      </MenuTrigger>\n      <MenuPanel>\n        <MenuItem>Copy</MenuItem>\n        <MenuItem>Paste</MenuItem>\n        <MenuItem>Export</MenuItem>\n        <MenuItem>Settings</MenuItem>\n      </MenuPanel>\n    </Menu>\n  );\n};\n"
+      },
+      {
+        "name": "Scrolling",
+        "description": "When a menu extends beyond the application window, the menu defaults to span the maximum height of the viewport and scroll.",
+        "code": "import { Button, Menu, MenuItem, MenuPanel, MenuTrigger } from \"@salt-ds/core\";\nimport { MicroMenuIcon } from \"@salt-ds/icons\";\nimport type { ReactElement } from \"react\";\n\nexport const Scrolling = (): ReactElement => {\n  return (\n    <Menu>\n      <MenuTrigger>\n        <Button appearance=\"transparent\" aria-label=\"Open Menu\">\n          <MicroMenuIcon aria-hidden />\n        </Button>\n      </MenuTrigger>\n      <MenuPanel>\n        {Array.from({ length: 30 }, (_, i) => (\n          <MenuItem key={i}>Item {i + 1}</MenuItem>\n        ))}\n      </MenuPanel>\n    </Menu>\n  );\n};\n"
+      },
+      {
+        "name": "SeparatorOnly",
+        "description": "",
+        "code": "import {\n  Button,\n  Menu,\n  MenuGroup,\n  MenuItem,\n  MenuPanel,\n  MenuTrigger,\n} from \"@salt-ds/core\";\nimport { MicroMenuIcon } from \"@salt-ds/icons\";\nimport type { ReactElement } from \"react\";\n\nexport const SeparatorOnly = (): ReactElement => {\n  return (\n    <Menu>\n      <MenuTrigger>\n        <Button appearance=\"transparent\" aria-label=\"Open Menu\">\n          <MicroMenuIcon aria-hidden />\n        </Button>\n      </MenuTrigger>\n      <MenuPanel>\n        <MenuGroup>\n          <MenuItem>Copy</MenuItem>\n          <MenuItem>Paste</MenuItem>\n        </MenuGroup>\n        <MenuGroup>\n          <MenuItem>Export</MenuItem>\n          <MenuItem>Settings</MenuItem>\n        </MenuGroup>\n      </MenuPanel>\n    </Menu>\n  );\n};\n"
+      },
+      {
+        "name": "SingleLevel",
+        "description": "",
+        "code": "import { Button, Menu, MenuItem, MenuPanel, MenuTrigger } from \"@salt-ds/core\";\nimport { MicroMenuIcon } from \"@salt-ds/icons\";\nimport type { ReactElement } from \"react\";\n\nexport const SingleLevel = (): ReactElement => {\n  return (\n    <Menu>\n      <MenuTrigger>\n        <Button appearance=\"transparent\" aria-label=\"Open Menu\">\n          <MicroMenuIcon aria-hidden />\n        </Button>\n      </MenuTrigger>\n      <MenuPanel>\n        <MenuItem>Copy</MenuItem>\n        <MenuItem>Paste</MenuItem>\n        <MenuItem>Export</MenuItem>\n        <MenuItem>Settings</MenuItem>\n      </MenuPanel>\n    </Menu>\n  );\n};\n"
+      },
+      {
+        "name": "VirtualElement",
+        "description": "",
+        "code": "import type { VirtualElement as FloatingUIVirtualElement } from \"@floating-ui/react\";\nimport { Card, Menu, MenuItem, MenuPanel } from \"@salt-ds/core\";\nimport { type ReactElement, useState } from \"react\";\n\nexport const VirtualElement = (): ReactElement => {\n  const [virtualElement, setVirtualElement] =\n    useState<FloatingUIVirtualElement | null>(null);\n  const [open, setOpen] = useState(false);\n  return (\n    <>\n      <Card\n        style={{\n          width: 300,\n          aspectRatio: 2 / 1,\n          display: \"flex\",\n          justifyContent: \"center\",\n          alignItems: \"center\",\n        }}\n        onContextMenu={(event) => {\n          event.preventDefault();\n          setVirtualElement({\n            getBoundingClientRect: () => ({\n              width: 0,\n              height: 0,\n              x: event.clientX,\n              y: event.clientY,\n              top: event.clientY,\n              right: event.clientX,\n              bottom: event.clientY,\n              left: event.clientX,\n            }),\n          });\n          setOpen(true);\n        }}\n      >\n        Right click here\n      </Card>\n      <Menu\n        getVirtualElement={() => virtualElement}\n        open={open}\n        onOpenChange={setOpen}\n      >\n        <MenuPanel>\n          <MenuItem>Copy</MenuItem>\n          <MenuItem>Move</MenuItem>\n          <MenuItem>Delete</MenuItem>\n        </MenuPanel>\n      </Menu>\n    </>\n  );\n};\n"
+      },
+      {
+        "name": "WithIcon",
+        "description": "",
+        "code": "import { Button, Menu, MenuItem, MenuPanel, MenuTrigger } from \"@salt-ds/core\";\nimport {\n  CopyIcon,\n  ExportIcon,\n  MicroMenuIcon,\n  SettingsIcon,\n} from \"@salt-ds/icons\";\nimport type { ReactElement } from \"react\";\n\nexport const WithIcon = (): ReactElement => {\n  return (\n    <Menu>\n      <MenuTrigger>\n        <Button appearance=\"transparent\" aria-label=\"Open Menu\">\n          <MicroMenuIcon aria-hidden />\n        </Button>\n      </MenuTrigger>\n      <MenuPanel>\n        <MenuItem>\n          <CopyIcon aria-hidden />\n          Copy\n        </MenuItem>\n        <MenuItem>\n          <ExportIcon aria-hidden />\n          Export\n        </MenuItem>\n        <MenuItem>\n          <SettingsIcon aria-hidden />\n          Settings\n        </MenuItem>\n      </MenuPanel>\n    </Menu>\n  );\n};\n"
+      }
+    ],
+    "category": "@salt-ds/core",
+    "tags": [
+      "Cascading Menu"
+    ],
+    "when_to_use": [
+      "When you need to display a list of actions or options.",
+      "When you have limited space and need to display overflow action in a list.",
+      "When you need to display secondary or less important information and actions inside a trigger element."
+    ],
+    "when_not_to_use": [
+      "Inside a form. Instead, use [`ComboBox`](../combo-box) or [`Dropdown`](../dropdown).",
+      "Always use sentence case for menu item labels.",
+      "Keep menu item labels short and concise.",
+      "Use an ellipsis at the end of a menu item label for actions that will require more information from the user to complete. For example, \"Open file...\" requires the user to choose a file."
+    ],
+    "import_statement": "import {\n  Menu,\n  MenuItem,\n  MenuTrigger,\n  MenuPanel,\n  MenuGroup,\n} from \"@salt-ds/core\";",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/core/src/menu",
+    "related_components": [
+      {
+        "name": "Dropdown",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Icon",
+        "relationship": "contains"
+      }
+    ]
+  }
+}

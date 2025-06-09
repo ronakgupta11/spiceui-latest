@@ -1,0 +1,15 @@
+fastapi==0.104.1
+uvicorn==0.24.0
+pydantic==2.4.2
+python-multipart==0.0.6
+langchain==0.0.335
+chromadb==0.4.15
+playwright==1.40.0
+beautifulsoup4==4.12.2
+torch==2.1.1
+pillow==10.1.0
+python-dotenv==1.0.0
+transformers==4.31.0
+sentence-transformers==2.2.2
+huggingface-hub==0.16.4
+langgraph==0.0.15

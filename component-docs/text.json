@@ -1,0 +1,84 @@
+{
+  "component_name": "Text",
+  "metadata": {
+    "component_name": "Text",
+    "description": "`Text` is a component that makes it easy to use our typography styles throughout a product or application, ensuring consistency and a unified look and feel. It includes attributes such as font size, weight, letter spacing, line height and decoration.",
+    "props": {
+      "disabled": {
+        "type": "boolean",
+        "required": false,
+        "description": "Applies disabled styling when true",
+        "defaultValue": "false"
+      },
+      "maxRows": {
+        "type": "number",
+        "required": false,
+        "description": "Apply text truncation by mentioning number of rows to be displayed"
+      },
+      "styleAs": {
+        "type": "enum",
+        "required": false,
+        "description": "Match styling to another text component's style"
+      },
+      "variant": {
+        "type": "enum",
+        "required": false,
+        "description": "Change text color palette\n@deprecated Use `color` instead"
+      },
+      "color": {
+        "type": "enum",
+        "required": false,
+        "description": ""
+      },
+      "as": {
+        "type": "ElementType<any, keyof IntrinsicElements>",
+        "required": false,
+        "description": "The HTML element used for the root node."
+      },
+      "ref": {
+        "type": "any",
+        "required": false,
+        "description": ""
+      }
+    },
+    "examples": [
+      {
+        "name": "Color",
+        "description": "Use the `color` prop to adjust the foreground color of any nested text. Use the `primary` color most of the time, the `secondary` color for supporting text or to create visual hierarchy, and `inherit` to inherit text color from the parent element.\n\nRead our [guidance on how to use text color](/salt/foundations/typography#color).",
+        "code": "import { StackLayout, Text } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Color = (): ReactElement => (\n  <StackLayout>\n    <Text color=\"primary\">This is primary color of Text</Text>\n    <Text color=\"secondary\">This is secondary color of Text</Text>\n    <Text color=\"info\">This is info color of Text</Text>\n    <Text color=\"error\">This is error color of Text</Text>\n    <Text color=\"warning\">This is warning color of Text</Text>\n    <Text color=\"success\">This is success color of Text</Text>\n    <Text color=\"inherit\">This is inherited color of Text</Text>\n  </StackLayout>\n);\n"
+      },
+      {
+        "name": "Styles",
+        "description": "`Text` supports these sets of styles:\n\n- Display\n- Headings\n- Body\n- Label\n- Code\n\nThese alternative components display text in commonly used styles. Where relevant, use them instead of `Text` to simplify syntax:\n\n- `Display1`\n- `Display2`\n- `Display3`\n- `H1`\n- `H2`\n- `H3`\n- `H4`\n- `Label`\n- `Code`\n- `TextNotation`\n- `TextAction`",
+        "code": "import {\n  Code,\n  Display1,\n  Display2,\n  Display3,\n  H1,\n  H2,\n  H3,\n  H4,\n  Label,\n  StackLayout,\n  Text,\n  TextAction,\n  TextNotation,\n} from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Styles = (): ReactElement => (\n  <StackLayout>\n    <Display1>Display 1</Display1>\n    <Display2>Display 2</Display2>\n    <Display3>Display 3</Display3>\n    <H1>H1</H1>\n    <H2>H2</H2>\n    <H3>H3</H3>\n    <H4>H4</H4>\n    <Text>Text</Text>\n    <Label>Label</Label>\n    <Code>Code</Code>\n    <TextNotation>Notation</TextNotation>\n    <TextAction>Action</TextAction>\n  </StackLayout>\n);\n"
+      },
+      {
+        "name": "Styling",
+        "description": "Although we don't encourage it, you may find it necessary to change an element’s mapped styling to another from our typography set. In this case, you'd use the `styleAs` prop.\n\nUsing the `styleAs` prop, you can maintain the correct HTML hierarchy and the appropriate visual priority. You can style headings to visually appear as different heading levels, irrespective of the underlying DOM element of a heading on the page.",
+        "code": "import { Text } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Styling = (): ReactElement => (\n  <Text as=\"p\" styleAs=\"h1\">\n    This paragraph is styled as a H1\n  </Text>\n);\n"
+      },
+      {
+        "name": "Truncation",
+        "description": "The component wraps by default, but you can use the `maxRows` prop to force truncation. Truncation will occur when `maxRows` is greater than 0. If you don't provide a value, the text content will wrap.\n\n#",
+        "code": "import { Text, Tooltip } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Truncation = (): ReactElement => (\n  <div style={{ width: 150 }}>\n    <Tooltip content=\"This text is truncated because it is long.\">\n      <Text maxRows={1} tabIndex={0}>\n        This text is truncated because it is long.\n      </Text>\n    </Tooltip>\n  </div>\n);\n"
+      },
+      {
+        "name": "Variant",
+        "description": "**Note:** This prop is deprecated. Use the `color` prop instead.\n\nUse the `variant` prop to adjust the foreground color of any nested text. Use the `primary` variant most often, and the `secondary` variant for supporting text or creating a visual hierarchy.\n\nRead our [guidance on how to use text color](/salt/foundations/typography#color).",
+        "code": "import { StackLayout, Text } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Variant = (): ReactElement => (\n  <StackLayout>\n    <Text variant=\"primary\">This is primary variant of Text</Text>\n    <Text variant=\"secondary\">This is secondary variant of Text</Text>\n  </StackLayout>\n);\n"
+      },
+      {
+        "name": "Weight",
+        "description": "",
+        "code": "import { StackLayout, Text } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Weight = (): ReactElement => (\n  <StackLayout>\n    <Text>\n      <small>This is a thinner font weight</small>\n    </Text>\n    <Text>This is the default font weight</Text>\n    <Text>\n      <strong>This is a stronger font weight</strong>\n    </Text>\n  </StackLayout>\n);\n"
+      }
+    ],
+    "category": "@salt-ds/core",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import {\n  Text,\n  Display1,\n  Display2,\n  Display3,\n  H1,\n  H2,\n  H3,\n  H4,\n  Label,\n  TextNotation,\n  TextAction,\n} from \"@salt-ds/core\";",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/tree/main/packages/core/src/text",
+    "related_components": []
+  }
+}

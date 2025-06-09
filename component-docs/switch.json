@@ -1,0 +1,130 @@
+{
+  "component_name": "Switch",
+  "metadata": {
+    "component_name": "Switch",
+    "description": "`Switch` is a binary control used to switch between two different states. When interacted with, the thumb of the switch travels along the track to indicate state. You can use a switch to control settings, preferences, or actions within an application or system.",
+    "props": {
+      "checked": {
+        "type": "boolean",
+        "required": false,
+        "description": "If `true`, the switch will be checked."
+      },
+      "defaultChecked": {
+        "type": "boolean",
+        "required": false,
+        "description": "Whether the switch component is checked by default\nThis will be disregarded if checked is already set."
+      },
+      "disabled": {
+        "type": "boolean",
+        "required": false,
+        "description": "If `true`, the switch will be disabled."
+      },
+      "inputProps": {
+        "type": "Partial<Omit<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, \"ref\">> & DataAttributes",
+        "required": false,
+        "description": "Properties applied to the input element."
+      },
+      "label": {
+        "type": "ReactNode",
+        "required": false,
+        "description": "The label to be shown next to the switch."
+      },
+      "name": {
+        "type": "string",
+        "required": false,
+        "description": "The name applied to the input."
+      },
+      "onBlur": {
+        "type": "FocusEventHandler<HTMLInputElement>",
+        "required": false,
+        "description": "Callback when switch loses focus."
+      },
+      "onChange": {
+        "type": "ChangeEventHandler<HTMLInputElement>",
+        "required": false,
+        "description": "Callback when checked state is changed."
+      },
+      "onFocus": {
+        "type": "FocusEventHandler<HTMLInputElement>",
+        "required": false,
+        "description": "Callback when switch gains focus."
+      },
+      "value": {
+        "type": "string",
+        "required": false,
+        "description": "The value of the switch."
+      }
+    },
+    "examples": [
+      {
+        "name": "Default",
+        "description": "",
+        "code": "import { Switch } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Default = (): ReactElement => <Switch label=\"Default\" />;\n"
+      },
+      {
+        "name": "DefaultChecked",
+        "description": "",
+        "code": "import { Switch } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const DefaultChecked = (): ReactElement => (\n  <Switch label=\"Checked\" defaultChecked />\n);\n"
+      },
+      {
+        "name": "Disabled",
+        "description": "You can set a switch to a disabled state. When `disabled`, it's not interactive or focusable.\n\n#",
+        "code": "import { Switch } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Disabled = (): ReactElement => (\n  <Switch label=\"Disabled\" disabled />\n);\n"
+      },
+      {
+        "name": "DisabledChecked",
+        "description": "",
+        "code": "import { Switch } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const DisabledChecked = (): ReactElement => (\n  <Switch label=\"Disabled + Checked\" disabled defaultChecked />\n);\n"
+      },
+      {
+        "name": "LeftAlignedLabel",
+        "description": "",
+        "code": "import { FormField, FormFieldLabel, Switch } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const LeftAlignedLabel = (): ReactElement => (\n  <div>\n    <FormField labelPlacement=\"left\">\n      <FormFieldLabel>Active</FormFieldLabel>\n      <Switch />\n    </FormField>\n  </div>\n);\n"
+      }
+    ],
+    "category": "@salt-ds/core",
+    "tags": [
+      "Lightswitch",
+      "Toggle",
+      "Toggle switch"
+    ],
+    "when_to_use": [
+      "To present an instantaneous, binary choice between two options that doesn’t require the user to submit or confirm the action. The corresponding action takes effect immediately.",
+      "To control a critical action that may require confirmation from the user before applying it. This delay is usually intentional, ensuring that users don't accidentally make unwanted changes."
+    ],
+    "when_not_to_use": [
+      "To present a list of independent options where the user can select any number of choices. Instead, use [`Checkbox`](../checkbox).",
+      "To make a single selection between mutually exclusive choices between two or more options. Instead, use [`RadioButton`](../radio-button).",
+      "To toggle between two (or more) opposing yet mutually exclusive states or options with visual priority. Instead, use [`ToggleButton`](../toggle-button).",
+      "To present multiple options in a group within a compact UI, or if they’re subject to change depending on context. Instead, use selectable [`Pill`](../pill).",
+      "Clarify the option that the switch controls in the text inline to the switch.",
+      "Text should always sit to the right of the switch.",
+      "Keep the text description as clear and concise as possible, and ensure it accurately describes the action the switch will perform upon interaction.",
+      "[Switch Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/switch/) from W3C"
+    ],
+    "import_statement": "import { Switch } from \"@salt-ds/core\";",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/core/src/switch",
+    "related_components": [
+      {
+        "name": "Icon",
+        "relationship": "contains"
+      },
+      {
+        "name": "Checkbox",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Pill",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Radio button",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Toggle button",
+        "relationship": "similarTo"
+      }
+    ]
+  }
+}

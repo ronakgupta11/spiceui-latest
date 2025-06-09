@@ -1,0 +1,18 @@
+{
+  "component_name": "Salt provider",
+  "metadata": {
+    "component_name": "Salt provider",
+    "description": "`SaltProvider` is a required component used to change the theme, mode, density and breakpoints of your application. Refer to the [getting started](/salt/getting-started/developing) page for a full step-by-step implementation guide.",
+    "props": {},
+    "examples": [],
+    "category": "@salt-ds/core",
+    "tags": [
+      "Provider"
+    ],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/tree/main/packages/core/src/salt-provider",
+    "related_components": []
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "component_name": "Badge",
+  "metadata": {
+    "component_name": "Badge",
+    "description": "`Badge` is a numeric or alpha character annotation. It appears either in the top-right corner of an element, or inline.",
+    "props": {
+      "value": {
+        "type": "string | number",
+        "required": false,
+        "description": "The number to display on the badge. If `value` is not provided,\nthe badge will render as a dot badge."
+      },
+      "children": {
+        "type": "ReactNode",
+        "required": false,
+        "description": "If a child is provided the Badge will render top right. By defualt renders inline."
+      },
+      "max": {
+        "type": "number",
+        "required": false,
+        "description": "The max number to display on the badge.",
+        "defaultValue": "999"
+      }
+    },
+    "examples": [
+      {
+        "name": "BadgeWithMaximumDigits",
+        "description": "",
+        "code": "import { Badge, Button } from \"@salt-ds/core\";\nimport { NotificationSolidIcon } from \"@salt-ds/icons\";\nimport type { ReactElement } from \"react\";\n\nexport const BadgeWithMaximumDigits = (): ReactElement => (\n  <Badge value={200} max={99}>\n    <Button aria-label=\"200 Notifications\">\n      <NotificationSolidIcon aria-hidden />\n    </Button>\n  </Badge>\n);\n"
+      },
+      {
+        "name": "BadgeWithString",
+        "description": "",
+        "code": "import { Badge, Button } from \"@salt-ds/core\";\nimport { MessageIcon } from \"@salt-ds/icons\";\nimport type { ReactElement } from \"react\";\n\nexport const BadgeWithString = (): ReactElement => (\n  <Badge value={\"NEW\"}>\n    <Button aria-label=\"New messages\">\n      <MessageIcon aria-hidden />\n    </Button>\n  </Badge>\n);\n"
+      },
+      {
+        "name": "Default",
+        "description": "The `Badge` is anchored to the top-right corner when attached to a child component such as a button. As the number of alphanumeric characters increases, the badge width expands but stays in the same place.\n\n#",
+        "code": "import { Badge, Button } from \"@salt-ds/core\";\nimport { NotificationSolidIcon } from \"@salt-ds/icons\";\nimport type { ReactElement } from \"react\";\n\nexport const Default = (): ReactElement => (\n  <Badge value={9}>\n    <Button aria-label=\"9 Notifications\">\n      <NotificationSolidIcon aria-hidden />\n    </Button>\n  </Badge>\n);\n"
+      },
+      {
+        "name": "DotBadge",
+        "description": "",
+        "code": "import { Badge, Button, FlexLayout } from \"@salt-ds/core\";\nimport { NotificationIcon, SettingsSolidIcon } from \"@salt-ds/icons\";\nimport type { ReactElement } from \"react\";\n\nexport const DotBadge = (): ReactElement => (\n  <FlexLayout>\n    <Button appearance=\"transparent\" aria-label=\"Settings - New available\">\n      <Badge>\n        <SettingsSolidIcon aria-hidden />\n      </Badge>\n    </Button>\n    <Badge>\n      <Button aria-label=\"Notifications - Unread\">\n        <NotificationIcon aria-hidden />\n      </Button>\n    </Badge>\n  </FlexLayout>\n);\n"
+      },
+      {
+        "name": "InlineBadge",
+        "description": "",
+        "code": "import { Badge } from \"@salt-ds/core\";\nimport {\n  TabBar,\n  TabListNext,\n  TabNext,\n  TabNextTrigger,\n  TabsNext,\n} from \"@salt-ds/lab\";\nimport type { ReactElement } from \"react\";\n\nexport const InlineBadge = (): ReactElement => (\n  <TabsNext defaultValue=\"Home\">\n    <TabBar inset divider>\n      <TabListNext\n        style={{\n          minWidth: 350,\n        }}\n      >\n        <TabNext value=\"Home\">\n          <TabNextTrigger>Home</TabNextTrigger>\n        </TabNext>\n        <TabNext value=\"Transactions\">\n          <TabNextTrigger aria-label=\"Transations - 30 updates\">\n            Transactions\n            <Badge value={30} />\n          </TabNextTrigger>\n        </TabNext>\n        <TabNext value=\"Loans\">\n          <TabNextTrigger>Loans</TabNextTrigger>\n        </TabNext>\n      </TabListNext>\n    </TabBar>\n  </TabsNext>\n);\n"
+      },
+      {
+        "name": "InlineDotBadge",
+        "description": "",
+        "code": "import { Badge } from \"@salt-ds/core\";\nimport {\n  TabBar,\n  TabListNext,\n  TabNext,\n  TabNextTrigger,\n  TabsNext,\n} from \"@salt-ds/lab\";\nimport type { ReactElement } from \"react\";\n\nexport const InlineDotBadge = (): ReactElement => {\n  return (\n    <TabsNext defaultValue=\"Home\">\n      <TabBar>\n        <TabListNext appearance=\"transparent\" style={{ minWidth: 350 }}>\n          <TabNext value=\"Home\">\n            <TabNextTrigger>Home</TabNextTrigger>\n          </TabNext>\n          <TabNext value=\"Transactions\">\n            <TabNextTrigger aria-label=\"Transations - New\">\n              Transactions\n              <Badge />\n            </TabNextTrigger>\n          </TabNext>\n          <TabNext value=\"Loans\">\n            <TabNextTrigger>Loans</TabNextTrigger>\n          </TabNext>\n        </TabListNext>\n      </TabBar>\n    </TabsNext>\n  );\n};\n"
+      }
+    ],
+    "category": "@salt-ds/core",
+    "tags": [
+      "Tag",
+      "Label",
+      "Chip"
+    ],
+    "when_to_use": [
+      "To communicate a non-interactive, system-driven change to the underlying component it anchors to, such as in tabs, pages and containers.",
+      "Typically, if you use a badge to indicate an unread notification, you'd hide the badge once the user addresses the notification. However, badges can remain persistent depending on the context."
+    ],
+    "when_not_to_use": [
+      "To trigger an immediate action, or enable an action that may change depending on context. Instead, use [`Pill`](../pill).",
+      "To communicate status through color, such as red/amber/green statuses. Instead, use `Pill`. Badges are independent of user action, so avoid using them to communicate something the user can directly influence through a task.",
+      "To communicate read-only metadata that categorizes or groups content use [`Tag`](/salt/components/tag)."
+    ],
+    "import_statement": "import { Badge } from \"@salt-ds/core\";",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/core/src/badge",
+    "related_components": [
+      {
+        "name": "Tag",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Pill",
+        "relationship": "similarTo"
+      }
+    ]
+  }
+}

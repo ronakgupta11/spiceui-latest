@@ -1,0 +1,33 @@
+{
+  "component_name": "Parent-child layout",
+  "metadata": {
+    "component_name": "Parent-child layout",
+    "description": "`ParentChildLayout` displays a larger child content area and a smaller parent content area. The parent area influences the content in the child area, such as navigation for a preferences dialog.",
+    "props": {},
+    "examples": [],
+    "category": "@salt-ds/core",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/core/src/parent-child-layout",
+    "related_components": [
+      {
+        "name": "Flex layout",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Split layout",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Stack layout",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Flex layout",
+        "relationship": "contains"
+      }
+    ]
+  }
+}

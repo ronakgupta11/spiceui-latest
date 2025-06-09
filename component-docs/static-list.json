@@ -1,0 +1,23 @@
+{
+  "component_name": "Static list",
+  "metadata": {
+    "component_name": "Static list",
+    "description": "`StaticList` manages the layout of non-interactive list items, providing a structured and composable way to display content. It's ideal for use in patterns like file upload or checkout baskets.",
+    "props": {},
+    "examples": [],
+    "category": "@salt-ds/lab",
+    "tags": [
+      "List"
+    ],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/lab/src/static-list",
+    "related_components": [
+      {
+        "name": "Listbox",
+        "relationship": "similarTo"
+      }
+    ]
+  }
+}

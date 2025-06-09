@@ -1,0 +1,24 @@
+{
+  "component_name": "Number input",
+  "metadata": {
+    "component_name": "Number input",
+    "description": "`NumberInput` displays a default numeric value that users can increase or decrease using the controls or by keyboard actions. Users can also manually enter a specific value. This is particularly useful in scenarios where users need to make small adjustments to a value within a defined range. ",
+    "props": {},
+    "examples": [],
+    "category": "@salt-ds/lab",
+    "tags": [
+      "Spin Button",
+      "Number Input"
+    ],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/lab/src/number-input",
+    "related_components": [
+      {
+        "name": "Input",
+        "relationship": "similarTo"
+      }
+    ]
+  }
+}

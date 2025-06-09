@@ -1,0 +1,77 @@
+{
+  "component_name": "Progress",
+  "metadata": {
+    "component_name": "Progress",
+    "description": "A progress indicator gives the user an understanding of how long a system operation will take. Use it when the operation will take more than a second to complete. Two components are available to accommodate different layout constraints: `CircularProgress` and `LinearProgress`.",
+    "props": {},
+    "examples": [
+      {
+        "name": "Circular",
+        "description": "",
+        "code": "import { CircularProgress } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Circular = (): ReactElement => (\n  <CircularProgress aria-label=\"Download\" value={38} />\n);\n"
+      },
+      {
+        "name": "HiddenLabel",
+        "description": "",
+        "code": "import {\n  CircularProgress,\n  FlexItem,\n  LinearProgress,\n  StackLayout,\n} from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const HiddenLabel = (): ReactElement => {\n  return (\n    <StackLayout align=\"center\">\n      <FlexItem>\n        <CircularProgress aria-label=\"Download\" value={38} hideLabel />\n      </FlexItem>\n      <FlexItem>\n        <LinearProgress aria-label=\"Download\" value={38} hideLabel />\n      </FlexItem>\n    </StackLayout>\n  );\n};\n"
+      },
+      {
+        "name": "Linear",
+        "description": "",
+        "code": "import { LinearProgress } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Linear = (): ReactElement => (\n  <LinearProgress aria-label=\"Download\" value={38} />\n);\n"
+      },
+      {
+        "name": "LinearIndeterminate",
+        "description": "",
+        "code": "import {\n  Button,\n  LinearProgress,\n  Text,\n  Toast,\n  ToastContent,\n} from \"@salt-ds/core\";\nimport { CloseIcon } from \"@salt-ds/icons\";\nimport type { ReactElement } from \"react\";\n\nexport const LinearIndeterminate = (): ReactElement => {\n  return (\n    <Toast status=\"info\">\n      <ToastContent>\n        <div>\n          <Text>\n            <strong>File uploading</strong>\n          </Text>\n          <Text>File upload to shared drive in progress.</Text>\n          <LinearProgress aria-label=\"Download\" />\n        </div>\n      </ToastContent>\n      <Button appearance=\"transparent\" aria-label=\"Dismiss\">\n        <CloseIcon aria-hidden />\n      </Button>\n    </Toast>\n  );\n};\n"
+      },
+      {
+        "name": "WithBuffer",
+        "description": "",
+        "code": "import {\n  CircularProgress,\n  FlexItem,\n  H3,\n  LinearProgress,\n  StackLayout,\n} from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const WithBuffer = (): ReactElement => {\n  return (\n    <StackLayout align=\"center\">\n      <H3> value = 38, buffer value = 60</H3>\n\n      <FlexItem>\n        <CircularProgress aria-label=\"Download\" value={38} bufferValue={60} />\n      </FlexItem>\n      <FlexItem>\n        <LinearProgress aria-label=\"Download\" value={38} bufferValue={60} />\n      </FlexItem>\n    </StackLayout>\n  );\n};\n"
+      },
+      {
+        "name": "WithMaxVal",
+        "description": "",
+        "code": "import {\n  CircularProgress,\n  FlexItem,\n  H3,\n  LinearProgress,\n  StackLayout,\n} from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const WithMaxVal = (): ReactElement => {\n  return (\n    <StackLayout align=\"center\">\n      <H3> max = 500, value = 250</H3>\n      <FlexItem>\n        <CircularProgress aria-label=\"Download\" value={250} max={500} />\n      </FlexItem>\n      <FlexItem>\n        <LinearProgress aria-label=\"Download\" value={250} max={500} />\n      </FlexItem>\n    </StackLayout>\n  );\n};\n"
+      },
+      {
+        "name": "WithMinVal",
+        "description": "",
+        "code": "import {\n  CircularProgress,\n  FlexItem,\n  H3,\n  LinearProgress,\n  StackLayout,\n} from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const WithMinVal = (): ReactElement => {\n  const max = 40;\n  const min = 20;\n  const value = 30;\n  return (\n    <StackLayout align=\"center\">\n      <H3>{`max = ${max}, min = ${min}, value = ${value}`}</H3>\n\n      <FlexItem>\n        <CircularProgress\n          aria-label=\"Download\"\n          value={value}\n          min={min}\n          max={max}\n        />\n      </FlexItem>\n      <FlexItem>\n        <LinearProgress\n          aria-label=\"Download\"\n          value={value}\n          min={min}\n          max={max}\n        />\n      </FlexItem>\n    </StackLayout>\n  );\n};\n"
+      },
+      {
+        "name": "WithProgBufferVal",
+        "description": "",
+        "code": "import {\n  Button,\n  CircularProgress,\n  FlexItem,\n  FlowLayout,\n  LinearProgress,\n  StackLayout,\n} from \"@salt-ds/core\";\nimport { type ReactElement, useCallback, useEffect, useState } from \"react\";\n\nfunction useProgressingValue(updateInterval = 100) {\n  const [bufferValue, setBufferValue] = useState(0);\n  const [isProgressing, setIsProgressing] = useState(false);\n\n  const handleStop = useCallback(() => {\n    setIsProgressing(false);\n  }, []);\n  const handleStart = () => {\n    setIsProgressing(true);\n  };\n\n  const handleReset = () => {\n    setBufferValue(0);\n    setIsProgressing(false);\n  };\n\n  useEffect(() => {\n    if (isProgressing) {\n      const id = setInterval(() => {\n        setBufferValue((preValue) => preValue + 1);\n      }, updateInterval);\n\n      return () => {\n        clearInterval(id);\n      };\n    }\n    return;\n  }, [isProgressing, updateInterval]);\n\n  useEffect(\n    function stopWhenComplete() {\n      if (bufferValue === 100) {\n        handleStop();\n      }\n    },\n    [bufferValue, handleStop],\n  );\n\n  return {\n    handleReset,\n    handleStart,\n    handleStop,\n    isProgressing,\n    bufferValue,\n  };\n}\n\nexport const WithProgBufferVal = (): ReactElement => {\n  const { handleReset, handleStart, handleStop, isProgressing, bufferValue } =\n    useProgressingValue();\n\n  return (\n    <StackLayout align=\"center\">\n      <FlowLayout justify=\"center\" gap={1}>\n        <Button disabled={isProgressing} onClick={handleStart}>\n          Start\n        </Button>\n        <Button disabled={!isProgressing} onClick={handleStop}>\n          Stop\n        </Button>\n        <Button onClick={handleReset}>Reset</Button>\n      </FlowLayout>\n\n      <FlexItem>\n        <CircularProgress aria-label=\"Download\" bufferValue={bufferValue} />\n      </FlexItem>\n      <FlexItem>\n        <LinearProgress aria-label=\"Download\" bufferValue={bufferValue} />\n      </FlexItem>\n    </StackLayout>\n  );\n};\n"
+      },
+      {
+        "name": "WithProgVal",
+        "description": "",
+        "code": "import {\n  Button,\n  CircularProgress,\n  FlexItem,\n  FlowLayout,\n  LinearProgress,\n  StackLayout,\n} from \"@salt-ds/core\";\nimport { type ReactElement, useCallback, useEffect, useState } from \"react\";\n\nfunction useProgressingValue(updateInterval = 100) {\n  const [value, setValue] = useState(0);\n  const [isProgressing, setIsProgressing] = useState(false);\n\n  const handleStop = useCallback(() => {\n    setIsProgressing(false);\n  }, []);\n  const handleStart = () => {\n    setIsProgressing(true);\n  };\n\n  const handleReset = () => {\n    setValue(0);\n    setIsProgressing(false);\n  };\n\n  useEffect(() => {\n    if (isProgressing) {\n      const id = setInterval(() => {\n        setValue((preValue) => preValue + 1);\n      }, updateInterval);\n\n      return () => {\n        clearInterval(id);\n      };\n    }\n    return;\n  }, [isProgressing, updateInterval]);\n\n  useEffect(\n    function stopWhenComplete() {\n      if (value === 100) {\n        handleStop();\n      }\n    },\n    [handleStop, value],\n  );\n\n  return {\n    handleReset,\n    handleStart,\n    handleStop,\n    isProgressing,\n    value,\n  };\n}\n\nexport const WithProgVal = (): ReactElement => {\n  const { handleReset, handleStart, handleStop, isProgressing, value } =\n    useProgressingValue();\n\n  return (\n    <StackLayout align=\"center\">\n      <FlowLayout justify=\"center\" gap={1}>\n        <Button disabled={isProgressing} onClick={handleStart}>\n          Start\n        </Button>\n        <Button disabled={!isProgressing} onClick={handleStop}>\n          Stop\n        </Button>\n        <Button onClick={handleReset}>Reset</Button>\n      </FlowLayout>\n\n      <FlexItem>\n        <CircularProgress aria-label=\"Download\" value={value} />\n      </FlexItem>\n      <FlexItem>\n        <LinearProgress aria-label=\"Download\" value={value} />\n      </FlexItem>\n    </StackLayout>\n  );\n};\n"
+      }
+    ],
+    "category": "@salt-ds/core",
+    "tags": [
+      "Progress bar",
+      "Progress indicator"
+    ],
+    "when_to_use": [
+      "When it’s possible to determine the length of time remaining for a task or operation to complete. This will reassure the user that it is being processed.",
+      "To provide users with a visual indication of the status of an operation, or how much of a process is completed.",
+      "When the operation will take more than a second to complete, to reassure users that the operation is in progress."
+    ],
+    "when_not_to_use": [
+      "When a task or operation will take an indeterminate length of time to complete. Instead, use [`Spinner`](/salt/components/spinner).",
+      "To indicate the loading of content on navigation. Instead, use [`Spinner`](/salt/components/spinner)."
+    ],
+    "import_statement": "import { CircularProgress } from \"@salt-ds/core\";\n// or\nimport { LinearProgress } from \"@salt-ds/core\";",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/tree/main/packages/core/src/progress",
+    "related_components": [
+      {
+        "name": "Spinner",
+        "relationship": "similarTo"
+      }
+    ]
+  }
+}

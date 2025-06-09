@@ -1,0 +1,141 @@
+{
+  "component_name": "Tooltip",
+  "metadata": {
+    "component_name": "Tooltip",
+    "description": "`Tooltip` displays a brief message to the user that provides additional information about a UI element. The tooltip appears after the user’s mouse pointer hovers over the target element for a certain time.  It can communicate new or supporting information, errors, warnings or successful completion of a process or task.",
+    "props": {
+      "children": {
+        "type": "ReactNode",
+        "required": true,
+        "description": "The children will be the Tooltip's trigger."
+      },
+      "hideArrow": {
+        "type": "boolean",
+        "required": false,
+        "description": "Whether to hide the Tooltip arrow. Defaults to `false`."
+      },
+      "hideIcon": {
+        "type": "boolean",
+        "required": false,
+        "description": "Whether to hide the status icon within the Tooltip. Defaults to `false`.\nIf no status is provided, icon will also be hidden."
+      },
+      "content": {
+        "type": "ReactNode",
+        "required": true,
+        "description": "Content displayed inside the Tooltip. Can be a string or a React component."
+      },
+      "status": {
+        "type": "enum",
+        "required": false,
+        "description": "Optional string to determine the status of the Tooltip."
+      },
+      "enterDelay": {
+        "type": "number",
+        "required": false,
+        "description": "Delay in milliseconds before the Tooltip is shown."
+      },
+      "leaveDelay": {
+        "type": "number",
+        "required": false,
+        "description": "Delay in milliseconds before the Tooltip is hidden. Defaults to 300ms."
+      },
+      "disabled": {
+        "type": "boolean",
+        "required": false,
+        "description": "Option to not display the Tooltip. Can be used in conditional situations like text truncation. Defaults to 0."
+      },
+      "disableHoverListener": {
+        "type": "boolean",
+        "required": false,
+        "description": "Option to remove the hover listener."
+      },
+      "disableFocusListener": {
+        "type": "boolean",
+        "required": false,
+        "description": "Option to remove the focus listener."
+      },
+      "open": {
+        "type": "boolean",
+        "required": false,
+        "description": "The `open` state of the floating element to synchronize with the\n`isPositioned` value.",
+        "defaultValue": "false"
+      },
+      "onOpenChange": {
+        "type": "(open: boolean, event?: Event, reason?: OpenChangeReason) => void",
+        "required": false,
+        "description": "An event callback that is invoked when the floating element is opened or\nclosed."
+      },
+      "placement": {
+        "type": "enum",
+        "required": false,
+        "description": "Where to place the floating element relative to the reference element."
+      }
+    },
+    "examples": [
+      {
+        "name": "Content",
+        "description": "Use the `content` prop to pass a simple string or a React component displayed inside the tooltip.",
+        "code": "import { Button, Text, Tooltip } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Content = (): ReactElement => (\n  <Tooltip\n    content={\n      <>\n        <Text styleAs=\"h3\">Persona B</Text>\n        <ul style={{ paddingLeft: 20, margin: 0 }}>\n          <li>Role</li>\n          <li>Position</li>\n          <li>Location</li>\n          <li>City, Country</li>\n        </ul>\n      </>\n    }\n  >\n    <Button>Custom Content</Button>\n  </Tooltip>\n);\n"
+      },
+      {
+        "name": "Default",
+        "description": "By default, `Tooltip` displays a message and an arrow pointing to the relevant UI element. Its default placement is \"right,\" and appears after 300 milliseconds.",
+        "code": "import { Button, Tooltip } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Default = (): ReactElement => (\n  <Tooltip content=\"I am a tooltip\">\n    <Button>Hover</Button>\n  </Tooltip>\n);\n"
+      },
+      {
+        "name": "DelayBeforeShown",
+        "description": "",
+        "code": "import { Button, StackLayout, Tooltip } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const DelayBeforeShown = (): ReactElement => (\n  <StackLayout gap={1}>\n    <Tooltip content=\"I am a tooltip\" enterDelay={100}>\n      <Button>100ms</Button>\n    </Tooltip>\n    <Tooltip content=\"I am a tooltip\">\n      <Button>300ms</Button>\n    </Tooltip>\n    <Tooltip content=\"I am a tooltip\" enterDelay={500}>\n      <Button>500ms</Button>\n    </Tooltip>\n  </StackLayout>\n);\n"
+      },
+      {
+        "name": "HideArrow",
+        "description": "",
+        "code": "import { Button, Tooltip } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const HideArrow = (): ReactElement => (\n  <Tooltip content=\"I am a tooltip\" hideArrow>\n    <Button>Without Arrow</Button>\n  </Tooltip>\n);\n"
+      },
+      {
+        "name": "HideIcon",
+        "description": "",
+        "code": "import { Button, Tooltip } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const HideIcon = (): ReactElement => (\n  <Tooltip status=\"info\" content=\"I am a tooltip\" hideIcon>\n    <Button>Without Icon</Button>\n  </Tooltip>\n);\n"
+      },
+      {
+        "name": "Placement",
+        "description": "Use the `placement` prop to position the tooltip on its targeted UI element.",
+        "code": "import { Button, StackLayout, Tooltip } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Placement = (): ReactElement => (\n  <StackLayout direction=\"row\">\n    <Tooltip content=\"I am a tooltip\" placement={\"left\"}>\n      <Button>Left</Button>\n    </Tooltip>\n    <Tooltip content=\"I am a tooltip\" placement={\"top\"}>\n      <Button>Top</Button>\n    </Tooltip>\n    <Tooltip content=\"I am a tooltip\" placement={\"bottom\"}>\n      <Button>Bottom</Button>\n    </Tooltip>\n    <Tooltip content=\"I am a tooltip\" placement={\"right\"}>\n      <Button>Right</Button>\n    </Tooltip>\n  </StackLayout>\n);\n"
+      },
+      {
+        "name": "Status",
+        "description": "Use the `status` prop to define the tooltip’s icon and border color. You can choose between the following statuses:\n\n- **Info**: Use this status when you need to display general information.\n- **Error**: Use this status to communicate a critical issue preventing the user from continuing.\n- **Warning**: Use this status to inform users of an issue or potential issue related to their current task. Use this for issues that don't prevent the user from continuing or completing their task.\n- **Success**: Use this status to confirm the successful completion of a user's action.",
+        "code": "import { Button, StackLayout, Tooltip } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Status = (): ReactElement => (\n  <StackLayout gap={1}>\n    <Tooltip content=\"I am a tooltip\" status=\"info\">\n      <Button>Info</Button>\n    </Tooltip>\n    <Tooltip content=\"We found an issue\" status=\"error\">\n      <Button>Error</Button>\n    </Tooltip>\n    <Tooltip content=\"Are you sure\" status=\"warning\">\n      <Button>Warning</Button>\n    </Tooltip>\n    <Tooltip content=\"Well done\" status=\"success\">\n      <Button>Success</Button>\n    </Tooltip>\n  </StackLayout>\n);\n"
+      }
+    ],
+    "category": "@salt-ds/core",
+    "tags": [
+      "Hint"
+    ],
+    "when_to_use": [
+      "When you want to display a brief message to the user that provides additional information about a UI element."
+    ],
+    "when_not_to_use": [
+      "When the content contains interactive elements, such as a link, input or button. Consider always making this content visible or using [`Overlay`](../overlay) or [`Dialog`](../dialog) instead.",
+      "When there's information that the user needs to know to complete a task. Important help text should always be visible to the user.",
+      "When the message always needs to be visible. Instead, place the message directly on the page.",
+      "When the message isn't about a UI element. Consider adding the message directly on the page or using [`Overlay`](../overlay), [`Dialog`](../dialog), or [`Banner`](../banner) instead."
+    ],
+    "import_statement": "import { Tooltip } from \"@salt-ds/core\";",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/tree/main/packages/core/src/tooltip",
+    "related_components": [
+      {
+        "name": "Banner",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Overlay",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Status indicator",
+        "relationship": "contains"
+      }
+    ]
+  }
+}

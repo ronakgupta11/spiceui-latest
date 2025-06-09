@@ -1,0 +1,71 @@
+{
+  "component_name": "Stepper",
+  "metadata": {
+    "component_name": "Stepper",
+    "description": "`Stepper` visually communicates a user’s progress through a linear process. It gives the user context about where they are, which steps have they completed, if any errors or warnings have occurred, and how many steps are left.",
+    "props": {
+      "orientation": {
+        "type": "enum",
+        "required": false,
+        "description": "The orientation of the stepper: defaults to horizontal."
+      }
+    },
+    "examples": [
+      {
+        "name": "Horizontal",
+        "description": "",
+        "code": "import { Step, Stepper } from \"@salt-ds/core\";\n\nexport const Horizontal = () => {\n  return (\n    <Stepper orientation=\"horizontal\">\n      <Step label=\"Step 1\" stage=\"completed\" />\n      <Step label=\"Step 2\" stage=\"active\" />\n      <Step label=\"Step 3\" stage=\"pending\" />\n    </Stepper>\n  );\n};\n"
+      },
+      {
+        "name": "NestedSteps",
+        "description": "",
+        "code": "import { StackLayout, Step, Stepper } from \"@salt-ds/core\";\n\nexport const NestedSteps = () => {\n  return (\n    <StackLayout>\n      <Stepper orientation=\"vertical\">\n        <Step label=\"Step 1\" stage=\"completed\">\n          <Step label=\"Step 1.1\" stage=\"completed\" />\n        </Step>\n        <Step label=\"Step 2\" stage=\"inprogress\">\n          <Step label=\"Step 2.1\" stage=\"active\" />\n          <Step label=\"Step 2.2\" stage=\"pending\">\n            <Step label=\"Step 2.2.1\" stage=\"pending\" />\n            <Step label=\"Step 2.2.2\" stage=\"pending\" />\n            <Step label=\"Step 2.2.3\" stage=\"pending\" />\n          </Step>\n        </Step>\n        <Step label=\"Step 3\">\n          <Step label=\"Step 3.1\" stage=\"pending\" />\n          <Step label=\"Step 3.2\" stage=\"pending\" />\n          <Step label=\"Step 3.3\" stage=\"pending\">\n            <Step label=\"Step 3.3.1\" stage=\"pending\" />\n            <Step label=\"Step 3.3.2\" stage=\"pending\" />\n            <Step label=\"Step 3.3.3\" stage=\"pending\" />\n          </Step>\n        </Step>\n      </Stepper>\n    </StackLayout>\n  );\n};\n"
+      },
+      {
+        "name": "Reducer",
+        "description": "",
+        "code": "import {\n  Button,\n  FlexLayout,\n  StackLayout,\n  Step,\n  type StepId,\n  type StepProps,\n  Stepper,\n} from \"@salt-ds/core\";\n\nimport { type Dispatch, useCallback, useReducer } from \"react\";\nimport {\n  assignStepStatus,\n  assignStepsStage,\n  autoStageSteps,\n  flattenSteps,\n  initStepperReducerState,\n  resetSteps,\n} from \"./utils\";\n\ntype StepRecord = StepProps & { id: string };\n\nconst initialSteps = [\n  { id: \"step-1\", label: \"Step 1\" },\n  { id: \"step-2\", label: \"Step 2\" },\n  { id: \"step-3\", label: \"Step 3\" },\n] as StepRecord[];\n\n/**\n * An example of a custom hook to control the stepper state, or write your own.\n */\ninterface StepperReducerState {\n  steps: StepRecord[]; // The list of all steps.\n  flatSteps: StepRecord[]; // A flattened version of the steps.\n  activeStepIndex: number;\n  activeStep: StepRecord | null; // The currently active step.\n  previousStep: StepRecord | null; // The step immediately before the active step.\n  nextStep: StepRecord | null; // The step immediately after the active step.\n  started: boolean; // A boolean indicating if the process has started.\n  ended: boolean; // A boolean indicating if the process has ended.\n}\n\ntype StepperReducerAction =\n  | { type: \"next\" } // Move to the next step.\n  | { type: \"previous\" } // Move to the previous step.\n  | { type: \"reset\" }\n  | { type: \"status/error\" } // Set the status of the active step to `'error'`.\n  | { type: \"status/warning\" } // Set the status of the active step to `'warning'`.\n  | { type: \"status/clear\" } // Set the status of the active step to `undefined`.\n  | { type: \"move\"; payload: StepId };\n\ntype StepperReducerDispatch = Dispatch<StepperReducerAction>;\n\ninterface StepperReducerOptions {\n  activeStepId?: string;\n}\n\nfunction StepperReducer(\n  state: StepperReducerState,\n  action: StepperReducerAction,\n): StepperReducerState {\n  switch (action.type) {\n    case \"next\": {\n      if (state.activeStep?.status === \"error\") {\n        return state;\n      }\n\n      const activeStepIndex = state.activeStepIndex + 1;\n      const lastStepIndex = state.flatSteps.length - 1;\n\n      if (activeStepIndex > lastStepIndex) {\n        const steps = assignStepsStage(state.steps, \"completed\");\n        const flatSteps = flattenSteps(steps);\n\n        return {\n          steps,\n          flatSteps,\n          activeStepIndex: lastStepIndex + 1,\n          activeStep: null,\n          previousStep: flatSteps[lastStepIndex],\n          nextStep: null,\n          started: true,\n          ended: true,\n        };\n      }\n\n      const activeStepId = state.flatSteps[activeStepIndex].id;\n      const steps = autoStageSteps(resetSteps(state.steps), { activeStepId });\n      const flatSteps = flattenSteps(steps);\n\n      return {\n        steps,\n        flatSteps,\n        activeStepIndex,\n        activeStep: flatSteps[activeStepIndex],\n        previousStep: flatSteps[activeStepIndex - 1],\n        nextStep: flatSteps[activeStepIndex + 1] ?? null,\n        started: true,\n        ended: false,\n      };\n    }\n\n    case \"previous\": {\n      if (state.activeStep?.status === \"error\") {\n        return state;\n      }\n\n      const activeStepIndex = state.activeStepIndex - 1;\n\n      if (activeStepIndex < 0) {\n        const steps = assignStepsStage(state.steps, \"pending\");\n        const flatSteps = flattenSteps(steps);\n\n        return {\n          steps,\n          flatSteps,\n          activeStepIndex: -1,\n          activeStep: null,\n          previousStep: null,\n          nextStep: flatSteps[0],\n          started: false,\n          ended: false,\n        };\n      }\n\n      const activeStepId = state.flatSteps[activeStepIndex].id;\n      const steps = autoStageSteps(resetSteps(state.steps), { activeStepId });\n      const flatSteps = flattenSteps(steps);\n\n      return {\n        steps,\n        flatSteps,\n        activeStepIndex,\n        activeStep: flatSteps[activeStepIndex],\n        previousStep: flatSteps[activeStepIndex - 1] ?? null,\n        nextStep: flatSteps[activeStepIndex + 1],\n        started: true,\n        ended: false,\n      };\n    }\n\n    case \"move\": {\n      const activeStepId = action.payload;\n      const steps = autoStageSteps(resetSteps(state.steps), { activeStepId });\n      const flatSteps = flattenSteps(steps);\n      const lastStepIndex = state.flatSteps.length - 1;\n      const activeStepIndex = flatSteps.findIndex(\n        (step) => step.stage === \"active\",\n      );\n\n      return {\n        steps,\n        flatSteps,\n        activeStepIndex,\n        activeStep: flatSteps[activeStepIndex],\n        previousStep: flatSteps[activeStepIndex - 1] ?? null,\n        nextStep: flatSteps[activeStepIndex + 1] ?? null,\n        started: true,\n        ended: activeStepIndex === lastStepIndex,\n      };\n    }\n\n    case \"status/error\": {\n      const { activeStep, activeStepIndex } = state;\n\n      if (!activeStep) {\n        return state;\n      }\n\n      const activeStepId = activeStep.id;\n\n      const steps = assignStepStatus(state.steps, activeStepId, \"error\");\n      const flatSteps = flattenSteps(steps);\n\n      return {\n        ...state,\n        steps,\n        flatSteps,\n        activeStepIndex,\n        activeStep: flatSteps[activeStepIndex],\n        previousStep: flatSteps[activeStepIndex - 1] ?? null,\n        nextStep: flatSteps[activeStepIndex + 1],\n      };\n    }\n\n    case \"status/warning\": {\n      const { activeStep, activeStepIndex } = state;\n\n      if (!activeStep) {\n        return state;\n      }\n\n      const activeStepId = activeStep.id;\n\n      const steps = assignStepStatus(state.steps, activeStepId, \"warning\");\n      const flatSteps = flattenSteps(steps);\n\n      return {\n        ...state,\n        steps,\n        flatSteps,\n        activeStepIndex,\n        activeStep: flatSteps[activeStepIndex],\n        previousStep: flatSteps[activeStepIndex - 1] ?? null,\n        nextStep: flatSteps[activeStepIndex + 1],\n      };\n    }\n\n    case \"status/clear\": {\n      const { activeStep, activeStepIndex } = state;\n\n      if (!activeStep) {\n        return state;\n      }\n\n      const activeStepId = activeStep.id;\n\n      const steps = assignStepStatus(state.steps, activeStepId, undefined);\n      const flatSteps = flattenSteps(steps);\n\n      return {\n        ...state,\n        steps,\n        flatSteps,\n        activeStepIndex,\n        activeStep: flatSteps[activeStepIndex],\n        previousStep: flatSteps[activeStepIndex - 1] ?? null,\n        nextStep: flatSteps[activeStepIndex + 1],\n      };\n    }\n\n    case \"reset\": {\n      const firstStepId = state.flatSteps[0].id;\n\n      const steps = autoStageSteps(\n        resetSteps(state.steps, { resetStatus: true }),\n        { activeStepId: firstStepId },\n      );\n      const flatSteps = flattenSteps(steps);\n\n      return {\n        steps,\n        flatSteps,\n        activeStepIndex: 0,\n        activeStep: flatSteps[0],\n        previousStep: null,\n        nextStep: flatSteps[1],\n        started: true,\n        ended: false,\n      };\n    }\n\n    default: {\n      const exhaustiveCheck: never = action;\n      throw new Error(`Unhandled StepperReducer Action: ${exhaustiveCheck}`);\n    }\n  }\n}\n\nfunction useStepperReducer(\n  initialSteps: StepRecord[],\n  options?: StepperReducerOptions,\n): [StepperReducerState, StepperReducerDispatch] {\n  const initializer = useCallback(\n    (initialSteps: StepRecord[]) => {\n      return initStepperReducerState(initialSteps, options);\n    },\n    [options],\n  );\n\n  return useReducer(StepperReducer, initialSteps, initializer);\n}\n\nexport function Reducer() {\n  const [state, dispatch] = useStepperReducer(initialSteps);\n\n  return (\n    <StackLayout style={{ minWidth: \"240px\" }}>\n      <Stepper>\n        {state.steps.map((step) => (\n          <Step key={step.id} {...step} />\n        ))}\n      </Stepper>\n      <FlexLayout justify=\"space-between\">\n        <Button onClick={() => dispatch({ type: \"previous\" })}>Previous</Button>\n        <Button onClick={() => dispatch({ type: \"next\" })}>Next</Button>\n      </FlexLayout>\n    </StackLayout>\n  );\n}\n"
+      },
+      {
+        "name": "StageStatus",
+        "description": "",
+        "code": "import { Step, Stepper } from \"@salt-ds/core\";\n\nexport const StageStatus = () => {\n  return (\n    <Stepper>\n      <Step label=\"Pending\" description=\"stage\" stage=\"pending\" />\n      <Step label=\"Inprogress\" description=\"stage\" stage=\"inprogress\" />\n      <Step label=\"Active\" description=\"stage\" stage=\"active\" />\n      <Step label=\"Completed\" description=\"stage\" stage=\"completed\" />\n      <Step label=\"Locked\" description=\"stage\" stage=\"locked\" />\n      <Step label=\"Error\" description=\"status\" status=\"error\" />\n      <Step label=\"Warning\" description=\"status\" status=\"warning\" />\n    </Stepper>\n  );\n};\n"
+      },
+      {
+        "name": "Vertical",
+        "description": "",
+        "code": "import { StackLayout, Step, Stepper } from \"@salt-ds/core\";\n\nexport const Vertical = () => {\n  return (\n    <StackLayout>\n      <Stepper orientation=\"vertical\">\n        <Step label=\"Step 1\" stage=\"completed\" />\n        <Step label=\"Step 2\" stage=\"active\" />\n        <Step label=\"Step 3\" stage=\"pending\" />\n      </Stepper>\n    </StackLayout>\n  );\n};\n"
+      }
+    ],
+    "category": "@salt-ds/core",
+    "tags": [
+      "Discrete progress indicator",
+      "Progress indicator",
+      "Progress stepper",
+      "Progress steps",
+      "Screen flow",
+      "Stepped tracker",
+      "Status tracker"
+    ],
+    "when_to_use": [
+      "When there are separate steps within a process, such as a wizard or a multistep form.",
+      "When you want to split a process into distinct, bite-sized sections that are less daunting than lengthy forms."
+    ],
+    "when_not_to_use": [
+      "When there are fewer than three steps in a process.",
+      "As navigation; users cannot interact with the steps."
+    ],
+    "import_statement": "",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/tree/main/packages/core/src/stepper",
+    "related_components": [
+      {
+        "name": "SemanticIconProvider",
+        "relationship": "contains"
+      },
+      {
+        "name": "Accordion",
+        "relationship": "similarTo"
+      }
+    ]
+  }
+}

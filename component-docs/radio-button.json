@@ -1,0 +1,32 @@
+{
+  "component_name": "Radio button",
+  "metadata": {
+    "component_name": "Radio button",
+    "description": "`RadioButton` and `RadioButtonGroup` represent a set of mutually exclusive but related options. The user can only select one radio button at a time. When a user selects a new option, the previously selected option automatically clears. Therefore, radio buttons should therefore be used to display a choice between two or more options, as it’s impossible to clear a single radio button after selecting it.",
+    "props": {},
+    "examples": [],
+    "category": "@salt-ds/core",
+    "tags": [
+      "Radio",
+      "Radio group"
+    ],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/core/src/radio-button",
+    "related_components": [
+      {
+        "name": "Checkbox",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Toggle button",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Switch",
+        "relationship": "similarTo"
+      }
+    ]
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "component_name": "Overlay",
+  "metadata": {
+    "component_name": "Overlay",
+    "description": "`Overlay` reveals supplementary content when the user clicks a UI trigger element. It remains active and open until the user dismisses it. It can contain interactive and focusable elements, such as buttons and links.",
+    "props": {
+      "open": {
+        "type": "boolean",
+        "required": false,
+        "description": "Display or hide the component."
+      },
+      "onOpenChange": {
+        "type": "(open: boolean) => void",
+        "required": false,
+        "description": "Callback function triggered when open state changes."
+      },
+      "placement": {
+        "type": "enum",
+        "required": false,
+        "description": ""
+      }
+    },
+    "examples": [
+      {
+        "name": "CloseButton",
+        "description": "",
+        "code": "import {\n  Button,\n  Overlay,\n  OverlayPanel,\n  OverlayPanelCloseButton,\n  OverlayPanelContent,\n  OverlayTrigger,\n  useId,\n} from \"@salt-ds/core\";\nimport { type ReactElement, useState } from \"react\";\n\nimport styles from \"./index.module.css\";\n\nexport const CloseButton = (): ReactElement => {\n  const [open, setOpen] = useState(false);\n  const id = useId();\n\n  const onOpenChange = (newOpen: boolean) => setOpen(newOpen);\n\n  const handleClose = () => setOpen(false);\n\n  return (\n    <Overlay placement=\"right\" open={open} onOpenChange={onOpenChange}>\n      <OverlayTrigger>\n        <Button>Show Overlay</Button>\n      </OverlayTrigger>\n      <OverlayPanel aria-labelledby={id}>\n        <OverlayPanelCloseButton onClick={handleClose} />\n        <OverlayPanelContent>\n          <h3 className={styles.contentHeading} id={id}>\n            Title\n          </h3>\n          <div>Content of Overlay</div>\n        </OverlayPanelContent>\n      </OverlayPanel>\n    </Overlay>\n  );\n};\n"
+      },
+      {
+        "name": "Default",
+        "description": "",
+        "code": "import {\n  Button,\n  Overlay,\n  OverlayPanel,\n  OverlayPanelContent,\n  OverlayTrigger,\n  Tooltip,\n  useId,\n} from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nimport styles from \"./index.module.css\";\n\nexport const Default = (): ReactElement => {\n  const id = useId();\n  return (\n    <Overlay>\n      <OverlayTrigger>\n        <Button>Show Overlay</Button>\n      </OverlayTrigger>\n      <OverlayPanel aria-labelledby={id}>\n        <OverlayPanelContent>\n          <h3 className={styles.contentHeading} id={id}>\n            Title\n          </h3>\n          <div>\n            Content of Overlay\n            <br />\n            <br />\n            <Tooltip content={\"I'm a tooltip\"}>\n              <Button>hover me</Button>\n            </Tooltip>\n          </div>\n        </OverlayPanelContent>\n      </OverlayPanel>\n    </Overlay>\n  );\n};\n"
+      },
+      {
+        "name": "LongContent",
+        "description": "",
+        "code": "import {\n  Button,\n  Overlay,\n  OverlayHeader,\n  OverlayPanel,\n  OverlayPanelContent,\n  OverlayTrigger,\n  StackLayout,\n} from \"@salt-ds/core\";\nimport { CloseIcon } from \"@salt-ds/icons\";\nimport { type ReactElement, useState } from \"react\";\n\nexport const LongContent = (): ReactElement => {\n  const [open, setOpen] = useState(false);\n\n  const onOpenChange = (newOpen: boolean) => setOpen(newOpen);\n\n  const handleClose = () => setOpen(false);\n\n  const closeButton = (\n    <Button\n      aria-label=\"Close dialog\"\n      appearance=\"transparent\"\n      onClick={handleClose}\n    >\n      <CloseIcon aria-hidden />\n    </Button>\n  );\n\n  return (\n    <Overlay placement=\"right\" open={open} onOpenChange={onOpenChange}>\n      <OverlayTrigger>\n        <Button>Show Overlay</Button>\n      </OverlayTrigger>\n      <OverlayPanel\n        style={{\n          width: 300,\n        }}\n      >\n        <OverlayHeader header=\"Long content\" actions={closeButton} />\n        <OverlayPanelContent style={{ height: 200 }}>\n          <StackLayout>\n            <div>\n              Lorem Ipsum is simply dummy text of the printing and typesetting\n              industry. Lorem Ipsum has been the industrys standard dummy text\n              ever since the 1500s, when an unknown printer took a galley of\n              type and scrambled it to make a type specimen book.\n            </div>\n            <div>\n              It has survived not only five centuries, but also the leap into\n              electronic typesetting, remaining essentially unchanged. It was\n              popularised in the 1960s with the release of Letraset sheets\n              containing Lorem Ipsum passages, and more recently with desktop\n              publishing software like Aldus PageMaker including versions of\n              Lorem Ipsum.\n            </div>\n          </StackLayout>\n        </OverlayPanelContent>\n      </OverlayPanel>\n    </Overlay>\n  );\n};\n"
+      },
+      {
+        "name": "Placement",
+        "description": "Use the `placement` prop to position overlay content to the `top`, `bottom`, `left` or `right` of the trigger element.",
+        "code": "import {\n  Button,\n  Overlay,\n  OverlayPanel,\n  OverlayPanelContent,\n  type OverlayProps,\n  OverlayTrigger,\n  Tooltip,\n  useId,\n} from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\nimport styles from \"./index.module.css\";\n\nexport const OverlayTemplate = (props: OverlayProps): ReactElement => {\n  const { placement, ...rest } = props;\n  const id = useId();\n\n  return (\n    <Overlay placement={placement} {...rest}>\n      <OverlayTrigger>\n        <Button>{placement}</Button>\n      </OverlayTrigger>\n      <OverlayPanel aria-labelledby={id}>\n        <OverlayPanelContent>\n          <h3 id={id} className={styles.contentHeading}>\n            Title\n          </h3>\n          <div>\n            Content of Overlay\n            <br />\n            <br />\n            <Tooltip content={\"I'm a tooltip\"}>\n              <Button>hover me</Button>\n            </Tooltip>\n          </div>\n        </OverlayPanelContent>\n      </OverlayPanel>\n    </Overlay>\n  );\n};\n\nexport const Placement = (): ReactElement => (\n  <div>\n    <div style={{ marginBottom: 10 }}>\n      <OverlayTemplate placement=\"top\" />\n    </div>\n    <div style={{ marginBottom: 40 }}>\n      <OverlayTemplate placement=\"bottom\" />\n    </div>\n    <div style={{ marginBottom: 10 }}>\n      <OverlayTemplate placement=\"left\" />\n    </div>\n    <OverlayTemplate placement=\"right\" />\n  </div>\n);\n"
+      },
+      {
+        "name": "WithActions",
+        "description": "",
+        "code": "import {\n  Button,\n  Checkbox,\n  CheckboxGroup,\n  Divider,\n  Overlay,\n  OverlayPanel,\n  OverlayPanelContent,\n  OverlayTrigger,\n  StackLayout,\n  useId,\n} from \"@salt-ds/core\";\nimport { type ChangeEvent, useState } from \"react\";\n\nconst checkboxesData = [\n  {\n    label: \"Overlay\",\n    value: \"overlay\",\n  },\n  {\n    label: \"Row\",\n    value: \"row\",\n  },\n];\n\ninterface WithActionsContentProps {\n  id?: string;\n  onClose: () => void;\n}\n\nconst WithActionsContent = ({ id, onClose }: WithActionsContentProps) => {\n  const [controlledValues, setControlledValues] = useState([\n    checkboxesData[0].value,\n  ]);\n\n  const [checkboxState, setCheckboxState] = useState({\n    checked: false,\n    indeterminate: true,\n  });\n\n  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {\n    const updatedChecked = event.target.checked;\n    setCheckboxState({\n      indeterminate: !updatedChecked && checkboxState.checked,\n      checked:\n        checkboxState.indeterminate && updatedChecked ? false : updatedChecked,\n    });\n  };\n\n  const handleGroupChange = (event: ChangeEvent<HTMLInputElement>) => {\n    const value = event.target.value;\n    if (controlledValues.indexOf(value) === -1) {\n      setControlledValues((prevControlledValues) => [\n        ...prevControlledValues,\n        value,\n      ]);\n    } else {\n      setControlledValues((prevControlledValues) =>\n        prevControlledValues.filter(\n          (controlledValue) => controlledValue !== value,\n        ),\n      );\n    }\n  };\n\n  const indeterminate = controlledValues.length <= 1;\n\n  const handleExport = () => {\n    console.log(`${controlledValues.length} file(s) exported`);\n    onClose();\n  };\n\n  return (\n    <>\n      <h3 id={id} style={{ marginTop: 0, paddingBottom: 10 }}>\n        Export\n      </h3>\n      <StackLayout gap={1}>\n        <Checkbox\n          indeterminate={indeterminate}\n          checked={!indeterminate}\n          label={`${controlledValues.length} of 2 selected`}\n          onChange={handleChange}\n        />\n        <Divider variant=\"secondary\" />\n        <CheckboxGroup\n          checkedValues={controlledValues}\n          onChange={handleGroupChange}\n        >\n          {checkboxesData.map((data) => (\n            <Checkbox key={data.value} {...data} />\n          ))}\n        </CheckboxGroup>\n        <Divider variant=\"secondary\" />\n        <Button\n          style={{ float: \"right\", marginRight: 2 }}\n          onClick={handleExport}\n        >\n          Export\n        </Button>\n      </StackLayout>\n    </>\n  );\n};\n\nexport const WithActions = () => {\n  const [open, setOpen] = useState(false);\n  const id = useId();\n\n  const onOpenChange = (newOpen: boolean) => setOpen(newOpen);\n\n  return (\n    <Overlay open={open} onOpenChange={onOpenChange} placement=\"bottom\">\n      <OverlayTrigger>\n        <Button\n          onClick={() => {\n            setOpen(true);\n          }}\n        >\n          Show Overlay\n        </Button>\n      </OverlayTrigger>\n      <OverlayPanel\n        style={{\n          width: 246,\n        }}\n        aria-labelledby={id}\n      >\n        <OverlayPanelContent>\n          <WithActionsContent\n            id={id}\n            onClose={() => {\n              setOpen(false);\n            }}\n          />\n        </OverlayPanelContent>\n      </OverlayPanel>\n    </Overlay>\n  );\n};\n"
+      },
+      {
+        "name": "WithHeader",
+        "description": "",
+        "code": "import {\n  Button,\n  Overlay,\n  OverlayHeader,\n  OverlayPanel,\n  OverlayPanelContent,\n  OverlayTrigger,\n} from \"@salt-ds/core\";\nimport { CloseIcon } from \"@salt-ds/icons\";\nimport { type ReactElement, useState } from \"react\";\n\nexport const WithHeader = (): ReactElement => {\n  const [open, setOpen] = useState(false);\n\n  const onOpenChange = (newOpen: boolean) => setOpen(newOpen);\n\n  const handleClose = () => setOpen(false);\n\n  const headerActions = (\n    <Button\n      aria-label=\"Close overlay\"\n      appearance=\"transparent\"\n      onClick={handleClose}\n    >\n      <CloseIcon aria-hidden />\n    </Button>\n  );\n  return (\n    <Overlay placement=\"right\" open={open} onOpenChange={onOpenChange}>\n      <OverlayTrigger>\n        <Button>Show Overlay</Button>\n      </OverlayTrigger>\n      <OverlayPanel>\n        <OverlayHeader header=\"Title\" actions={headerActions} />\n        <OverlayPanelContent>\n          <div>Content of Overlay</div>\n        </OverlayPanelContent>\n      </OverlayPanel>\n    </Overlay>\n  );\n};\n"
+      }
+    ],
+    "category": "@salt-ds/core",
+    "tags": [
+      "Popover"
+    ],
+    "when_to_use": [
+      "To expose interactive and essential elements within a tooltip to carry out in-context tasks.",
+      "For filter or dropdown panels that overlay content.",
+      "When acknowledgement on overlay content is needed. An overlay only dismissess after user interaction."
+    ],
+    "when_not_to_use": [
+      "To notify and present critical information that requires immediate action from the user. Instead, use [`Dialog`](/salt/components/dialog).",
+      "To provide a non-focusable and informative hint. Instead, use [`Tooltip`](/salt/components/tooltip)."
+    ],
+    "import_statement": "import {\n  Overlay,\n  OverlayTrigger,\n  OverlayPanel,\n  OverlayPanelContent,\n  OverlayPanelCloseButton,\n} from \"@salt-ds/core\";",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/tree/main/packages/core/src/overlay",
+    "related_components": [
+      {
+        "name": "Button",
+        "relationship": "contains"
+      },
+      {
+        "name": "Drawer",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Tooltip",
+        "relationship": "similarTo"
+      }
+    ]
+  }
+}

@@ -1,0 +1,191 @@
+{
+  "component_name": "Tabs",
+  "metadata": {
+    "component_name": "Tabs",
+    "description": "`TabsNext` switch between different but related content. Users can move between different views without the need to leave the current page. A tabstrip comprises a minimum of two tabs, with one tab actively engaged at any given moment. The active tab is differentiated from an inactive tab by a colored indicator either on the top or bottom edge of the tab, depending on the variant in use. These tabstrips can expand the full width of the page or be used within content areas, or within components such as dialogs, cards, and drawers.",
+    "props": {
+      "allowDragDrop": {
+        "type": "boolean",
+        "required": false,
+        "description": "when true Tabs may be re-arranged by dragging individual Tabs to new position within Tabstrip."
+      },
+      "centered": {
+        "type": "boolean",
+        "required": false,
+        "description": "Boolean that indicates if tabs are centered on the container"
+      },
+      "defaultActiveTabIndex": {
+        "type": "number",
+        "required": false,
+        "description": "index value of Selected Tab, used in uncontrolled mode"
+      },
+      "editing": {
+        "type": "boolean",
+        "required": false,
+        "description": ""
+      },
+      "enableAddTab": {
+        "type": "boolean",
+        "required": false,
+        "description": "Boolean that enables add new tab"
+      },
+      "enableCloseTab": {
+        "type": "boolean",
+        "required": false,
+        "description": "@deprecated Boolean that enables closing tabs"
+      },
+      "enableRenameTab": {
+        "type": "boolean",
+        "required": false,
+        "description": "Boolean that enables renaming a tab"
+      },
+      "keyBoardActivation": {
+        "type": "enum",
+        "required": false,
+        "description": ""
+      },
+      "onAddTab": {
+        "type": "() => void",
+        "required": false,
+        "description": ""
+      },
+      "onActiveChange": {
+        "type": "(tabIndex: number) => void",
+        "required": false,
+        "description": ""
+      },
+      "onCloseTab": {
+        "type": "(tabIndex: number) => void",
+        "required": false,
+        "description": ""
+      },
+      "onMoveTab": {
+        "type": "(fromIndex: number, toIndex: number) => void",
+        "required": false,
+        "description": ""
+      },
+      "orientation": {
+        "type": "enum",
+        "required": false,
+        "description": ""
+      },
+      "onEnterEditMode": {
+        "type": "() => void",
+        "required": false,
+        "description": ""
+      },
+      "onExitEditMode": {
+        "type": "ExitEditModeHandler",
+        "required": false,
+        "description": ""
+      },
+      "overflowMenu": {
+        "type": "boolean",
+        "required": false,
+        "description": "Boolean that indicates whether to enable overflow dropdown or not"
+      },
+      "promptForNewTabName": {
+        "type": "boolean",
+        "required": false,
+        "description": ""
+      },
+      "showActivationIndicator": {
+        "type": "boolean",
+        "required": false,
+        "description": ""
+      },
+      "source": {
+        "type": "TabsSource",
+        "required": false,
+        "description": ""
+      },
+      "activeTabIndex": {
+        "type": "number",
+        "required": false,
+        "description": "index value of Active Tab, used in controlled mode. Set to `null` for no active tab."
+      },
+      "variant": {
+        "type": "enum",
+        "required": false,
+        "description": "Set variant - defaults 'primary'"
+      }
+    },
+    "examples": [
+      {
+        "name": "ActiveColor",
+        "description": "",
+        "code": "import {\n  FormField,\n  FormFieldLabel,\n  Panel,\n  RadioButton,\n  RadioButtonGroup,\n  StackLayout,\n} from \"@salt-ds/core\";\nimport {\n  TabBar,\n  TabListNext,\n  type TabListNextProps,\n  TabNext,\n  TabNextPanel,\n  TabNextTrigger,\n  TabsNext,\n} from \"@salt-ds/lab\";\nimport { type ChangeEvent, type ReactElement, useState } from \"react\";\n\nconst tabs = [\"Home\", \"Transactions\", \"Loans\"];\n\nexport const ActiveColor = (): ReactElement => {\n  const [variant, setVariant] =\n    useState<TabListNextProps[\"activeColor\"]>(\"primary\");\n\n  const handleVariantChange = (event: ChangeEvent<HTMLInputElement>) => {\n    setVariant(event.target.value as TabListNextProps[\"activeColor\"]);\n  };\n\n  return (\n    <StackLayout gap={6}>\n      <div style={{ alignItems: \"center\", width: \"40vw\" }}>\n        <TabsNext defaultValue={tabs[0]}>\n          <TabBar divider>\n            <TabListNext activeColor={variant}>\n              {tabs.map((label) => (\n                <TabNext value={label} key={label}>\n                  <TabNextTrigger>{label}</TabNextTrigger>\n                </TabNext>\n              ))}\n            </TabListNext>\n          </TabBar>\n          {tabs.map((label) => (\n            <TabNextPanel value={label} key={label} style={{ height: 200 }}>\n              <Panel variant={variant}>{label}</Panel>\n            </TabNextPanel>\n          ))}\n        </TabsNext>\n      </div>\n      <FormField style={{ width: \"auto\" }}>\n        <FormFieldLabel>Select tabstrip color</FormFieldLabel>\n        <RadioButtonGroup\n          direction=\"horizontal\"\n          value={variant}\n          onChange={handleVariantChange}\n        >\n          <RadioButton label=\"Primary\" value=\"primary\" />\n          <RadioButton label=\"Secondary\" value=\"secondary\" />\n          <RadioButton label=\"Tertiary\" value=\"tertiary\" />\n        </RadioButtonGroup>\n      </FormField>\n    </StackLayout>\n  );\n};\n"
+      },
+      {
+        "name": "AddANewTab",
+        "description": "",
+        "code": "import { Button, useAriaAnnouncer } from \"@salt-ds/core\";\nimport { AddIcon } from \"@salt-ds/icons\";\nimport {\n  TabBar,\n  TabListNext,\n  TabNext,\n  TabNextTrigger,\n  TabsNext,\n} from \"@salt-ds/lab\";\nimport { type ReactElement, useRef, useState } from \"react\";\n\nexport const AddANewTab = (): ReactElement => {\n  const [tabs, setTabs] = useState([\"Home\", \"Transactions\", \"Loans\"]);\n  const [value, setValue] = useState(tabs[0]);\n  const newCount = useRef(0);\n  const { announce } = useAriaAnnouncer();\n\n  return (\n    <TabsNext value={value} onChange={(_event, newValue) => setValue(newValue)}>\n      <TabBar inset divider style={{ width: 500 }}>\n        <TabListNext>\n          {tabs.map((label) => (\n            <TabNext value={label} key={label}>\n              <TabNextTrigger>{label}</TabNextTrigger>\n            </TabNext>\n          ))}\n        </TabListNext>\n        <Button\n          aria-label=\"Add tab\"\n          appearance=\"transparent\"\n          onClick={() => {\n            const newTab = `New tab${newCount.current > 0 ? ` ${newCount.current}` : \"\"}`;\n            newCount.current += 1;\n\n            setTabs((old) => old.concat(newTab));\n            announce(`${newTab} tab added`, 150);\n          }}\n        >\n          <AddIcon aria-hidden />\n        </Button>\n      </TabBar>\n    </TabsNext>\n  );\n};\n"
+      },
+      {
+        "name": "Appearance",
+        "description": "Two different appearances are available for tabs: Bordered and Transparent.",
+        "code": "import { StackLayout } from \"@salt-ds/core\";\nimport {\n  TabBar,\n  TabListNext,\n  TabNext,\n  TabNextTrigger,\n  TabsNext,\n} from \"@salt-ds/lab\";\nimport type { ReactElement } from \"react\";\n\nconst tabs = [\"Home\", \"Transactions\", \"Loans\", \"Checks\", \"Liquidity\"];\n\nexport const Appearance = (): ReactElement => {\n  return (\n    <StackLayout>\n      <TabsNext defaultValue={tabs[0]}>\n        <TabBar>\n          <TabListNext appearance=\"bordered\">\n            {tabs.map((label) => (\n              <TabNext value={label} key={label}>\n                <TabNextTrigger>{label}</TabNextTrigger>\n              </TabNext>\n            ))}\n          </TabListNext>\n        </TabBar>\n      </TabsNext>\n      <TabsNext defaultValue={tabs[0]}>\n        <TabBar>\n          <TabListNext appearance=\"transparent\">\n            {tabs.map((label) => (\n              <TabNext value={label} key={label}>\n                <TabNextTrigger>{label}</TabNextTrigger>\n              </TabNext>\n            ))}\n          </TabListNext>\n        </TabBar>\n      </TabsNext>\n    </StackLayout>\n  );\n};\n"
+      },
+      {
+        "name": "ClosableTabs",
+        "description": "",
+        "code": "import { useAriaAnnouncer } from \"@salt-ds/core\";\nimport { CloseIcon } from \"@salt-ds/icons\";\nimport {\n  TabBar,\n  TabListNext,\n  TabNext,\n  TabNextAction,\n  TabNextTrigger,\n  TabsNext,\n} from \"@salt-ds/lab\";\nimport { type ReactElement, useState } from \"react\";\n\nexport const ClosableTabs = (): ReactElement => {\n  const [tabs, setTabs] = useState([\n    \"Home\",\n    \"Transactions\",\n    \"Loans\",\n    \"Checks\",\n    \"Liquidity\",\n  ]);\n\n  const { announce } = useAriaAnnouncer();\n\n  return (\n    <TabsNext defaultValue={tabs[0]}>\n      <TabBar inset divider>\n        <TabListNext>\n          {tabs.map((label) => (\n            <TabNext value={label} key={label}>\n              <TabNextTrigger>{label}</TabNextTrigger>\n              {tabs.length > 1 && (\n                <TabNextAction\n                  onClick={() => {\n                    setTabs(tabs.filter((tab) => tab !== label));\n                    announce(`${label} tab has been removed`, 150);\n                  }}\n                  aria-label=\"Close tab\"\n                >\n                  <CloseIcon aria-hidden />\n                </TabNextAction>\n              )}\n            </TabNext>\n          ))}\n        </TabListNext>\n      </TabBar>\n    </TabsNext>\n  );\n};\n"
+      },
+      {
+        "name": "DisabledTabs",
+        "description": "",
+        "code": "import {\n  TabBar,\n  TabListNext,\n  TabNext,\n  TabNextTrigger,\n  TabsNext,\n} from \"@salt-ds/lab\";\nimport type { ReactElement } from \"react\";\n\nconst tabs = [\"Home\", \"Transactions\", \"Loans\", \"Checks\", \"Liquidity\"];\n\nexport const DisabledTabs = (): ReactElement => {\n  return (\n    <TabsNext defaultValue={tabs[0]}>\n      <TabBar inset divider>\n        <TabListNext>\n          {tabs.map((label) => {\n            return (\n              <TabNext disabled={label === \"Loans\"} value={label} key={label}>\n                <TabNextTrigger>{label}</TabNextTrigger>\n              </TabNext>\n            );\n          })}\n        </TabListNext>\n      </TabBar>\n    </TabsNext>\n  );\n};\n"
+      },
+      {
+        "name": "DividerAndInset",
+        "description": "",
+        "code": "import { StackLayout, Switch } from \"@salt-ds/core\";\nimport {\n  TabBar,\n  TabListNext,\n  TabNext,\n  TabNextTrigger,\n  TabsNext,\n} from \"@salt-ds/lab\";\nimport { type ReactElement, useState } from \"react\";\n\nconst tabs = [\"Home\", \"Transactions\", \"Loans\", \"Checks\", \"Liquidity\"];\n\nexport const DividerAndInset = (): ReactElement => {\n  const [divider, setDivider] = useState(true);\n  const [inset, setInset] = useState(true);\n\n  return (\n    <StackLayout>\n      <TabsNext defaultValue={tabs[0]}>\n        <TabBar divider={divider} inset={inset}>\n          <TabListNext appearance=\"bordered\">\n            {tabs.map((label) => (\n              <TabNext value={label} key={label}>\n                <TabNextTrigger>{label}</TabNextTrigger>\n              </TabNext>\n            ))}\n          </TabListNext>\n        </TabBar>\n      </TabsNext>\n      <TabsNext defaultValue={tabs[0]}>\n        <TabBar divider={divider} inset={inset}>\n          <TabListNext appearance=\"transparent\">\n            {tabs.map((label) => (\n              <TabNext value={label} key={label}>\n                <TabNextTrigger>{label}</TabNextTrigger>\n              </TabNext>\n            ))}\n          </TabListNext>\n        </TabBar>\n      </TabsNext>\n      <StackLayout direction=\"row\">\n        <Switch\n          label=\"Divider\"\n          checked={divider}\n          onChange={(event) => setDivider(event.target.checked)}\n        />\n        <Switch\n          label=\"Inset\"\n          checked={inset}\n          onChange={(event) => setInset(event.target.checked)}\n        />\n      </StackLayout>\n    </StackLayout>\n  );\n};\n"
+      },
+      {
+        "name": "Overflow",
+        "description": "When there are too many tabs to fit in the tabstrip, an overflow menu appears. The overflow menu contains a list of all tabs that are not visible in the tabstrip. Users can access the overflow menu by clicking the chevron icon on the right side of the tabstrip or navigating using the arrow keys.",
+        "code": "import {\n  TabBar,\n  TabListNext,\n  TabNext,\n  TabNextTrigger,\n  TabsNext,\n} from \"@salt-ds/lab\";\nimport type { ReactElement } from \"react\";\n\nconst tabs = [\n  \"Home\",\n  \"Transactions\",\n  \"Loans\",\n  \"Checks\",\n  \"Liquidity\",\n  \"With\",\n  \"Lots\",\n  \"More\",\n  \"Additional\",\n  \"Tabs\",\n  \"Added\",\n  \"In order to\",\n  \"Showcase overflow\",\n  \"Menu\",\n  \"On\",\n  \"Larger\",\n  \"Screens\",\n];\n\nexport const Overflow = (): ReactElement => {\n  return (\n    <TabsNext defaultValue={tabs[0]}>\n      <TabBar inset divider>\n        <TabListNext style={{ maxWidth: 350, margin: \"auto\" }}>\n          {tabs.map((label) => (\n            <TabNext value={label} key={label}>\n              <TabNextTrigger>{label}</TabNextTrigger>\n            </TabNext>\n          ))}\n        </TabListNext>\n      </TabBar>\n    </TabsNext>\n  );\n};\n"
+      },
+      {
+        "name": "WithBadge",
+        "description": "",
+        "code": "import { Badge } from \"@salt-ds/core\";\nimport {\n  TabBar,\n  TabListNext,\n  TabNext,\n  TabNextTrigger,\n  TabsNext,\n} from \"@salt-ds/lab\";\nimport type { ReactElement } from \"react\";\n\nconst tabs = [\"Home\", \"Transactions\", \"Loans\", \"Checks\", \"Liquidity\"];\n\nconst notifications: Record<(typeof tabs)[number], number> = {\n  Transactions: 1,\n  Checks: 6,\n};\n\nexport const WithBadge = (): ReactElement => {\n  return (\n    <TabsNext defaultValue={tabs[0]}>\n      <TabBar divider inset>\n        <TabListNext>\n          {tabs.map((label) => (\n            <TabNext value={label} key={label}>\n              <TabNextTrigger>\n                {label}\n                {notifications[label] > 0 ? (\n                  <Badge\n                    value={notifications[label]}\n                    aria-label={`${notifications[label]} updates`}\n                  />\n                ) : undefined}\n              </TabNextTrigger>\n            </TabNext>\n          ))}\n        </TabListNext>\n      </TabBar>\n    </TabsNext>\n  );\n};\n"
+      },
+      {
+        "name": "WithIcon",
+        "description": "",
+        "code": "import {\n  BankCheckIcon,\n  CreditCardIcon,\n  HomeIcon,\n  LineChartIcon,\n  ReceiptIcon,\n} from \"@salt-ds/icons\";\nimport {\n  TabBar,\n  TabListNext,\n  TabNext,\n  TabNextTrigger,\n  TabsNext,\n} from \"@salt-ds/lab\";\nimport type { ComponentType, ReactElement } from \"react\";\n\nconst tabs = [\"Home\", \"Transactions\", \"Loans\", \"Checks\", \"Liquidity\"];\n\nconst tabToIcon: Record<string, ComponentType> = {\n  Home: HomeIcon,\n  Transactions: ReceiptIcon,\n  Loans: CreditCardIcon,\n  Checks: BankCheckIcon,\n  Liquidity: LineChartIcon,\n};\n\nexport const WithIcon = (): ReactElement => {\n  return (\n    <TabsNext defaultValue={tabs[0]}>\n      <TabBar divider inset>\n        <TabListNext>\n          {tabs.map((label) => {\n            const Icon = tabToIcon[label];\n            return (\n              <TabNext value={label} key={label}>\n                <TabNextTrigger>\n                  <Icon /> {label}\n                </TabNextTrigger>\n              </TabNext>\n            );\n          })}\n        </TabListNext>\n      </TabBar>\n    </TabsNext>\n  );\n};\n"
+      }
+    ],
+    "category": "@salt-ds/lab",
+    "tags": [
+      "Tab",
+      "Tabstrip",
+      "Tab bar",
+      "Tab set"
+    ],
+    "when_to_use": [
+      "Use tabs to organize logically related but mutually exclusive content on a single page.",
+      "Use tabs to prevent users from navigating to another page to complete a task."
+    ],
+    "when_not_to_use": [
+      "Don’t use tabs when users need to compare information between views.",
+      "Don’t use tabs to communicate progress. Instead, use [`Stepper`](/salt/components/stepper).",
+      "Don’t use tabs for primary navigation, taking the user off the current page. Instead, use [`Navigation Item`](/salt/components/navigation-item).",
+      "All labels should be short and concise.",
+      "Labels should clearly communicate the underlying view.",
+      "Always use sentence case in labels.",
+      "Always use sentence case for badge labels when nesting in a tab.",
+      "Do not wrap labels. Use truncation with `Tooltip` if necessary.",
+      "Icon and text should match each other semantically."
+    ],
+    "import_statement": "import {\n  TabsNext,\n  TabBar,\n  TabListNext,\n  TabNext,\n  TabNextTrigger,\n  TabNextAction,\n  TabPanelNext,\n} from \"@salt-ds/lab\";",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/lab/src/tabs-next",
+    "related_components": [
+      {
+        "name": "Navigation item",
+        "relationship": "similarTo"
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "component_name": "Country symbol",
+  "metadata": {
+    "component_name": "Country symbol",
+    "description": "Country symbols display an icon that represents the flag of a country or intergovernmental organization. You can use country symbols individually or as a complete package. The country symbols are stylized and representative, so users are more likely to recognize them at smaller sizes, and they maintain their character within the circular form. Rectangular \"sharp\" versions are also provided for every country symbol.",
+    "props": {},
+    "examples": [],
+    "category": "@salt-ds/countries",
+    "tags": [
+      "Flag",
+      "Country"
+    ],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/countries/src",
+    "related_components": [
+      {
+        "name": "Avatar",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Icon",
+        "relationship": "similarTo"
+      }
+    ]
+  }
+}

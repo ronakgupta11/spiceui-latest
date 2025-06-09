@@ -1,0 +1,16 @@
+{
+  "component_name": "Semantic icon provider",
+  "metadata": {
+    "component_name": "Semantic icon provider",
+    "description": "`SemanticIconProvider` introduces a optional centralized approach to managing and customizing icons in Salt’s ecosystem. This provider allows for flexible configuration of icon components and ensures consistent icon usage across your application.",
+    "props": {},
+    "examples": [],
+    "category": "@salt-ds/core",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/tree/main/packages/core/src/semantic-icon-provider",
+    "related_components": []
+  }
+}

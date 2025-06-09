@@ -1,0 +1,20 @@
+{
+  "component_name": "Form field",
+  "metadata": {
+    "component_name": "Form field",
+    "description": "`FormField` is a wrapper for user interface controls that are typically found in a form (for example, `Input`, `ComboBox` or `RadioButton`). You must make these controls accessible by providing them with a visible label, validation control, states and descriptive text elements.",
+    "props": {},
+    "examples": [],
+    "category": "@salt-ds/core",
+    "tags": [
+      "Form input",
+      "Input control",
+      "Form element"
+    ],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/core/src/form-field",
+    "related_components": []
+  }
+}

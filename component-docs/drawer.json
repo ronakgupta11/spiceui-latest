@@ -1,0 +1,101 @@
+{
+  "component_name": "Drawer",
+  "metadata": {
+    "component_name": "Drawer",
+    "description": "`Drawer` is an expandable panel that displays content and controls over the application content. It provides temporary access to additional or related content without navigating away from the current screen.",
+    "props": {
+      "position": {
+        "type": "enum",
+        "required": false,
+        "description": "Defines the drawer position within the screen. Defaults to `left`."
+      },
+      "open": {
+        "type": "boolean",
+        "required": false,
+        "description": "Display or hide the component."
+      },
+      "onOpenChange": {
+        "type": "(newOpen: boolean) => void",
+        "required": false,
+        "description": "Callback function triggered when open state changes."
+      },
+      "variant": {
+        "type": "enum",
+        "required": false,
+        "description": "Change background color palette"
+      },
+      "disableDismiss": {
+        "type": "boolean",
+        "required": false,
+        "description": "Prevent the dialog closing on click away"
+      },
+      "disableScrim": {
+        "type": "boolean",
+        "required": false,
+        "description": "Prevent Scrim from rendering"
+      }
+    },
+    "examples": [
+      {
+        "name": "BottomDrawer",
+        "description": "",
+        "code": "import {\n  Button,\n  Display2,\n  Display3,\n  Drawer,\n  DrawerCloseButton,\n  FlowLayout,\n  H2,\n  H3,\n  StackLayout,\n  Text,\n  useId,\n} from \"@salt-ds/core\";\nimport { AgGridReact } from \"ag-grid-react\";\nimport { type ReactElement, useState } from \"react\";\nimport { useAgGridHelpers } from \"../ag-grid-theme/useAgGridHelpers\";\n\nconst columns = [\n  {\n    headerName: \"Market Type\",\n    field: \"market\",\n    suppressHeaderMenuButton: true,\n    width: 120,\n  },\n  {\n    headerName: \"AUC\",\n    field: \"auc\",\n    type: \"rightAligned\",\n    suppressHeaderMenuButton: true,\n    width: 120,\n  },\n  {\n    headerName: \"Price 1\",\n    field: \"price1\",\n    type: \"rightAligned\",\n    suppressHeaderMenuButton: true,\n    width: 120,\n    editable: true,\n    cellClass: [\"editable-cell\", \"numeric-cell\"],\n  },\n  {\n    headerName: \"Threshold 1\",\n    field: \"threshold1\",\n    type: \"rightAligned\",\n    suppressHeaderMenuButton: true,\n    width: 120,\n    editable: true,\n    cellClass: [\"editable-cell\", \"numeric-cell\"],\n  },\n  {\n    headerName: \"Price 2\",\n    field: \"price2\",\n    type: \"rightAligned\",\n    suppressHeaderMenuButton: true,\n    width: 120,\n    editable: true,\n    cellClass: [\"editable-cell\", \"numeric-cell\"],\n  },\n  {\n    headerName: \"Threshold 2\",\n    field: \"threshold2\",\n    type: \"rightAligned\",\n    suppressHeaderMenuButton: true,\n    width: 120,\n    editable: true,\n    cellClass: [\"editable-cell\", \"numeric-cell\"],\n  },\n  {\n    headerName: \"Price 3\",\n    field: \"price3\",\n    type: \"rightAligned\",\n    suppressHeaderMenuButton: true,\n    width: 120,\n    editable: true,\n    cellClass: [\"editable-cell\", \"numeric-cell\"],\n  },\n  {\n    headerName: \"Threshold 3\",\n    field: \"threshold3\",\n    type: \"rightAligned\",\n    suppressHeaderMenuButton: true,\n    width: 120,\n    editable: true,\n    cellClass: [\"editable-cell\", \"numeric-cell\"],\n  },\n  {\n    headerName: \"Price 4\",\n    field: \"price4\",\n    type: \"rightAligned\",\n    suppressHeaderMenuButton: true,\n    width: 120,\n    editable: true,\n    cellClass: [\"editable-cell\", \"numeric-cell\"],\n  },\n  {\n    headerName: \"Threshold 4\",\n    field: \"threshold4\",\n    type: \"rightAligned\",\n    suppressHeaderMenuButton: true,\n    width: 120,\n    editable: true,\n    cellClass: [\"editable-cell\", \"numeric-cell\"],\n  },\n];\n\nconst defaultData = [\n  {\n    market: \"Australia\",\n    auc: \"$15,000,000,000\",\n    price1: \"1\",\n    threshold1: \"$10,000mm\",\n    price2: \"0.90\",\n    threshold2: \"$20,000mm\",\n    price3: \"0.75\",\n    threshold3: \"$20,000mm\",\n    price4: \"0.65\",\n    threshold4: \"$30,000mm\",\n  },\n];\n\nexport const BottomDrawer = (): ReactElement => {\n  const [open, setOpen] = useState(false);\n  const { containerProps, agGridProps } = useAgGridHelpers();\n  const id = useId();\n\n  const handleRequestOpen = () => {\n    setOpen(true);\n  };\n\n  const onOpenChange = (newOpen: boolean) => {\n    setOpen(newOpen);\n  };\n\n  const handleClose = () => {\n    setOpen(false);\n  };\n\n  return (\n    <>\n      <Button onClick={handleRequestOpen}>Open Bottom Drawer</Button>\n      <Drawer\n        open={open}\n        onOpenChange={onOpenChange}\n        position=\"bottom\"\n        style={{ height: \"max-content\" }}\n        aria-labelledby={id}\n      >\n        <DrawerCloseButton onClick={handleClose} />\n        <StackLayout gap={3}>\n          <H2 id={id}>Marginal Tiering</H2>\n          <div\n            {...containerProps}\n            style={{ height: \"calc(3 * var(--salt-size-base))\" }}\n          >\n            <AgGridReact\n              columnDefs={columns}\n              rowData={defaultData}\n              {...agGridProps}\n            />\n          </div>\n          <FlowLayout gap={1}>\n            <H3 style={{ margin: 0 }}>Threshold Summary</H3>\n            <Text>(Projected Revenue)</Text>\n          </FlowLayout>\n          <FlowLayout justify=\"space-between\">\n            <StackLayout direction=\"row\" gap={3}>\n              <StackLayout gap={0}>\n                <Text>Below Threshold 1</Text>\n                <Display3>$1,000,000</Display3>\n              </StackLayout>\n              <StackLayout gap={0}>\n                <Text>Below Threshold 1 & 2</Text>\n                <Display3>$450,000</Display3>\n              </StackLayout>\n              <StackLayout gap={0}>\n                <Text>Below Threshold 2 & 3</Text>\n                <Display3>$0</Display3>\n              </StackLayout>\n              <StackLayout gap={0}>\n                <Text>Below Threshold 3 & 4</Text>\n                <Display3>$0</Display3>\n              </StackLayout>\n              <StackLayout gap={0}>\n                <Text>Total</Text>\n                <Display3>$1,450,000</Display3>\n              </StackLayout>\n            </StackLayout>\n            <StackLayout gap={0}>\n              <Text\n                style={{\n                  position: \"absolute\",\n                }}\n              >\n                Blended bps\n              </Text>\n              <Display2>0.968</Display2>\n            </StackLayout>\n          </FlowLayout>\n          <FlowLayout justify=\"end\">\n            <Button appearance=\"transparent\" onClick={handleClose}>\n              Cancel\n            </Button>\n            <Button sentiment=\"accented\" onClick={handleClose}>\n              Update Tier\n            </Button>\n          </FlowLayout>\n        </StackLayout>\n      </Drawer>\n    </>\n  );\n};\n"
+      },
+      {
+        "name": "Default",
+        "description": "By default, a drawer anchors to the `left` edge of the screen and has `variant=\"primary\"`.\n\nYou can place drawer on the `left`, `right`, `top` and `bottom` edges using the `position` prop.\n\nSet `variant=\"secondary\"` for a secondary drawer.",
+        "code": "import { Button, Drawer, DrawerCloseButton, StackLayout } from \"@salt-ds/core\";\nimport { type ReactElement, useState } from \"react\";\n\nexport const Default = (): ReactElement => {\n  const [openPrimary, setOpenPrimary] = useState(false);\n  const [openSecondary, setOpenSecondary] = useState(false);\n\n  return (\n    <StackLayout>\n      <Button onClick={() => setOpenPrimary(true)}>Open Primary Drawer</Button>\n      <Drawer\n        open={openPrimary}\n        onOpenChange={(newOpen) => setOpenPrimary(newOpen)}\n        style={{ width: 200 }}\n      >\n        <DrawerCloseButton onClick={() => setOpenPrimary(false)} />\n      </Drawer>\n      <Button onClick={() => setOpenSecondary(true)}>\n        Open Secondary Drawer\n      </Button>\n      <Drawer\n        open={openSecondary}\n        onOpenChange={(newOpen) => setOpenSecondary(newOpen)}\n        variant=\"secondary\"\n        style={{ width: 200 }}\n      >\n        <DrawerCloseButton onClick={() => setOpenSecondary(false)} />\n      </Drawer>\n    </StackLayout>\n  );\n};\n"
+      },
+      {
+        "name": "DisableScrim",
+        "description": "Use the `disableScrim` prop to prevent the scrim from rendering.",
+        "code": "import { type ReactElement, useState } from \"react\";\n\nimport { Button, Drawer, DrawerCloseButton, StackLayout } from \"@salt-ds/core\";\n\nexport const DisableScrim = (): ReactElement => {\n  const [open, setOpen] = useState(false);\n\n  return (\n    <StackLayout>\n      <Button onClick={() => setOpen(true)}>Open Primary Drawer</Button>\n      <Drawer\n        open={open}\n        onOpenChange={(newOpen) => setOpen(newOpen)}\n        style={{ width: 200 }}\n        disableScrim\n      >\n        <DrawerCloseButton onClick={() => setOpen(false)} />\n      </Drawer>\n    </StackLayout>\n  );\n};\n"
+      },
+      {
+        "name": "MandatoryAction",
+        "description": "This example uses the `disableDismiss` prop to prevent the drawer closing on click away therefore ensuring the user takes an action within the drawer for it to close. This example closes when the user clicks the **Submit** button.",
+        "code": "import {\n  Button,\n  Checkbox,\n  ComboBox,\n  Drawer,\n  FlexItem,\n  FormField,\n  FormFieldHelperText,\n  FormFieldLabel,\n  H2,\n  Input,\n  Option,\n  StackLayout,\n  useId,\n} from \"@salt-ds/core\";\nimport {\n  type ChangeEvent,\n  type ReactElement,\n  type SyntheticEvent,\n  useState,\n} from \"react\";\n\nexport const MandatoryAction = (): ReactElement => {\n  const [open, setOpen] = useState(false);\n  const [value, setValue] = useState(\"\");\n  const id = useId();\n\n  const postcodes = [\"05011\", \"01050\", \"03040\", \"11050\"];\n\n  const handleRequestOpen = () => {\n    setOpen(true);\n  };\n\n  const onOpenChange = (newOpen: boolean) => {\n    setOpen(newOpen);\n  };\n\n  const handleClose = () => {\n    setOpen(false);\n  };\n\n  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {\n    const value = event.target.value;\n    setValue(value);\n  };\n\n  const handleSelectionChange = (\n    event: SyntheticEvent,\n    newSelected: string[],\n  ) => {\n    setValue(newSelected.length === 1 ? newSelected[0] : \"\");\n  };\n\n  return (\n    <>\n      <Button onClick={handleRequestOpen}>Open Mandatory Action Drawer</Button>\n      <Drawer\n        open={open}\n        onOpenChange={onOpenChange}\n        position=\"right\"\n        style={{ width: 500 }}\n        disableDismiss\n        aria-labelledby={id}\n      >\n        <StackLayout>\n          <H2 id={id}>Add your delivery details</H2>\n          <FormField>\n            <FormFieldLabel>House no.</FormFieldLabel>\n            <Input />\n          </FormField>\n          <FormField>\n            <FormFieldLabel>Street name</FormFieldLabel>\n            <Input />\n          </FormField>\n          <FormField>\n            <FormFieldLabel>Postcode</FormFieldLabel>\n            <ComboBox\n              onChange={handleChange}\n              onSelectionChange={handleSelectionChange}\n              value={value}\n              placeholder=\"Postcode\"\n            >\n              {postcodes.map((postcode) => (\n                <Option value={postcode} key={postcode}>\n                  {postcode}\n                </Option>\n              ))}\n            </ComboBox>\n            <FormFieldHelperText>Do not include space</FormFieldHelperText>\n          </FormField>\n          <FormField>\n            <FormFieldLabel>City/Town</FormFieldLabel>\n            <Input />\n          </FormField>\n          <FormField>\n            <FormFieldLabel>Country</FormFieldLabel>\n            <Input />\n          </FormField>\n          <FormField>\n            <Checkbox label=\"Dog(s) present at my property\" />\n          </FormField>\n          <FlexItem align=\"end\">\n            <Button onClick={handleClose}>Submit</Button>\n          </FlexItem>\n        </StackLayout>\n      </Drawer>\n    </>\n  );\n};\n"
+      },
+      {
+        "name": "RightDrawer",
+        "description": "",
+        "code": "import {\n  Button,\n  Drawer,\n  DrawerCloseButton,\n  FormField,\n  FormFieldHelperText,\n  FormFieldLabel,\n  H2,\n  Input,\n  StackLayout,\n  Text,\n  useId,\n} from \"@salt-ds/core\";\nimport { type ReactElement, useState } from \"react\";\n\nconst FormFieldExample = () => (\n  <FormField>\n    <FormFieldLabel>Label</FormFieldLabel>\n    <Input />\n    <FormFieldHelperText>Help text appears here</FormFieldHelperText>\n  </FormField>\n);\n\nexport const RightDrawer = (): ReactElement => {\n  const [open, setOpen] = useState(false);\n  const id = useId();\n\n  const handleRequestOpen = () => {\n    setOpen(true);\n  };\n\n  const onOpenChange = (newOpen: boolean) => {\n    setOpen(newOpen);\n  };\n\n  const handleClose = () => {\n    setOpen(false);\n  };\n\n  return (\n    <>\n      <Button onClick={handleRequestOpen}>Open Right Drawer</Button>\n      <Drawer\n        open={open}\n        onOpenChange={onOpenChange}\n        position=\"right\"\n        style={{ width: 500 }}\n        aria-labelledby={id}\n      >\n        <StackLayout>\n          <DrawerCloseButton onClick={handleClose} />\n          <H2 id={id}>Section Title</H2>\n          <Text>\n            Incididunt adipisicing deserunt nostrud ullamco consequat\n            consectetur magna id do irure labore fugiat. Eiusmod pariatur\n            officia elit ad. Ullamco adipisicing Lorem amet velit in do\n            reprehenderit nostrud eu aute voluptate quis quis.\n          </Text>\n          {Array.from({ length: 7 }, (_, index) => (\n            <FormFieldExample key={index} />\n          ))}\n        </StackLayout>\n      </Drawer>\n    </>\n  );\n};\n"
+      },
+      {
+        "name": "TopDrawer",
+        "description": "",
+        "code": "import {\n  Button,\n  Drawer,\n  DrawerCloseButton,\n  FlexLayout,\n  FormField,\n  FormFieldHelperText,\n  FormFieldLabel,\n  H2,\n  Input,\n  StackLayout,\n  Text,\n  useId,\n} from \"@salt-ds/core\";\nimport { type ReactElement, useState } from \"react\";\n\nconst FormFieldExample = () => (\n  <FormField>\n    <FormFieldLabel>Label</FormFieldLabel>\n    <Input />\n    <FormFieldHelperText>Help text appears here</FormFieldHelperText>\n  </FormField>\n);\n\nexport const TopDrawer = (): ReactElement => {\n  const [open, setOpen] = useState(false);\n  const id = useId();\n\n  const handleRequestOpen = () => {\n    setOpen(true);\n  };\n\n  const onOpenChange = (newOpen: boolean) => {\n    setOpen(newOpen);\n  };\n\n  const handleClose = () => {\n    setOpen(false);\n  };\n\n  return (\n    <>\n      <Button onClick={handleRequestOpen}>Open Top Drawer</Button>\n      <Drawer\n        open={open}\n        onOpenChange={onOpenChange}\n        position=\"top\"\n        aria-labelledby={id}\n      >\n        <StackLayout>\n          <DrawerCloseButton onClick={handleClose} />\n          <H2 id={id}>Section title</H2>\n          <Text>\n            Incididunt adipisicing deserunt nostrud ullamco consequat\n            consectetur magna id do irure labore fugiat. Eiusmod pariatur\n            officia elit ad. Ullamco adipisicing Lorem amet velit in do\n            reprehenderit nostrud eu aute voluptate quis quis.\n          </Text>\n          <FlexLayout>\n            {Array.from({ length: 4 }, (_, index) => (\n              <FormFieldExample key={index} />\n            ))}\n          </FlexLayout>\n        </StackLayout>\n      </Drawer>\n    </>\n  );\n};\n"
+      }
+    ],
+    "category": "@salt-ds/core",
+    "tags": [
+      "Flyout",
+      "Sheet"
+    ],
+    "when_to_use": [
+      "To reveal additional functionality or information contextual to on-screen content which the user can close when not required.",
+      "To display additional relevant functionality or information, such as a form or sidebar navigation, in a specific area of the screen.",
+      "To allow the user to show and hide additional relevant content."
+    ],
+    "when_not_to_use": [
+      "To provide an inlaid drawer that opens in-line with content. Instead, use [`BorderLayout`](../border-layout).",
+      "To provide a docked drawer that's fixed in the application layout and always visible. Instead, use [`Panel`](../panel) with styles to expand and collapse a non-modal surface."
+    ],
+    "import_statement": "import { Drawer, DrawerCloseButton } from \"@salt-ds/core\";",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/core/src/drawer",
+    "related_components": [
+      {
+        "name": "Overlay",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Dialog",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Scrim",
+        "relationship": "contains"
+      }
+    ]
+  }
+}

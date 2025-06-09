@@ -1,0 +1,199 @@
+{
+  "component_name": "Slider",
+  "metadata": {
+    "component_name": "Slider",
+    "description": "`Slider` enables the selection of a single value within a range of values. It offers inline label positioning and marks displayed under the track.",
+    "props": {
+      "accessibleMaxText": {
+        "type": "string",
+        "required": false,
+        "description": "Accessible text to announce maximum value label."
+      },
+      "accessibleMinText": {
+        "type": "string",
+        "required": false,
+        "description": "Accessible text to announce minimum value label."
+      },
+      "constrainLabelPosition": {
+        "type": "boolean",
+        "required": false,
+        "description": "When minimum and maximum labels are defined, ensure\nthey are confined within the boundary of the slider.",
+        "defaultValue": "false"
+      },
+      "decimalPlaces": {
+        "type": "number",
+        "required": false,
+        "description": "The number of allowed decimal places",
+        "defaultValue": "2"
+      },
+      "defaultValue": {
+        "type": "number",
+        "required": false,
+        "description": "The default value. Use when the component is not controlled.",
+        "defaultValue": "min + (max - min) / 2"
+      },
+      "disabled": {
+        "type": "boolean",
+        "required": false,
+        "description": "Disable the slider."
+      },
+      "format": {
+        "type": "(value: number) => string | number",
+        "required": false,
+        "description": "A callback to format the display value in the tooltip, min and max labels\nand the `aria-valuetext` attribute."
+      },
+      "marks": {
+        "type": "{ label: string; value: number; }[]",
+        "required": false,
+        "description": "Marks that are displayed under the track."
+      },
+      "max": {
+        "type": "number",
+        "required": false,
+        "description": "Maximum slider value.",
+        "defaultValue": "100"
+      },
+      "min": {
+        "type": "number",
+        "required": false,
+        "description": "Minimum slider value.",
+        "defaultValue": "0"
+      },
+      "maxLabel": {
+        "type": "string",
+        "required": false,
+        "description": "Label for maximum value."
+      },
+      "minLabel": {
+        "type": "string",
+        "required": false,
+        "description": "Label for the minimum value."
+      },
+      "onChange": {
+        "type": "(event: Event, value: number) => void",
+        "required": false,
+        "description": "Callback called when slider value is changed.\nIt provides a generic event and the current value of the slider."
+      },
+      "onChangeEnd": {
+        "type": "(event: Event, value: number) => void",
+        "required": false,
+        "description": "Callback called when the slider is stopped from being dragged or\nits value is changed from the keyboard. It provides a generic\nevent and the current value of the slider."
+      },
+      "restrictToMarks": {
+        "type": "boolean",
+        "required": false,
+        "description": "Restrict slider value to marks only. The step will be ignored.",
+        "defaultValue": "false"
+      },
+      "showTicks": {
+        "type": "boolean",
+        "required": false,
+        "description": "Show visual ticks above the marks."
+      },
+      "showTooltip": {
+        "type": "boolean",
+        "required": false,
+        "description": "Show the slider value in a tooltip when the thumb is hovered.",
+        "defaultValue": "true"
+      },
+      "step": {
+        "type": "number",
+        "required": false,
+        "description": "Minimum interval the slider thumb can move.",
+        "defaultValue": "1"
+      },
+      "stepMultiplier": {
+        "type": "number",
+        "required": false,
+        "description": "Maximum interval the slider thumb can move when using PageUp and PageDown keys.",
+        "defaultValue": "2"
+      },
+      "value": {
+        "type": "number",
+        "required": false,
+        "description": "Value of the slider, to be used when in a controlled state."
+      }
+    },
+    "examples": [
+      {
+        "name": "Default",
+        "description": "Selection of a single value from a `Slider` track. A tooltip displays the value of the `Slider` \"thumb\" when the thumb is focused or hovered.",
+        "code": "import { Slider } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Default = (): ReactElement => (\n  <Slider\n    aria-label=\"Default\"\n    min={0}\n    max={100}\n    defaultValue={30}\n    style={{ width: \"80%\" }}\n  />\n);\n"
+      },
+      {
+        "name": "Disabled",
+        "description": "You can set the `Slider` as disabled.",
+        "code": "import { Slider } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Disabled = (): ReactElement => (\n  <Slider style={{ width: \"80%\" }} disabled minLabel=\"0\" maxLabel=\"100\" />\n);\n"
+      },
+      {
+        "name": "WithChangeEvents",
+        "description": "",
+        "code": "import { Slider, StackLayout, Text } from \"@salt-ds/core\";\nimport { useState } from \"react\";\n\nexport const WithChangeEvents = () => {\n  const [valueOnChange, setValueOnChange] = useState<number>(50);\n  const [valueOnChangeEnd, setValueOnChangeEnd] = useState<number>(50);\n\n  return (\n    <StackLayout style={{ width: \"80%\" }}>\n      <Slider\n        minLabel=\"0\"\n        maxLabel=\"100\"\n        defaultValue={50}\n        onChange={(_, value) => setValueOnChange(value)}\n        onChangeEnd={(_, value) => setValueOnChangeEnd(value)}\n      />\n      <Text>\n        Value onChange: &nbsp;\n        <span style={{ color: \"var(--salt-color-teal-500)\" }}>\n          {valueOnChange}\n        </span>\n      </Text>\n      <Text>\n        Value onChangeEnd: &nbsp;\n        <span style={{ color: \"var(--salt-color-teal-500)\" }}>\n          {valueOnChangeEnd}\n        </span>\n      </Text>\n    </StackLayout>\n  );\n};\n"
+      },
+      {
+        "name": "WithConstrainedLabelPosition",
+        "description": "",
+        "code": "import { FormField, FormFieldLabel, Slider, StackLayout } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const WithConstrainedLabelPosition = (): ReactElement => (\n  <StackLayout gap={6} style={{ width: \"80%\" }}>\n    <FormField>\n      <FormFieldLabel>With constrained label position</FormFieldLabel>\n      <Slider\n        min={0}\n        max={10}\n        marks={[\n          {\n            value: 0,\n            label: \"Low\",\n          },\n          {\n            value: 10,\n            label: \"High\",\n          },\n        ]}\n        constrainLabelPosition\n      />\n    </FormField>\n    <FormField>\n      <FormFieldLabel>With constrained label position and ticks</FormFieldLabel>\n      <Slider\n        min={0}\n        max={10}\n        marks={[\n          {\n            value: 0,\n            label: \"Low\",\n          },\n          {\n            value: 10,\n            label: \"High\",\n          },\n        ]}\n        constrainLabelPosition\n        showTicks\n      />\n    </FormField>\n  </StackLayout>\n);\n"
+      },
+      {
+        "name": "WithCustomStep",
+        "description": "",
+        "code": "import { FormField, FormFieldLabel, Slider, StackLayout } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const WithCustomStep = (): ReactElement => (\n  <StackLayout gap={6} style={{ width: \"80%\" }}>\n    <FormField>\n      <FormFieldLabel>Step: 1 (default)</FormFieldLabel>\n      <Slider min={-1} max={1} minLabel=\"-1\" maxLabel=\"1\" />\n    </FormField>\n    <FormField>\n      <FormFieldLabel>Step: 0.2</FormFieldLabel>\n      <Slider\n        min={-1}\n        max={1}\n        step={0.2}\n        minLabel=\"-1\"\n        maxLabel=\"1\"\n        format={(value: number) => Intl.NumberFormat().format(value)}\n      />\n    </FormField>\n    <FormField>\n      <FormFieldLabel>Step: 0.25 (two decimal places)</FormFieldLabel>\n      <Slider\n        min={-1}\n        max={1}\n        step={0.25}\n        minLabel=\"-1\"\n        maxLabel=\"1\"\n        format={(value: number) => Intl.NumberFormat().format(value)}\n      />\n    </FormField>\n  </StackLayout>\n);\n"
+      },
+      {
+        "name": "WithFormField",
+        "description": "",
+        "code": "import { FormField, FormFieldLabel, Slider, StackLayout } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nconst marks = [\n  {\n    value: 0,\n    label: \"0\",\n  },\n  {\n    value: 10,\n    label: \"10\",\n  },\n  {\n    value: 20,\n    label: \"20\",\n  },\n  {\n    value: 30,\n    label: \"30\",\n  },\n  {\n    value: 40,\n    label: \"40\",\n  },\n  {\n    value: 50,\n    label: \"50\",\n  },\n];\n\nexport const WithFormField = (): ReactElement => {\n  return (\n    <StackLayout gap={3} style={{ width: \"80%\" }}>\n      <FormField>\n        <FormFieldLabel>Field label</FormFieldLabel>\n        <Slider minLabel=\"0\" maxLabel=\"50\" min={0} max={50} />\n      </FormField>\n      <FormField>\n        <FormFieldLabel>Field label</FormFieldLabel>\n        <Slider\n          constrainLabelPosition\n          showTicks\n          marks={marks}\n          min={0}\n          max={50}\n        />\n      </FormField>\n      <FormField\n        labelPlacement=\"left\"\n        style={\n          {\n            \"--saltFormField-label-width\": \"20%\",\n          } as React.CSSProperties\n        }\n      >\n        <FormFieldLabel>Field label left</FormFieldLabel>\n        <Slider minLabel=\"0\" maxLabel=\"50\" min={0} max={50} />\n      </FormField>\n      <FormField\n        labelPlacement=\"left\"\n        style={\n          {\n            \"--saltFormField-label-width\": \"20%\",\n          } as React.CSSProperties\n        }\n      >\n        <FormFieldLabel>Field label left</FormFieldLabel>\n        <Slider\n          marks={marks}\n          showTicks\n          constrainLabelPosition\n          min={0}\n          max={50}\n        />\n      </FormField>\n    </StackLayout>\n  );\n};\n"
+      },
+      {
+        "name": "WithFormatting",
+        "description": "",
+        "code": "import { Slider } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const WithFormatting = (): ReactElement => (\n  <Slider\n    aria-label=\"With formatting\"\n    style={{ width: \"80%\" }}\n    format={(value: number) =>\n      Intl.NumberFormat(\"en-US\", {\n        style: \"currency\",\n        currency: \"EUR\",\n        maximumFractionDigits: 0,\n      }).format(value)\n    }\n    minLabel=\"€0\"\n    maxLabel=\"€100\"\n  />\n);\n"
+      },
+      {
+        "name": "WithHiddenTooltip",
+        "description": "",
+        "code": "import { Slider } from \"@salt-ds/core\";\n\nexport const WithHiddenTooltip = () => (\n  <Slider\n    aria-label=\"With hidden tooltip\"\n    min={0}\n    max={50}\n    defaultValue={30}\n    style={{ width: \"80%\" }}\n    showTooltip={false}\n    minLabel=\"Low\"\n    maxLabel=\"High\"\n    step={10}\n    marks={[\n      {\n        value: 0,\n        label: \"0\",\n      },\n      {\n        value: 10,\n        label: \"10\",\n      },\n      {\n        value: 20,\n        label: \"20\",\n      },\n      {\n        value: 30,\n        label: \"30\",\n      },\n      {\n        value: 40,\n        label: \"40\",\n      },\n      {\n        value: 50,\n        label: \"50\",\n      },\n    ]}\n  />\n);\n"
+      },
+      {
+        "name": "WithInput",
+        "description": "",
+        "code": "import {\n  FlexLayout,\n  FormField,\n  FormFieldLabel,\n  Input,\n  Slider,\n} from \"@salt-ds/core\";\nimport {\n  type ChangeEvent,\n  type ReactElement,\n  type SyntheticEvent,\n  useEffect,\n  useState,\n} from \"react\";\n\nconst validateSingle = (value: number, bounds: [number, number]) => {\n  if (Number.isNaN(value)) return false;\n  if (value < bounds[0] || value > bounds[1]) return false;\n  return true;\n};\n\nexport const SingleWithInput = () => {\n  const bounds: [number, number] = [-50, 50];\n  const [value, setValue] = useState<number>(20);\n  const [inputValue, setInputValue] = useState<string>(value.toString());\n  const [validationStatus, setValidationStatus] = useState<undefined | \"error\">(\n    undefined,\n  );\n\n  useEffect(() => {\n    const valid = validateSingle(value, bounds);\n    setValidationStatus(valid ? undefined : \"error\");\n    if (valid) {\n      setValue(value);\n    }\n  }, [value]);\n\n  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {\n    const inputValue = event.target.value;\n    setInputValue(inputValue);\n    setValue(Number.parseFloat(inputValue));\n  };\n\n  const handleSliderChange = (\n    _e: SyntheticEvent<unknown> | Event,\n    value: number,\n  ) => {\n    setValue(value);\n    setInputValue(value.toString());\n  };\n\n  return (\n    <FormField style={{ width: \"80%\" }}>\n      <FormFieldLabel>Slider with Input</FormFieldLabel>\n      <FlexLayout gap={3} align=\"center\">\n        <Input\n          placeholder={inputValue}\n          value={inputValue}\n          style={{ width: \"15%\" }}\n          inputProps={{ style: { textAlign: \"center\" } }}\n          onChange={handleInputChange}\n          validationStatus={validationStatus}\n        />\n        <Slider\n          min={bounds[0]}\n          max={bounds[1]}\n          value={value}\n          minLabel=\"-50\"\n          maxLabel=\"50\"\n          onChange={handleSliderChange}\n          style={{ width: \"85%\" }}\n        />\n      </FlexLayout>\n    </FormField>\n  );\n};\n\nexport const WithInput = (): ReactElement => <SingleWithInput />;\n"
+      },
+      {
+        "name": "WithLabels",
+        "description": "",
+        "code": "import { FormField, FormFieldLabel, Slider, StackLayout } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const WithLabels = (): ReactElement => (\n  <StackLayout gap={6} style={{ width: \"80%\" }}>\n    <FormField>\n      <FormFieldLabel>Min/max labels</FormFieldLabel>\n      <Slider min={0} max={100} minLabel=\"0\" maxLabel=\"100\" defaultValue={30} />\n    </FormField>\n    <FormField>\n      <FormFieldLabel>Min/max labels with accessible text</FormFieldLabel>\n      <Slider\n        min={0}\n        max={100}\n        minLabel=\"Low\"\n        maxLabel=\"High\"\n        accessibleMinText=\"Low\"\n        accessibleMaxText=\"High\"\n        defaultValue={30}\n      />\n    </FormField>\n    <FormField>\n      <FormFieldLabel>\n        Min/max labelled by marks with accessible text\n      </FormFieldLabel>\n      <Slider\n        min={0}\n        max={100}\n        defaultValue={30}\n        accessibleMinText=\"Low\"\n        accessibleMaxText=\"High\"\n        constrainLabelPosition\n        marks={[\n          {\n            value: 0,\n            label: \"Low\",\n          },\n          {\n            value: 100,\n            label: \"High\",\n          },\n        ]}\n      />\n    </FormField>\n  </StackLayout>\n);\n"
+      },
+      {
+        "name": "WithMarks",
+        "description": "",
+        "code": "import { FormField, FormFieldLabel, Slider, StackLayout } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const WithMarks = (): ReactElement => (\n  <StackLayout gap={6} style={{ width: \"80%\" }}>\n    <FormField>\n      <FormFieldLabel>With marks</FormFieldLabel>\n      <Slider\n        min={0}\n        max={50}\n        defaultValue={30}\n        marks={[\n          {\n            value: 0,\n            label: \"0\",\n          },\n          {\n            value: 10,\n            label: \"10\",\n          },\n          {\n            value: 20,\n            label: \"20\",\n          },\n          {\n            value: 30,\n            label: \"30\",\n          },\n          {\n            value: 40,\n            label: \"40\",\n          },\n          {\n            value: 50,\n            label: \"50\",\n          },\n        ]}\n      />\n    </FormField>\n    <FormField>\n      <FormFieldLabel>With marks & ticks</FormFieldLabel>\n      <Slider\n        min={0}\n        max={50}\n        defaultValue={30}\n        showTicks\n        marks={[\n          {\n            value: 0,\n            label: \"0\",\n          },\n          {\n            value: 10,\n            label: \"10\",\n          },\n          {\n            value: 20,\n            label: \"20\",\n          },\n          {\n            value: 30,\n            label: \"30\",\n          },\n          {\n            value: 40,\n            label: \"40\",\n          },\n          {\n            value: 50,\n            label: \"50\",\n          },\n        ]}\n      />\n    </FormField>\n    <FormField>\n      <FormFieldLabel>With marks, ticks & min/max labels</FormFieldLabel>\n      <Slider\n        min={0}\n        max={50}\n        defaultValue={30}\n        minLabel=\"Low\"\n        maxLabel=\"High\"\n        accessibleMinText=\"Low\"\n        accessibleMaxText=\"High\"\n        showTicks\n        marks={[\n          {\n            value: 0,\n            label: \"0\",\n          },\n          {\n            value: 10,\n            label: \"10\",\n          },\n          {\n            value: 20,\n            label: \"20\",\n          },\n          {\n            value: 30,\n            label: \"30\",\n          },\n          {\n            value: 40,\n            label: \"40\",\n          },\n          {\n            value: 50,\n            label: \"50\",\n          },\n        ]}\n      />\n    </FormField>\n  </StackLayout>\n);\n"
+      },
+      {
+        "name": "WithNonNumericValues",
+        "description": "",
+        "code": "import { Slider, useResponsiveProp } from \"@salt-ds/core\";\nimport { type ReactElement, useState } from \"react\";\n\nexport const WithNonNumericValues = (): ReactElement => {\n  const [value, setValue] = useState<number>(3);\n\n  const daysOfTheWeek = [\n    { label: \"Monday\", shortLabel: \"Mon\", value: 1 },\n    { label: \"Tuesday\", shortLabel: \"Tue\", value: 2 },\n    { label: \"Wednesday\", shortLabel: \"Wed\", value: 3 },\n    { label: \"Thursday\", shortLabel: \"Thu\", value: 4 },\n    { label: \"Friday\", shortLabel: \"Fri\", value: 5 },\n    { label: \"Saturday\", shortLabel: \"Sat\", value: 6 },\n    { label: \"Sunday\", shortLabel: \"Sun\", value: 7 },\n  ];\n\n  const getDayOfTheWeek = (value?: number) => {\n    const day = daysOfTheWeek.find((day) => day.value === value);\n    return day ? day.label : \"\";\n  };\n\n  const responsiveLabels = useResponsiveProp(\n    {\n      xs: daysOfTheWeek.map((day) => ({\n        value: day.value,\n        label: day.shortLabel,\n      })),\n      lg: daysOfTheWeek.map((day) => ({ value: day.value, label: day.label })),\n    },\n    daysOfTheWeek.map((day) => ({ value: day.value, label: day.label })),\n  );\n\n  return (\n    <Slider\n      aria-label=\"With non-numeric values\"\n      style={{ width: \"80%\" }}\n      min={1}\n      max={7}\n      value={value}\n      onChange={(_e, value) => setValue(value)}\n      format={getDayOfTheWeek}\n      marks={responsiveLabels}\n    />\n  );\n};\n"
+      },
+      {
+        "name": "WithRestrictToMarks",
+        "description": "",
+        "code": "import { FormField, FormFieldLabel, Slider, StackLayout } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const WithRestrictToMarks = (): ReactElement => (\n  <StackLayout gap={6} style={{ width: \"80%\" }}>\n    <FormField>\n      <FormFieldLabel>Restricted to marks</FormFieldLabel>\n      <Slider\n        marks={[\n          { value: 0, label: \"0\" },\n          { value: 15, label: \"15\" },\n          { value: 35, label: \"35\" },\n          { value: 70, label: \"70\" },\n          { value: 85, label: \"85\" },\n          { value: 100, label: \"100\" },\n        ]}\n        min={0}\n        max={100}\n        restrictToMarks\n      />\n    </FormField>\n    <FormField>\n      <FormFieldLabel>Restricted to marks, with ticks</FormFieldLabel>\n      <Slider\n        marks={[\n          { value: 0, label: \"0\" },\n          { value: 15, label: \"15\" },\n          { value: 35, label: \"35\" },\n          { value: 70, label: \"70\" },\n          { value: 85, label: \"85\" },\n          { value: 100, label: \"100\" },\n        ]}\n        min={0}\n        max={100}\n        restrictToMarks\n        showTicks\n      />\n    </FormField>\n  </StackLayout>\n);\n"
+      }
+    ],
+    "category": "@salt-ds/core",
+    "tags": [],
+    "when_to_use": [
+      "When selecting a single value, range of numeric values or relative scale.",
+      "When the exact value does not matter (depending on the size of the predefined range), but an approximate value is good enough.",
+      "When changes are applied for immediate feedback, e.g., changing the volume on an audio or video player."
+    ],
+    "when_not_to_use": [
+      "When it’s important to select an exact numeric value that falls within a significantly large range, for example, 1-1000. Instead, use [Input](/salt/components/input).",
+      "When displaying progress through a series of separate steps, such as a wizard or multistep form. Use [Stepper](/salt/components/stepper) instead."
+    ],
+    "import_statement": "import { Slider } from \"@salt-ds/core\";",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/tree/main/packages/core/src/slider",
+    "related_components": []
+  }
+}

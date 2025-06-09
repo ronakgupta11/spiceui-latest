@@ -1,0 +1,18 @@
+{
+  "component_name": "Localization provider",
+  "metadata": {
+    "component_name": "Localization provider",
+    "description": "The `LocalizationProvider` component is essential for configuring the locale and date adapter in components that utilize date objects.",
+    "props": {},
+    "examples": [],
+    "category": "@salt-ds/lab",
+    "tags": [
+      "Provider"
+    ],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/tree/main/packages/lab/src/localization-provider",
+    "related_components": []
+  }
+}
