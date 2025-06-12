@@ -6,7 +6,7 @@ import os
 # Load environment variables from .env file
 load_dotenv()
 
-from app.routers import ingest, generate
+from app.routers import ingest, generate, modify
 
 app = FastAPI(
     title="SpiceUI",
@@ -26,6 +26,7 @@ app.add_middleware(
 # Include routers
 app.include_router(ingest.router, prefix="/api/v1", tags=["Component Ingestion"])
 app.include_router(generate.router, prefix="/api/v1", tags=["Code Generation"])
+app.include_router(modify.router, prefix="/api/v1", tags=["Code Modification"])
 
 @app.get("/")
 async def root():
@@ -35,6 +36,7 @@ async def root():
         "endpoints": {
             "ingest": "/api/v1/ingest-component",
             "annotate": "/api/v1/annotate",
-            "generate": "/api/v1/generate"
+            "generate": "/api/v1/generate",
+            "modify": "/api/v1/modify"
         }
     } 

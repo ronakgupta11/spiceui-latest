@@ -12,6 +12,7 @@ export interface SessionState {
   generatedCode: string | null;
   isLoading: boolean;
   error: string | null;
+  available_components: Array<{ [key: string]: any }>;
 }
 
 export interface ChatProps {

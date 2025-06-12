@@ -258,8 +258,6 @@ root.render(
 
             state.output_data.update({
                 "generated_files": files,
-                "dependencies": ["saltds", "react", "react-dom", "typescript"],
-                "hooks": ["useState", "useEffect"]
             })
 
             return state

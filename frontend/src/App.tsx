@@ -38,7 +38,8 @@ const App: React.FC<AppProps> = () => {
     componentTree: null,
     generatedCode: null,
     isLoading: false,
-    error: null
+    error: null,
+    available_components: []
   });
   const [loadingStep, setLoadingStep] = useState(0);
 
@@ -79,6 +80,7 @@ const App: React.FC<AppProps> = () => {
           isLoading: false,
           generatedCode: response.output_data.generated_files["src/App.tsx"] || "",
           componentTree: response.componentTree,
+          available_components: response.output_data.detailed_components || [],
           messages: [
             ...prev.messages,
             {
@@ -116,16 +118,21 @@ const App: React.FC<AppProps> = () => {
     }));
 
     try {
-      const response = await modifyCode(sessionState.image, message);
+      const response = await modifyCode(
+        sessionState.messages,
+        { 'src/App.tsx': sessionState.generatedCode || '' },
+        sessionState.available_components
+      );
+      
       setSessionState(prev => ({
         ...prev,
-        generatedCode: response.code,
-        componentTree: response.componentTree,
+        generatedCode: response.modified_files['src/App.tsx'],
+        componentTree: response.changes,
         messages: [
           ...prev.messages,
           {
             id: (Date.now() + 1).toString(),
-            content: 'I\'ve updated the code based on your request.',
+            content: response.explanation || 'I\'ve updated the code based on your request.',
             role: 'assistant',
             timestamp: new Date()
           }
@@ -137,7 +144,7 @@ const App: React.FC<AppProps> = () => {
         error: 'Failed to modify code. Please try again.'
       }));
     }
-  }, [sessionState.image]);
+  }, [sessionState.image, sessionState.messages, sessionState.generatedCode, sessionState.available_components]);
 
   const handleDownload = useCallback(() => {
     if (!sessionState.generatedCode) return;
@@ -160,7 +167,8 @@ const App: React.FC<AppProps> = () => {
       componentTree: null,
       generatedCode: null,
       isLoading: false,
-      error: null
+      error: null,
+      available_components: []
     });
   }, []);
 

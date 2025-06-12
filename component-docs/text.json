@@ -29,11 +29,7 @@
         "required": false,
         "description": ""
       },
-      "as": {
-        "type": "ElementType<any, keyof IntrinsicElements>",
-        "required": false,
-        "description": "The HTML element used for the root node."
-      },
+  
       "ref": {
         "type": "any",
         "required": false,
