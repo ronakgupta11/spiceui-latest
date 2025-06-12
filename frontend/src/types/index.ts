@@ -18,6 +18,7 @@ export interface ChatProps {
   messages: Message[];
   onSendMessage: (message: string) => void;
   isLoading: boolean;
+  uploadedImage?: string | null;
 }
 
 export interface CodePreviewProps {
