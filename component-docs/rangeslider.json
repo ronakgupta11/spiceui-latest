@@ -1,0 +1,124 @@
+{
+  "component_name": "RangeSlider",
+  "metadata": {
+    "component_name": "RangeSlider",
+    "props": {
+      "accessibleMaxText": {
+        "type": "string",
+        "required": false,
+        "description": "Accessible text to announce maximum value label."
+      },
+      "accessibleMinText": {
+        "type": "string",
+        "required": false,
+        "description": "Accessible text to announce minimum value label."
+      },
+      "constrainLabelPosition": {
+        "type": "boolean",
+        "required": false,
+        "description": "When minimum and maximum labels are defined, ensure\nthey are confined within the boundary of the slider."
+      },
+      "decimalPlaces": {
+        "type": "number",
+        "required": false,
+        "description": "The number of allowed decimal places",
+        "defaultValue": "2"
+      },
+      "defaultValue": {
+        "type": "[number, number]",
+        "required": false,
+        "description": "The default value. Use when the component is not controlled.",
+        "defaultValue": "[min, min + (max - min) / 2]"
+      },
+      "disabled": {
+        "type": "boolean",
+        "required": false,
+        "description": "Disable the slider."
+      },
+      "showTicks": {
+        "type": "boolean",
+        "required": false,
+        "description": "Show visual ticks above the marks."
+      },
+      "format": {
+        "type": "(value: number) => string | number",
+        "required": false,
+        "description": "A callback to format the display value in the tooltip, min and max labels\nand the `aria-valuetext` attribute."
+      },
+      "marks": {
+        "type": "{ label: string; value: number; }[]",
+        "required": false,
+        "description": "Marks that are displayed under the track."
+      },
+      "max": {
+        "type": "number",
+        "required": false,
+        "description": "Maximum slider value.",
+        "defaultValue": "100"
+      },
+      "min": {
+        "type": "number",
+        "required": false,
+        "description": "Minimum slider value.",
+        "defaultValue": "0"
+      },
+      "maxLabel": {
+        "type": "string",
+        "required": false,
+        "description": "Label for maximum value."
+      },
+      "minLabel": {
+        "type": "string",
+        "required": false,
+        "description": "Label for minimum value."
+      },
+      "onChange": {
+        "type": "(event: Event, value: [number, number]) => void",
+        "required": false,
+        "description": "Callback called when slider value is changed.\nIt provides a generic event and the current value of the slider."
+      },
+      "onChangeEnd": {
+        "type": "(event: Event, value: [number, number]) => void",
+        "required": false,
+        "description": "Callback called when the slider is stopped from being dragged or\nits value is changed from the keyboard. It provides a generic\nevent and the current value of the slider."
+      },
+      "restrictToMarks": {
+        "type": "boolean",
+        "required": false,
+        "description": "Restrict slider value to marks only. The step will be ignored.",
+        "defaultValue": "false"
+      },
+      "showTooltip": {
+        "type": "boolean",
+        "required": false,
+        "description": "Show the slider value in a tooltip when the thumb is hovered.",
+        "defaultValue": "true"
+      },
+      "step": {
+        "type": "number",
+        "required": false,
+        "description": "Minimum interval the slider thumb can move.",
+        "defaultValue": "1"
+      },
+      "stepMultiplier": {
+        "type": "number",
+        "required": false,
+        "description": "Maximum interval the slider thumb can move when using PageUp and PageDown keys.",
+        "defaultValue": "2"
+      },
+      "value": {
+        "type": "[number, number]",
+        "required": false,
+        "description": "Value of the slider, to be used when in a controlled state."
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { RangeSlider } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

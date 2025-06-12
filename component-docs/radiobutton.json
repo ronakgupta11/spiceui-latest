@@ -1,0 +1,81 @@
+{
+  "component_name": "RadioButton",
+  "metadata": {
+    "component_name": "RadioButton",
+    "props": {
+      "checked": {
+        "type": "boolean",
+        "required": false,
+        "description": "Set the default selected radio button in the group"
+      },
+      "disabled": {
+        "type": "boolean",
+        "required": false,
+        "description": "Set the disabled state"
+      },
+      "error": {
+        "type": "boolean",
+        "required": false,
+        "description": "**Deprecated**: Use validationStatus instead\nSet the error state"
+      },
+      "inputProps": {
+        "type": "Partial<InputHTMLAttributes<HTMLInputElement>> & DataAttributes",
+        "required": false,
+        "description": "Props to be passed to the radio input"
+      },
+      "inputRef": {
+        "type": "Ref<HTMLInputElement>",
+        "required": false,
+        "description": "Used to access the hidden `<input>` element."
+      },
+      "label": {
+        "type": "ReactNode",
+        "required": false,
+        "description": "The label to be shown next to the radio icon"
+      },
+      "name": {
+        "type": "string",
+        "required": false,
+        "description": "Name of the radio group"
+      },
+      "onBlur": {
+        "type": "FocusEventHandler<HTMLInputElement>",
+        "required": false,
+        "description": "Callback for blur event"
+      },
+      "onChange": {
+        "type": "ChangeEventHandler<HTMLInputElement>",
+        "required": false,
+        "description": "Callback for change event"
+      },
+      "onFocus": {
+        "type": "FocusEventHandler<HTMLInputElement>",
+        "required": false,
+        "description": "Callback for focus event"
+      },
+      "readOnly": {
+        "type": "boolean",
+        "required": false,
+        "description": "Set the read only state.\n**Note**: Setting a standalone radio button as read-only is not accessible. The whole radio buttton group should be set as read-only instead."
+      },
+      "value": {
+        "type": "string",
+        "required": false,
+        "description": "Value of radio button"
+      },
+      "validationStatus": {
+        "type": "\"error\" | \"warning\" | \"success\"",
+        "required": false,
+        "description": "Validation status, one of \"warning\" | \"error\" | \"success\"\n\nRadioButton has styling variants for \"error\" and \"warning\".\nNo visual styling will be applied on \"success\" variant."
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { RadioButton } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

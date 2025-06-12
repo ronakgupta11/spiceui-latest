@@ -1,0 +1,28 @@
+{
+  "component_name": "PageRanges",
+  "metadata": {
+    "component_name": "PageRanges",
+    "props": {
+      "boundaryCount": {
+        "type": "number",
+        "required": false,
+        "description": "",
+        "defaultValue": "1"
+      },
+      "siblingCount": {
+        "type": "number",
+        "required": false,
+        "description": "",
+        "defaultValue": "2"
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { PageRanges } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

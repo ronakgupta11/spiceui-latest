@@ -1,0 +1,21 @@
+{
+  "component_name": "AccordionGroup",
+  "metadata": {
+    "component_name": "AccordionGroup",
+    "props": {
+      "children": {
+        "type": "ReactNode",
+        "required": false,
+        "description": "The child Accordions to be rendered"
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { AccordionGroup } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

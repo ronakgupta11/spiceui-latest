@@ -1,0 +1,49 @@
+{
+  "component_name": "SaltProvider",
+  "metadata": {
+    "component_name": "SaltProvider",
+    "props": {
+      "applyClassesTo": {
+        "type": "\"child\" | \"root\" | \"scope\"",
+        "required": false,
+        "description": "Either \"root\", \"scope\" or \"child\".\nSpecifies the location of salt theme class and attributes should be applied to.\n\nDefaults to \"root\" for a root provider, otherwise \"scope\"."
+      },
+      "density": {
+        "type": "\"high\" | \"medium\" | \"low\" | \"touch\"",
+        "required": false,
+        "description": "Either \"high\", \"medium\", \"low\" or \"touch\".\nDetermines the amount of content that can fit on a screen based on the size and spacing of components.\nRefer to [density](https://www.saltdesignsystem.com/salt/foundations/density) doc for more detail.",
+        "defaultValue": "\"medium\""
+      },
+      "theme": {
+        "type": "string",
+        "required": false,
+        "description": "A string. Specifies custom theme name(s) you want to apply, similar to `className`."
+      },
+      "mode": {
+        "type": "\"light\" | \"dark\"",
+        "required": false,
+        "description": "Either \"light\" or \"dark\". Enable the color palette to change from light to dark.\nRefer to [modes](https://www.saltdesignsystem.com/salt/foundations/modes) doc for more detail.",
+        "defaultValue": "\"light\""
+      },
+      "breakpoints": {
+        "type": "Breakpoints",
+        "required": false,
+        "description": "Shape of `{ xs: number; sm: number; md: number; lg: number; xl: number; }`.\nDetermines breakpoints used in responsive calculation for layout components."
+      },
+      "enableStyleInjection": {
+        "type": "boolean",
+        "required": false,
+        "description": "A boolean. Enables dynamic style injection for each component.\n\nIf `false`, you'll need to include component CSS yourself.",
+        "defaultValue": "true"
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { SaltProvider } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

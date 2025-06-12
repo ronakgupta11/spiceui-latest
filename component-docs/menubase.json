@@ -1,0 +1,41 @@
+{
+  "component_name": "MenuBase",
+  "metadata": {
+    "component_name": "MenuBase",
+    "props": {
+      "open": {
+        "type": "boolean",
+        "required": false,
+        "description": "Display or hide the component."
+      },
+      "defaultOpen": {
+        "type": "boolean",
+        "required": false,
+        "description": "If true, the menu will be open by default."
+      },
+      "onOpenChange": {
+        "type": "(newOpen: boolean) => void",
+        "required": false,
+        "description": "Callback function triggered when open state changes."
+      },
+      "placement": {
+        "type": "\"top\" | \"right\" | \"bottom\" | \"left\" | \"top-start\" | \"top-end\" | \"right-start\" | \"right-end\" | \"bottom-start\" | \"bottom-end\" | \"left-start\" | \"left-end\"",
+        "required": false,
+        "description": "Set the placement of the Menu component relative to the trigger element. Defaults to `bottom-start` if it's the root menu or `right-start` if it's nested."
+      },
+      "getVirtualElement": {
+        "type": "() => ReferenceType",
+        "required": false,
+        "description": "Function that returns a [virtual element](https://floating-ui.com/docs/virtual-elements). If this is provided, it will override MenuTrigger."
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { MenuBase } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

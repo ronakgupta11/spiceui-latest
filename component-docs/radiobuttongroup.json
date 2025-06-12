@@ -1,0 +1,61 @@
+{
+  "component_name": "RadioButtonGroup",
+  "metadata": {
+    "component_name": "RadioButtonGroup",
+    "props": {
+      "defaultValue": {
+        "type": "string",
+        "required": false,
+        "description": "Set the selected value when initialized."
+      },
+      "direction": {
+        "type": "\"horizontal\" | \"vertical\"",
+        "required": false,
+        "description": "Set the group direction."
+      },
+      "disabled": {
+        "type": "boolean",
+        "required": false,
+        "description": "Disable the RadioButton group"
+      },
+      "wrap": {
+        "type": "boolean",
+        "required": false,
+        "description": "Only for horizontal direction. When `true` the text in radio button label will wrap to fit within the container. Otherwise the radio buttons will wrap onto the next line."
+      },
+      "name": {
+        "type": "string",
+        "required": false,
+        "description": "The name to be set on each radio button within the group. If not set, then one will be generated for you."
+      },
+      "onChange": {
+        "type": "ChangeEventHandler<HTMLInputElement>",
+        "required": false,
+        "description": "Callback for change event."
+      },
+      "readOnly": {
+        "type": "boolean",
+        "required": false,
+        "description": "Set the RadioButton group to read only."
+      },
+      "value": {
+        "type": "string",
+        "required": false,
+        "description": "The value of the radio group, required for a controlled component."
+      },
+      "validationStatus": {
+        "type": "\"error\" | \"warning\"",
+        "required": false,
+        "description": "Validation status."
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { RadioButtonGroup } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

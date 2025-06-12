@@ -1,0 +1,71 @@
+{
+  "component_name": "FlexLayout",
+  "metadata": {
+    "component_name": "FlexLayout",
+    "props": {
+      "align": {
+        "type": "\"start\" | \"end\" | \"center\" | \"stretch\" | \"baseline\"",
+        "required": false,
+        "description": "Defines the default behavior for how flex items are laid out along the cross axis on the current line, default is \"stretch\"."
+      },
+      "direction": {
+        "type": "ResponsiveProp<LayoutDirection>",
+        "required": false,
+        "description": "Establishes the main-axis, defining the direction children are placed. Default is \"row\".",
+        "defaultValue": "row"
+      },
+      "gap": {
+        "type": "ResponsiveProp<string | number>",
+        "required": false,
+        "description": "Controls the space between items, default is 3.",
+        "defaultValue": "3"
+      },
+      "justify": {
+        "type": "\"start\" | \"end\" | \"center\" | \"space-between\" | \"space-around\" | \"space-evenly\"",
+        "required": false,
+        "description": "Defines the alignment along the main axis, default is \"start\"."
+      },
+      "separators": {
+        "type": "true | LayoutSeparator",
+        "required": false,
+        "description": "**Deprecated:** For separators see `StackLayout` component instead.\n\nAdds a separator between elements if wrap is not active, default is false."
+      },
+      "wrap": {
+        "type": "ResponsiveProp<boolean>",
+        "required": false,
+        "description": "Allow the items to wrap as needed, default is false.",
+        "defaultValue": "false"
+      },
+      "margin": {
+        "type": "ResponsiveProp<string | number>",
+        "required": false,
+        "description": "Defines the margin around the component. It can be specified as a number (which acts as a multiplier) or a string representing the margin value. Default is `0`.",
+        "defaultValue": "0"
+      },
+      "padding": {
+        "type": "ResponsiveProp<string | number>",
+        "required": false,
+        "description": "Defines the padding within the component. It can be specified as a number (which acts as a multiplier) or a string representing the padding value. Default is `0`.",
+        "defaultValue": "0"
+      },
+      "as": {
+        "type": "ElementType<any, keyof IntrinsicElements>",
+        "required": false,
+        "description": "The HTML element used for the root node."
+      },
+      "ref": {
+        "type": "any",
+        "required": false,
+        "description": ""
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { FlexLayout } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

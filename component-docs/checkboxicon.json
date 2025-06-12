@@ -1,0 +1,52 @@
+{
+  "component_name": "CheckboxIcon",
+  "metadata": {
+    "component_name": "CheckboxIcon",
+    "props": {
+      "checked": {
+        "type": "boolean",
+        "required": false,
+        "description": "",
+        "defaultValue": "false"
+      },
+      "className": {
+        "type": "string",
+        "required": false,
+        "description": ""
+      },
+      "disabled": {
+        "type": "boolean",
+        "required": false,
+        "description": ""
+      },
+      "error": {
+        "type": "boolean",
+        "required": false,
+        "description": "@deprecated Use validationStatus instead"
+      },
+      "indeterminate": {
+        "type": "boolean",
+        "required": false,
+        "description": ""
+      },
+      "readOnly": {
+        "type": "boolean",
+        "required": false,
+        "description": ""
+      },
+      "validationStatus": {
+        "type": "\"error\" | \"warning\" | \"success\"",
+        "required": false,
+        "description": ""
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { CheckboxIcon } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

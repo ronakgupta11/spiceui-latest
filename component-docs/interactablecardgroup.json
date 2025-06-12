@@ -1,0 +1,41 @@
+{
+  "component_name": "InteractableCardGroup",
+  "metadata": {
+    "component_name": "InteractableCardGroup",
+    "props": {
+      "defaultValue": {
+        "type": "InteractableCardValue",
+        "required": false,
+        "description": "The default value. Use when the component is not controlled. Should be an array when `multiSelect` is true."
+      },
+      "disabled": {
+        "type": "boolean",
+        "required": false,
+        "description": "If `true`, the Interactable Card Group will be disabled."
+      },
+      "value": {
+        "type": "InteractableCardValue",
+        "required": false,
+        "description": "The value. Use when the component is controlled. Should be an array when `multiSelect` is true."
+      },
+      "multiSelect": {
+        "type": "boolean",
+        "required": false,
+        "description": "If `true` the Interactable Card Group will allow multiple selection functionality, with keyboard interactions matching those of a checkbox.\nBy default the group allows mutually exclusive selection with keyboard interactions matching radio buttons."
+      },
+      "onChange": {
+        "type": "(event: SyntheticEvent<HTMLDivElement, Event>, value: InteractableCardValue) => void",
+        "required": false,
+        "description": "Callback fired when the selection changes.\n@param event"
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { InteractableCardGroup } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

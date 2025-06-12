@@ -1,0 +1,53 @@
+{
+  "component_name": "ToggleButton",
+  "metadata": {
+    "component_name": "ToggleButton",
+    "props": {
+      "appearance": {
+        "type": "\"solid\" | \"bordered\"",
+        "required": false,
+        "description": "The appearance of the toggle button when `selected` is true.",
+        "defaultValue": "solid"
+      },
+      "onChange": {
+        "type": "(event: MouseEvent<HTMLButtonElement, MouseEvent>) => void",
+        "required": false,
+        "description": "Callback fired when the toggle button's selection state is changed."
+      },
+      "readOnly": {
+        "type": "boolean",
+        "required": false,
+        "description": "If `true`, the toggle button will be read-only."
+      },
+      "sentiment": {
+        "type": "\"accented\" | \"neutral\" | \"positive\" | \"negative\" | \"caution\"",
+        "required": false,
+        "description": "The sentiment of the toggle button.",
+        "defaultValue": "neutral"
+      },
+      "selected": {
+        "type": "boolean",
+        "required": false,
+        "description": "Whether the toggle button is in a selected state."
+      },
+      "defaultSelected": {
+        "type": "boolean",
+        "required": false,
+        "description": "Whether the toggle button is selected by default.\nThis will be disregarded if `selected` is already set."
+      },
+      "value": {
+        "type": "string | number | readonly string[]",
+        "required": true,
+        "description": "Value of the toggle button, to be used when in a controlled state."
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { ToggleButton } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

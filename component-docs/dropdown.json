@@ -2,7 +2,6 @@
   "component_name": "Dropdown",
   "metadata": {
     "component_name": "Dropdown",
-    "description": "`Dropdown` allows the user to select from an overlayed vertical list of options. A selected value is displayed in the dropdown field. Dropdowns provide a screen space-efficient way of interacting with a list of selectable options.",
     "props": {
       "ListProps": {
         "type": "Omit<ListProps<Item, Selection>, \"ListItem\" | \"itemToString\" | \"source\">",
@@ -45,7 +44,7 @@
         "description": ""
       },
       "placement": {
-        "type": "enum",
+        "type": "\"bottom-start\" | \"bottom-end\" | \"top-start\" | \"top-end\"",
         "required": false,
         "description": ""
       },
@@ -110,7 +109,7 @@
         "description": ""
       },
       "selectionStrategy": {
-        "type": "enum",
+        "type": "\"default\" | \"deselectable\" | \"multiple\" | \"extended\" | \"extended-multi-range\"",
         "required": false,
         "description": ""
       },
@@ -120,6 +119,35 @@
         "description": ""
       }
     },
+    "category": "@salt-ds/core",
+    "description": "`Dropdown` allows the user to select from an overlayed vertical list of options. A selected value is displayed in the dropdown field. Dropdowns provide a screen space-efficient way of interacting with a list of selectable options.",
+    "tags": [
+      "Select",
+      "Picklist"
+    ],
+    "when_to_use": [
+      "When a user needs the ability to choose one value from a set of five to 10 options.",
+      "When only the selected value from a set of options needs to be visible once the selection is made."
+    ],
+    "when_not_to_use": [
+      "When you have more than 10 options and users would benefit from filtering to narrow down the available options. Instead, use [`ComboBox`](../combo-box).",
+      "When you have fewer than five options and need to one option to be selected. Instead, use [`RadioButtonGroup`](../button).",
+      "When you have fewer than five options and multiple selections are required, or possible. Instead, use [`CheckboxGroup`](../checkbox).",
+      "If you have a Boolean selection, for instance “on” or “off”. Instead, use [`Switch`](../switch).",
+      "When you have large number (>100) of list items, to prevent performance issues without virtualization, we strongly recommend adding a filter e.g. use a [`ComboBox`](../combo-box) instead."
+    ],
+    "import_statement": "import { Dropdown, Option, OptionGroup } from \"@salt-ds/core\";",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/core/src/dropdown",
+    "related_components": [
+      {
+        "name": "Checkbox",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Combo box",
+        "relationship": "similarTo"
+      }
+    ],
     "examples": [
       {
         "name": "Bordered",
@@ -200,34 +228,6 @@
         "name": "WithFormField",
         "description": "",
         "code": "import {\n  Dropdown,\n  FormField,\n  FormFieldHelperText,\n  FormFieldLabel,\n  Option,\n} from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\nimport { shortColorData } from \"./exampleData\";\n\nexport const WithFormField = (): ReactElement => {\n  return (\n    <FormField style={{ width: \"266px\" }}>\n      <FormFieldLabel>Color</FormFieldLabel>\n      <Dropdown>\n        {shortColorData.map((color) => (\n          <Option value={color} key={color} />\n        ))}\n      </Dropdown>\n      <FormFieldHelperText>Pick a color</FormFieldHelperText>\n    </FormField>\n  );\n};\n"
-      }
-    ],
-    "category": "@salt-ds/core",
-    "tags": [
-      "Select",
-      "Picklist"
-    ],
-    "when_to_use": [
-      "When a user needs the ability to choose one value from a set of five to 10 options.",
-      "When only the selected value from a set of options needs to be visible once the selection is made."
-    ],
-    "when_not_to_use": [
-      "When you have more than 10 options and users would benefit from filtering to narrow down the available options. Instead, use [`ComboBox`](../combo-box).",
-      "When you have fewer than five options and need to one option to be selected. Instead, use [`RadioButtonGroup`](../button).",
-      "When you have fewer than five options and multiple selections are required, or possible. Instead, use [`CheckboxGroup`](../checkbox).",
-      "If you have a Boolean selection, for instance “on” or “off”. Instead, use [`Switch`](../switch).",
-      "When you have large number (>100) of list items, to prevent performance issues without virtualization, we strongly recommend adding a filter e.g. use a [`ComboBox`](../combo-box) instead."
-    ],
-    "import_statement": "import { Dropdown, Option, OptionGroup } from \"@salt-ds/core\";",
-    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/core/src/dropdown",
-    "related_components": [
-      {
-        "name": "Checkbox",
-        "relationship": "similarTo"
-      },
-      {
-        "name": "Combo box",
-        "relationship": "similarTo"
       }
     ]
   }

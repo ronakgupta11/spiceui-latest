@@ -1,0 +1,21 @@
+{
+  "component_name": "MenuTrigger",
+  "metadata": {
+    "component_name": "MenuTrigger",
+    "props": {
+      "children": {
+        "type": "ReactNode",
+        "required": false,
+        "description": "The trigger element for the menu. This should be a single child element and accept a ref."
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { MenuTrigger } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

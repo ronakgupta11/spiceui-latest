@@ -1,0 +1,76 @@
+{
+  "component_name": "ListBox",
+  "metadata": {
+    "component_name": "ListBox",
+    "props": {
+      "disabled": {
+        "type": "boolean",
+        "required": false,
+        "description": "If `true`, the list box will be disabled.\nIf true, the control will be disabled."
+      },
+      "bordered": {
+        "type": "boolean",
+        "required": false,
+        "description": "If `false`, the list box will have not a border."
+      },
+      "children": {
+        "type": "ReactNode",
+        "required": false,
+        "description": "The options to display in the list box."
+      },
+      "multiselect": {
+        "type": "boolean",
+        "required": false,
+        "description": "If `true`, the list box will be multiselect.\nIf true, multiple options can be selected."
+      },
+      "readOnly": {
+        "type": "boolean",
+        "required": false,
+        "description": "If true, the control will be read-only."
+      },
+      "defaultOpen": {
+        "type": "boolean",
+        "required": false,
+        "description": "If true, the list will be open by default."
+      },
+      "open": {
+        "type": "boolean",
+        "required": false,
+        "description": "If true, the list will be open. Useful for controlling the component."
+      },
+      "defaultSelected": {
+        "type": "Item[]",
+        "required": false,
+        "description": "The default selected options. If this is provided `defaultValue` should be provided as well."
+      },
+      "selected": {
+        "type": "Item[]",
+        "required": false,
+        "description": "The selected options. The component will be controlled if this prop is provided."
+      },
+      "onSelectionChange": {
+        "type": "(event: SyntheticEvent<Element, Event>, newSelected: Item[]) => void",
+        "required": false,
+        "description": "Callback fired when the selected options change."
+      },
+      "valueToString": {
+        "type": "(item: Item) => string",
+        "required": false,
+        "description": "Callback used to convert an option's `value` to a string. This is needed when the value is different to the display value or the value is not a string."
+      },
+      "ref": {
+        "type": "Ref<HTMLDivElement>",
+        "required": false,
+        "description": ""
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { ListBox } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

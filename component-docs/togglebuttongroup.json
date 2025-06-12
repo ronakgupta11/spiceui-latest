@@ -1,0 +1,58 @@
+{
+  "component_name": "ToggleButtonGroup",
+  "metadata": {
+    "component_name": "ToggleButtonGroup",
+    "props": {
+      "appearance": {
+        "type": "\"solid\" | \"bordered\"",
+        "required": false,
+        "description": "The appearance of all the toggle buttons within the group.",
+        "defaultValue": "solid"
+      },
+      "defaultValue": {
+        "type": "Value",
+        "required": false,
+        "description": "The default value. Use when the component is not controlled."
+      },
+      "disabled": {
+        "type": "boolean",
+        "required": false,
+        "description": "If `true`, the Toggle Button Group will be disabled."
+      },
+      "value": {
+        "type": "Value",
+        "required": false,
+        "description": "Value of the toggle button group, to be used when the component is controlled."
+      },
+      "onChange": {
+        "type": "(event: SyntheticEvent<HTMLButtonElement, Event>) => void",
+        "required": false,
+        "description": "Callback fired when the selection changes."
+      },
+      "readOnly": {
+        "type": "boolean",
+        "required": false,
+        "description": "If `true`, the toggle button group will be read-only."
+      },
+      "orientation": {
+        "type": "\"horizontal\" | \"vertical\"",
+        "required": false,
+        "description": "The orientation of the toggle buttons."
+      },
+      "sentiment": {
+        "type": "\"accented\" | \"neutral\" | \"positive\" | \"negative\" | \"caution\"",
+        "required": false,
+        "description": "The visual sentimenent of all the toggle buttons within the group.",
+        "defaultValue": "neutral"
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { ToggleButtonGroup } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "component_name": "FloatingComponentProvider",
+  "metadata": {
+    "component_name": "FloatingComponentProvider",
+    "props": {
+      "Component": {
+        "type": "ForwardRefExoticComponent<FloatingComponentProps & RefAttributes<HTMLDivElement>>",
+        "required": true,
+        "description": ""
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { FloatingComponentProvider } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

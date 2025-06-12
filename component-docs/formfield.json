@@ -1,0 +1,59 @@
+{
+  "component_name": "FormField",
+  "metadata": {
+    "component_name": "FormField",
+    "props": {
+      "disabled": {
+        "type": "boolean",
+        "required": false,
+        "description": "If `true`, the field will be disabled.",
+        "defaultValue": "false"
+      },
+      "labelPlacement": {
+        "type": "\"top\" | \"left\" | \"right\"",
+        "required": false,
+        "description": "Location of the label relative to the control.\n\nEither 'top', 'left', or 'right'`.",
+        "defaultValue": "top"
+      },
+      "readOnly": {
+        "type": "boolean",
+        "required": false,
+        "description": "If `true`, the field will be read-only.",
+        "defaultValue": "false"
+      },
+      "id": {
+        "type": "string",
+        "required": false,
+        "description": "Optional id prop\n\nUsed as suffix of FormFieldLabel id: `label-{id}`\nUsed as suffix of FormFieldHelperText id: `helperText-{id}`"
+      },
+      "necessity": {
+        "type": "\"required\" | \"optional\" | \"asterisk\"",
+        "required": false,
+        "description": "Displays necessity on label"
+      },
+      "validationStatus": {
+        "type": "\"error\" | \"warning\" | \"success\"",
+        "required": false,
+        "description": "Validation status"
+      },
+      "helperTextId": {
+        "type": "string",
+        "required": false,
+        "description": "id for FormFieldHelperText"
+      },
+      "labelId": {
+        "type": "string",
+        "required": false,
+        "description": "id for FormFieldLabel"
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { FormField } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

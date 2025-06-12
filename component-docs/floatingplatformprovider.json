@@ -1,0 +1,31 @@
+{
+  "component_name": "FloatingPlatformProvider",
+  "metadata": {
+    "component_name": "FloatingPlatformProvider",
+    "props": {
+      "platform": {
+        "type": "Platform",
+        "required": false,
+        "description": ""
+      },
+      "middleware": {
+        "type": "GetMiddleware",
+        "required": false,
+        "description": ""
+      },
+      "animationFrame": {
+        "type": "boolean",
+        "required": false,
+        "description": ""
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { FloatingPlatformProvider } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

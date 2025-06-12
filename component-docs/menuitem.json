@@ -1,0 +1,21 @@
+{
+  "component_name": "MenuItem",
+  "metadata": {
+    "component_name": "MenuItem",
+    "props": {
+      "disabled": {
+        "type": "boolean",
+        "required": false,
+        "description": "If `true`, the item will be disabled."
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { MenuItem } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

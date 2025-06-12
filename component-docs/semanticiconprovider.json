@@ -1,0 +1,27 @@
+{
+  "component_name": "SemanticIconProvider",
+  "metadata": {
+    "component_name": "SemanticIconProvider",
+    "props": {
+      "iconMap": {
+        "type": "Partial<SemanticIconMap>",
+        "required": false,
+        "description": "Custom mapping of icon names to components. Overrides default icons if provided.",
+        "defaultValue": "{}"
+      },
+      "children": {
+        "type": "ReactNode",
+        "required": true,
+        "description": "Child elements that will use the provided icons."
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { SemanticIconProvider } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

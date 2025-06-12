@@ -1,0 +1,46 @@
+{
+  "component_name": "DialogHeader",
+  "metadata": {
+    "component_name": "DialogHeader",
+    "props": {
+      "status": {
+        "type": "\"error\" | \"warning\" | \"success\" | \"info\"",
+        "required": false,
+        "description": "The status of the Dialog"
+      },
+      "disableAccent": {
+        "type": "boolean",
+        "required": false,
+        "description": "Displays the accent bar in the Dialog Title"
+      },
+      "header": {
+        "type": "ReactNode",
+        "required": true,
+        "description": "Displays the header at the top of the Dialog"
+      },
+      "preheader": {
+        "type": "ReactNode",
+        "required": false,
+        "description": "Displays the preheader just above the header"
+      },
+      "description": {
+        "type": "ReactNode",
+        "required": false,
+        "description": "Description text is displayed just below the header"
+      },
+      "actions": {
+        "type": "ReactNode",
+        "required": false,
+        "description": "Actions to be displayed in header"
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { DialogHeader } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

@@ -2,32 +2,20 @@
   "component_name": "Divider",
   "metadata": {
     "component_name": "Divider",
-    "description": "`Divider` provides a thin, unobtrusive line for grouping elements to reinforce visual hierarchy.",
     "props": {
       "orientation": {
-        "type": "enum",
+        "type": "\"horizontal\" | \"vertical\"",
         "required": false,
         "description": "The orientation of the divider. Defaults to `\"horizontal\"`."
       },
       "variant": {
-        "type": "enum",
+        "type": "\"primary\" | \"secondary\" | \"tertiary\"",
         "required": false,
         "description": "The variant of the divider. Defaults to `\"primary\"`."
       }
     },
-    "examples": [
-      {
-        "name": "Variants",
-        "description": "Divider has three variants: `primary`, `secondary` and `tertiary`. The default variant is `primary`. You can use the `variant` prop to change",
-        "code": "import { Divider, StackLayout } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Variants = (): ReactElement => {\n  return (\n    <StackLayout gap={6} style={{ width: \"200px\" }}>\n      <Divider />\n      <Divider variant=\"secondary\" />\n      <Divider variant=\"tertiary\" />\n    </StackLayout>\n  );\n};\n"
-      },
-      {
-        "name": "Vertical",
-        "description": "The orientation of the divider can be changed with the `orientation` prop.",
-        "code": "import { Divider, StackLayout } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Vertical = (): ReactElement => {\n  return (\n    <StackLayout direction=\"row\" gap={10} style={{ height: \"200px\" }}>\n      <Divider orientation=\"vertical\" />\n      <Divider orientation=\"vertical\" variant=\"secondary\" />\n      <Divider orientation=\"vertical\" variant=\"tertiary\" />\n    </StackLayout>\n  );\n};\n"
-      }
-    ],
     "category": "@salt-ds/core",
+    "description": "`Divider` provides a thin, unobtrusive line for grouping elements to reinforce visual hierarchy.",
     "tags": [
       "Separator"
     ],
@@ -39,6 +27,18 @@
     ],
     "import_statement": "import { Divider } from \"@salt-ds/core\";",
     "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/core/src/divider",
-    "related_components": []
+    "related_components": [],
+    "examples": [
+      {
+        "name": "Variants",
+        "description": "Divider has three variants: `primary`, `secondary` and `tertiary`. The default variant is `primary`. You can use the `variant` prop to change",
+        "code": "import { Divider, StackLayout } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Variants = (): ReactElement => {\n  return (\n    <StackLayout gap={6} style={{ width: \"200px\" }}>\n      <Divider />\n      <Divider variant=\"secondary\" />\n      <Divider variant=\"tertiary\" />\n    </StackLayout>\n  );\n};\n"
+      },
+      {
+        "name": "Vertical",
+        "description": "The orientation of the divider can be changed with the `orientation` prop.",
+        "code": "import { Divider, StackLayout } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Vertical = (): ReactElement => {\n  return (\n    <StackLayout direction=\"row\" gap={10} style={{ height: \"200px\" }}>\n      <Divider orientation=\"vertical\" />\n      <Divider orientation=\"vertical\" variant=\"secondary\" />\n      <Divider orientation=\"vertical\" variant=\"tertiary\" />\n    </StackLayout>\n  );\n};\n"
+      }
+    ]
   }
 }

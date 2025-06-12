@@ -2,7 +2,6 @@
   "component_name": "Input",
   "metadata": {
     "component_name": "Input",
-    "description": "`Input` provides an editable field where users can enter text and numeric values. It works best for short, freeform content and data entry.",
     "props": {
       "emptyReadOnlyMarker": {
         "type": "string",
@@ -37,18 +36,18 @@
         "description": "Start adornment component"
       },
       "textAlign": {
-        "type": "enum",
+        "type": "\"center\" | \"left\" | \"right\"",
         "required": false,
         "description": "Alignment of text within container. Defaults to \"left\"",
         "defaultValue": "left"
       },
       "validationStatus": {
-        "type": "enum",
+        "type": "\"error\" | \"warning\" | \"success\"",
         "required": false,
         "description": "Validation status."
       },
       "variant": {
-        "type": "enum",
+        "type": "\"primary\" | \"secondary\"",
         "required": false,
         "description": "Styling variant. Defaults to \"primary\".",
         "defaultValue": "primary"
@@ -60,6 +59,22 @@
         "defaultValue": "false"
       }
     },
+    "category": "@salt-ds/core",
+    "description": "`Input` provides an editable field where users can enter text and numeric values. It works best for short, freeform content and data entry.",
+    "tags": [
+      "Text Field",
+      "Text Box"
+    ],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { Input } from \"@salt-ds/core\";",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/core/src/input",
+    "related_components": [
+      {
+        "name": "Multiline Input",
+        "relationship": "similarTo"
+      }
+    ],
     "examples": [
       {
         "name": "Bordered",
@@ -120,21 +135,6 @@
         "name": "Validation",
         "description": "Input can show validation states (warning, success and error) with the prop `validationStatus`.\n\n#",
         "code": "import { FlowLayout, Input } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Validation = (): ReactElement => (\n  <FlowLayout style={{ maxWidth: \"256px\" }}>\n    <Input defaultValue=\"Error value\" validationStatus=\"error\" />\n    <Input bordered defaultValue=\"Error value\" validationStatus=\"error\" />\n    <Input defaultValue=\"Warning value\" validationStatus=\"warning\" />\n    <Input bordered defaultValue=\"Warning value\" validationStatus=\"warning\" />\n    <Input defaultValue=\"Success value\" validationStatus=\"success\" />\n    <Input bordered defaultValue=\"Success value\" validationStatus=\"success\" />\n  </FlowLayout>\n);\n"
-      }
-    ],
-    "category": "@salt-ds/core",
-    "tags": [
-      "Text Field",
-      "Text Box"
-    ],
-    "when_to_use": [],
-    "when_not_to_use": [],
-    "import_statement": "import { Input } from \"@salt-ds/core\";",
-    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/core/src/input",
-    "related_components": [
-      {
-        "name": "Multiline Input",
-        "relationship": "similarTo"
       }
     ]
   }

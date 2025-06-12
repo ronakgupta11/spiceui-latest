@@ -1,0 +1,21 @@
+{
+  "component_name": "AriaAnnouncerProvider",
+  "metadata": {
+    "component_name": "AriaAnnouncerProvider",
+    "props": {
+      "style": {
+        "type": "CSSProperties",
+        "required": false,
+        "description": "Style overrides for the aria-live element"
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { AriaAnnouncerProvider } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

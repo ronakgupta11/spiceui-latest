@@ -2,10 +2,9 @@
   "component_name": "Drawer",
   "metadata": {
     "component_name": "Drawer",
-    "description": "`Drawer` is an expandable panel that displays content and controls over the application content. It provides temporary access to additional or related content without navigating away from the current screen.",
     "props": {
       "position": {
-        "type": "enum",
+        "type": "\"left\" | \"top\" | \"right\" | \"bottom\"",
         "required": false,
         "description": "Defines the drawer position within the screen. Defaults to `left`."
       },
@@ -20,7 +19,7 @@
         "description": "Callback function triggered when open state changes."
       },
       "variant": {
-        "type": "enum",
+        "type": "\"primary\" | \"secondary\"",
         "required": false,
         "description": "Change background color palette"
       },
@@ -35,6 +34,37 @@
         "description": "Prevent Scrim from rendering"
       }
     },
+    "category": "@salt-ds/core",
+    "description": "`Drawer` is an expandable panel that displays content and controls over the application content. It provides temporary access to additional or related content without navigating away from the current screen.",
+    "tags": [
+      "Flyout",
+      "Sheet"
+    ],
+    "when_to_use": [
+      "To reveal additional functionality or information contextual to on-screen content which the user can close when not required.",
+      "To display additional relevant functionality or information, such as a form or sidebar navigation, in a specific area of the screen.",
+      "To allow the user to show and hide additional relevant content."
+    ],
+    "when_not_to_use": [
+      "To provide an inlaid drawer that opens in-line with content. Instead, use [`BorderLayout`](../border-layout).",
+      "To provide a docked drawer that's fixed in the application layout and always visible. Instead, use [`Panel`](../panel) with styles to expand and collapse a non-modal surface."
+    ],
+    "import_statement": "import { Drawer, DrawerCloseButton } from \"@salt-ds/core\";",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/core/src/drawer",
+    "related_components": [
+      {
+        "name": "Overlay",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Dialog",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Scrim",
+        "relationship": "contains"
+      }
+    ],
     "examples": [
       {
         "name": "BottomDrawer",
@@ -65,36 +95,6 @@
         "name": "TopDrawer",
         "description": "",
         "code": "import {\n  Button,\n  Drawer,\n  DrawerCloseButton,\n  FlexLayout,\n  FormField,\n  FormFieldHelperText,\n  FormFieldLabel,\n  H2,\n  Input,\n  StackLayout,\n  Text,\n  useId,\n} from \"@salt-ds/core\";\nimport { type ReactElement, useState } from \"react\";\n\nconst FormFieldExample = () => (\n  <FormField>\n    <FormFieldLabel>Label</FormFieldLabel>\n    <Input />\n    <FormFieldHelperText>Help text appears here</FormFieldHelperText>\n  </FormField>\n);\n\nexport const TopDrawer = (): ReactElement => {\n  const [open, setOpen] = useState(false);\n  const id = useId();\n\n  const handleRequestOpen = () => {\n    setOpen(true);\n  };\n\n  const onOpenChange = (newOpen: boolean) => {\n    setOpen(newOpen);\n  };\n\n  const handleClose = () => {\n    setOpen(false);\n  };\n\n  return (\n    <>\n      <Button onClick={handleRequestOpen}>Open Top Drawer</Button>\n      <Drawer\n        open={open}\n        onOpenChange={onOpenChange}\n        position=\"top\"\n        aria-labelledby={id}\n      >\n        <StackLayout>\n          <DrawerCloseButton onClick={handleClose} />\n          <H2 id={id}>Section title</H2>\n          <Text>\n            Incididunt adipisicing deserunt nostrud ullamco consequat\n            consectetur magna id do irure labore fugiat. Eiusmod pariatur\n            officia elit ad. Ullamco adipisicing Lorem amet velit in do\n            reprehenderit nostrud eu aute voluptate quis quis.\n          </Text>\n          <FlexLayout>\n            {Array.from({ length: 4 }, (_, index) => (\n              <FormFieldExample key={index} />\n            ))}\n          </FlexLayout>\n        </StackLayout>\n      </Drawer>\n    </>\n  );\n};\n"
-      }
-    ],
-    "category": "@salt-ds/core",
-    "tags": [
-      "Flyout",
-      "Sheet"
-    ],
-    "when_to_use": [
-      "To reveal additional functionality or information contextual to on-screen content which the user can close when not required.",
-      "To display additional relevant functionality or information, such as a form or sidebar navigation, in a specific area of the screen.",
-      "To allow the user to show and hide additional relevant content."
-    ],
-    "when_not_to_use": [
-      "To provide an inlaid drawer that opens in-line with content. Instead, use [`BorderLayout`](../border-layout).",
-      "To provide a docked drawer that's fixed in the application layout and always visible. Instead, use [`Panel`](../panel) with styles to expand and collapse a non-modal surface."
-    ],
-    "import_statement": "import { Drawer, DrawerCloseButton } from \"@salt-ds/core\";",
-    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/core/src/drawer",
-    "related_components": [
-      {
-        "name": "Overlay",
-        "relationship": "similarTo"
-      },
-      {
-        "name": "Dialog",
-        "relationship": "similarTo"
-      },
-      {
-        "name": "Scrim",
-        "relationship": "contains"
       }
     ]
   }

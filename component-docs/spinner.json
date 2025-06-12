@@ -2,7 +2,6 @@
   "component_name": "Spinner",
   "metadata": {
     "component_name": "Spinner",
-    "description": "`Spinner` is a visual representation of a process taking an indeterminate time to complete. Triggers include automated system processes, a user action or an indicator of content loading. Displaying a spinner reassures the user that the system is still working, especially when the operation takes longer than one second.",
     "props": {
       "announcerInterval": {
         "type": "number",
@@ -39,7 +38,7 @@
         "defaultValue": "img"
       },
       "size": {
-        "type": "enum",
+        "type": "\"default\" | \"large\" | \"small\" | \"medium\"",
         "required": false,
         "description": "Determines the size of the spinner. Must be one of: 'default', 'large', 'small', 'medium'.",
         "defaultValue": "medium"
@@ -50,6 +49,29 @@
         "description": "The ids of the SvgSpinner components"
       }
     },
+    "category": "@salt-ds/core",
+    "description": "`Spinner` is a visual representation of a process taking an indeterminate time to complete. Triggers include automated system processes, a user action or an indicator of content loading. Displaying a spinner reassures the user that the system is still working, especially when the operation takes longer than one second.",
+    "tags": [
+      "Loader",
+      "Loading",
+      "Progress"
+    ],
+    "when_to_use": [
+      "To indicate that content is loading and reassure the user that the system is still working.",
+      "For actions that you expect will take 1–9 seconds to load or for processes that will take an indeterminate amount of time to complete."
+    ],
+    "when_not_to_use": [
+      "For actions that will run for a determinable length of time. Instead, use [`Progress`](/salt/components/progress).",
+      "For a process that is taking longer than 10 seconds to complete, as this is the point at which any attempt for a system to respond should finish, and a status message should display instead. For further guidance, view the [Salt duration foundation](/salt/foundations/duration)."
+    ],
+    "import_statement": "import { Spinner } from \"@salt-ds/core\";",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/core/src/spinner",
+    "related_components": [
+      {
+        "name": "Progress",
+        "relationship": "similarTo"
+      }
+    ],
     "examples": [
       {
         "name": "Large",
@@ -75,28 +97,6 @@
         "name": "Small",
         "description": "The small spinner is used for embedding in individual components (e.g., button or input) that require dynamic loading experiences.\n\nFor the small size set the `size` prop to `\"small\"`.",
         "code": "import { Spinner } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Small = (): ReactElement => (\n  <Spinner aria-label=\"loading\" role=\"status\" size=\"small\" />\n);\n"
-      }
-    ],
-    "category": "@salt-ds/core",
-    "tags": [
-      "Loader",
-      "Loading",
-      "Progress"
-    ],
-    "when_to_use": [
-      "To indicate that content is loading and reassure the user that the system is still working.",
-      "For actions that you expect will take 1–9 seconds to load or for processes that will take an indeterminate amount of time to complete."
-    ],
-    "when_not_to_use": [
-      "For actions that will run for a determinable length of time. Instead, use [`Progress`](/salt/components/progress).",
-      "For a process that is taking longer than 10 seconds to complete, as this is the point at which any attempt for a system to respond should finish, and a status message should display instead. For further guidance, view the [Salt duration foundation](/salt/foundations/duration)."
-    ],
-    "import_statement": "import { Spinner } from \"@salt-ds/core\";",
-    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/core/src/spinner",
-    "related_components": [
-      {
-        "name": "Progress",
-        "relationship": "similarTo"
       }
     ]
   }

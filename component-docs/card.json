@@ -2,10 +2,9 @@
   "component_name": "Card",
   "metadata": {
     "component_name": "Card",
-    "description": "`Card`, `LinkCard` and `InteractableCard` are visually distinct content containers that display a snapshot of information about a single subject and act as an entry point for more detailed information.\n",
     "props": {
       "accent": {
-        "type": "enum",
+        "type": "\"bottom\" | \"top\" | \"left\" | \"right\"",
         "required": false,
         "description": "If provided an accent is shown in the specified position."
       },
@@ -25,11 +24,45 @@
         "description": "**Deprecated:** Use the InteractableCard component instead\n\nIf `true`, interactive styles will be applied to `Card`. These styles give prominence to certain content\non the page."
       },
       "variant": {
-        "type": "enum",
+        "type": "\"primary\" | \"secondary\" | \"tertiary\" | \"ghost\"",
         "required": false,
         "description": "Styling variant. Defaults to \"primary\"."
       }
     },
+    "category": "@salt-ds/core",
+    "description": "`Card`, `LinkCard` and `InteractableCard` are visually distinct content containers that display a snapshot of information about a single subject and act as an entry point for more detailed information.\n",
+    "tags": [
+      "Tile",
+      "Panel",
+      "Teaser"
+    ],
+    "when_to_use": [
+      "To group related information with the same visual hierarchy.",
+      "To present a summary of a larger idea.",
+      "**Link cards:** to link to more detailed information.",
+      "**Interactable cards:** when you need a card to act as a button or when a group of cards needs to behave like a set of checkboxes or radio buttons."
+    ],
+    "when_not_to_use": [
+      "To display sequential information or emphasize ranking. Instead, use [`List`](../list).",
+      "As a stand-alone call to action. Instead, use [`Button`](../button).",
+      "For decoration purposes only."
+    ],
+    "import_statement": "import {\n  Card,\n  InteractableCard,\n  InteractableCardGroup,\n  LinkCard,\n} from \"@salt-ds/core\";",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/tree/main/packages/core/src/card",
+    "related_components": [
+      {
+        "name": "Panel",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Link",
+        "relationship": "contains"
+      },
+      {
+        "name": "Button",
+        "relationship": "contains"
+      }
+    ],
     "examples": [
       {
         "name": "Accents",
@@ -100,39 +133,6 @@
         "name": "Variants",
         "description": "Cards are available in several variants: primary, secondary, and tertiary, with an additional ghost variant for static cards. These variants can be combined to create different levels of hierarchy within your UI. There is no strict order to follow; the choice largely depends on the content, layout, and structure of your UI. Select the variant that best aligns with the design language you are establishing and the hierarchy you aim to create.",
         "code": "import { Card, GridLayout, StackLayout } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\nimport styles from \"./index.module.css\";\n\nexport const Variants = (): ReactElement => {\n  return (\n    <StackLayout className={styles.variantContainer}>\n      <GridLayout\n        columns=\"repeat(auto-fill, 260px)\"\n        className={styles.variantContainer}\n      >\n        <Card variant=\"primary\" className={styles.variantCard}>\n          Primary\n        </Card>\n        <Card variant=\"secondary\" className={styles.variantCard}>\n          Secondary\n        </Card>\n        <Card variant=\"tertiary\" className={styles.variantCard}>\n          Tertiary\n        </Card>\n      </GridLayout>\n    </StackLayout>\n  );\n};\n"
-      }
-    ],
-    "category": "@salt-ds/core",
-    "tags": [
-      "Tile",
-      "Panel",
-      "Teaser"
-    ],
-    "when_to_use": [
-      "To group related information with the same visual hierarchy.",
-      "To present a summary of a larger idea.",
-      "**Link cards:** to link to more detailed information.",
-      "**Interactable cards:** when you need a card to act as a button or when a group of cards needs to behave like a set of checkboxes or radio buttons."
-    ],
-    "when_not_to_use": [
-      "To display sequential information or emphasize ranking. Instead, use [`List`](../list).",
-      "As a stand-alone call to action. Instead, use [`Button`](../button).",
-      "For decoration purposes only."
-    ],
-    "import_statement": "import {\n  Card,\n  InteractableCard,\n  InteractableCardGroup,\n  LinkCard,\n} from \"@salt-ds/core\";",
-    "source_code_url": "https://github.com/jpmorganchase/salt-ds/tree/main/packages/core/src/card",
-    "related_components": [
-      {
-        "name": "Panel",
-        "relationship": "similarTo"
-      },
-      {
-        "name": "Link",
-        "relationship": "contains"
-      },
-      {
-        "name": "Button",
-        "relationship": "contains"
       }
     ]
   }

@@ -1,0 +1,47 @@
+{
+  "component_name": "useFloatingUI",
+  "metadata": {
+    "component_name": "useFloatingUI",
+    "props": {
+      "middleware": {
+        "type": "{ name: string; options?: any; fn: (state: { placement: Placement; strategy: Strategy; platform: Platform; x: number; y: number; initialPlacement: Placement; middlewareData: MiddlewareData; rects: ElementRects; elements: Elements; }) => Promisable<...>; }[]",
+        "required": false,
+        "description": "Function to update the default middleware used to extend or replace it"
+      },
+      "open": {
+        "type": "boolean",
+        "required": false,
+        "description": "The `open` state of the floating element to synchronize with the\n`isPositioned` value.",
+        "defaultValue": "false"
+      },
+      "placement": {
+        "type": "\"top\" | \"left\" | \"right\" | \"bottom\" | \"top-start\" | \"top-end\" | \"left-start\" | \"left-end\" | \"right-start\" | \"right-end\" | \"bottom-start\" | \"bottom-end\"",
+        "required": false,
+        "description": "Where to place the floating element relative to the reference element."
+      },
+      "strategy": {
+        "type": "\"absolute\" | \"fixed\"",
+        "required": false,
+        "description": "The strategy to use when positioning the floating element."
+      },
+      "onOpenChange": {
+        "type": "(open: boolean, event?: Event, reason?: OpenChangeReason) => void",
+        "required": false,
+        "description": "An event callback that is invoked when the floating element is opened or\nclosed."
+      },
+      "nodeId": {
+        "type": "string",
+        "required": false,
+        "description": "Unique node id when using `FloatingTree`."
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { useFloatingUI } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

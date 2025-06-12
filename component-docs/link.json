@@ -2,7 +2,6 @@
   "component_name": "Link",
   "metadata": {
     "component_name": "Link",
-    "description": "`Link` allows users to navigate to a different site or other pages within the current site. You can use it inline in a sentence, standalone on its own, or after a sentence.",
     "props": {
       "IconComponent": {
         "type": "ComponentType<IconProps>",
@@ -15,12 +14,12 @@
         "description": "Render prop to enable customisation of anchor element."
       },
       "color": {
-        "type": "enum",
+        "type": "\"inherit\" | \"primary\" | \"secondary\" | \"accent\"",
         "required": false,
         "description": ""
       },
       "underline": {
-        "type": "enum",
+        "type": "\"default\" | \"never\"",
         "required": false,
         "description": "Either \"default\" or \"never\".\nDetermines when underline should be applied to the link.",
         "defaultValue": "default"
@@ -31,16 +30,49 @@
         "description": "Apply text truncation by mentioning number of rows to be displayed"
       },
       "styleAs": {
-        "type": "enum",
+        "type": "\"code\" | \"h1\" | \"h2\" | \"h3\" | \"h4\" | \"label\" | \"display1\" | \"display2\" | \"display3\" | \"display4\" | \"notation\" | \"action\"",
         "required": false,
         "description": "Match styling to another text component's style"
       },
       "variant": {
-        "type": "enum",
+        "type": "\"primary\" | \"secondary\"",
         "required": false,
         "description": "Change text color palette\n@deprecated Use `color` instead"
       }
     },
+    "category": "@salt-ds/core",
+    "description": "`Link` allows users to navigate to a different site or other pages within the current site. You can use it inline in a sentence, standalone on its own, or after a sentence.",
+    "tags": [
+      "Anchor",
+      "Hyperlink"
+    ],
+    "when_to_use": [
+      "To provide navigation to a page on the same or different site.",
+      "To link to documents, email addresses or phone numbers.",
+      "To send users to a specific section on the same page.",
+      "To provide users with more detailed information or assistance e.g., terms and conditions, help sections or contact information."
+    ],
+    "when_not_to_use": [
+      "To trigger an action, such as submitting a form or opening a dialog. Instead, use [`Button`](../button).",
+      "Link text should be concise, no longer than a single sentence. This helps to keep the user interface clean, minimize distractions and maintain a clear visual hierarchy.",
+      "Do not overload sentences or pages with links.",
+      "Consider writing standalone links as calls-to-action and begin with a verb e.g., “Visit the help page”.",
+      "Write inline links as if they were part of the sentence.",
+      "Do not include the word “link” in the link text. Most screen readers say “link” before each link.",
+      "Link text should accurately describe the linked content. Link text that does not correctly reflect the destination or purpose can confuse or frustrate the user.",
+      "https://developer.chrome.com/docs/lighthouse/seo/link-text/",
+      "https://www.smashingmagazine.com/2012/06/links-should-never-say-click-here/",
+      "https://business.scope.org.uk/article/how-to-write-better-link-text-for-accessibility",
+      "https://www.nngroup.com/articles/duplicate-links/"
+    ],
+    "import_statement": "import { Link } from \"@salt-ds/core\";",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/tree/main/packages/core/src/link",
+    "related_components": [
+      {
+        "name": "Button",
+        "relationship": "similarTo"
+      }
+    ],
     "examples": [
       {
         "name": "Color",
@@ -81,38 +113,6 @@
         "name": "Visited",
         "description": "Links change color after a user clicks on them. This tells the user which links they have already visited.",
         "code": "import { Link } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\nimport styles from \"./index.module.css\";\n\nexport const Visited = (): ReactElement => (\n  <Link href=\"#\" className={styles.visitedLink}>\n    Link with visited style\n  </Link>\n);\n"
-      }
-    ],
-    "category": "@salt-ds/core",
-    "tags": [
-      "Anchor",
-      "Hyperlink"
-    ],
-    "when_to_use": [
-      "To provide navigation to a page on the same or different site.",
-      "To link to documents, email addresses or phone numbers.",
-      "To send users to a specific section on the same page.",
-      "To provide users with more detailed information or assistance e.g., terms and conditions, help sections or contact information."
-    ],
-    "when_not_to_use": [
-      "To trigger an action, such as submitting a form or opening a dialog. Instead, use [`Button`](../button).",
-      "Link text should be concise, no longer than a single sentence. This helps to keep the user interface clean, minimize distractions and maintain a clear visual hierarchy.",
-      "Do not overload sentences or pages with links.",
-      "Consider writing standalone links as calls-to-action and begin with a verb e.g., “Visit the help page”.",
-      "Write inline links as if they were part of the sentence.",
-      "Do not include the word “link” in the link text. Most screen readers say “link” before each link.",
-      "Link text should accurately describe the linked content. Link text that does not correctly reflect the destination or purpose can confuse or frustrate the user.",
-      "https://developer.chrome.com/docs/lighthouse/seo/link-text/",
-      "https://www.smashingmagazine.com/2012/06/links-should-never-say-click-here/",
-      "https://business.scope.org.uk/article/how-to-write-better-link-text-for-accessibility",
-      "https://www.nngroup.com/articles/duplicate-links/"
-    ],
-    "import_statement": "import { Link } from \"@salt-ds/core\";",
-    "source_code_url": "https://github.com/jpmorganchase/salt-ds/tree/main/packages/core/src/link",
-    "related_components": [
-      {
-        "name": "Button",
-        "relationship": "similarTo"
       }
     ]
   }

@@ -1,0 +1,21 @@
+{
+  "component_name": "DialogActions",
+  "metadata": {
+    "component_name": "DialogActions",
+    "props": {
+      "children": {
+        "type": "ReactNode",
+        "required": false,
+        "description": "The content of Dialog Actions"
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { DialogActions } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

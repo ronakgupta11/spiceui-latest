@@ -2,7 +2,6 @@
   "component_name": "Scrim",
   "metadata": {
     "component_name": "Scrim",
-    "description": "`Scrim` is a temporary, semi-transparent layer that makes underlying content less prominent.",
     "props": {
       "fixed": {
         "type": "boolean",
@@ -17,6 +16,17 @@
         "defaultValue": "true"
       }
     },
+    "category": "@salt-ds/core",
+    "description": "`Scrim` is a temporary, semi-transparent layer that makes underlying content less prominent.",
+    "tags": [
+      "Backdrop",
+      "Shade"
+    ],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { Scrim } from \"@salt-ds/core\";",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/tree/main/packages/core/src/scrim",
+    "related_components": [],
     "examples": [
       {
         "name": "FillContainer",
@@ -33,16 +43,6 @@
         "description": "",
         "code": "import {\n  Button,\n  Card,\n  Display3,\n  H3,\n  Scrim,\n  Spinner,\n  StackLayout,\n  Text,\n} from \"@salt-ds/core\";\nimport { ArrowDownIcon, ArrowUpIcon } from \"@salt-ds/icons\";\nimport { type ReactElement, useState } from \"react\";\n\nexport const WithChild = (): ReactElement => {\n  const [open, setOpen] = useState(false);\n\n  const handleClick = () => {\n    setOpen((old) => !old);\n  };\n\n  return (\n    <StackLayout>\n      <Card\n        style={{ position: \"relative\", padding: \"var(--salt-spacing-200)\" }}\n        variant=\"secondary\"\n      >\n        <Scrim open={open}>\n          <Spinner size=\"medium\" />\n        </Scrim>\n        <StackLayout gap={1}>\n          <H3>Emails</H3>\n          <StackLayout gap={3}>\n            <StackLayout direction=\"row\" gap={3}>\n              <StackLayout gap={0}>\n                <Text>Sent</Text>\n                <Display3>\n                  400\n                  <ArrowUpIcon\n                    style={{ fill: \"var(--salt-status-positive-foreground)\" }}\n                    size={1}\n                  />\n                </Display3>\n                <Text\n                  style={{ color: \"var(--salt-status-positive-foreground)\" }}\n                >\n                  +10 (+1.23%)\n                </Text>\n              </StackLayout>\n              <StackLayout gap={0}>\n                <Text>Received</Text>\n                <Display3>\n                  984\n                  <ArrowDownIcon\n                    style={{ fill: \"var(--salt-status-negative-foreground)\" }}\n                    size={1}\n                  />\n                </Display3>\n                <Text\n                  style={{ color: \"var(--salt-status-negative-foreground)\" }}\n                >\n                  -32 (-5.4%)\n                </Text>\n              </StackLayout>\n            </StackLayout>\n            <StackLayout direction=\"row\" gap={3}>\n              <StackLayout gap={0}>\n                <Text>Open rate</Text>\n                <Display3>\n                  20%\n                  <ArrowUpIcon\n                    style={{ fill: \"var(--salt-status-positive-foreground)\" }}\n                    size={1}\n                  />\n                </Display3>\n                <Text\n                  style={{ color: \"var(--salt-status-positive-foreground)\" }}\n                >\n                  +6.1 (+4.32%)\n                </Text>\n              </StackLayout>\n              <StackLayout gap={0}>\n                <Text>Click rate</Text>\n                <Display3>\n                  5%\n                  <ArrowUpIcon\n                    style={{ fill: \"var(--salt-status-positive-foreground)\" }}\n                    size={1}\n                  />\n                </Display3>\n                <Text\n                  style={{ color: \"var(--salt-status-positive-foreground)\" }}\n                >\n                  +3.7 (+1.23%)\n                </Text>\n              </StackLayout>\n            </StackLayout>\n          </StackLayout>\n        </StackLayout>\n      </Card>\n      <Button\n        style={{ width: \"fit-content\", alignSelf: \"center\" }}\n        onClick={handleClick}\n        sentiment=\"accented\"\n      >\n        {open ? \"Hide scrim\" : \"Show scrim\"}\n      </Button>\n    </StackLayout>\n  );\n};\n"
       }
-    ],
-    "category": "@salt-ds/core",
-    "tags": [
-      "Backdrop",
-      "Shade"
-    ],
-    "when_to_use": [],
-    "when_not_to_use": [],
-    "import_statement": "import { Scrim } from \"@salt-ds/core\";",
-    "source_code_url": "https://github.com/jpmorganchase/salt-ds/tree/main/packages/core/src/scrim",
-    "related_components": []
+    ]
   }
 }

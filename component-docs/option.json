@@ -1,0 +1,31 @@
+{
+  "component_name": "Option",
+  "metadata": {
+    "component_name": "Option",
+    "props": {
+      "disabled": {
+        "type": "boolean",
+        "required": false,
+        "description": "If `true`, the option will be disabled."
+      },
+      "value": {
+        "type": "unknown",
+        "required": true,
+        "description": "The value of the option."
+      },
+      "children": {
+        "type": "ReactNode",
+        "required": false,
+        "description": "The content of the option."
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { Option } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

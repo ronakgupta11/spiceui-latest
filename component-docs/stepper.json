@@ -2,14 +2,44 @@
   "component_name": "Stepper",
   "metadata": {
     "component_name": "Stepper",
-    "description": "`Stepper` visually communicates a user’s progress through a linear process. It gives the user context about where they are, which steps have they completed, if any errors or warnings have occurred, and how many steps are left.",
     "props": {
       "orientation": {
-        "type": "enum",
+        "type": "\"horizontal\" | \"vertical\"",
         "required": false,
         "description": "The orientation of the stepper: defaults to horizontal."
       }
     },
+    "category": "@salt-ds/core",
+    "description": "`Stepper` visually communicates a user’s progress through a linear process. It gives the user context about where they are, which steps have they completed, if any errors or warnings have occurred, and how many steps are left.",
+    "tags": [
+      "Discrete progress indicator",
+      "Progress indicator",
+      "Progress stepper",
+      "Progress steps",
+      "Screen flow",
+      "Stepped tracker",
+      "Status tracker"
+    ],
+    "when_to_use": [
+      "When there are separate steps within a process, such as a wizard or a multistep form.",
+      "When you want to split a process into distinct, bite-sized sections that are less daunting than lengthy forms."
+    ],
+    "when_not_to_use": [
+      "When there are fewer than three steps in a process.",
+      "As navigation; users cannot interact with the steps."
+    ],
+    "import_statement": "import { Stepper, Step } from \"@salt-ds/core\";",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/tree/main/packages/core/src/stepper",
+    "related_components": [
+      {
+        "name": "SemanticIconProvider",
+        "relationship": "contains"
+      },
+      {
+        "name": "Accordion",
+        "relationship": "similarTo"
+      }
+    ],
     "examples": [
       {
         "name": "Horizontal",
@@ -35,36 +65,6 @@
         "name": "Vertical",
         "description": "",
         "code": "import { StackLayout, Step, Stepper } from \"@salt-ds/core\";\n\nexport const Vertical = () => {\n  return (\n    <StackLayout>\n      <Stepper orientation=\"vertical\">\n        <Step label=\"Step 1\" stage=\"completed\" />\n        <Step label=\"Step 2\" stage=\"active\" />\n        <Step label=\"Step 3\" stage=\"pending\" />\n      </Stepper>\n    </StackLayout>\n  );\n};\n"
-      }
-    ],
-    "category": "@salt-ds/core",
-    "tags": [
-      "Discrete progress indicator",
-      "Progress indicator",
-      "Progress stepper",
-      "Progress steps",
-      "Screen flow",
-      "Stepped tracker",
-      "Status tracker"
-    ],
-    "when_to_use": [
-      "When there are separate steps within a process, such as a wizard or a multistep form.",
-      "When you want to split a process into distinct, bite-sized sections that are less daunting than lengthy forms."
-    ],
-    "when_not_to_use": [
-      "When there are fewer than three steps in a process.",
-      "As navigation; users cannot interact with the steps."
-    ],
-    "import_statement": "",
-    "source_code_url": "https://github.com/jpmorganchase/salt-ds/tree/main/packages/core/src/stepper",
-    "related_components": [
-      {
-        "name": "SemanticIconProvider",
-        "relationship": "contains"
-      },
-      {
-        "name": "Accordion",
-        "relationship": "similarTo"
       }
     ]
   }

@@ -1,0 +1,26 @@
+{
+  "component_name": "LinkCard",
+  "metadata": {
+    "component_name": "LinkCard",
+    "props": {
+      "accent": {
+        "type": "\"bottom\" | \"top\" | \"left\" | \"right\"",
+        "required": false,
+        "description": "If provided an accent is shown in the specified position."
+      },
+      "variant": {
+        "type": "\"primary\" | \"secondary\" | \"tertiary\"",
+        "required": false,
+        "description": "Styling variant; defaults to \"primary\"."
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { LinkCard } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

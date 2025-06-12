@@ -2,7 +2,6 @@
   "component_name": "Overlay",
   "metadata": {
     "component_name": "Overlay",
-    "description": "`Overlay` reveals supplementary content when the user clicks a UI trigger element. It remains active and open until the user dismisses it. It can contain interactive and focusable elements, such as buttons and links.",
     "props": {
       "open": {
         "type": "boolean",
@@ -15,11 +14,41 @@
         "description": "Callback function triggered when open state changes."
       },
       "placement": {
-        "type": "enum",
+        "type": "\"top\" | \"bottom\" | \"left\" | \"right\"",
         "required": false,
         "description": ""
       }
     },
+    "category": "@salt-ds/core",
+    "description": "`Overlay` reveals supplementary content when the user clicks a UI trigger element. It remains active and open until the user dismisses it. It can contain interactive and focusable elements, such as buttons and links.",
+    "tags": [
+      "Popover"
+    ],
+    "when_to_use": [
+      "To expose interactive and essential elements within a tooltip to carry out in-context tasks.",
+      "For filter or dropdown panels that overlay content.",
+      "When acknowledgement on overlay content is needed. An overlay only dismissess after user interaction."
+    ],
+    "when_not_to_use": [
+      "To notify and present critical information that requires immediate action from the user. Instead, use [`Dialog`](/salt/components/dialog).",
+      "To provide a non-focusable and informative hint. Instead, use [`Tooltip`](/salt/components/tooltip)."
+    ],
+    "import_statement": "import {\n  Overlay,\n  OverlayTrigger,\n  OverlayPanel,\n  OverlayPanelContent,\n  OverlayPanelCloseButton,\n} from \"@salt-ds/core\";",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/tree/main/packages/core/src/overlay",
+    "related_components": [
+      {
+        "name": "Button",
+        "relationship": "contains"
+      },
+      {
+        "name": "Drawer",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Tooltip",
+        "relationship": "similarTo"
+      }
+    ],
     "examples": [
       {
         "name": "CloseButton",
@@ -50,35 +79,6 @@
         "name": "WithHeader",
         "description": "",
         "code": "import {\n  Button,\n  Overlay,\n  OverlayHeader,\n  OverlayPanel,\n  OverlayPanelContent,\n  OverlayTrigger,\n} from \"@salt-ds/core\";\nimport { CloseIcon } from \"@salt-ds/icons\";\nimport { type ReactElement, useState } from \"react\";\n\nexport const WithHeader = (): ReactElement => {\n  const [open, setOpen] = useState(false);\n\n  const onOpenChange = (newOpen: boolean) => setOpen(newOpen);\n\n  const handleClose = () => setOpen(false);\n\n  const headerActions = (\n    <Button\n      aria-label=\"Close overlay\"\n      appearance=\"transparent\"\n      onClick={handleClose}\n    >\n      <CloseIcon aria-hidden />\n    </Button>\n  );\n  return (\n    <Overlay placement=\"right\" open={open} onOpenChange={onOpenChange}>\n      <OverlayTrigger>\n        <Button>Show Overlay</Button>\n      </OverlayTrigger>\n      <OverlayPanel>\n        <OverlayHeader header=\"Title\" actions={headerActions} />\n        <OverlayPanelContent>\n          <div>Content of Overlay</div>\n        </OverlayPanelContent>\n      </OverlayPanel>\n    </Overlay>\n  );\n};\n"
-      }
-    ],
-    "category": "@salt-ds/core",
-    "tags": [
-      "Popover"
-    ],
-    "when_to_use": [
-      "To expose interactive and essential elements within a tooltip to carry out in-context tasks.",
-      "For filter or dropdown panels that overlay content.",
-      "When acknowledgement on overlay content is needed. An overlay only dismissess after user interaction."
-    ],
-    "when_not_to_use": [
-      "To notify and present critical information that requires immediate action from the user. Instead, use [`Dialog`](/salt/components/dialog).",
-      "To provide a non-focusable and informative hint. Instead, use [`Tooltip`](/salt/components/tooltip)."
-    ],
-    "import_statement": "import {\n  Overlay,\n  OverlayTrigger,\n  OverlayPanel,\n  OverlayPanelContent,\n  OverlayPanelCloseButton,\n} from \"@salt-ds/core\";",
-    "source_code_url": "https://github.com/jpmorganchase/salt-ds/tree/main/packages/core/src/overlay",
-    "related_components": [
-      {
-        "name": "Button",
-        "relationship": "contains"
-      },
-      {
-        "name": "Drawer",
-        "relationship": "similarTo"
-      },
-      {
-        "name": "Tooltip",
-        "relationship": "similarTo"
       }
     ]
   }

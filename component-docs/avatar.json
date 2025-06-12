@@ -2,7 +2,6 @@
   "component_name": "Avatar",
   "metadata": {
     "component_name": "Avatar",
-    "description": "`Avatar` is a graphical element which you can use to represent a person, group, entity or communication channel.",
     "props": {
       "name": {
         "type": "string",
@@ -32,12 +31,29 @@
         "description": "Icon to be used as a default item. Defaults to `UserIcon`."
       },
       "color": {
-        "type": "enum",
+        "type": "\"accent\" | \"category-1\" | \"category-2\" | \"category-3\" | \"category-4\" | \"category-5\" | \"category-6\" | \"category-7\" | \"category-8\" | \"category-9\" | \"category-10\" | \"category-11\" | \"category-12\" | \"category-13\" | \"category-14\" | \"category-15\" | \"category-16\" | \"category-17\" | \"category-18\" | \"category-19\" | \"category-20\"",
         "required": false,
         "description": "Changes Avatar's color.",
         "defaultValue": "accent"
       }
     },
+    "category": "@salt-ds/core",
+    "description": "`Avatar` is a graphical element which you can use to represent a person, group, entity or communication channel.",
+    "tags": [
+      "Faces",
+      "Profile Picture",
+      "User Photo"
+    ],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { Avatar } from \"@salt-ds/core\";",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/core/src/avatar",
+    "related_components": [
+      {
+        "name": "Country symbol",
+        "relationship": "similarTo"
+      }
+    ],
     "examples": [
       {
         "name": "Categories",
@@ -63,22 +79,6 @@
         "name": "Sizes",
         "description": "You can use the `size` prop to modify the avatar size. Each avatar variant has a default size across all four densities, equal to the [size foundation](/salt/foundations/size) `size-base`: 20px (HD), 28px (MD), 36px (LD), and 44px (TD). The size property acts as a multiplier of the base size.",
         "code": "import { Avatar, FlowLayout, Label, StackLayout } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nconst sizes = [1, 2, 4] as const;\n\nexport const Sizes = (): ReactElement => {\n  return (\n    <FlowLayout gap={7} align=\"end\">\n      {sizes.map((size) => (\n        <StackLayout key={size} align=\"center\">\n          <Avatar key={size} size={size} />\n          <Label>Size: {size}x</Label>\n        </StackLayout>\n      ))}\n    </FlowLayout>\n  );\n};\n"
-      }
-    ],
-    "category": "@salt-ds/core",
-    "tags": [
-      "Faces",
-      "Profile Picture",
-      "User Photo"
-    ],
-    "when_to_use": [],
-    "when_not_to_use": [],
-    "import_statement": "",
-    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/core/src/avatar",
-    "related_components": [
-      {
-        "name": "Country symbol",
-        "relationship": "similarTo"
       }
     ]
   }

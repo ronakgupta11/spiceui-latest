@@ -1,0 +1,21 @@
+{
+  "component_name": "MenuPanel",
+  "metadata": {
+    "component_name": "MenuPanel",
+    "props": {
+      "children": {
+        "type": "ReactNode",
+        "required": false,
+        "description": "The content of the menu panel."
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { MenuPanel } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

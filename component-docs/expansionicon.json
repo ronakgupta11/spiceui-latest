@@ -1,0 +1,28 @@
+{
+  "component_name": "ExpansionIcon",
+  "metadata": {
+    "component_name": "ExpansionIcon",
+    "props": {
+      "expanded": {
+        "type": "boolean",
+        "required": false,
+        "description": "Whether the navigation item is expanded.",
+        "defaultValue": "false"
+      },
+      "orientation": {
+        "type": "\"horizontal\" | \"vertical\"",
+        "required": false,
+        "description": "The orientation of the navigation item.",
+        "defaultValue": "horizontal"
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { ExpansionIcon } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

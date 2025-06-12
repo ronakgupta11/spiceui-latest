@@ -1,0 +1,21 @@
+{
+  "component_name": "OverlayPanel",
+  "metadata": {
+    "component_name": "OverlayPanel",
+    "props": {
+      "children": {
+        "type": "ReactNode",
+        "required": false,
+        "description": "The content of Overlay Panel"
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { OverlayPanel } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

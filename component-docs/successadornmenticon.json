@@ -1,0 +1,26 @@
+{
+  "component_name": "SuccessAdornmentIcon",
+  "metadata": {
+    "component_name": "SuccessAdornmentIcon",
+    "props": {
+      "color": {
+        "type": "\"inherit\" | \"primary\" | \"secondary\"",
+        "required": false,
+        "description": ""
+      },
+      "size": {
+        "type": "number",
+        "required": false,
+        "description": "Multiplier for the base icon size. Should be a positive integer to conform to the rest of the design system."
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { SuccessAdornmentIcon } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

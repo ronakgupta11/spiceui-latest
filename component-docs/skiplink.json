@@ -1,0 +1,21 @@
+{
+  "component_name": "SkipLink",
+  "metadata": {
+    "component_name": "SkipLink",
+    "props": {
+      "targetId": {
+        "type": "string",
+        "required": true,
+        "description": "The ID of the target element to apply focus when the link is clicked.\nIf the element with this ID is not found, the SkipLink will not be rendered."
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { SkipLink } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

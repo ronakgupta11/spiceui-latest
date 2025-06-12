@@ -1,0 +1,51 @@
+{
+  "component_name": "DrawerCloseButton",
+  "metadata": {
+    "component_name": "DrawerCloseButton",
+    "props": {
+      "disabled": {
+        "type": "boolean",
+        "required": false,
+        "description": "If `true`, the button will be disabled."
+      },
+      "focusableWhenDisabled": {
+        "type": "boolean",
+        "required": false,
+        "description": "If `true`, the button will be focusable when disabled."
+      },
+      "variant": {
+        "type": "\"primary\" | \"secondary\" | \"cta\"",
+        "required": false,
+        "description": "The variant to use. Options are 'primary', 'secondary' and 'cta'.\n'primary' is the default value.\n@deprecated Use `appearance` and `sentiment` instead.\n\n| variant     | appearance    | sentiment   |\n| ----------- | ------------- | ----------- |\n| `cta`       | `solid`       | `accented`  |\n| `primary`   | `solid`       | `neutral`   |\n| `secondary` | `transparent` | `neutral`   |"
+      },
+      "appearance": {
+        "type": "\"solid\" | \"bordered\" | \"transparent\"",
+        "required": false,
+        "description": "The appearance of the button. Options are 'solid', 'bordered', and 'transparent'.\n'solid' is the default value.\n@since 1.36.0."
+      },
+      "sentiment": {
+        "type": "\"accented\" | \"neutral\" | \"positive\" | \"negative\" | \"caution\"",
+        "required": false,
+        "description": "The sentiment of the button. Options are 'accented', 'neutral', 'positive', 'negative' and 'caution'.\n'neutral' is the default value.\n@since 1.36.0."
+      },
+      "loading": {
+        "type": "boolean",
+        "required": false,
+        "description": "If `true`, the button will be in a loading state. This allows a spinner to be nested inside the button.\n@since 1.38.0."
+      },
+      "loadingAnnouncement": {
+        "type": "string",
+        "required": false,
+        "description": "Text to be announced by screen readers, intended to be used in conjunction with the `loading` prop.\n@since 1.38.0."
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { DrawerCloseButton } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

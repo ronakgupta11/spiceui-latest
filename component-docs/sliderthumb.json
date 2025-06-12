@@ -1,0 +1,122 @@
+{
+  "component_name": "SliderThumb",
+  "metadata": {
+    "component_name": "SliderThumb",
+    "props": {
+      "accessibleMaxText": {
+        "type": "string",
+        "required": false,
+        "description": ""
+      },
+      "accessibleMinText": {
+        "type": "string",
+        "required": false,
+        "description": ""
+      },
+      "disabled": {
+        "type": "boolean",
+        "required": true,
+        "description": ""
+      },
+      "format": {
+        "type": "(value: number) => string | number",
+        "required": false,
+        "description": ""
+      },
+      "handleInputChange": {
+        "type": "(event: ChangeEvent<HTMLInputElement>) => void",
+        "required": true,
+        "description": ""
+      },
+      "handleKeydownOnThumb": {
+        "type": "(event: KeyboardEvent<Element>) => void",
+        "required": true,
+        "description": ""
+      },
+      "handlePointerDown": {
+        "type": "(event: PointerEvent<HTMLDivElement>) => void",
+        "required": true,
+        "description": ""
+      },
+      "index": {
+        "type": "number",
+        "required": false,
+        "description": "",
+        "defaultValue": "0"
+      },
+      "inputRef": {
+        "type": "RefObject<HTMLInputElement>",
+        "required": false,
+        "description": ""
+      },
+      "isFocusVisible": {
+        "type": "boolean",
+        "required": true,
+        "description": ""
+      },
+      "max": {
+        "type": "number",
+        "required": true,
+        "description": ""
+      },
+      "maxLabel": {
+        "type": "string",
+        "required": false,
+        "description": ""
+      },
+      "min": {
+        "type": "number",
+        "required": true,
+        "description": ""
+      },
+      "minLabel": {
+        "type": "string",
+        "required": false,
+        "description": ""
+      },
+      "offsetPercentage": {
+        "type": "string",
+        "required": false,
+        "description": ""
+      },
+      "restrictToMarks": {
+        "type": "boolean",
+        "required": false,
+        "description": ""
+      },
+      "showTooltip": {
+        "type": "boolean",
+        "required": false,
+        "description": ""
+      },
+      "sliderValue": {
+        "type": "number | [number, number]",
+        "required": true,
+        "description": ""
+      },
+      "step": {
+        "type": "number",
+        "required": true,
+        "description": ""
+      },
+      "stepMultiplier": {
+        "type": "number",
+        "required": true,
+        "description": ""
+      },
+      "trackDragging": {
+        "type": "boolean",
+        "required": true,
+        "description": ""
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { SliderThumb } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

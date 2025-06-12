@@ -1,0 +1,41 @@
+{
+  "component_name": "FormFieldHelperText",
+  "metadata": {
+    "component_name": "FormFieldHelperText",
+    "props": {
+      "as": {
+        "type": "\"label\"",
+        "required": false,
+        "description": "The HTML element used for the root node."
+      },
+      "disabled": {
+        "type": "boolean",
+        "required": false,
+        "description": "Applies disabled styling when true"
+      },
+      "maxRows": {
+        "type": "number",
+        "required": false,
+        "description": "Apply text truncation by mentioning number of rows to be displayed"
+      },
+      "color": {
+        "type": "\"error\" | \"warning\" | \"success\" | \"info\" | \"inherit\" | \"primary\" | \"secondary\"",
+        "required": false,
+        "description": ""
+      },
+      "ref": {
+        "type": "Ref<HTMLLabelElement>",
+        "required": false,
+        "description": ""
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { FormFieldHelperText } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

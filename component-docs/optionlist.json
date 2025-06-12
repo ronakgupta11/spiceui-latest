@@ -1,0 +1,61 @@
+{
+  "component_name": "OptionList",
+  "metadata": {
+    "component_name": "OptionList",
+    "props": {
+      "collapsed": {
+        "type": "boolean",
+        "required": false,
+        "description": ""
+      },
+      "open": {
+        "type": "boolean",
+        "required": true,
+        "description": "Whether the floating component is open (used for determining whether to show the component)\nWe pass this as a prop rather than not rendering the component to allow more advanced use-cases e.g.\nfor caching windows and reusing them, rather than always spawning a new one"
+      },
+      "focusManagerProps": {
+        "type": "Omit<FloatingFocusManagerProps, \"children\">",
+        "required": false,
+        "description": "Use this prop when `FloatingFocusManager` is needed for floating component"
+      },
+      "top": {
+        "type": "number",
+        "required": false,
+        "description": "Position and sizing optional props for the floating component. `top`, `left`, and `position` for floating elements where they aren't positioned with relative to the trigger.\n`width` and `height` are used to define the size of the floating element."
+      },
+      "left": {
+        "type": "number",
+        "required": false,
+        "description": ""
+      },
+      "width": {
+        "type": "number",
+        "required": false,
+        "description": ""
+      },
+      "height": {
+        "type": "number",
+        "required": false,
+        "description": ""
+      },
+      "position": {
+        "type": "\"absolute\" | \"fixed\"",
+        "required": false,
+        "description": ""
+      },
+      "lockScroll": {
+        "type": "boolean",
+        "required": false,
+        "description": "Makes the page unscrollable when the floating component is open."
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { OptionList } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

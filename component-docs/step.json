@@ -1,0 +1,48 @@
+{
+  "component_name": "Step",
+  "metadata": {
+    "component_name": "Step",
+    "description": "Props for Step component",
+    "props": {
+      "label": {
+        "type": "ReactNode",
+        "required": false,
+        "description": "The label of the step"
+      },
+      "description": {
+        "type": "ReactNode",
+        "required": false,
+        "description": "Description text is displayed just below the label"
+      },
+      "status": {
+        "type": "\"warning\" | \"error\"",
+        "required": false,
+        "description": "Optional string to determine the status of the step."
+      },
+      "stage": {
+        "type": "\"pending\" | \"locked\" | \"completed\" | \"inprogress\" | \"active\"",
+        "required": false,
+        "description": "The stage of the step",
+        "defaultValue": "pending"
+      },
+      "expanded": {
+        "type": "boolean",
+        "required": false,
+        "description": "Whether the step item is expanded."
+      },
+      "defaultExpanded": {
+        "type": "boolean",
+        "required": false,
+        "description": "Initial expanded state of the step."
+      },
+      "onToggle": {
+        "type": "MouseEventHandler<HTMLButtonElement>",
+        "required": false,
+        "description": "Callback fired when the step is toggled."
+      }
+    },
+    "category": "@salt-ds/core",
+    "related_to": "Stepper",
+    "import_statement": "import { Stepper, Step } from \"@salt-ds/core\";"
+  }
+}

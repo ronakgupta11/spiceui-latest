@@ -1,0 +1,58 @@
+{
+  "component_name": "FlexItem",
+  "metadata": {
+    "component_name": "FlexItem",
+    "props": {
+      "align": {
+        "type": "\"start\" | \"end\" | \"center\" | \"stretch\"",
+        "required": false,
+        "description": "Allows the alignment specified by parent to be overridden for individual items, default is \"start\"."
+      },
+      "shrink": {
+        "type": "ResponsiveProp<number>",
+        "required": false,
+        "description": "Defines the ability for an item to shrink x times more compared to its siblings, default is 1."
+      },
+      "grow": {
+        "type": "ResponsiveProp<number>",
+        "required": false,
+        "description": "Defines the ability for an item to grow x times more compared to its siblings, default is 0."
+      },
+      "basis": {
+        "type": "ResponsiveProp<FlexBasis<string | number>>",
+        "required": false,
+        "description": "Sets the initial main size of a flex item, default is \"auto\"."
+      },
+      "margin": {
+        "type": "ResponsiveProp<string | number>",
+        "required": false,
+        "description": "Defines the margin around the component. It can be specified as a number (which acts as a multiplier) or a string representing the margin value. Default is `0`.",
+        "defaultValue": "0"
+      },
+      "padding": {
+        "type": "ResponsiveProp<string | number>",
+        "required": false,
+        "description": "Defines the padding within the component. It can be specified as a number (which acts as a multiplier) or a string representing the padding value. Default is `0`.",
+        "defaultValue": "0"
+      },
+      "as": {
+        "type": "ElementType<any, keyof IntrinsicElements>",
+        "required": false,
+        "description": "The HTML element used for the root node."
+      },
+      "ref": {
+        "type": "any",
+        "required": false,
+        "description": ""
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { FlexItem } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "component_name": "PageButton",
+  "metadata": {
+    "component_name": "PageButton",
+    "props": {
+      "page": {
+        "type": "number",
+        "required": true,
+        "description": ""
+      },
+      "selected": {
+        "type": "boolean",
+        "required": false,
+        "description": ""
+      },
+      "disabled": {
+        "type": "boolean",
+        "required": false,
+        "description": ""
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { PageButton } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

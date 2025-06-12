@@ -162,13 +162,14 @@ class ComponentVectorStore:
                 'component_name': metadata['component_name'],
                 'description': metadata['metadata']['description'],
                 'props': json.dumps(metadata['metadata']['props']),
-                'examples': json.dumps(metadata['metadata']['examples']),
-                'category': metadata['metadata']['category'] or "",
-                'tags': json.dumps(metadata['metadata']['tags'])
+                'examples': json.dumps(metadata['metadata'].get('examples', [])),
+                'category': metadata['metadata'].get('category', ""),
+                'tags': json.dumps(metadata['metadata'].get('tags', []))
             }
             
+            
             # Create a text representation of the component for embedding
-            component_text = f"{metadata['component_name']} {metadata['metadata']['description']} {' '.join(metadata['metadata']['tags'])}"
+            component_text = f"{metadata['component_name']} {metadata['metadata']['description']} {' '.join(metadata['metadata'].get('tags', []))}"
             
             # Create embedding
             embedding = self._create_embedding(component_text)

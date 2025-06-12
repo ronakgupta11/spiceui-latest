@@ -1,0 +1,46 @@
+{
+  "component_name": "InteractableCard",
+  "metadata": {
+    "component_name": "InteractableCard",
+    "props": {
+      "accent": {
+        "type": "\"bottom\" | \"top\" | \"left\" | \"right\"",
+        "required": false,
+        "description": "Accent border position: defaults to \"bottom\""
+      },
+      "accentPlacement": {
+        "type": "\"bottom\" | \"top\" | \"left\" | \"right\"",
+        "required": false,
+        "description": "@deprecated Use the `accent` prop instead"
+      },
+      "disabled": {
+        "type": "boolean",
+        "required": false,
+        "description": "If `true`, the card will be disabled."
+      },
+      "onChange": {
+        "type": "(event: SyntheticEvent<HTMLDivElement, Event>) => void",
+        "required": false,
+        "description": "Callback fired when the selection changes.\n@param event"
+      },
+      "variant": {
+        "type": "\"primary\" | \"secondary\" | \"tertiary\"",
+        "required": false,
+        "description": "Styling variant; defaults to \"primary\"."
+      },
+      "value": {
+        "type": "InteractableCardValue",
+        "required": false,
+        "description": "Value of card (for selectable use case)."
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { InteractableCard } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

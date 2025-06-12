@@ -1,0 +1,38 @@
+{
+  "component_name": "Display3",
+  "metadata": {
+    "component_name": "Display3",
+    "description": "Props for Display3 component",
+    "props": {
+      "disabled": {
+        "type": "boolean",
+        "required": false,
+        "description": "Applies disabled styling when true"
+      },
+      "maxRows": {
+        "type": "number",
+        "required": false,
+        "description": "Apply text truncation by mentioning number of rows to be displayed"
+      },
+      "styleAs": {
+        "type": "\"code\" | \"h1\" | \"h2\" | \"h3\" | \"h4\" | \"label\" | \"display1\" | \"display2\" | \"display3\" | \"display4\" | \"notation\" | \"action\"",
+        "required": false,
+        "description": "Match styling to another text component's style",
+        "defaultValue": "display4"
+      },
+      "variant": {
+        "type": "\"primary\" | \"secondary\"",
+        "required": false,
+        "description": "Change text color palette\n@deprecated Use `color` instead"
+      },
+      "color": {
+        "type": "\"error\" | \"warning\" | \"success\" | \"info\" | \"primary\" | \"secondary\" | \"inherit\"",
+        "required": false,
+        "description": ""
+      }
+    },
+    "category": "@salt-ds/core",
+    "related_to": "Text",
+    "import_statement": "import {\n  Text,\n  Display1,\n  Display2,\n  Display3,\n  H1,\n  H2,\n  H3,\n  H4,\n  Label,\n  TextNotation,\n  TextAction,\n} from \"@salt-ds/core\";"
+  }
+}

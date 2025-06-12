@@ -1,0 +1,44 @@
+{
+  "component_name": "LinearProgress",
+  "metadata": {
+    "component_name": "LinearProgress",
+    "props": {
+      "bufferValue": {
+        "type": "number",
+        "required": false,
+        "description": "The value of the buffer indicator.\nValue between `min` and `max`.\nWhen no `value` and `bufferValue` is passed in, show as indeterminate state."
+      },
+      "hideLabel": {
+        "type": "boolean",
+        "required": false,
+        "description": "Whether to hide the text label within the progress. Defaults to `false`.",
+        "defaultValue": "false"
+      },
+      "max": {
+        "type": "number",
+        "required": false,
+        "description": "The value of the max progress indicator.\nDefault value is 100.",
+        "defaultValue": "100"
+      },
+      "min": {
+        "type": "number",
+        "required": false,
+        "description": "The value of the min progress indicator.\nDefault value is 0.",
+        "defaultValue": "0"
+      },
+      "value": {
+        "type": "number",
+        "required": false,
+        "description": "The value of the progress indicator.\nValue between `min` and `max`.\nWhen no `value` and `bufferValue` is passed in, show as indeterminate state."
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { LinearProgress } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

@@ -2,7 +2,6 @@
   "component_name": "Dialog",
   "metadata": {
     "component_name": "Dialog",
-    "description": "`Dialog` is a window that opens over the application content, focusing the user’s attention on a particular task or piece of information. It can communicate new information, errors, warnings, or successful completion of a process or task.",
     "props": {
       "open": {
         "type": "boolean",
@@ -15,7 +14,7 @@
         "description": "Callback function triggered when open state changes."
       },
       "status": {
-        "type": "enum",
+        "type": "\"error\" | \"warning\" | \"success\" | \"info\"",
         "required": false,
         "description": "The status of the Dialog"
       },
@@ -25,7 +24,7 @@
         "description": "Which element to initially focus. Can be either a number (tabbable index as specified by the order) or a ref.\nDefault value is 0 (first tabbable element)."
       },
       "size": {
-        "type": "enum",
+        "type": "\"small\" | \"medium\" | \"large\"",
         "required": false,
         "description": "Size of the Dialog"
       },
@@ -45,6 +44,38 @@
         "description": "Optional id prop\nUsed for accessibility purposes to announce the title and subtitle when using a screen reader"
       }
     },
+    "category": "@salt-ds/core",
+    "description": "`Dialog` is a window that opens over the application content, focusing the user’s attention on a particular task or piece of information. It can communicate new information, errors, warnings, or successful completion of a process or task.",
+    "tags": [
+      "Modal",
+      "Modal dialog",
+      "Overlay",
+      "Popup"
+    ],
+    "when_to_use": [
+      "To notify the user of critical information related to their current workflow that requires immediate action.",
+      "To interrupt the user's flow."
+    ],
+    "when_not_to_use": [
+      "When you don't need to interrupt the user's flow. If the information is part of an event that’s occurred in a peripheral application or workflow, use [`Toast`](../toast) instead. If the information is related to the current workflow, use [`Banner`](../banner) instead.",
+      "To launch a dialog from another dialog. Users may struggle to dismiss the two dialogs and may not understand which dialog is higher priority. Consider an alternative solution, such as progressively disclosing information in the first dialog."
+    ],
+    "import_statement": "import {\n  Dialog,\n  DialogHeader,\n  DialogActions,\n  DialogContent,\n  DialogCloseButton,\n} from \"@salt-ds/core\";",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/tree/main/packages/core/src/dialog",
+    "related_components": [
+      {
+        "name": "Banner",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Drawer",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Toast",
+        "relationship": "similarTo"
+      }
+    ],
     "examples": [
       {
         "name": "CloseButton",
@@ -105,37 +136,6 @@
         "name": "WithoutAccent",
         "description": "",
         "code": "import {\n  Button,\n  Dialog,\n  DialogActions,\n  DialogContent,\n  DialogHeader,\n  H3,\n  StackLayout,\n  useId,\n} from \"@salt-ds/core\";\nimport { type ReactElement, useState } from \"react\";\n\nexport const WithoutAccent = (): ReactElement => {\n  const [open, setOpen] = useState(false);\n  const id = useId();\n\n  const handleRequestOpen = () => {\n    setOpen(true);\n  };\n\n  const onOpenChange = (value: boolean) => {\n    setOpen(value);\n  };\n\n  const handleClose = () => {\n    setOpen(false);\n  };\n\n  return (\n    <>\n      <Button onClick={handleRequestOpen}>Open dialog without accent</Button>\n      <Dialog open={open} onOpenChange={onOpenChange} id={id}>\n        <DialogHeader header=\"Terms and conditions\" disableAccent />\n        <DialogContent style={{ maxHeight: 250 }}>\n          <StackLayout>\n            <div>\n              When you add a Chase Card to a Wallet, you agree to these Terms:\n            </div>\n            <H3>Adding Your Chase Card</H3>\n            <div>\n              You can add an eligible Chase Card to a Wallet by either following\n              our instructions as they appear on a Chase proprietary platform\n              (e.g., Chase Mobile® app or chase.com) or by following the\n              instructions of the Wallet provider. Only Chase Cards that we\n              determine are eligible can be added to the Wallet.\n            </div>\n            <div>\n              If your Chase Card or underlying account is not in good standing,\n              that Chase Card will not be eligible to be added to or enrolled in\n              the Wallet. We may determine other eligibility criteria in our\n              sole discretion.\n            </div>\n            When you add a Chase Card to a Wallet, the Wallet may allow you to\n            (a) use the Chase Card to (i) enable transfers of money between you\n            and others who are enrolled with the Wallet provider or a partner of\n            such Wallet provider, and/or (ii) enter into transactions where the\n            Wallet is accepted, including the ability to use the Chase Card to\n            complete transactions at participating merchants' physical\n            locations, e-commerce locations, and at ATMs; and (b) use other\n            services that are described in the Wallet provider's agreement or\n            that they may offer from time to time. The Wallet may not be\n            accepted at all places where your Chase Card is accepted.\n            <div>\n              We reserve the right to terminate our participation in a Wallet or\n              with a Wallet provider at any time and the right to designate a\n              maximum number of Chase Cards that may be added to a Wallet.\n            </div>\n          </StackLayout>\n        </DialogContent>\n        <DialogActions>\n          <Button\n            appearance=\"bordered\"\n            onClick={handleClose}\n            style={{ marginRight: \"auto\" }}\n          >\n            My privacy settings\n          </Button>\n          <Button\n            sentiment=\"accented\"\n            appearance=\"bordered\"\n            onClick={handleClose}\n          >\n            Cancel\n          </Button>\n          <Button sentiment=\"accented\" onClick={handleClose}>\n            Accept\n          </Button>\n        </DialogActions>\n      </Dialog>\n    </>\n  );\n};\n"
-      }
-    ],
-    "category": "@salt-ds/core",
-    "tags": [
-      "Modal",
-      "Modal dialog",
-      "Overlay",
-      "Popup"
-    ],
-    "when_to_use": [
-      "To notify the user of critical information related to their current workflow that requires immediate action.",
-      "To interrupt the user's flow."
-    ],
-    "when_not_to_use": [
-      "When you don't need to interrupt the user's flow. If the information is part of an event that’s occurred in a peripheral application or workflow, use [`Toast`](../toast) instead. If the information is related to the current workflow, use [`Banner`](../banner) instead.",
-      "To launch a dialog from another dialog. Users may struggle to dismiss the two dialogs and may not understand which dialog is higher priority. Consider an alternative solution, such as progressively disclosing information in the first dialog."
-    ],
-    "import_statement": "",
-    "source_code_url": "https://github.com/jpmorganchase/salt-ds/tree/main/packages/core/src/dialog",
-    "related_components": [
-      {
-        "name": "Banner",
-        "relationship": "similarTo"
-      },
-      {
-        "name": "Drawer",
-        "relationship": "similarTo"
-      },
-      {
-        "name": "Toast",
-        "relationship": "similarTo"
       }
     ]
   }

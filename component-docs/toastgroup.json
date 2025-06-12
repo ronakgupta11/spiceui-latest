@@ -1,0 +1,17 @@
+{
+  "component_name": "ToastGroup",
+  "metadata": {
+    "component_name": "ToastGroup",
+    "description": "Props for ToastGroup component",
+    "props": {
+      "placement": {
+        "type": "\"top-right\" | \"bottom-right\"",
+        "required": false,
+        "description": ""
+      }
+    },
+    "category": "@salt-ds/core",
+    "related_to": "Toast",
+    "import_statement": "import { Toast, ToastContent } from \"@salt-ds/core\";"
+  }
+}

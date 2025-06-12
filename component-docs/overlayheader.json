@@ -1,0 +1,36 @@
+{
+  "component_name": "OverlayHeader",
+  "metadata": {
+    "component_name": "OverlayHeader",
+    "props": {
+      "description": {
+        "type": "ReactNode",
+        "required": false,
+        "description": "Description text is displayed just below the header"
+      },
+      "actions": {
+        "type": "ReactNode",
+        "required": false,
+        "description": "Actions to be displayed in header"
+      },
+      "header": {
+        "type": "ReactNode",
+        "required": false,
+        "description": "Header text"
+      },
+      "preheader": {
+        "type": "ReactNode",
+        "required": false,
+        "description": "Preheader text is displayed just above the header"
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { OverlayHeader } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

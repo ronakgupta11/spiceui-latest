@@ -1,0 +1,41 @@
+{
+  "component_name": "RadioButtonIcon",
+  "metadata": {
+    "component_name": "RadioButtonIcon",
+    "props": {
+      "checked": {
+        "type": "boolean",
+        "required": false,
+        "description": ""
+      },
+      "disabled": {
+        "type": "boolean",
+        "required": false,
+        "description": ""
+      },
+      "error": {
+        "type": "boolean",
+        "required": false,
+        "description": "@deprecated Use validationStatus instead"
+      },
+      "readOnly": {
+        "type": "boolean",
+        "required": false,
+        "description": ""
+      },
+      "validationStatus": {
+        "type": "\"error\" | \"warning\" | \"success\"",
+        "required": false,
+        "description": ""
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "Default radio icon",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { RadioButtonIcon } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

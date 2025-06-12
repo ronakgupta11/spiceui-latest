@@ -1,0 +1,95 @@
+{
+  "component_name": "SliderTrack",
+  "metadata": {
+    "component_name": "SliderTrack",
+    "props": {
+      "constrainLabelPosition": {
+        "type": "boolean",
+        "required": false,
+        "description": "",
+        "defaultValue": "false"
+      },
+      "disabled": {
+        "type": "boolean",
+        "required": true,
+        "description": ""
+      },
+      "showTicks": {
+        "type": "boolean",
+        "required": false,
+        "description": ""
+      },
+      "format": {
+        "type": "(value: number) => string | number",
+        "required": false,
+        "description": ""
+      },
+      "handlePointerDown": {
+        "type": "(event: PointerEvent<HTMLDivElement>) => void",
+        "required": true,
+        "description": ""
+      },
+      "isDragging": {
+        "type": "boolean",
+        "required": true,
+        "description": ""
+      },
+      "isRange": {
+        "type": "boolean",
+        "required": false,
+        "description": "",
+        "defaultValue": "false"
+      },
+      "marks": {
+        "type": "{ label: string; value: number; }[]",
+        "required": false,
+        "description": ""
+      },
+      "max": {
+        "type": "number",
+        "required": true,
+        "description": ""
+      },
+      "maxLabel": {
+        "type": "string | number",
+        "required": false,
+        "description": ""
+      },
+      "min": {
+        "type": "number",
+        "required": true,
+        "description": ""
+      },
+      "minLabel": {
+        "type": "string | number",
+        "required": false,
+        "description": ""
+      },
+      "progressPercentage": {
+        "type": "number",
+        "required": false,
+        "description": "",
+        "defaultValue": "0"
+      },
+      "progressPercentageRange": {
+        "type": "[number, number]",
+        "required": false,
+        "description": "",
+        "defaultValue": "[0, 0]"
+      },
+      "sliderRef": {
+        "type": "RefObject<HTMLDivElement>",
+        "required": true,
+        "description": ""
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { SliderTrack } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

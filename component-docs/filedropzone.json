@@ -1,0 +1,31 @@
+{
+  "component_name": "FileDropZone",
+  "metadata": {
+    "component_name": "FileDropZone",
+    "props": {
+      "disabled": {
+        "type": "boolean",
+        "required": false,
+        "description": "If `true`, the file drop zone will be disabled."
+      },
+      "status": {
+        "type": "Omit<\"error\" | \"warning\" | \"success\" | \"info\", \"warning\" | \"info\">",
+        "required": false,
+        "description": "Status indicator to be displayed."
+      },
+      "onDrop": {
+        "type": "(event: DragEvent<HTMLDivElement>, files: File[]) => void",
+        "required": false,
+        "description": "Callback for on drop event"
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { FileDropZone } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

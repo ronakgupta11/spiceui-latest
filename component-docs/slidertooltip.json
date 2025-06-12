@@ -1,0 +1,26 @@
+{
+  "component_name": "SliderTooltip",
+  "metadata": {
+    "component_name": "SliderTooltip",
+    "props": {
+      "value": {
+        "type": "string | number",
+        "required": true,
+        "description": ""
+      },
+      "open": {
+        "type": "boolean",
+        "required": false,
+        "description": ""
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { SliderTooltip } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

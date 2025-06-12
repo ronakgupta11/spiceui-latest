@@ -1,0 +1,61 @@
+{
+  "component_name": "NavigationItem",
+  "metadata": {
+    "component_name": "NavigationItem",
+    "props": {
+      "active": {
+        "type": "boolean",
+        "required": false,
+        "description": "Whether the navigation item is active."
+      },
+      "blurActive": {
+        "type": "boolean",
+        "required": false,
+        "description": "Whether the nested group is collapsed and there is an active nested item within it."
+      },
+      "expanded": {
+        "type": "boolean",
+        "required": false,
+        "description": "Whether the navigation item is expanded."
+      },
+      "level": {
+        "type": "number",
+        "required": false,
+        "description": "Level of nesting."
+      },
+      "orientation": {
+        "type": "\"horizontal\" | \"vertical\"",
+        "required": false,
+        "description": "The orientation of the navigation item."
+      },
+      "parent": {
+        "type": "boolean",
+        "required": false,
+        "description": "Whether the navigation item is a parent with nested items."
+      },
+      "render": {
+        "type": "ReactElement<any, string | JSXElementConstructor<any>> | ((props: any) => ReactElement<any, string | JSXElementConstructor<any>>)",
+        "required": false,
+        "description": "Render prop to enable customisation of navigation item element."
+      },
+      "onExpand": {
+        "type": "MouseEventHandler<HTMLButtonElement>",
+        "required": false,
+        "description": "Action to be triggered when the navigation item is expanded."
+      },
+      "href": {
+        "type": "string",
+        "required": false,
+        "description": "Href to be passed to the Link element."
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { NavigationItem } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

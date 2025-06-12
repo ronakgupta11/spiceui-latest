@@ -2,21 +2,72 @@
   "component_name": "Banner",
   "metadata": {
     "component_name": "Banner",
-    "description": "`Banner` is a type of notification that displays a message or provides feedback related to the user’s current workflow, spanning the page or container horizontally. It can communicate new information, errors, warnings, or successful completion of a process or task.",
     "props": {
       "variant": {
-        "type": "enum",
+        "type": "\"primary\" | \"secondary\"",
         "required": false,
         "description": "Emphasize the styling by applying a background color: defaults to false",
         "defaultValue": "primary"
       },
       "status": {
-        "type": "enum",
+        "type": "\"error\" | \"warning\" | \"success\" | \"info\"",
         "required": false,
         "description": "A string to determine the current state of the Banner",
         "defaultValue": "info"
       }
     },
+    "category": "@salt-ds/core",
+    "description": "`Banner` is a type of notification that displays a message or provides feedback related to the user’s current workflow, spanning the page or container horizontally. It can communicate new information, errors, warnings, or successful completion of a process or task.",
+    "tags": [
+      "Alert",
+      "Application Message",
+      "Notification",
+      "Strip",
+      "System Message"
+    ],
+    "when_to_use": [
+      "To show a notification that applies to the user’s current task or workflow."
+    ],
+    "when_not_to_use": [
+      "To notify users of an event that has occurred in a peripheral application or workflow. Instead, use [`Toast`](../toast).",
+      "When a low priority event not requiring user feedback causes the notification. Instead, use [`Toast`](../toast)."
+    ],
+    "import_statement": "import { Banner, BannerContent, BannerActions } from \"@salt-ds/core\";",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/core/src/banner",
+    "related_components": [
+      {
+        "name": "Content status",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Dialog",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Toast",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Tooltip",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Button",
+        "relationship": "contains"
+      },
+      {
+        "name": "Icon",
+        "relationship": "contains"
+      },
+      {
+        "name": "Link",
+        "relationship": "contains"
+      },
+      {
+        "name": "Status indicator",
+        "relationship": "contains"
+      }
+    ],
     "examples": [
       {
         "name": "Error",
@@ -57,57 +108,6 @@
         "name": "Warning",
         "description": "Use the warning banner to inform users of an issue or potential issue related to their current task that won't prevent them from continuing the task, but may cause errors if they don't address it, such as a restriction due to entitlements or current system status.\n\nA warning icon displays alongside a supporting message.",
         "code": "import {\n  Banner,\n  BannerActions,\n  BannerContent,\n  Button,\n  StackLayout,\n  Text,\n} from \"@salt-ds/core\";\nimport { CloseIcon } from \"@salt-ds/icons\";\nimport type { ReactElement } from \"react\";\n\nexport const Warning = (): ReactElement => (\n  <StackLayout gap={3} style={{ width: \"80%\" }}>\n    <Banner status=\"warning\">\n      <BannerContent role=\"status\">\n        Your connection is unstable. Please proceed with caution.\n      </BannerContent>\n      <BannerActions>\n        <Button aria-label=\"close\" appearance=\"transparent\">\n          <CloseIcon />\n        </Button>\n      </BannerActions>\n    </Banner>\n    <Text styleAs=\"h1\">Header</Text>\n    <Text>\n      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod\n      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim\n      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea\n      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate\n      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat\n      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id\n      est laborum.\n    </Text>\n  </StackLayout>\n);\n"
-      }
-    ],
-    "category": "@salt-ds/core",
-    "tags": [
-      "Alert",
-      "Application Message",
-      "Notification",
-      "Strip",
-      "System Message"
-    ],
-    "when_to_use": [
-      "To show a notification that applies to the user’s current task or workflow."
-    ],
-    "when_not_to_use": [
-      "To notify users of an event that has occurred in a peripheral application or workflow. Instead, use [`Toast`](../toast).",
-      "When a low priority event not requiring user feedback causes the notification. Instead, use [`Toast`](../toast)."
-    ],
-    "import_statement": "",
-    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/core/src/banner",
-    "related_components": [
-      {
-        "name": "Content status",
-        "relationship": "similarTo"
-      },
-      {
-        "name": "Dialog",
-        "relationship": "similarTo"
-      },
-      {
-        "name": "Toast",
-        "relationship": "similarTo"
-      },
-      {
-        "name": "Tooltip",
-        "relationship": "similarTo"
-      },
-      {
-        "name": "Button",
-        "relationship": "contains"
-      },
-      {
-        "name": "Icon",
-        "relationship": "contains"
-      },
-      {
-        "name": "Link",
-        "relationship": "contains"
-      },
-      {
-        "name": "Status indicator",
-        "relationship": "contains"
       }
     ]
   }

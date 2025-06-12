@@ -2,7 +2,6 @@
   "component_name": "Switch",
   "metadata": {
     "component_name": "Switch",
-    "description": "`Switch` is a binary control used to switch between two different states. When interacted with, the thumb of the switch travels along the track to indicate state. You can use a switch to control settings, preferences, or actions within an application or system.",
     "props": {
       "checked": {
         "type": "boolean",
@@ -55,34 +54,8 @@
         "description": "The value of the switch."
       }
     },
-    "examples": [
-      {
-        "name": "Default",
-        "description": "",
-        "code": "import { Switch } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Default = (): ReactElement => <Switch label=\"Default\" />;\n"
-      },
-      {
-        "name": "DefaultChecked",
-        "description": "",
-        "code": "import { Switch } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const DefaultChecked = (): ReactElement => (\n  <Switch label=\"Checked\" defaultChecked />\n);\n"
-      },
-      {
-        "name": "Disabled",
-        "description": "You can set a switch to a disabled state. When `disabled`, it's not interactive or focusable.\n\n#",
-        "code": "import { Switch } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Disabled = (): ReactElement => (\n  <Switch label=\"Disabled\" disabled />\n);\n"
-      },
-      {
-        "name": "DisabledChecked",
-        "description": "",
-        "code": "import { Switch } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const DisabledChecked = (): ReactElement => (\n  <Switch label=\"Disabled + Checked\" disabled defaultChecked />\n);\n"
-      },
-      {
-        "name": "LeftAlignedLabel",
-        "description": "",
-        "code": "import { FormField, FormFieldLabel, Switch } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const LeftAlignedLabel = (): ReactElement => (\n  <div>\n    <FormField labelPlacement=\"left\">\n      <FormFieldLabel>Active</FormFieldLabel>\n      <Switch />\n    </FormField>\n  </div>\n);\n"
-      }
-    ],
     "category": "@salt-ds/core",
+    "description": "`Switch` is a binary control used to switch between two different states. When interacted with, the thumb of the switch travels along the track to indicate state. You can use a switch to control settings, preferences, or actions within an application or system.",
     "tags": [
       "Lightswitch",
       "Toggle",
@@ -124,6 +97,33 @@
       {
         "name": "Toggle button",
         "relationship": "similarTo"
+      }
+    ],
+    "examples": [
+      {
+        "name": "Default",
+        "description": "",
+        "code": "import { Switch } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Default = (): ReactElement => <Switch label=\"Default\" />;\n"
+      },
+      {
+        "name": "DefaultChecked",
+        "description": "",
+        "code": "import { Switch } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const DefaultChecked = (): ReactElement => (\n  <Switch label=\"Checked\" defaultChecked />\n);\n"
+      },
+      {
+        "name": "Disabled",
+        "description": "You can set a switch to a disabled state. When `disabled`, it's not interactive or focusable.\n\n#",
+        "code": "import { Switch } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Disabled = (): ReactElement => (\n  <Switch label=\"Disabled\" disabled />\n);\n"
+      },
+      {
+        "name": "DisabledChecked",
+        "description": "",
+        "code": "import { Switch } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const DisabledChecked = (): ReactElement => (\n  <Switch label=\"Disabled + Checked\" disabled defaultChecked />\n);\n"
+      },
+      {
+        "name": "LeftAlignedLabel",
+        "description": "",
+        "code": "import { FormField, FormFieldLabel, Switch } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const LeftAlignedLabel = (): ReactElement => (\n  <div>\n    <FormField labelPlacement=\"left\">\n      <FormFieldLabel>Active</FormFieldLabel>\n      <Switch />\n    </FormField>\n  </div>\n);\n"
       }
     ]
   }

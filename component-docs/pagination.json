@@ -2,7 +2,6 @@
   "component_name": "Pagination",
   "metadata": {
     "component_name": "Pagination",
-    "description": "`Pagination` helps users navigate easily between content separated into multiple pages. It enables users to jump to specific points within a set of results, helps focus their attention, and provides a sense of scale.",
     "props": {
       "disableStaticMarkup": {
         "type": "boolean",
@@ -78,7 +77,7 @@
         "defaultValue": "false"
       },
       "columnMenu": {
-        "type": "enum",
+        "type": "\"legacy\" | \"new\"",
         "required": false,
         "description": "Changes the display type of the column menu.\n`'new'` just displays the main list of menu items. `'legacy'` displays a tabbed menu.\n@initial",
         "defaultValue": "'new'"
@@ -96,7 +95,7 @@
         "defaultValue": "false"
       },
       "tooltipTrigger": {
-        "type": "enum",
+        "type": "\"hover\" | \"focus\"",
         "required": false,
         "description": "The trigger that will cause tooltips to show and hide.\n - `hover` - The tooltip will show/hide when a cell/header is hovered.\n - `focus` - The tooltip will show/hide when a cell/header is focused.\n@initial",
         "defaultValue": "'hover'"
@@ -120,7 +119,7 @@
         "defaultValue": "false"
       },
       "tooltipShowMode": {
-        "type": "enum",
+        "type": "\"standard\" | \"whenTruncated\"",
         "required": false,
         "description": "This defines when tooltip will show up for Cells, Headers and SetFilter Items.\n - `standard` - The tooltip always shows up when the items configured with Tooltips are hovered.\n- `whenTruncated` - The tooltip will only be displayed when the items hovered have truncated (showing ellipsis) values. This property does not work when `enableBrowserTooltips={true}`.",
         "defaultValue": "`standard`"
@@ -761,7 +760,7 @@
         "defaultValue": "false"
       },
       "pivotPanelShow": {
-        "type": "enum",
+        "type": "\"always\" | \"onlyWhenPivoting\" | \"never\"",
         "required": false,
         "description": "When to show the 'pivot panel' (where you drag rows to pivot) at the top. Note that the pivot panel will never show if `pivotMode` is off.\n@initial",
         "defaultValue": "'never'"
@@ -779,12 +778,12 @@
         "defaultValue": "0"
       },
       "pivotColumnGroupTotals": {
-        "type": "enum",
+        "type": "\"before\" | \"after\"",
         "required": false,
         "description": "When set and the grid is in pivot mode, automatically calculated totals will appear within the Pivot Column Groups, in the position specified."
       },
       "pivotRowTotals": {
-        "type": "enum",
+        "type": "\"before\" | \"after\"",
         "required": false,
         "description": "When set and the grid is in pivot mode, automatically calculated totals will appear for each value column in the position specified."
       },
@@ -882,7 +881,7 @@
         "defaultValue": "false"
       },
       "domLayout": {
-        "type": "enum",
+        "type": "\"autoHeight\" | \"normal\" | \"print\"",
         "required": false,
         "description": "Switch between layout options: `normal`, `autoHeight`, `print`.",
         "defaultValue": "'normal'"
@@ -974,7 +973,7 @@
         "defaultValue": "false"
       },
       "groupDisplayType": {
-        "type": "enum",
+        "type": "\"singleColumn\" | \"multipleColumns\" | \"groupRows\" | \"custom\"",
         "required": false,
         "description": "Specifies how the results of row grouping should be displayed.\n\n The options are:\n\n- `'singleColumn'`: single group column automatically added by the grid.\n- `'multipleColumns'`: a group column per row group is added automatically.\n- `'groupRows'`: group rows are automatically added instead of group columns.\n- `'custom'`: informs the grid that group columns will be provided."
       },
@@ -1031,7 +1030,7 @@
         "description": "When provided, an extra row group total row will be inserted into row groups at the specified position, to display\nwhen the group is expanded. This row will contain the aggregate values for the group. If a callback function is\nprovided, it can be used to selectively determine which groups will have a total row added."
       },
       "grandTotalRow": {
-        "type": "enum",
+        "type": "\"top\" | \"bottom\"",
         "required": false,
         "description": "When provided, an extra grand total row will be inserted into the grid at the specified position.\nThis row displays the aggregate totals of all rows in the grid."
       },
@@ -1083,7 +1082,7 @@
         "defaultValue": "false"
       },
       "rowGroupPanelShow": {
-        "type": "enum",
+        "type": "\"always\" | \"never\" | \"onlyWhenGrouping\"",
         "required": false,
         "description": "When to show the 'row group panel' (where you drag rows to group) at the top.",
         "defaultValue": "'never'"
@@ -1133,7 +1132,7 @@
         "description": "Data to be displayed as pinned bottom rows in the grid."
       },
       "rowModelType": {
-        "type": "enum",
+        "type": "\"infinite\" | \"viewport\" | \"clientSide\" | \"serverSide\"",
         "required": false,
         "description": "Sets the row model type.\n@initial",
         "defaultValue": "'clientSide'"
@@ -1407,7 +1406,7 @@
         "defaultValue": "false"
       },
       "fillHandleDirection": {
-        "type": "enum",
+        "type": "\"x\" | \"y\" | \"xy\"",
         "required": false,
         "description": "Set to `'x'` to force the fill handle direction to horizontal, or set to `'y'` to force the fill handle direction to vertical.\n@deprecated v32.2 Use `cellSelection.handle.direction` instead",
         "defaultValue": "'xy'"
@@ -1515,7 +1514,7 @@
         "defaultValue": "false"
       },
       "treeDataDisplayType": {
-        "type": "enum",
+        "type": "\"custom\" | \"auto\"",
         "required": false,
         "description": ""
       },
@@ -2262,6 +2261,44 @@
         "description": "@deprecated Since v31 api is no longer attached to GridOptions. See https://ag-grid.com/javascript-data-grid/grid-interface/#grid-api for how to access the api in your framework."
       }
     },
+    "category": "@salt-ds/core",
+    "description": "`Pagination` helps users navigate easily between content separated into multiple pages. It enables users to jump to specific points within a set of results, helps focus their attention, and provides a sense of scale.",
+    "tags": [
+      "Pager",
+      "Paginator",
+      "Paging"
+    ],
+    "when_to_use": [
+      "When presenting a large amount of content that may take time to load, or when users need to review and navigate to content that’s split across sequential pages.",
+      "To organize and present search results or data within a grid.",
+      "To provide a natural break point that allows users to determine if they’ve found what they need when viewing the results of a search or data query, or if they must navigate to another page or refine their initial query.",
+      "To enable users to reference specific pages within a set of results."
+    ],
+    "when_not_to_use": [
+      "When you’re walking the user through a sequential process, such as an onboarding form. Instead, use [`Stepper`](../stepper/index) to communicate current progress and the [button bar](../../../patterns/button-bar) pattern to provide navigation.",
+      "When there’s no need for users to navigate between, or filter, results. Instead, use infinite scrolling. This allows users to scroll through a large amount of content with no clear end point, adding more content to the page as the user scrolls. For example, a common use case is for news articles or social site feeds, where searching or filtering isn’t an expected behavior and the content has a flat hierarchy.",
+      "When you want to present content in clearly defined batches without defining the total number of pages. Instead, use lazy loading. A **Load More** button loads the next set of results on the same page—giving the user greater control."
+    ],
+    "import_statement": "import {\n  Pagination,\n  Paginator,\n  CompactPaginator,\n  CompactInput,\n  GoToInput,\n} from \"@salt-ds/core\";",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/core/src/pagination",
+    "related_components": [
+      {
+        "name": "Button",
+        "relationship": "contains"
+      },
+      {
+        "name": "Form field",
+        "relationship": "contains"
+      },
+      {
+        "name": "Input",
+        "relationship": "contains"
+      },
+      {
+        "name": "Icon",
+        "relationship": "contains"
+      }
+    ],
     "examples": [
       {
         "name": "BoundaryCount",
@@ -2302,43 +2339,6 @@
         "name": "Truncation",
         "description": "The component will truncate the page numbers displayed when it cannot display all of them in a given space. An ellipsis communicates this to the user.\n\n#",
         "code": "import { Pagination, Paginator } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Truncation = (): ReactElement => (\n  <Pagination count={20} defaultPage={10}>\n    <Paginator />\n  </Pagination>\n);\n"
-      }
-    ],
-    "category": "@salt-ds/core",
-    "tags": [
-      "Pager",
-      "Paginator",
-      "Paging"
-    ],
-    "when_to_use": [
-      "When presenting a large amount of content that may take time to load, or when users need to review and navigate to content that’s split across sequential pages.",
-      "To organize and present search results or data within a grid.",
-      "To provide a natural break point that allows users to determine if they’ve found what they need when viewing the results of a search or data query, or if they must navigate to another page or refine their initial query.",
-      "To enable users to reference specific pages within a set of results."
-    ],
-    "when_not_to_use": [
-      "When you’re walking the user through a sequential process, such as an onboarding form. Instead, use [`Stepper`](../stepper/index) to communicate current progress and the [button bar](../../../patterns/button-bar) pattern to provide navigation.",
-      "When there’s no need for users to navigate between, or filter, results. Instead, use infinite scrolling. This allows users to scroll through a large amount of content with no clear end point, adding more content to the page as the user scrolls. For example, a common use case is for news articles or social site feeds, where searching or filtering isn’t an expected behavior and the content has a flat hierarchy.",
-      "When you want to present content in clearly defined batches without defining the total number of pages. Instead, use lazy loading. A **Load More** button loads the next set of results on the same page—giving the user greater control."
-    ],
-    "import_statement": "import {\n  Pagination,\n  Paginator,\n  CompactPaginator,\n  CompactInput,\n  GoToInput,\n} from \"@salt-ds/core\";",
-    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/core/src/pagination",
-    "related_components": [
-      {
-        "name": "Button",
-        "relationship": "contains"
-      },
-      {
-        "name": "Form field",
-        "relationship": "contains"
-      },
-      {
-        "name": "Input",
-        "relationship": "contains"
-      },
-      {
-        "name": "Icon",
-        "relationship": "contains"
       }
     ]
   }

@@ -1,0 +1,21 @@
+{
+  "component_name": "StepperProvider",
+  "metadata": {
+    "component_name": "StepperProvider",
+    "props": {
+      "orientation": {
+        "type": "\"horizontal\" | \"vertical\"",
+        "required": true,
+        "description": ""
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { StepperProvider } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

@@ -1,0 +1,1758 @@
+{
+  "generated_at": "2025-06-12T16:54:11.243556",
+  "total_components": 438,
+  "components": [
+    {
+      "name": "Accordion",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "AccordionGroup",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "AccordionHeader",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "AccordionPanel",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "AriaAnnouncerProvider",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "Avatar",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "Badge",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "Banner",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "BannerActions",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "BannerContent",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "BorderItem",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "BorderLayout",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "BreakpointProvider",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "Button",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "Card",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "Checkbox",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "CheckboxGroup",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "CheckboxIcon",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "CircularProgress",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "Code",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "ComboBox",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "CompactInput",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "CompactPaginator",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "ConditionalScrimWrapper",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "Dialog",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "DialogActions",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "DialogCloseButton",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "DialogContent",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "DialogHeader",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "Display1",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "Display2",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "Display3",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "Display4",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "Divider",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "Drawer",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "DrawerCloseButton",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "Dropdown",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "ErrorAdornmentIcon",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "ExpansionIcon",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "FileDropZone",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "FileDropZoneIcon",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "FileDropZoneTrigger",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "FlexItem",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "FlexLayout",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "FloatingComponentProvider",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "FloatingPlatformProvider",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "FlowLayout",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "FormField",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "FormFieldHelperText",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "FormFieldLabel",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "GoToInput",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "GridItem",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "GridLayout",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "H1",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "H2",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "H3",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "H4",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "Input",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "InteractableCard",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "InteractableCardGroup",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "Label",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "LinearProgress",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "Link",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "LinkAction",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "LinkCard",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "ListBox",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "Menu",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "MenuBase",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "MenuGroup",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "MenuItem",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "MenuPanel",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "MenuPanelBase",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "MenuTrigger",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "MultilineInput",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "NavigationItem",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "NavigationItemAction",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "Option",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "OptionGroup",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "OptionList",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "OptionListBase",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "Overlay",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "OverlayHeader",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "OverlayPanel",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "OverlayPanelCloseButton",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "OverlayPanelContent",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "OverlayTrigger",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "PageButton",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "PageRanges",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "Pagination",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "Paginator",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "Panel",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "ParentChildLayout",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "Pill",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "PillInput",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "RadioButton",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "RadioButtonGroup",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "RadioButtonIcon",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "RangeSlider",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "SaltProvider",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "SaltProviderNext",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "Scrim",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "SegmentedButtonGroup",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "SemanticIconProvider",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "SkipLink",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "Slider",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "SliderThumb",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "SliderTooltip",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "SliderTrack",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "Spinner",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "SpinnerSVG",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "SpinnerSizeValues",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "SplitLayout",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "StackLayout",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "StatusAdornment",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "StatusIndicator",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "Step",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "StepExpandTrigger",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "StepIcon",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "StepScreenReaderOnly",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "StepText",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "Stepper",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "StepperProvider",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "SuccessAdornmentIcon",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "Switch",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "Tag",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "Text",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "TextAction",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "TextNotation",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "Toast",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "ToastContent",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "ToastGroup",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "ToggleButton",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "ToggleButtonGroup",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "Tooltip",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "TooltipBase",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "UNSTABLE_SaltProviderNext",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "WarningAdornmentIcon",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "useDensity",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "useFloatingUI",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "useMatchedBreakpoints",
+      "category": "@salt-ds/core"
+    },
+    {
+      "name": "AccessibleIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "AddDocumentIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "AddIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "AddToGridIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "AddUserIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "AnnouncementIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "ApiIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "AppSwitcherIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "ArrowDownIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "ArrowLeftIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "ArrowRightIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "ArrowUpIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "AttachIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "BankCheckIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "BankIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "BarChartIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "BatteryIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "BookmarkIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "BooleanIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "BrowserIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "BuildReportIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "BuildingIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "BuildingsIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "CalculatorIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "CalendarIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "CallIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "CartIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "ChatGroupIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "ChatIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "ChattingIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "CheckmarkIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "ChevronDownIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "ChevronLeftIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "ChevronRightIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "ChevronUpIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "ClockIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "CloneIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "CloseIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "ClosedcaptionDisabledIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "ClosedcaptionIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "CloudDisabledIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "CloudDownloadIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "CloudIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "CloudSuccessIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "CloudSyncIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "CloudUploadIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "CoffeeIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "CollapseAllIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "CollapseIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "ColumnChooserIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "CommentaryIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "CompareIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "CompassIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "CookieIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "CopyIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "CreditCardIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "CropsIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "CsvIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "CurrencyExchangeIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "CurrencyIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "CutIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "DarkIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "DashboardIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "DatabaseIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "DatasetIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "DatasetManagerIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "DeleteIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "DevicesIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "DiamondIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "DisplayIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "DocumentIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "DocumentSearchIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "DoubleChevronDownIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "DoubleChevronLeftIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "DoubleChevronRightIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "DoubleChevronUpIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "DownloadIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "DragRowIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "EditIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "ErrorExecuteIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "ErrorIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "ExpandAllIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "ExpandIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "ExportIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "FavoriteIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "FeedbackIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "FilterClearIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "FilterIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "FirstIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "FlagIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "FolderClosedIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "FolderOpenIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "Forward10Icon",
+      "category": "Icon"
+    },
+    {
+      "name": "Forward15Icon",
+      "category": "Icon"
+    },
+    {
+      "name": "Forward30Icon",
+      "category": "Icon"
+    },
+    {
+      "name": "Forward5Icon",
+      "category": "Icon"
+    },
+    {
+      "name": "GithubIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "GlobeIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "GridIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "GroupIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "GrowthIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "GuideClosedIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "GuideOpenIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "HandshakeIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "HeadphonesDisabledIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "HeadphonesIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "HelpIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "HiddenIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "HierarchyIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "HistoryIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "HolidayIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "HomeIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "HospitalIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "IconFigmaIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "ImageIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "ImportIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "InboxIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "IndentIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "InfoIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "JigsawIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "KeyBackspaceIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "KeyCapslockIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "KeyCommandIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "KeyControlIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "KeyEnterIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "KeyIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "KeyOptionIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "KeyShiftIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "KeyTabIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "LaptopIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "LastIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "LayersIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "LightIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "LightbulbIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "LikeIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "LineChartIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "LinkedIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "LinkedinIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "ListIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "LoaderIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "LocationIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "LockedIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "MagicWandIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "MaintenanceIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "ManIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "ManWomanIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "MapIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "MarkerIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "MaximizeIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "MedicalKitIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "MenuIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "MessageIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "MicroMenuIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "MicrophoneDisabledIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "MicrophoneIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "MinimizeIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "MobileIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "MouseIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "MoveAllIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "MoveHorizontalIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "MoveVerticalIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "MusicDisabledIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "MusicIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "NoteIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "NotificationIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "NotificationReadIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "OutdentIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "OverflowMenuIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "PasteIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "PauseIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "PdfIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "PicnicIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "PieChartIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "PinIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "PivotIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "PlaceInIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "PlayIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "PolicyIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "PotFoodIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "PresentationIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "PriceLadderIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "PrintIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "ProgressCancelledIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "ProgressClosedIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "ProgressCompleteIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "ProgressDraftIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "ProgressInprogressIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "ProgressOnholdIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "ProgressPendingIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "ProgressRejectedIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "ProgressTodoIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "ProtectionIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "ReceiptIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "RedoIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "RefreshIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "RemoveDocumentIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "RemoveIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "RemoveUserIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "Replay10Icon",
+      "category": "Icon"
+    },
+    {
+      "name": "Replay15Icon",
+      "category": "Icon"
+    },
+    {
+      "name": "Replay30Icon",
+      "category": "Icon"
+    },
+    {
+      "name": "Replay5Icon",
+      "category": "Icon"
+    },
+    {
+      "name": "RestoreIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "RunReportIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "SaltShakerIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "SaveIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "ScalesIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "ScheduleTimeIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "SchoolIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "SearchIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "SemanticDissatisfiedIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "SemanticNeutralIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "SemanticSatisfiedIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "SemanticVeryDissatisfiedIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "SemanticVerySatisfiedIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "SendIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "SettingsIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "ShareIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "SignalIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "SignatureIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "SignpostIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "SlideIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "SortAlphaAscendIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "SortAlphaDescendIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "SortAscendIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "SortDescendIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "SortIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "SortNumAscendIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "SortNumDescendIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "SortableAlphaIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "SortableNumIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "SparkleIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "SparkleRefreshIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "StackoverflowIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "StepActiveIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "StepDefaultIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "StethoscopeIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "StorageIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "StorefrontIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "StringNumberIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "StringTextIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "SuccessCircleIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "SumIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "SummarizeIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "SwapIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "SymphonyIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "SyncIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "TagClearIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "TagIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "TailsIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "TargetIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "TearOutIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "ThumbsDownIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "ThumbsUpIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "ToteIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "TravelIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "TreeIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "TriangleDownIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "TriangleLeftIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "TriangleRightDownIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "TriangleRightIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "TriangleUpIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "TypeIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "UndoIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "UngroupIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "UniversalAccessIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "UnlinkedIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "UnlockedIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "UploadIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "UrgencyCriticalIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "UrgencyHighIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "UrgencyLowIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "UrgencyMediumIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "UrgencyNoneIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "UrgencyOnTimeIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "UserAdminIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "UserBadgeIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "UserGroupIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "UserIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "UserSearchIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "UtensilsIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "VideoDisabledIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "VideoIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "VisibleIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "VolumeDownIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "VolumeOffIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "VolumeUpIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "WarningIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "WatchIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "WaveformIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "WeightIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "WifiDisabledIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "WifiIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "WomanIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "WoodlandIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "WorkflowIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "XlsIcon",
+      "category": "Icon"
+    },
+    {
+      "name": "ZipIcon",
+      "category": "Icon"
+    }
+  ]
+}

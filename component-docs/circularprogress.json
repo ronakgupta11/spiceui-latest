@@ -1,0 +1,46 @@
+{
+  "component_name": "CircularProgress",
+  "metadata": {
+    "component_name": "CircularProgress",
+    "props": {
+      "bufferValue": {
+        "type": "number",
+        "required": false,
+        "description": "The value of the buffer indicator.\nValue between 0 and max.",
+        "defaultValue": "0"
+      },
+      "hideLabel": {
+        "type": "boolean",
+        "required": false,
+        "description": "Whether to hide the text label within the progress. Defaults to `false`.",
+        "defaultValue": "false"
+      },
+      "max": {
+        "type": "number",
+        "required": false,
+        "description": "The value of the max progress indicator.\nDefault value is 100.",
+        "defaultValue": "100"
+      },
+      "min": {
+        "type": "number",
+        "required": false,
+        "description": "The value of the min progress indicator.\nDefault value is 0.",
+        "defaultValue": "0"
+      },
+      "value": {
+        "type": "number",
+        "required": false,
+        "description": "The value of the progress indicator.\nValue between 0 and max.",
+        "defaultValue": "0"
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { CircularProgress } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

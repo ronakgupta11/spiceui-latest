@@ -1,0 +1,26 @@
+{
+  "component_name": "MenuGroup",
+  "metadata": {
+    "component_name": "MenuGroup",
+    "props": {
+      "label": {
+        "type": "string",
+        "required": false,
+        "description": "The label of the menu group."
+      },
+      "children": {
+        "type": "ReactNode",
+        "required": false,
+        "description": "Menus to be rendered inside the menu group."
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { MenuGroup } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "component_name": "SpinnerSVG",
+  "metadata": {
+    "component_name": "SpinnerSVG",
+    "props": {
+      "id": {
+        "type": "string",
+        "required": false,
+        "description": "",
+        "defaultValue": "svg-spinner"
+      },
+      "rest": {
+        "type": "Omit<SVGAttributes<SVGSVGElement>, \"id\">",
+        "required": false,
+        "description": ""
+      },
+      "size": {
+        "type": "\"large\" | \"small\" | \"medium\"",
+        "required": true,
+        "description": ""
+      },
+      "density": {
+        "type": "\"medium\" | \"high\" | \"low\" | \"touch\"",
+        "required": true,
+        "description": ""
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { SpinnerSVG } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

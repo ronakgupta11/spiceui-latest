@@ -2,7 +2,6 @@
   "component_name": "Checkbox",
   "metadata": {
     "component_name": "Checkbox",
-    "description": "`Checkbox` and `CheckboxGroup` allow users to select or deselect a specific option. A checkbox can stand alone to control a single option, or form part of a checkbox group to control multiple options.",
     "props": {
       "checked": {
         "type": "boolean",
@@ -71,11 +70,46 @@
         "description": "The value of the checkbox."
       },
       "validationStatus": {
-        "type": "enum",
+        "type": "\"error\" | \"warning\" | \"success\"",
         "required": false,
         "description": "Validation status, one of \"warning\" | \"error\" | \"success\"\n\nCheckbox has styling variants for \"error\" and \"warning\".\nNo visual styling will be applied on \"success\" variant."
       }
     },
+    "category": "@salt-ds/core",
+    "description": "`Checkbox` and `CheckboxGroup` allow users to select or deselect a specific option. A checkbox can stand alone to control a single option, or form part of a checkbox group to control multiple options.",
+    "tags": [
+      "Check box",
+      "Tick box",
+      "Tickbox"
+    ],
+    "when_to_use": [
+      "To present an independent choice that the user can select or deselect.",
+      "To present a list of independent options where the user can select any number of choices."
+    ],
+    "when_not_to_use": [
+      "When the checkbox displays a mutually exclusive choice between two or more options. Instead, use [`RadioButton`](../radio-button).",
+      "To display a single option but trigger a state change directly and immediately. Instead, use [`Switch`](../switch)."
+    ],
+    "import_statement": "import { Checkbox, CheckboxGroup } from \"@salt-ds/core\";",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/core/src/checkbox",
+    "related_components": [
+      {
+        "name": "Dropdown",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Radio button",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Switch",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "ToggleButton",
+        "relationship": "similarTo"
+      }
+    ],
     "examples": [
       {
         "name": "Default",
@@ -141,40 +175,6 @@
         "name": "WrapGroup",
         "description": "",
         "code": "import { Checkbox, CheckboxGroup } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const WrapGroup = (): ReactElement => (\n  <div\n    style={{\n      width: 250,\n    }}\n  >\n    <CheckboxGroup name=\"fx\" direction=\"horizontal\" wrap>\n      <Checkbox label=\"Alternatives\" value=\"alternatives\" />\n      <Checkbox label=\"Equities\" value=\"equities\" />\n      <Checkbox disabled label=\"Fixed income\" value=\"fixed income\" />\n    </CheckboxGroup>\n  </div>\n);\n"
-      }
-    ],
-    "category": "@salt-ds/core",
-    "tags": [
-      "Check box",
-      "Tick box",
-      "Tickbox"
-    ],
-    "when_to_use": [
-      "To present an independent choice that the user can select or deselect.",
-      "To present a list of independent options where the user can select any number of choices."
-    ],
-    "when_not_to_use": [
-      "When the checkbox displays a mutually exclusive choice between two or more options. Instead, use [`RadioButton`](../radio-button).",
-      "To display a single option but trigger a state change directly and immediately. Instead, use [`Switch`](../switch)."
-    ],
-    "import_statement": "import { Checkbox, CheckboxGroup } from \"@salt-ds/core\";",
-    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/core/src/checkbox",
-    "related_components": [
-      {
-        "name": "Dropdown",
-        "relationship": "similarTo"
-      },
-      {
-        "name": "Radio button",
-        "relationship": "similarTo"
-      },
-      {
-        "name": "Switch",
-        "relationship": "similarTo"
-      },
-      {
-        "name": "ToggleButton",
-        "relationship": "similarTo"
       }
     ]
   }

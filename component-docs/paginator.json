@@ -1,0 +1,26 @@
+{
+  "component_name": "Paginator",
+  "metadata": {
+    "component_name": "Paginator",
+    "props": {
+      "boundaryCount": {
+        "type": "number",
+        "required": false,
+        "description": "Number of pages next to the arrow buttons when page range is truncated."
+      },
+      "siblingCount": {
+        "type": "number",
+        "required": false,
+        "description": "Number of pages on each side of the current page when page range is truncated."
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { Paginator } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "component_name": "MultilineInput",
+  "metadata": {
+    "component_name": "MultilineInput",
+    "props": {
+      "bordered": {
+        "type": "boolean",
+        "required": false,
+        "description": "Styling variant with full border. Defaults to false",
+        "defaultValue": "false"
+      },
+      "endAdornment": {
+        "type": "ReactNode",
+        "required": false,
+        "description": "End adornment component"
+      },
+      "readOnly": {
+        "type": "boolean",
+        "required": false,
+        "description": "If `true`, the component is read only."
+      },
+      "rows": {
+        "type": "number",
+        "required": false,
+        "description": "The default minimum number of rows. Defaults to 3",
+        "defaultValue": "3"
+      },
+      "startAdornment": {
+        "type": "ReactNode",
+        "required": false,
+        "description": "Start adornment component"
+      },
+      "textAreaProps": {
+        "type": "Partial<TextareaHTMLAttributes<HTMLTextAreaElement>> & DataAttributes",
+        "required": false,
+        "description": "[Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#Attributes) applied to the `textarea` element.",
+        "defaultValue": "{}"
+      },
+      "textAreaRef": {
+        "type": "Ref<HTMLTextAreaElement>",
+        "required": false,
+        "description": "Optional ref for the textarea component"
+      },
+      "validationStatus": {
+        "type": "\"error\" | \"warning\" | \"success\"",
+        "required": false,
+        "description": "Validation status."
+      },
+      "variant": {
+        "type": "\"primary\" | \"secondary\"",
+        "required": false,
+        "description": "Styling variant. Defaults to \"primary\".",
+        "defaultValue": "primary"
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { MultilineInput } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

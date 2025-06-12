@@ -1,0 +1,29 @@
+{
+  "component_name": "GoToInput",
+  "metadata": {
+    "component_name": "GoToInput",
+    "description": "Props for GoToInput component",
+    "props": {
+      "label": {
+        "type": "string",
+        "required": false,
+        "description": "Input label.",
+        "defaultValue": "Go to"
+      },
+      "inputRef": {
+        "type": "Ref<HTMLInputElement>",
+        "required": false,
+        "description": "Optional ref for the input component"
+      },
+      "inputVariant": {
+        "type": "\"primary\" | \"secondary\"",
+        "required": false,
+        "description": "Change input variant.",
+        "defaultValue": "primary"
+      }
+    },
+    "category": "@salt-ds/core",
+    "related_to": "Pagination",
+    "import_statement": "import {\n  Pagination,\n  Paginator,\n  CompactPaginator,\n  CompactInput,\n  GoToInput,\n} from \"@salt-ds/core\";"
+  }
+}

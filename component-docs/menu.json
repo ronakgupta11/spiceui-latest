@@ -2,7 +2,6 @@
   "component_name": "Menu",
   "metadata": {
     "component_name": "Menu",
-    "description": "`Menu` is a container that presents a selection of choices or actions for a user to choose from. The user opens it with a customizable trigger, e.g., an interactive element such as a button, or an interaction, such as right mouse click or keyboard shortcut.",
     "props": {
       "open": {
         "type": "boolean",
@@ -20,7 +19,7 @@
         "description": "Callback function triggered when open state changes."
       },
       "placement": {
-        "type": "enum",
+        "type": "\"top\" | \"right\" | \"bottom\" | \"left\" | \"top-start\" | \"top-end\" | \"right-start\" | \"right-end\" | \"bottom-start\" | \"bottom-end\" | \"left-start\" | \"left-end\"",
         "required": false,
         "description": "Set the placement of the Menu component relative to the trigger element. Defaults to `bottom-start` if it's the root menu or `right-start` if it's nested."
       },
@@ -30,6 +29,34 @@
         "description": "Function that returns a [virtual element](https://floating-ui.com/docs/virtual-elements). If this is provided, it will override MenuTrigger."
       }
     },
+    "category": "@salt-ds/core",
+    "description": "`Menu` is a container that presents a selection of choices or actions for a user to choose from. The user opens it with a customizable trigger, e.g., an interactive element such as a button, or an interaction, such as right mouse click or keyboard shortcut.",
+    "tags": [
+      "Cascading Menu"
+    ],
+    "when_to_use": [
+      "When you need to display a list of actions or options.",
+      "When you have limited space and need to display overflow action in a list.",
+      "When you need to display secondary or less important information and actions inside a trigger element."
+    ],
+    "when_not_to_use": [
+      "Inside a form. Instead, use [`ComboBox`](../combo-box) or [`Dropdown`](../dropdown).",
+      "Always use sentence case for menu item labels.",
+      "Keep menu item labels short and concise.",
+      "Use an ellipsis at the end of a menu item label for actions that will require more information from the user to complete. For example, \"Open file...\" requires the user to choose a file."
+    ],
+    "import_statement": "import {\n  Menu,\n  MenuItem,\n  MenuTrigger,\n  MenuPanel,\n  MenuGroup,\n} from \"@salt-ds/core\";",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/core/src/menu",
+    "related_components": [
+      {
+        "name": "Dropdown",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Icon",
+        "relationship": "contains"
+      }
+    ],
     "examples": [
       {
         "name": "Descriptions",
@@ -80,33 +107,6 @@
         "name": "WithIcon",
         "description": "",
         "code": "import { Button, Menu, MenuItem, MenuPanel, MenuTrigger } from \"@salt-ds/core\";\nimport {\n  CopyIcon,\n  ExportIcon,\n  MicroMenuIcon,\n  SettingsIcon,\n} from \"@salt-ds/icons\";\nimport type { ReactElement } from \"react\";\n\nexport const WithIcon = (): ReactElement => {\n  return (\n    <Menu>\n      <MenuTrigger>\n        <Button appearance=\"transparent\" aria-label=\"Open Menu\">\n          <MicroMenuIcon aria-hidden />\n        </Button>\n      </MenuTrigger>\n      <MenuPanel>\n        <MenuItem>\n          <CopyIcon aria-hidden />\n          Copy\n        </MenuItem>\n        <MenuItem>\n          <ExportIcon aria-hidden />\n          Export\n        </MenuItem>\n        <MenuItem>\n          <SettingsIcon aria-hidden />\n          Settings\n        </MenuItem>\n      </MenuPanel>\n    </Menu>\n  );\n};\n"
-      }
-    ],
-    "category": "@salt-ds/core",
-    "tags": [
-      "Cascading Menu"
-    ],
-    "when_to_use": [
-      "When you need to display a list of actions or options.",
-      "When you have limited space and need to display overflow action in a list.",
-      "When you need to display secondary or less important information and actions inside a trigger element."
-    ],
-    "when_not_to_use": [
-      "Inside a form. Instead, use [`ComboBox`](../combo-box) or [`Dropdown`](../dropdown).",
-      "Always use sentence case for menu item labels.",
-      "Keep menu item labels short and concise.",
-      "Use an ellipsis at the end of a menu item label for actions that will require more information from the user to complete. For example, \"Open file...\" requires the user to choose a file."
-    ],
-    "import_statement": "import {\n  Menu,\n  MenuItem,\n  MenuTrigger,\n  MenuPanel,\n  MenuGroup,\n} from \"@salt-ds/core\";",
-    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/core/src/menu",
-    "related_components": [
-      {
-        "name": "Dropdown",
-        "relationship": "similarTo"
-      },
-      {
-        "name": "Icon",
-        "relationship": "contains"
       }
     ]
   }

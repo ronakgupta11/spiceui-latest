@@ -1,0 +1,82 @@
+{
+  "component_name": "TooltipBase",
+  "metadata": {
+    "component_name": "TooltipBase",
+    "props": {
+      "arrowProps": {
+        "type": "FloatingArrowProps",
+        "required": true,
+        "description": ""
+      },
+      "status": {
+        "type": "\"error\" | \"warning\" | \"success\" | \"info\"",
+        "required": false,
+        "description": "Optional string to determine the status of the Tooltip."
+      },
+      "open": {
+        "type": "boolean",
+        "required": false,
+        "description": "The `open` state of the floating element to synchronize with the\n`isPositioned` value.",
+        "defaultValue": "false"
+      },
+      "onOpenChange": {
+        "type": "(open: boolean, event?: Event, reason?: OpenChangeReason) => void",
+        "required": false,
+        "description": "An event callback that is invoked when the floating element is opened or\nclosed."
+      },
+      "placement": {
+        "type": "\"top\" | \"right\" | \"bottom\" | \"left\" | \"top-start\" | \"top-end\" | \"right-start\" | \"right-end\" | \"bottom-start\" | \"bottom-end\" | \"left-start\" | \"left-end\"",
+        "required": false,
+        "description": "Where to place the floating element relative to the reference element."
+      },
+      "content": {
+        "type": "ReactNode",
+        "required": true,
+        "description": "Content displayed inside the Tooltip. Can be a string or a React component."
+      },
+      "hideArrow": {
+        "type": "boolean",
+        "required": false,
+        "description": "Whether to hide the Tooltip arrow. Defaults to `false`."
+      },
+      "hideIcon": {
+        "type": "boolean",
+        "required": false,
+        "description": "Whether to hide the status icon within the Tooltip. Defaults to `false`.\nIf no status is provided, icon will also be hidden."
+      },
+      "enterDelay": {
+        "type": "number",
+        "required": false,
+        "description": "Delay in milliseconds before the Tooltip is shown."
+      },
+      "leaveDelay": {
+        "type": "number",
+        "required": false,
+        "description": "Delay in milliseconds before the Tooltip is hidden. Defaults to 300ms."
+      },
+      "disabled": {
+        "type": "boolean",
+        "required": false,
+        "description": "Option to not display the Tooltip. Can be used in conditional situations like text truncation. Defaults to 0."
+      },
+      "disableHoverListener": {
+        "type": "boolean",
+        "required": false,
+        "description": "Option to remove the hover listener."
+      },
+      "disableFocusListener": {
+        "type": "boolean",
+        "required": false,
+        "description": "Option to remove the focus listener."
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { TooltipBase } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

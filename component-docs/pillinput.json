@@ -1,0 +1,92 @@
+{
+  "component_name": "PillInput",
+  "metadata": {
+    "component_name": "PillInput",
+    "props": {
+      "emptyReadOnlyMarker": {
+        "type": "string",
+        "required": false,
+        "description": "The marker to use in an empty read only Input.\nUse `''` to disable this feature. Defaults to '—'.",
+        "defaultValue": "—"
+      },
+      "endAdornment": {
+        "type": "ReactNode",
+        "required": false,
+        "description": "End adornment component"
+      },
+      "inputProps": {
+        "type": "Partial<InputHTMLAttributes<HTMLInputElement>> & DataAttributes",
+        "required": false,
+        "description": "[Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes) applied to the `input` element.",
+        "defaultValue": "{}"
+      },
+      "inputRef": {
+        "type": "Ref<HTMLInputElement>",
+        "required": false,
+        "description": "Optional ref for the input component"
+      },
+      "readOnly": {
+        "type": "boolean",
+        "required": false,
+        "description": "If `true`, the component is read only."
+      },
+      "pills": {
+        "type": "string[]",
+        "required": false,
+        "description": "The tokens to display in the input.",
+        "defaultValue": "[]"
+      },
+      "onPillRemove": {
+        "type": "(event: SyntheticEvent<Element, Event>, index: number) => void",
+        "required": false,
+        "description": ""
+      },
+      "startAdornment": {
+        "type": "ReactNode",
+        "required": false,
+        "description": "Start adornment component"
+      },
+      "textAlign": {
+        "type": "\"center\" | \"left\" | \"right\"",
+        "required": false,
+        "description": "Alignment of text within container. Defaults to \"left\"",
+        "defaultValue": "left"
+      },
+      "validationStatus": {
+        "type": "\"error\" | \"warning\" | \"success\"",
+        "required": false,
+        "description": "Validation status."
+      },
+      "variant": {
+        "type": "\"primary\" | \"secondary\"",
+        "required": false,
+        "description": "Styling variant. Defaults to \"primary\".",
+        "defaultValue": "primary"
+      },
+      "hidePillClose": {
+        "type": "boolean",
+        "required": false,
+        "description": ""
+      },
+      "truncate": {
+        "type": "boolean",
+        "required": false,
+        "description": ""
+      },
+      "bordered": {
+        "type": "boolean",
+        "required": false,
+        "description": "Styling variant with full border. Defaults to false",
+        "defaultValue": "false"
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { PillInput } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

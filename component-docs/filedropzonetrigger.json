@@ -1,0 +1,37 @@
+{
+  "component_name": "FileDropZoneTrigger",
+  "metadata": {
+    "component_name": "FileDropZoneTrigger",
+    "props": {
+      "accept": {
+        "type": "string",
+        "required": false,
+        "description": "`accept` attribute for HTML <input>.\n\nA comma separated list of file types the user can pick from the file input dialog box."
+      },
+      "disabled": {
+        "type": "boolean",
+        "required": false,
+        "description": "Disable all trigger elements."
+      },
+      "multiple": {
+        "type": "boolean",
+        "required": false,
+        "description": "Allows multiple files to be uploaded.",
+        "defaultValue": "false"
+      },
+      "onChange": {
+        "type": "(event: ChangeEvent<HTMLInputElement>, files: File[]) => void",
+        "required": false,
+        "description": "Callback for input change event"
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { FileDropZoneTrigger } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

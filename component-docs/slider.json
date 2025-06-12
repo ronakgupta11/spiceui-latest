@@ -2,7 +2,6 @@
   "component_name": "Slider",
   "metadata": {
     "component_name": "Slider",
-    "description": "`Slider` enables the selection of a single value within a range of values. It offers inline label positioning and marks displayed under the track.",
     "props": {
       "accessibleMaxText": {
         "type": "string",
@@ -114,6 +113,21 @@
         "description": "Value of the slider, to be used when in a controlled state."
       }
     },
+    "category": "@salt-ds/core",
+    "description": "`Slider` enables the selection of a single value within a range of values. It offers inline label positioning and marks displayed under the track.",
+    "tags": [],
+    "when_to_use": [
+      "When selecting a single value, range of numeric values or relative scale.",
+      "When the exact value does not matter (depending on the size of the predefined range), but an approximate value is good enough.",
+      "When changes are applied for immediate feedback, e.g., changing the volume on an audio or video player."
+    ],
+    "when_not_to_use": [
+      "When it’s important to select an exact numeric value that falls within a significantly large range, for example, 1-1000. Instead, use [Input](/salt/components/input).",
+      "When displaying progress through a series of separate steps, such as a wizard or multistep form. Use [Stepper](/salt/components/stepper) instead."
+    ],
+    "import_statement": "import { Slider } from \"@salt-ds/core\";",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/tree/main/packages/core/src/slider",
+    "related_components": [],
     "examples": [
       {
         "name": "Default",
@@ -180,20 +194,6 @@
         "description": "",
         "code": "import { FormField, FormFieldLabel, Slider, StackLayout } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const WithRestrictToMarks = (): ReactElement => (\n  <StackLayout gap={6} style={{ width: \"80%\" }}>\n    <FormField>\n      <FormFieldLabel>Restricted to marks</FormFieldLabel>\n      <Slider\n        marks={[\n          { value: 0, label: \"0\" },\n          { value: 15, label: \"15\" },\n          { value: 35, label: \"35\" },\n          { value: 70, label: \"70\" },\n          { value: 85, label: \"85\" },\n          { value: 100, label: \"100\" },\n        ]}\n        min={0}\n        max={100}\n        restrictToMarks\n      />\n    </FormField>\n    <FormField>\n      <FormFieldLabel>Restricted to marks, with ticks</FormFieldLabel>\n      <Slider\n        marks={[\n          { value: 0, label: \"0\" },\n          { value: 15, label: \"15\" },\n          { value: 35, label: \"35\" },\n          { value: 70, label: \"70\" },\n          { value: 85, label: \"85\" },\n          { value: 100, label: \"100\" },\n        ]}\n        min={0}\n        max={100}\n        restrictToMarks\n        showTicks\n      />\n    </FormField>\n  </StackLayout>\n);\n"
       }
-    ],
-    "category": "@salt-ds/core",
-    "tags": [],
-    "when_to_use": [
-      "When selecting a single value, range of numeric values or relative scale.",
-      "When the exact value does not matter (depending on the size of the predefined range), but an approximate value is good enough.",
-      "When changes are applied for immediate feedback, e.g., changing the volume on an audio or video player."
-    ],
-    "when_not_to_use": [
-      "When it’s important to select an exact numeric value that falls within a significantly large range, for example, 1-1000. Instead, use [Input](/salt/components/input).",
-      "When displaying progress through a series of separate steps, such as a wizard or multistep form. Use [Stepper](/salt/components/stepper) instead."
-    ],
-    "import_statement": "import { Slider } from \"@salt-ds/core\";",
-    "source_code_url": "https://github.com/jpmorganchase/salt-ds/tree/main/packages/core/src/slider",
-    "related_components": []
+    ]
   }
 }

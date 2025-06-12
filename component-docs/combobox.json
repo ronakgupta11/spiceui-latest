@@ -1,0 +1,156 @@
+{
+  "component_name": "ComboBox",
+  "metadata": {
+    "component_name": "ComboBox",
+    "props": {
+      "InputProps": {
+        "type": "InputLegacyProps",
+        "required": false,
+        "description": ""
+      },
+      "ListProps": {
+        "type": "Omit<ListProps<Item, Selection>, \"ListItem\" | \"itemToString\" | \"source\">",
+        "required": false,
+        "description": ""
+      },
+      "allowFreeText": {
+        "type": "boolean",
+        "required": false,
+        "description": ""
+      },
+      "defaultValue": {
+        "type": "string",
+        "required": false,
+        "description": ""
+      },
+      "getFilterRegex": {
+        "type": "(inputValue: string) => RegExp",
+        "required": false,
+        "description": ""
+      },
+      "stringToItem": {
+        "type": "(value?: string) => Item",
+        "required": false,
+        "description": ""
+      },
+      "value": {
+        "type": "string",
+        "required": false,
+        "description": ""
+      },
+      "onKeyDown": {
+        "type": "(e: KeyboardEvent<HTMLElement>) => void",
+        "required": false,
+        "description": ""
+      },
+      "disablePortal": {
+        "type": "boolean",
+        "required": false,
+        "description": "Disable the portal behavior.\nThe children stay within it's parent DOM hierarchy."
+      },
+      "container": {
+        "type": "Element | (() => Element)",
+        "required": false,
+        "description": "An HTML element, component instance, or function that returns either.\nThe `container` will have the portal children appended to it.\n\nBy default, it uses the body of the top-level document object,\nso it's simply `document.body` most of the time."
+      },
+      "defaultIsOpen": {
+        "type": "boolean",
+        "required": false,
+        "description": ""
+      },
+      "disabled": {
+        "type": "boolean",
+        "required": false,
+        "description": ""
+      },
+      "fullWidth": {
+        "type": "boolean",
+        "required": false,
+        "description": ""
+      },
+      "isOpen": {
+        "type": "boolean",
+        "required": false,
+        "description": ""
+      },
+      "onOpenChange": {
+        "type": "(isOpen: boolean) => void",
+        "required": false,
+        "description": ""
+      },
+      "openOnFocus": {
+        "type": "boolean",
+        "required": false,
+        "description": ""
+      },
+      "placement": {
+        "type": "\"bottom-start\" | \"bottom-end\" | \"top-start\" | \"top-end\"",
+        "required": false,
+        "description": ""
+      },
+      "popupWidth": {
+        "type": "number",
+        "required": false,
+        "description": ""
+      },
+      "width": {
+        "type": "string | number",
+        "required": false,
+        "description": ""
+      },
+      "onBlur": {
+        "type": "FocusEventHandler<HTMLInputElement>",
+        "required": false,
+        "description": ""
+      },
+      "onChange": {
+        "type": "(event: ChangeEvent<HTMLInputElement>, value: string) => void",
+        "required": false,
+        "description": "Callback for change event."
+      },
+      "onFocus": {
+        "type": "FocusEventHandler<HTMLInputElement>",
+        "required": false,
+        "description": ""
+      },
+      "ListItem": {
+        "type": "ListItemType<Item>",
+        "required": false,
+        "description": "The component used to render a ListItem instead of the default. This must itself render a ListItem,\nmust implement props that extend ListItemProps and must forward ListItem props to the ListItem."
+      },
+      "itemToString": {
+        "type": "(item: Item) => string",
+        "required": false,
+        "description": "Item `toString` function when list is not used declaratively and its items are objects\ninstead of strings. The string value is also used in tooltip when item text is truncated.\n\nIf omitted, component will look for a `label` property on the data object.\n@param item The item."
+      },
+      "source": {
+        "type": "readonly Item[]",
+        "required": false,
+        "description": ""
+      },
+      "onSelectionChange": {
+        "type": "SelectionChangeHandler<Item, Selection>",
+        "required": false,
+        "description": ""
+      },
+      "selectionStrategy": {
+        "type": "\"default\" | \"deselectable\" | \"multiple\" | \"extended\" | \"extended-multi-range\"",
+        "required": false,
+        "description": ""
+      },
+      "ref": {
+        "type": "ForwardedRef<HTMLDivElement>",
+        "required": false,
+        "description": ""
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { ComboBox } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

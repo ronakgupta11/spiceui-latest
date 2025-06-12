@@ -1,0 +1,21 @@
+{
+  "component_name": "BannerActions",
+  "metadata": {
+    "component_name": "BannerActions",
+    "props": {
+      "children": {
+        "type": "ReactNode",
+        "required": true,
+        "description": "The content of BannerActions"
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { BannerActions } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

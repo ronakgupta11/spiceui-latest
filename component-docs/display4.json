@@ -1,0 +1,42 @@
+{
+  "component_name": "Display4",
+  "metadata": {
+    "component_name": "Display4",
+    "props": {
+      "disabled": {
+        "type": "boolean",
+        "required": false,
+        "description": "Applies disabled styling when true"
+      },
+      "maxRows": {
+        "type": "number",
+        "required": false,
+        "description": "Apply text truncation by mentioning number of rows to be displayed"
+      },
+      "styleAs": {
+        "type": "\"code\" | \"h1\" | \"h2\" | \"h3\" | \"h4\" | \"label\" | \"display1\" | \"display2\" | \"display3\" | \"display4\" | \"notation\" | \"action\"",
+        "required": false,
+        "description": "Match styling to another text component's style",
+        "defaultValue": "display4"
+      },
+      "variant": {
+        "type": "\"primary\" | \"secondary\"",
+        "required": false,
+        "description": "Change text color palette\n@deprecated Use `color` instead"
+      },
+      "color": {
+        "type": "\"error\" | \"warning\" | \"success\" | \"info\" | \"primary\" | \"secondary\" | \"inherit\"",
+        "required": false,
+        "description": ""
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { Display4 } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "component_name": "useMatchedBreakpoints",
+  "metadata": {
+    "component_name": "useMatchedBreakpoints",
+    "props": {
+      "xs": {
+        "type": "number",
+        "required": true,
+        "description": ""
+      },
+      "sm": {
+        "type": "number",
+        "required": true,
+        "description": ""
+      },
+      "md": {
+        "type": "number",
+        "required": true,
+        "description": ""
+      },
+      "lg": {
+        "type": "number",
+        "required": true,
+        "description": ""
+      },
+      "xl": {
+        "type": "number",
+        "required": true,
+        "description": ""
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { useMatchedBreakpoints } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

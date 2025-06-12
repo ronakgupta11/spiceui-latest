@@ -2,7 +2,6 @@
   "component_name": "Text",
   "metadata": {
     "component_name": "Text",
-    "description": "`Text` is a component that makes it easy to use our typography styles throughout a product or application, ensuring consistency and a unified look and feel. It includes attributes such as font size, weight, letter spacing, line height and decoration.",
     "props": {
       "disabled": {
         "type": "boolean",
@@ -16,17 +15,17 @@
         "description": "Apply text truncation by mentioning number of rows to be displayed"
       },
       "styleAs": {
-        "type": "enum",
+        "type": "\"code\" | \"h1\" | \"h2\" | \"h3\" | \"h4\" | \"label\" | \"display1\" | \"display2\" | \"display3\" | \"display4\" | \"notation\" | \"action\"",
         "required": false,
         "description": "Match styling to another text component's style"
       },
       "variant": {
-        "type": "enum",
+        "type": "\"primary\" | \"secondary\"",
         "required": false,
         "description": "Change text color palette\n@deprecated Use `color` instead"
       },
       "color": {
-        "type": "enum",
+        "type": "\"error\" | \"warning\" | \"success\" | \"info\" | \"primary\" | \"secondary\" | \"inherit\"",
         "required": false,
         "description": ""
       },
@@ -41,6 +40,14 @@
         "description": ""
       }
     },
+    "category": "@salt-ds/core",
+    "description": "`Text` is a component that makes it easy to use our typography styles throughout a product or application, ensuring consistency and a unified look and feel. It includes attributes such as font size, weight, letter spacing, line height and decoration.",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import {\n  Text,\n  Display1,\n  Display2,\n  Display3,\n  H1,\n  H2,\n  H3,\n  H4,\n  Label,\n  TextNotation,\n  TextAction,\n} from \"@salt-ds/core\";",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/tree/main/packages/core/src/text",
+    "related_components": [],
     "examples": [
       {
         "name": "Color",
@@ -72,13 +79,6 @@
         "description": "",
         "code": "import { StackLayout, Text } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Weight = (): ReactElement => (\n  <StackLayout>\n    <Text>\n      <small>This is a thinner font weight</small>\n    </Text>\n    <Text>This is the default font weight</Text>\n    <Text>\n      <strong>This is a stronger font weight</strong>\n    </Text>\n  </StackLayout>\n);\n"
       }
-    ],
-    "category": "@salt-ds/core",
-    "tags": [],
-    "when_to_use": [],
-    "when_not_to_use": [],
-    "import_statement": "import {\n  Text,\n  Display1,\n  Display2,\n  Display3,\n  H1,\n  H2,\n  H3,\n  H4,\n  Label,\n  TextNotation,\n  TextAction,\n} from \"@salt-ds/core\";",
-    "source_code_url": "https://github.com/jpmorganchase/salt-ds/tree/main/packages/core/src/text",
-    "related_components": []
+    ]
   }
 }

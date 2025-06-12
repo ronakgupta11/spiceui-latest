@@ -1,0 +1,21 @@
+{
+  "component_name": "BannerContent",
+  "metadata": {
+    "component_name": "BannerContent",
+    "props": {
+      "children": {
+        "type": "ReactNode",
+        "required": true,
+        "description": "The content of BannerContent"
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { BannerContent } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

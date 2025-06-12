@@ -2,7 +2,6 @@
   "component_name": "Button",
   "metadata": {
     "component_name": "Button",
-    "description": "`Button` is an interactive component that allows the user to execute an action. Button comes in three distinct appearances: solid, bordered, and transparent. These styles provide greater choice and flexibility for establishing hierarchy and affordance within a UI. You can display a button with or without a text description or icon.",
     "props": {
       "disabled": {
         "type": "boolean",
@@ -15,18 +14,18 @@
         "description": "If `true`, the button will be focusable when disabled."
       },
       "variant": {
-        "type": "enum",
+        "type": "\"primary\" | \"secondary\" | \"cta\"",
         "required": false,
         "description": "The variant to use. Options are 'primary', 'secondary' and 'cta'.\n'primary' is the default value.\n@deprecated Use `appearance` and `sentiment` instead.\n\n| variant     | appearance    | sentiment   |\n| ----------- | ------------- | ----------- |\n| `cta`       | `solid`       | `accented`  |\n| `primary`   | `solid`       | `neutral`   |\n| `secondary` | `transparent` | `neutral`   |",
         "defaultValue": "primary"
       },
       "appearance": {
-        "type": "enum",
+        "type": "\"solid\" | \"bordered\" | \"transparent\"",
         "required": false,
         "description": "The appearance of the button. Options are 'solid', 'bordered', and 'transparent'.\n'solid' is the default value.\n@since 1.36.0."
       },
       "sentiment": {
-        "type": "enum",
+        "type": "\"accented\" | \"neutral\" | \"positive\" | \"negative\" | \"caution\"",
         "required": false,
         "description": "The sentiment of the button. Options are 'accented', 'neutral', 'positive', 'negative' and 'caution'.\n'neutral' is the default value.\n@since 1.36.0."
       },
@@ -41,6 +40,40 @@
         "description": "Text to be announced by screen readers, intended to be used in conjunction with the `loading` prop.\n@since 1.38.0."
       }
     },
+    "category": "@salt-ds/core",
+    "description": "`Button` is an interactive component that allows the user to execute an action. Button comes in three distinct appearances: solid, bordered, and transparent. These styles provide greater choice and flexibility for establishing hierarchy and affordance within a UI. You can display a button with or without a text description or icon.",
+    "tags": [
+      "Action",
+      "UI action"
+    ],
+    "when_to_use": [],
+    "when_not_to_use": [
+      "Always style button text in all caps for prominence. This avoids confusion with body text or general writing.",
+      "Never use ampersand (&) in button text to save space.",
+      "Always use verbs that emphasize the action the button carries out. For example, use **Create** instead of **Ok** to create a profile, or **Save**/**Discard** instead of **Yes**/**No** to save changes.",
+      "Be succinct. Avoid having more than two or three words in a button label.",
+      "Button Pattern (https://www.w3.org/WAI/ARIA/apg/patterns/button/) W3C"
+    ],
+    "import_statement": "import { Button } from \"@salt-ds/core\";",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/core/src/button",
+    "related_components": [
+      {
+        "name": "Link",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Pill",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Icon",
+        "relationship": "contains"
+      },
+      {
+        "name": "Status indicator",
+        "relationship": "contains"
+      }
+    ],
     "examples": [
       {
         "name": "Accented",
@@ -91,39 +124,6 @@
         "name": "Sentiment",
         "description": "",
         "code": "import { Button, GridItem, GridLayout, Label } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Sentiment = (): ReactElement => (\n  <GridLayout\n    columns=\"min-content auto auto auto\"\n    gap={3}\n    style={{ alignItems: \"center\" }}\n  >\n    <GridItem />\n\n    <GridItem horizontalAlignment=\"center\">\n      <Label>Solid</Label>\n    </GridItem>\n    <GridItem horizontalAlignment=\"center\">\n      <Label>Bordered</Label>\n    </GridItem>\n    <GridItem horizontalAlignment=\"center\">\n      <Label>Transparent</Label>\n    </GridItem>\n\n    <Label>Positive</Label>\n\n    <Button appearance=\"solid\" sentiment=\"positive\">\n      Button\n    </Button>\n    <Button appearance=\"bordered\" sentiment=\"positive\">\n      Button\n    </Button>\n    <Button appearance=\"transparent\" sentiment=\"positive\">\n      Button\n    </Button>\n\n    <Label>Caution</Label>\n\n    <Button appearance=\"solid\" sentiment=\"caution\">\n      Button\n    </Button>\n    <Button appearance=\"bordered\" sentiment=\"caution\">\n      Button\n    </Button>\n    <Button appearance=\"transparent\" sentiment=\"caution\">\n      Button\n    </Button>\n\n    <Label>Negative</Label>\n\n    <Button appearance=\"solid\" sentiment=\"negative\">\n      Button\n    </Button>\n    <Button appearance=\"bordered\" sentiment=\"negative\">\n      Button\n    </Button>\n    <Button appearance=\"transparent\" sentiment=\"negative\">\n      Button\n    </Button>\n  </GridLayout>\n);\n"
-      }
-    ],
-    "category": "@salt-ds/core",
-    "tags": [
-      "Action",
-      "UI action"
-    ],
-    "when_to_use": [],
-    "when_not_to_use": [
-      "Always style button text in all caps for prominence. This avoids confusion with body text or general writing.",
-      "Never use ampersand (&) in button text to save space.",
-      "Always use verbs that emphasize the action the button carries out. For example, use **Create** instead of **Ok** to create a profile, or **Save**/**Discard** instead of **Yes**/**No** to save changes.",
-      "Be succinct. Avoid having more than two or three words in a button label.",
-      "Button Pattern (https://www.w3.org/WAI/ARIA/apg/patterns/button/) W3C"
-    ],
-    "import_statement": "import { Button } from \"@salt-ds/core\";",
-    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/core/src/button",
-    "related_components": [
-      {
-        "name": "Link",
-        "relationship": "similarTo"
-      },
-      {
-        "name": "Pill",
-        "relationship": "similarTo"
-      },
-      {
-        "name": "Icon",
-        "relationship": "contains"
-      },
-      {
-        "name": "Status indicator",
-        "relationship": "contains"
       }
     ]
   }

@@ -1,0 +1,63 @@
+{
+  "component_name": "CheckboxGroup",
+  "metadata": {
+    "component_name": "CheckboxGroup",
+    "props": {
+      "checkedValues": {
+        "type": "string[]",
+        "required": false,
+        "description": "The current checked options."
+      },
+      "defaultCheckedValues": {
+        "type": "string[]",
+        "required": false,
+        "description": "The default selected options for un-controlled component.",
+        "defaultValue": "[]"
+      },
+      "direction": {
+        "type": "\"horizontal\" | \"vertical\"",
+        "required": false,
+        "description": "Display group of elements in a compact row.",
+        "defaultValue": "vertical"
+      },
+      "disabled": {
+        "type": "boolean",
+        "required": false,
+        "description": "Disable the Checkbox group"
+      },
+      "name": {
+        "type": "string",
+        "required": false,
+        "description": "The name used to reference the value of the control."
+      },
+      "onChange": {
+        "type": "ChangeEventHandler<HTMLInputElement>",
+        "required": false,
+        "description": "Callback fired when a checkbox is clicked.\n`event.target.value` returns the value of the checkbox that was clicked."
+      },
+      "readOnly": {
+        "type": "boolean",
+        "required": false,
+        "description": "If `true`, the component is read only."
+      },
+      "wrap": {
+        "type": "boolean",
+        "required": false,
+        "description": "Only for horizontal direction. When `true` the text in radio button label will wrap to fit within the container. Otherwise, the checkboxes will wrap onto the next line."
+      },
+      "validationStatus": {
+        "type": "\"error\" | \"warning\" | \"success\"",
+        "required": false,
+        "description": "Validation status."
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { CheckboxGroup } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

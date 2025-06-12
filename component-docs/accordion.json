@@ -2,7 +2,6 @@
   "component_name": "Accordion",
   "metadata": {
     "component_name": "Accordion",
-    "description": "`Accordion` displays a panel that the user can expand or collapse to show or hide content and control the complexity of a given view.",
     "props": {
       "value": {
         "type": "string",
@@ -20,7 +19,7 @@
         "description": "Whether the accordion is expanded by default."
       },
       "indicatorSide": {
-        "type": "enum",
+        "type": "\"left\" | \"right\"",
         "required": false,
         "description": "Side to align the Accordion's indicator. Defaults to `left`."
       },
@@ -35,11 +34,38 @@
         "description": "Whether the accordion is disabled."
       },
       "status": {
-        "type": "enum",
+        "type": "\"error\" | \"warning\" | \"success\"",
         "required": false,
         "description": "The status of the accordion."
       }
     },
+    "category": "@salt-ds/core",
+    "description": "`Accordion` displays a panel that the user can expand or collapse to show or hide content and control the complexity of a given view.",
+    "tags": [
+      "Collapsible panel",
+      "Concertina",
+      "Expansion panel"
+    ],
+    "when_to_use": [
+      "To organize related content within expandable groups/categories/sections.",
+      "To reduce scrolling or overall page length when displaying content in full isn't critical.",
+      "When you can't display all the content at once due to restricted screen space."
+    ],
+    "when_not_to_use": [
+      "To replace grouped rows with grids."
+    ],
+    "import_statement": "import {\n  Accordion,\n  AccordionGroup,\n  AccordionHeader,\n  AccordionPanel,\n} from \"@salt-ds/core\";",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/core/src/accordion",
+    "related_components": [
+      {
+        "name": "Icon",
+        "relationship": "contains"
+      },
+      {
+        "name": "Status indicator",
+        "relationship": "contains"
+      }
+    ],
     "examples": [
       {
         "name": "AdditionalLabels",
@@ -85,32 +111,6 @@
         "name": "Status",
         "description": "You can set a status of \"error\", \"warning\" or \"success\" for an accordion to indicate the type of content it contains.",
         "code": "import {\n  Accordion,\n  AccordionGroup,\n  AccordionHeader,\n  AccordionPanel,\n  type AccordionProps,\n  FlowLayout,\n  FormField,\n  FormFieldLabel as FormLabel,\n  Input,\n} from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nconst statuses: AccordionProps[\"status\"][] = [\n  undefined,\n  \"error\",\n  \"warning\",\n  \"success\",\n];\n\nexport const Status = (): ReactElement => (\n  <div style={{ width: \"80%\", height: \"100%\" }}>\n    <AccordionGroup>\n      {Array.from({ length: 3 }, (_, i) => i + 1).map((i) => (\n        <Accordion\n          value={`accordion-${i}`}\n          key={`accordion-${i}`}\n          status={statuses[i]}\n        >\n          <AccordionHeader>Internal form</AccordionHeader>\n          <AccordionPanel>\n            <FlowLayout>\n              Please fill out the following details.\n              <FormField labelPlacement=\"left\">\n                <FormLabel>Disclosure ID</FormLabel>\n                <Input />\n              </FormField>\n              <FormField labelPlacement=\"left\">\n                <FormLabel>Email</FormLabel>\n                <Input />\n              </FormField>\n              <FormField labelPlacement=\"left\">\n                <FormLabel>Justification</FormLabel>\n                <Input />\n              </FormField>\n            </FlowLayout>\n          </AccordionPanel>\n        </Accordion>\n      ))}\n    </AccordionGroup>\n  </div>\n);\n"
-      }
-    ],
-    "category": "@salt-ds/core",
-    "tags": [
-      "Collapsible panel",
-      "Concertina",
-      "Expansion panel"
-    ],
-    "when_to_use": [
-      "To organize related content within expandable groups/categories/sections.",
-      "To reduce scrolling or overall page length when displaying content in full isn't critical.",
-      "When you can't display all the content at once due to restricted screen space."
-    ],
-    "when_not_to_use": [
-      "To replace grouped rows with grids."
-    ],
-    "import_statement": "import {\n  Accordion,\n  AccordionGroup,\n  AccordionHeader,\n  AccordionPanel,\n} from \"@salt-ds/core\";",
-    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/core/src/accordion",
-    "related_components": [
-      {
-        "name": "Icon",
-        "relationship": "contains"
-      },
-      {
-        "name": "Status indicator",
-        "relationship": "contains"
       }
     ]
   }

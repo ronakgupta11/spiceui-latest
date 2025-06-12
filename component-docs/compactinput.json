@@ -1,0 +1,22 @@
+{
+  "component_name": "CompactInput",
+  "metadata": {
+    "component_name": "CompactInput",
+    "description": "Props for CompactInput component",
+    "props": {
+      "inputRef": {
+        "type": "Ref<HTMLInputElement>",
+        "required": false,
+        "description": "Optional ref for the input component"
+      },
+      "variant": {
+        "type": "\"primary\" | \"secondary\"",
+        "required": false,
+        "description": "Styling variant. Defaults to \"primary\"."
+      }
+    },
+    "category": "@salt-ds/core",
+    "related_to": "Pagination",
+    "import_statement": "import {\n  Pagination,\n  Paginator,\n  CompactPaginator,\n  CompactInput,\n  GoToInput,\n} from \"@salt-ds/core\";"
+  }
+}

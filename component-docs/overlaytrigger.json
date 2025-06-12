@@ -1,0 +1,15 @@
+{
+  "component_name": "OverlayTrigger",
+  "metadata": {
+    "component_name": "OverlayTrigger",
+    "props": {},
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { OverlayTrigger } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

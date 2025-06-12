@@ -2,7 +2,6 @@
   "component_name": "Badge",
   "metadata": {
     "component_name": "Badge",
-    "description": "`Badge` is a numeric or alpha character annotation. It appears either in the top-right corner of an element, or inline.",
     "props": {
       "value": {
         "type": "string | number",
@@ -21,6 +20,34 @@
         "defaultValue": "999"
       }
     },
+    "category": "@salt-ds/core",
+    "description": "`Badge` is a numeric or alpha character annotation. It appears either in the top-right corner of an element, or inline.",
+    "tags": [
+      "Tag",
+      "Label",
+      "Chip"
+    ],
+    "when_to_use": [
+      "To communicate a non-interactive, system-driven change to the underlying component it anchors to, such as in tabs, pages and containers.",
+      "Typically, if you use a badge to indicate an unread notification, you'd hide the badge once the user addresses the notification. However, badges can remain persistent depending on the context."
+    ],
+    "when_not_to_use": [
+      "To trigger an immediate action, or enable an action that may change depending on context. Instead, use [`Pill`](../pill).",
+      "To communicate status through color, such as red/amber/green statuses. Instead, use `Pill`. Badges are independent of user action, so avoid using them to communicate something the user can directly influence through a task.",
+      "To communicate read-only metadata that categorizes or groups content use [`Tag`](/salt/components/tag)."
+    ],
+    "import_statement": "import { Badge } from \"@salt-ds/core\";",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/core/src/badge",
+    "related_components": [
+      {
+        "name": "Tag",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Pill",
+        "relationship": "similarTo"
+      }
+    ],
     "examples": [
       {
         "name": "BadgeWithMaximumDigits",
@@ -51,33 +78,6 @@
         "name": "InlineDotBadge",
         "description": "",
         "code": "import { Badge } from \"@salt-ds/core\";\nimport {\n  TabBar,\n  TabListNext,\n  TabNext,\n  TabNextTrigger,\n  TabsNext,\n} from \"@salt-ds/lab\";\nimport type { ReactElement } from \"react\";\n\nexport const InlineDotBadge = (): ReactElement => {\n  return (\n    <TabsNext defaultValue=\"Home\">\n      <TabBar>\n        <TabListNext appearance=\"transparent\" style={{ minWidth: 350 }}>\n          <TabNext value=\"Home\">\n            <TabNextTrigger>Home</TabNextTrigger>\n          </TabNext>\n          <TabNext value=\"Transactions\">\n            <TabNextTrigger aria-label=\"Transations - New\">\n              Transactions\n              <Badge />\n            </TabNextTrigger>\n          </TabNext>\n          <TabNext value=\"Loans\">\n            <TabNextTrigger>Loans</TabNextTrigger>\n          </TabNext>\n        </TabListNext>\n      </TabBar>\n    </TabsNext>\n  );\n};\n"
-      }
-    ],
-    "category": "@salt-ds/core",
-    "tags": [
-      "Tag",
-      "Label",
-      "Chip"
-    ],
-    "when_to_use": [
-      "To communicate a non-interactive, system-driven change to the underlying component it anchors to, such as in tabs, pages and containers.",
-      "Typically, if you use a badge to indicate an unread notification, you'd hide the badge once the user addresses the notification. However, badges can remain persistent depending on the context."
-    ],
-    "when_not_to_use": [
-      "To trigger an immediate action, or enable an action that may change depending on context. Instead, use [`Pill`](../pill).",
-      "To communicate status through color, such as red/amber/green statuses. Instead, use `Pill`. Badges are independent of user action, so avoid using them to communicate something the user can directly influence through a task.",
-      "To communicate read-only metadata that categorizes or groups content use [`Tag`](/salt/components/tag)."
-    ],
-    "import_statement": "import { Badge } from \"@salt-ds/core\";",
-    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/core/src/badge",
-    "related_components": [
-      {
-        "name": "Tag",
-        "relationship": "similarTo"
-      },
-      {
-        "name": "Pill",
-        "relationship": "similarTo"
       }
     ]
   }

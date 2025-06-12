@@ -1,0 +1,73 @@
+{
+  "component_name": "UNSTABLE_SaltProviderNext",
+  "metadata": {
+    "component_name": "UNSTABLE_SaltProviderNext",
+    "props": {
+      "applyClassesTo": {
+        "type": "\"child\" | \"root\" | \"scope\"",
+        "required": false,
+        "description": "Either \"root\", \"scope\" or \"child\".\nSpecifies the location of salt theme class and attributes should be applied to.\n\nDefaults to \"root\" for a root provider, otherwise \"scope\"."
+      },
+      "density": {
+        "type": "\"high\" | \"medium\" | \"low\" | \"touch\"",
+        "required": false,
+        "description": "Either \"high\", \"medium\", \"low\" or \"touch\".\nDetermines the amount of content that can fit on a screen based on the size and spacing of components.\nRefer to [density](https://www.saltdesignsystem.com/salt/foundations/density) doc for more detail.",
+        "defaultValue": "\"medium\""
+      },
+      "theme": {
+        "type": "string",
+        "required": false,
+        "description": "A string. Specifies custom theme name(s) you want to apply, similar to `className`."
+      },
+      "mode": {
+        "type": "\"light\" | \"dark\"",
+        "required": false,
+        "description": "Either \"light\" or \"dark\". Enable the color palette to change from light to dark.\nRefer to [modes](https://www.saltdesignsystem.com/salt/foundations/modes) doc for more detail.",
+        "defaultValue": "\"light\""
+      },
+      "breakpoints": {
+        "type": "Breakpoints",
+        "required": false,
+        "description": "Shape of `{ xs: number; sm: number; md: number; lg: number; xl: number; }`.\nDetermines breakpoints used in responsive calculation for layout components."
+      },
+      "enableStyleInjection": {
+        "type": "boolean",
+        "required": false,
+        "description": "A boolean. Enables dynamic style injection for each component.\n\nIf `false`, you'll need to include component CSS yourself.",
+        "defaultValue": "true"
+      },
+      "corner": {
+        "type": "\"sharp\" | \"rounded\"",
+        "required": false,
+        "description": "Either \"sharp\" or \"rounded\".\nDetermines selected components corner radius.",
+        "defaultValue": "\"sharp\""
+      },
+      "headingFont": {
+        "type": "\"Open Sans\" | \"Amplitude\"",
+        "required": false,
+        "description": "Either \"Open Sans\" or \"Amplitude\".\nDetermines font family of display and heading text.",
+        "defaultValue": "\"Open Sans\""
+      },
+      "accent": {
+        "type": "\"blue\" | \"teal\"",
+        "required": false,
+        "description": "Either \"blue\" or \"teal\".\nDetermines accent color used across components, e.g. Accent Button, List, Calendar.",
+        "defaultValue": "\"blue\""
+      },
+      "actionFont": {
+        "type": "\"Open Sans\" | \"Amplitude\"",
+        "required": false,
+        "description": "Either \"Open Sans\" or \"Amplitude\".\nDetermines font family of action components, mostly Buttons.",
+        "defaultValue": "\"Open Sans\""
+      }
+    },
+    "category": "@salt-ds/core",
+    "description": "",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { UNSTABLE_SaltProviderNext } from \"@salt-ds/core\";",
+    "source_code_url": "",
+    "related_components": []
+  }
+}

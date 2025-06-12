@@ -98,9 +98,30 @@ Return only the component code in JSX format.
                                     theme: Dict[str, Any]) -> str:
         """Generate the main App component code"""
         
-        prompt = f"""
-Generate a React App component that uses the following mapped components:
+        system_prompt = f'''
+You are a React code generation engine trained to produce clean, correct, and fully structured Salt Design System JSX code.
 
+Your job is to:
+1. Interpret a deeply nested component tree.
+2. Map it precisely to SaltDS components, layout primitives, and icons.
+3. Analyze and utilize each available UI component's props to determine the most efficient way to render the UI.
+4. Apply correct props, layout rules, spacing (in 8px units), and semantic structure.
+5. Output only the final `App` component JSX code, including `export default function App` — no markdown, explanations, or commentary.
+
+You MUST:
+- Think through the hierarchy, layout, and available component props before writing JSX.
+- Apply layout primitives like `FlexLayout`, `StackLayout`, `GridLayout` instead of generic wrappers.
+- Use child JSX (e.g., `<Text>hello</Text>`) rather than props like `text="hello"` unless the API explicitly requires it.
+- Leverage component-specific props effectively to enhance functionality and visual appeal.
+- Apply spacing via `padding`, `margin`, `gap` using 8px units (`gap=4` = 32px).
+- Group and deduplicate imports by SaltDS package (e.g., `@salt-ds/core`, `@salt-ds/icons`).
+- Ensure all components used in the JSX are correctly imported.
+- Ensure functional correctness, hierarchy fidelity, and visual layout match.
+- Do not guess — use only the components, icons, and layout options explicitly provided.
+
+Generate **only** the valid JSX of a functional `App` component with the appropriate imports.
+'''
+        user_prompt = f'''
 Component Tree:
 {json.dumps(components, indent=2)}
 
@@ -110,30 +131,39 @@ Available Components:
 Available Icons:
 {json.dumps(detailed_icons, indent=2)}
 
-Available Layouts:
-{json.dumps(detailed_layouts, indent=2)}
-
 Theme:
 {json.dumps(theme, indent=2)}
 
 Instructions:
-1. Use SaltDS components and icons with **correct and minimal imports**. Club all imports from the same package together (e.g., `import A, B from "@salt-ds/icons"`).
-2. Apply the theme configuration correctly.
-3. **Respect correct JSX usage**. For example:
-   - Use `<Text>example</Text>` instead of `<Text text="example" />`
-   - Use `<Button>Click me</Button>` instead of `<Button label="Click me" />` unless the API demands it.
-4. Use layout components appropriately to reflect the `Component Tree` hierarchy.
-5. When using spacing, paddings, margins, and gaps, **use numbers according to the 1 unit = 8px rule**. For example:
-   - For 40px spacing, use `gap={5}` (not `gap={40}`).
-6. Prefer `props` over `style`, and use inline styles **only if absolutely required**.
-7. Ensure all components are rendered in their correct order and nested correctly inside their respective parent layout components.
-8. Include **clear inline comments** only where necessary (such as for conditionals or computed logic), but do not overcomment obvious UI structure.
+- Use the data above to map each node in the component tree to a real SaltDS component.
+- Apply correct layout structure and prop mapping.
+- Do not include markdown formatting or explanations.
+- Only return the JSX for the App component.
 
-Only return the final React JSX code of the App component.  
-Do not return any extra text, explanations, descriptions, markdown formatting, or surrounding commentary.
-"""
+'''
 
-        return await self._call_llm(prompt, structured_output=False)
+# Instructions:
+# 1. Use SaltDS components and icons with **correct and minimal imports**. Club all imports from the same package together (e.g., `import A, B from "@salt-ds/icons"`).
+# 2. Apply the theme configuration correctly.
+# 3. **Respect correct JSX usage**. For example:
+#    - Use `<Text>example</Text>` instead of `<Text text="example" />`
+#    - Use `<Button>Click me</Button>` instead of `<Button label="Click me" />` unless the API demands it.
+# 4. Use layout components appropriately to reflect the `Component Tree` hierarchy.
+# 5. When using spacing, paddings, margins, and gaps, **use numbers according to the 1 unit = 8px rule**. For example:
+#    - For 40px spacing, use `gap={5}` (not `gap={40}`).
+# 6. Prefer `props` over `style`, and use inline styles **only if absolutely required**.
+# 7. Ensure all components are rendered in their correct order and nested correctly inside their respective parent layout components.
+# 8. Include **clear inline comments** only where necessary (such as for conditionals or computed logic), but do not overcomment obvious UI structure.
+
+# Only return the final React JSX code of the App component.  
+# Do not return any extra text, explanations, descriptions, markdown formatting, or surrounding commentary.
+        messages=[
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": user_prompt}]
+        response = await self.model.ainvoke(messages, temperature=0)
+        raw = response.content.strip()
+        return raw
+
 
     async def process(self, state: AgentState) -> AgentState:
         """Process the input state and generate React code"""
