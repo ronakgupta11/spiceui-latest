@@ -1,0 +1,139 @@
+{
+  "component_name": "Card",
+  "metadata": {
+    "component_name": "Card",
+    "description": "`Card`, `LinkCard` and `InteractableCard` are visually distinct content containers that display a snapshot of information about a single subject and act as an entry point for more detailed information.\n",
+    "props": {
+      "accent": {
+        "type": "enum",
+        "required": false,
+        "description": "If provided an accent is shown in the specified position."
+      },
+      "disabled": {
+        "type": "boolean",
+        "required": false,
+        "description": "**Deprecated:** Use the InteractableCard component instead\n\nIf `true`, the card will be disabled."
+      },
+      "hoverable": {
+        "type": "boolean",
+        "required": false,
+        "description": "If `true` the card will have hover styling."
+      },
+      "interactable": {
+        "type": "boolean",
+        "required": false,
+        "description": "**Deprecated:** Use the InteractableCard component instead\n\nIf `true`, interactive styles will be applied to `Card`. These styles give prominence to certain content\non the page."
+      },
+      "variant": {
+        "type": "enum",
+        "required": false,
+        "description": "Styling variant. Defaults to \"primary\"."
+      }
+    },
+    "examples": [
+      {
+        "name": "Accents",
+        "description": "- The accent in a card is optional, but you can use it to indicate meaning (such as product or brand color).\n- When paired with the hoverable prop, an accent can indicate a card is interactive when the user moves focus to the card. Interactable cards and link cards are always hoverable.\n- Maintain consistency in accent placement across cards to ensure a coherent visual experience in your UI.",
+        "code": "import {\n  Card,\n  type CardProps,\n  H3,\n  RadioButton,\n  RadioButtonGroup,\n  StackLayout,\n  Text,\n} from \"@salt-ds/core\";\nimport { useState } from \"react\";\n\nexport const Accents = () => {\n  const [placement, setPlacement] = useState<CardProps[\"accent\"]>(\"top\");\n\n  return (\n    <StackLayout style={{ width: \"266px\" }} align=\"center\">\n      <Card accent={placement} hoverable>\n        <StackLayout gap={1} align=\"start\">\n          <H3>Sustainable investing products</H3>\n          <Text>\n            We have a commitment to provide a wide range of investment solutions\n            to enable you to align your financial goals to your values.\n          </Text>\n        </StackLayout>\n      </Card>\n      <RadioButtonGroup\n        value={placement}\n        onChange={(event) =>\n          setPlacement(event.target.value as CardProps[\"accent\"])\n        }\n        direction=\"horizontal\"\n      >\n        <RadioButton label=\"Top\" value=\"top\" key=\"top\" />\n        <RadioButton label=\"Right\" value=\"right\" key=\"right\" />\n        <RadioButton label=\"Bottom\" value=\"bottom\" key=\"bottom\" />\n        <RadioButton label=\"Left\" value=\"left\" key=\"left\" />\n      </RadioButtonGroup>\n    </StackLayout>\n  );\n};\n"
+      },
+      {
+        "name": "Actions",
+        "description": "You can incorporate actions like [links](../link) or [buttons](../button) into a card. Don't embed actions into a link card or an interactable card, as the card itself is the interactive element.",
+        "code": "import { Button, Card, H3, Link, StackLayout, Text } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Actions = (): ReactElement => {\n  return (\n    <StackLayout direction={\"row\"} align=\"start\">\n      <Card style={{ width: \"260px\" }} accent=\"top\">\n        <StackLayout align=\"start\">\n          <StackLayout gap={1}>\n            <H3>Sustainable investing products</H3>\n            <Text>\n              We have a commitment to provide a wide range of investment\n              solutions to enable you to align your financial goals to your\n              values.\n            </Text>\n          </StackLayout>\n          <Button>Learn more</Button>\n        </StackLayout>\n      </Card>\n      <Card style={{ width: \"260px\" }} accent=\"top\">\n        <StackLayout align=\"start\">\n          <StackLayout gap={1}>\n            <H3>Climate change</H3>\n            <Text>\n              Climate factors represent the biggest source of risk and\n              opportunity for investors in the decades to come.\n            </Text>\n          </StackLayout>\n          <Link href=\"#\">See our approach</Link>\n        </StackLayout>\n      </Card>\n    </StackLayout>\n  );\n};\n"
+      },
+      {
+        "name": "BackgroundImage",
+        "description": "",
+        "code": "import { Card, H3, Link, StackLayout, Text } from \"@salt-ds/core\";\nimport type { CSSProperties, ReactElement } from \"react\";\n\nexport const BackgroundImage = (): ReactElement => {\n  return (\n    <Card\n      style={\n        {\n          backgroundImage: 'url(\"/img/examples/backgroundImg.png\")',\n          backgroundSize: \"cover\",\n          // Make sure text meets color contrast standards in both light and dark modes.\n          // Example image is dark, so use content bold color for texts and links.\n          \"--salt-content-primary-foreground\":\n            \"var(--salt-content-bold-foreground)\",\n        } as CSSProperties\n      }\n    >\n      <StackLayout align=\"start\">\n        <StackLayout gap={1}>\n          <H3>Sustainable investing products</H3>\n          <Text>\n            We have a commitment to provide a wide range of investment solutions\n            to enable you to align your financial goals to your values.\n          </Text>\n        </StackLayout>\n        <Link href=\"#\" IconComponent={null}>\n          Learn more\n        </Link>\n      </StackLayout>\n    </Card>\n  );\n};\n"
+      },
+      {
+        "name": "CustomAccent",
+        "description": "",
+        "code": "import { Card, H3, StackLayout, Text } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\nimport styles from \"./index.module.css\";\n\nexport const CustomAccent = (): ReactElement => {\n  return (\n    <StackLayout direction=\"row\">\n      {/* in your css:\n        .category1 { \n          --saltCard-accent-color: rgb(70, 118, 191);\n        }\n        .category1:hover {\n          --saltCard-accent-color: rgb(35, 77, 140);\n        }\n      */}\n      <Card\n        className={styles.category1}\n        style={{\n          width: \"240px\",\n        }}\n        accent=\"top\"\n        hoverable\n      >\n        <StackLayout gap={1}>\n          <H3>\n            <strong>Investment Compliance</strong>\n          </H3>\n          <Text>\n            Exception-based reporting that highlights potential warnings or\n            violations of investment guidelines and regulations.\n          </Text>\n        </StackLayout>\n      </Card>\n      {/* in your css:\n        .category2 {\n          --saltCard-accent-color: rgb(171, 101, 40);\n        }\n\n        .category2:hover {\n          --saltCard-accent-color: rgb(133, 72, 20);\n        }\n      */}\n      <Card\n        className={styles.category2}\n        style={{\n          width: \"240px\",\n        }}\n        accent=\"top\"\n        hoverable\n      >\n        <StackLayout gap={1}>\n          <H3>\n            <strong>S&P Global Market Intelligence</strong>\n          </H3>\n          <Text>\n            Automate transmission of bank loan settlement instructions.\n          </Text>\n        </StackLayout>\n      </Card>\n    </StackLayout>\n  );\n};\n"
+      },
+      {
+        "name": "CustomPadding",
+        "description": "",
+        "code": "import {\n  Button,\n  Card,\n  Display3,\n  FlowLayout,\n  H3,\n  LinkCard,\n  RadioButton,\n  RadioButtonGroup,\n  StackLayout,\n  Text,\n} from \"@salt-ds/core\";\nimport { MessageIcon } from \"@salt-ds/icons\";\nimport { type CSSProperties, type ReactElement, useState } from \"react\";\n\nexport const CustomPadding = (): ReactElement => {\n  const [padding, setPadding] = useState(\"spacing-200\");\n\n  return (\n    <StackLayout align=\"center\">\n      {padding === \"spacing-100\" && (\n        <LinkCard\n          href=\"#\"\n          style={\n            {\n              \"--saltLinkCard-padding\": \"var(--salt-spacing-100)\",\n              width: \"160px\",\n            } as CSSProperties\n          }\n        >\n          <StackLayout gap={1} direction=\"row\" align=\"center\">\n            <MessageIcon size={1} />\n            <Text>Contact us</Text>\n          </StackLayout>\n        </LinkCard>\n      )}\n      {padding === \"spacing-200\" && (\n        <Card\n          style={\n            {\n              \"--saltCard-padding\": \"var(--salt-spacing-200)\",\n              width: \"260px\",\n            } as CSSProperties\n          }\n        >\n          <StackLayout gap={1}>\n            <H3>Sustainable investing products</H3>\n            <Text>\n              We have a commitment to provide a wide range of investment\n              solutions to enable you to align your financial goals to your\n              values.\n            </Text>\n          </StackLayout>\n        </Card>\n      )}\n      {padding === \"spacing-300\" && (\n        <Card\n          style={\n            {\n              \"--saltCard-padding\": \"var(--salt-spacing-300)\",\n              width: \"500px\",\n            } as CSSProperties\n          }\n        >\n          <StackLayout>\n            <StackLayout direction=\"row\" align=\"end\" gap={1}>\n              <H3>Threshold Summary</H3>\n              <Text variant=\"secondary\">(Projected Revenue)</Text>\n            </StackLayout>\n            <FlowLayout gap={3}>\n              <StackLayout gap={0}>\n                <Text>Below Threshold 1</Text>\n                <Display3>$1,000,000</Display3>\n              </StackLayout>\n              <StackLayout gap={0}>\n                <Text>Below Threshold 1 & 2</Text>\n                <Display3>$450,000</Display3>\n              </StackLayout>\n              <StackLayout gap={0}>\n                <Text>Below Threshold 2 & 3</Text>\n                <Display3>$0</Display3>\n              </StackLayout>\n            </FlowLayout>\n\n            <StackLayout direction=\"row\" gap={1}>\n              <Button>Cancel</Button>\n              <Button sentiment=\"accented\">Update tier</Button>\n            </StackLayout>\n          </StackLayout>\n        </Card>\n      )}\n      <RadioButtonGroup\n        value={padding}\n        onChange={(e) => setPadding(e.target.value)}\n        direction=\"horizontal\"\n      >\n        <RadioButton label=\"spacing-100\" value=\"spacing-100\" />\n        <RadioButton\n          key=\"spacing-200\"\n          label=\"spacing-200 (default)\"\n          value=\"spacing-200\"\n        />\n        <RadioButton label=\"spacing-300\" value=\"spacing-300\" />\n      </RadioButtonGroup>\n    </StackLayout>\n  );\n};\n"
+      },
+      {
+        "name": "Default",
+        "description": "",
+        "code": "import { Card } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Default = (): ReactElement => {\n  return <Card style={{ width: \"260px\", height: \"144px\" }} />;\n};\n"
+      },
+      {
+        "name": "DisabledInteractableCard",
+        "description": "",
+        "code": "import { InteractableCard } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const DisabledInteractableCard = (): ReactElement => {\n  return (\n    <InteractableCard\n      accent=\"top\"\n      style={{ width: \"260px\", height: \"144px\" }}\n      disabled\n    />\n  );\n};\n"
+      },
+      {
+        "name": "DisabledToggleGroup",
+        "description": "",
+        "code": "import {\n  H3,\n  InteractableCard,\n  InteractableCardGroup,\n  StackLayout,\n  Text,\n} from \"@salt-ds/core\";\nimport { BankIcon, CreditCardIcon, DiamondIcon } from \"@salt-ds/icons\";\nimport type { ReactElement } from \"react\";\n\nexport const DisabledToggleGroup = (): ReactElement => (\n  <StackLayout>\n    <StackLayout gap={1}>\n      <H3>Payment method</H3>\n      <Text>Choose your payment method from the options below.</Text>\n    </StackLayout>\n    <InteractableCardGroup disabled value=\"card\">\n      <InteractableCard value=\"card\" style={{ width: \"180px\" }}>\n        <StackLayout gap={1}>\n          <StackLayout gap={1} direction=\"row\" align=\"center\">\n            <CreditCardIcon size={2} />\n            <H3 disabled>Credit Card</H3>\n          </StackLayout>\n          <Text disabled>Link credit card to your payments account.</Text>\n        </StackLayout>\n      </InteractableCard>\n      <InteractableCard value=\"wire\" style={{ width: \"180px\" }}>\n        <StackLayout gap={1}>\n          <StackLayout gap={1} direction=\"row\" align=\"center\">\n            <BankIcon size={2} />\n            <H3 disabled>Bank wire</H3>\n          </StackLayout>\n          <Text disabled>Link your bank to your payments account.</Text>\n        </StackLayout>\n      </InteractableCard>\n      <InteractableCard value=\"crypto\" style={{ width: \"180px\" }}>\n        <StackLayout gap={1}>\n          <StackLayout gap={1} direction=\"row\" align=\"center\">\n            <DiamondIcon size={2} />\n            <H3 disabled>Cryptocurrency</H3>\n          </StackLayout>\n          <Text disabled>Link your crypto to your payments account.</Text>\n        </StackLayout>\n      </InteractableCard>\n    </InteractableCardGroup>\n  </StackLayout>\n);\n"
+      },
+      {
+        "name": "FullWidthImage",
+        "description": "",
+        "code": "import { Card, H3, Link, StackLayout, Text } from \"@salt-ds/core\";\nimport type { CSSProperties, ReactElement } from \"react\";\n\nexport const FullWidthImage = (): ReactElement => {\n  return (\n    <Card style={{ \"--saltCard-padding\": 0, width: \"260px\" } as CSSProperties}>\n      <img\n        src=\"/img/examples/cardExample.jpg\"\n        alt=\"placeholder\"\n        style={{ width: \"100%\" }}\n      />\n      <StackLayout padding={2} align=\"start\">\n        <StackLayout padding={0} gap={1}>\n          <H3>Sustainable investing products</H3>\n          <Text>\n            We have a commitment to provide a wide range of investment solutions\n            to enable you to align your financial goals to your values.\n          </Text>\n        </StackLayout>\n        <Link href=\"#\" IconComponent={null}>\n          Learn more\n        </Link>\n      </StackLayout>\n    </Card>\n  );\n};\n"
+      },
+      {
+        "name": "Ghost",
+        "description": "",
+        "code": "import { Card, Panel, Text } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\nimport styles from \"./index.module.css\";\n\nexport const Ghost = (): ReactElement => {\n  return (\n    <Panel className={styles.exampleGradient}>\n      <Card variant=\"ghost\" className={styles.variantCard}>\n        <Text>Ghost Card</Text>\n      </Card>\n    </Panel>\n  );\n};\n"
+      },
+      {
+        "name": "InteractableCardExample",
+        "description": "",
+        "code": "import { InteractableCard } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const InteractableCardExample = (): ReactElement => {\n  return (\n    <InteractableCard\n      accent=\"top\"\n      style={{ width: \"260px\", height: \"144px\" }}\n    />\n  );\n};\n"
+      },
+      {
+        "name": "LinkCardExample",
+        "description": "",
+        "code": "import { LinkCard } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const LinkCardExample = (): ReactElement => {\n  return (\n    <LinkCard\n      href=\"https://www.saltdesignsystem.com\"\n      target=\"_blank\"\n      style={{ width: \"260px\", height: \"144px\" }}\n      accent=\"top\"\n    />\n  );\n};\n"
+      },
+      {
+        "name": "ToggleGroup",
+        "description": "",
+        "code": "import {\n  H3,\n  InteractableCard,\n  InteractableCardGroup,\n  StackLayout,\n  Text,\n} from \"@salt-ds/core\";\nimport { BankIcon, CreditCardIcon, DiamondIcon } from \"@salt-ds/icons\";\nimport type { ReactElement } from \"react\";\n\nexport const ToggleGroup = (): ReactElement => (\n  <StackLayout>\n    <StackLayout gap={1}>\n      <H3>Payment method</H3>\n      <Text>Choose your payment method from the options below.</Text>\n    </StackLayout>\n    <InteractableCardGroup>\n      <InteractableCard value=\"card\" style={{ minWidth: \"180px\" }}>\n        <StackLayout gap={1}>\n          <StackLayout gap={1} direction=\"row\" align=\"center\">\n            <CreditCardIcon size={2} />\n            <H3>Credit Card</H3>\n          </StackLayout>\n          <Text>Link credit card to your payments account.</Text>\n        </StackLayout>\n      </InteractableCard>\n      <InteractableCard value=\"wire\" style={{ minWidth: \"180px\" }}>\n        <StackLayout gap={1}>\n          <StackLayout gap={1} direction=\"row\" align=\"center\">\n            <BankIcon size={2} />\n            <H3>Bank wire</H3>\n          </StackLayout>\n          <Text>Link your bank to your payments account.</Text>\n        </StackLayout>\n      </InteractableCard>\n      <InteractableCard value=\"crypto\" style={{ minWidth: \"180px\" }}>\n        <StackLayout gap={1}>\n          <StackLayout gap={1} direction=\"row\" align=\"center\">\n            <DiamondIcon size={2} />\n            <H3>Cryptocurrency</H3>\n          </StackLayout>\n          <Text>Link your crypto to your payments account.</Text>\n        </StackLayout>\n      </InteractableCard>\n    </InteractableCardGroup>\n  </StackLayout>\n);\n"
+      },
+      {
+        "name": "Variants",
+        "description": "Cards are available in several variants: primary, secondary, and tertiary, with an additional ghost variant for static cards. These variants can be combined to create different levels of hierarchy within your UI. There is no strict order to follow; the choice largely depends on the content, layout, and structure of your UI. Select the variant that best aligns with the design language you are establishing and the hierarchy you aim to create.",
+        "code": "import { Card, GridLayout, StackLayout } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\nimport styles from \"./index.module.css\";\n\nexport const Variants = (): ReactElement => {\n  return (\n    <StackLayout className={styles.variantContainer}>\n      <GridLayout\n        columns=\"repeat(auto-fill, 260px)\"\n        className={styles.variantContainer}\n      >\n        <Card variant=\"primary\" className={styles.variantCard}>\n          Primary\n        </Card>\n        <Card variant=\"secondary\" className={styles.variantCard}>\n          Secondary\n        </Card>\n        <Card variant=\"tertiary\" className={styles.variantCard}>\n          Tertiary\n        </Card>\n      </GridLayout>\n    </StackLayout>\n  );\n};\n"
+      }
+    ],
+    "category": "@salt-ds/core",
+    "tags": [
+      "Tile",
+      "Panel",
+      "Teaser"
+    ],
+    "when_to_use": [
+      "To group related information with the same visual hierarchy.",
+      "To present a summary of a larger idea.",
+      "**Link cards:** to link to more detailed information.",
+      "**Interactable cards:** when you need a card to act as a button or when a group of cards needs to behave like a set of checkboxes or radio buttons."
+    ],
+    "when_not_to_use": [
+      "To display sequential information or emphasize ranking. Instead, use [`List`](../list).",
+      "As a stand-alone call to action. Instead, use [`Button`](../button).",
+      "For decoration purposes only."
+    ],
+    "import_statement": "import {\n  Card,\n  InteractableCard,\n  InteractableCardGroup,\n  LinkCard,\n} from \"@salt-ds/core\";",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/tree/main/packages/core/src/card",
+    "related_components": [
+      {
+        "name": "Panel",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Link",
+        "relationship": "contains"
+      },
+      {
+        "name": "Button",
+        "relationship": "contains"
+      }
+    ]
+  }
+}

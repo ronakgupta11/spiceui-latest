@@ -1,0 +1,119 @@
+{
+  "component_name": "Link",
+  "metadata": {
+    "component_name": "Link",
+    "description": "`Link` allows users to navigate to a different site or other pages within the current site. You can use it inline in a sentence, standalone on its own, or after a sentence.",
+    "props": {
+      "IconComponent": {
+        "type": "ComponentType<IconProps>",
+        "required": false,
+        "description": "Icon component displayed for external links. Defaults to `ExternalIcon` from `SemanticIconProvider`."
+      },
+      "render": {
+        "type": "ReactElement<any, string | JSXElementConstructor<any>> | ((props: any) => ReactElement<any, string | JSXElementConstructor<any>>)",
+        "required": false,
+        "description": "Render prop to enable customisation of anchor element."
+      },
+      "color": {
+        "type": "enum",
+        "required": false,
+        "description": ""
+      },
+      "underline": {
+        "type": "enum",
+        "required": false,
+        "description": "Either \"default\" or \"never\".\nDetermines when underline should be applied to the link.",
+        "defaultValue": "default"
+      },
+      "maxRows": {
+        "type": "number",
+        "required": false,
+        "description": "Apply text truncation by mentioning number of rows to be displayed"
+      },
+      "styleAs": {
+        "type": "enum",
+        "required": false,
+        "description": "Match styling to another text component's style"
+      },
+      "variant": {
+        "type": "enum",
+        "required": false,
+        "description": "Change text color palette\n@deprecated Use `color` instead"
+      }
+    },
+    "examples": [
+      {
+        "name": "Color",
+        "description": "To help create a visual hierarchy using a link, use the `color` prop. The default color is `primary`.\n\nWhen `color` is set to `\"inherit\"` Link's hover, active and focus colors will also be inherited.",
+        "code": "import { Link, StackLayout, Text } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\nimport styles from \"./index.module.css\";\n\nexport const Color = (): ReactElement => (\n  <StackLayout align=\"start\">\n    <Link href=\"#\" color=\"accent\" className={styles.linkExample}>\n      Accent Link color\n    </Link>\n    <Link href=\"#\" color=\"primary\" className={styles.linkExample}>\n      Primary Link color\n    </Link>\n    <Link href=\"#\" color=\"secondary\" className={styles.linkExample}>\n      Secondary Link color\n    </Link>\n    <Text color=\"error\">\n      <Link href=\"#\" color=\"inherit\" className={styles.linkExample}>\n        Inherit Link color\n      </Link>\n    </Text>\n  </StackLayout>\n);\n"
+      },
+      {
+        "name": "Default",
+        "description": "By default, a link will only navigate the user within the same tab, replacing the page where the user followed the link.",
+        "code": "import { Link } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\nimport styles from \"./index.module.css\";\n\nexport const Default = (): ReactElement => (\n  <Link href=\"#\" className={styles.linkExample}>\n    Default Link\n  </Link>\n);\n"
+      },
+      {
+        "name": "OpenInANewTab",
+        "description": "",
+        "code": "import { Link, StackLayout } from \"@salt-ds/core\";\nimport { GithubIcon } from \"@salt-ds/icons\";\nimport type { ReactElement } from \"react\";\nimport styles from \"./index.module.css\";\n\nexport const OpenInANewTab = (): ReactElement => (\n  <StackLayout align=\"start\">\n    <Link\n      href=\"https://www.saltdesignsystem.com\"\n      target=\"_blank\"\n      rel=\"noopener\"\n      className={styles.linkExample}\n    >\n      Link with default icon\n    </Link>\n\n    <Link\n      href=\"https://github.com/jpmorganchase/salt-ds\"\n      target=\"_blank\"\n      rel=\"noopener\"\n      IconComponent={GithubIcon}\n      className={styles.linkExample}\n    >\n      Link with custom icon\n    </Link>\n\n    <Link\n      href=\"\"\n      target=\"_blank\"\n      rel=\"noopener\"\n      IconComponent={null}\n      className={styles.linkExample}\n    >\n      Link with no icon\n    </Link>\n  </StackLayout>\n);\n"
+      },
+      {
+        "name": "RenderElement",
+        "description": "",
+        "code": "import { Link, Text } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\nimport styles from \"./index.module.css\";\n\nconst CustomLinkImplementation = (props: any) => (\n  <a {...props}>\n    <Text>Your own Link implementation</Text>\n  </a>\n);\n\nexport const RenderElement = (): ReactElement => {\n  return (\n    <Link\n      href=\"#\"\n      className={styles.linkExample}\n      render={<CustomLinkImplementation />}\n    />\n  );\n};\n"
+      },
+      {
+        "name": "RenderProp",
+        "description": "",
+        "code": "import { Link, Text } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\nimport styles from \"./index.module.css\";\n\nconst CustomLinkImplementation = (props: any) => (\n  <a {...props}>\n    <Text>Your own Link implementation</Text>\n  </a>\n);\n\nexport const RenderProp = (): ReactElement => {\n  return (\n    <Link\n      href=\"#\"\n      className={styles.linkExample}\n      render={(props) => <CustomLinkImplementation {...props} />}\n    />\n  );\n};\n"
+      },
+      {
+        "name": "Underline",
+        "description": "By default, links are underlined apart from hover state. If you need a more subtle effect, set `underline=\"never\"`.",
+        "code": "import { Link, StackLayout } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\nimport styles from \"./index.module.css\";\n\nexport const Underline = (): ReactElement => (\n  <StackLayout align=\"start\">\n    <Link href=\"#\" className={styles.linkExample}>\n      Underline default\n    </Link>\n    <Link href=\"#\" underline=\"never\" className={styles.linkExample}>\n      Underline never\n    </Link>\n  </StackLayout>\n);\n"
+      },
+      {
+        "name": "Variant",
+        "description": "**Note:** This prop is deprecated. Use the `color` prop instead.",
+        "code": "import { Link, StackLayout } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\nimport styles from \"./index.module.css\";\n\nexport const Variant = (): ReactElement => (\n  <StackLayout align=\"start\">\n    <Link href=\"#\" variant=\"primary\" className={styles.linkExample}>\n      Primary Link variant\n    </Link>\n    <Link href=\"#\" variant=\"secondary\" className={styles.linkExample}>\n      Secondary Link variant\n    </Link>\n  </StackLayout>\n);\n"
+      },
+      {
+        "name": "Visited",
+        "description": "Links change color after a user clicks on them. This tells the user which links they have already visited.",
+        "code": "import { Link } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\nimport styles from \"./index.module.css\";\n\nexport const Visited = (): ReactElement => (\n  <Link href=\"#\" className={styles.visitedLink}>\n    Link with visited style\n  </Link>\n);\n"
+      }
+    ],
+    "category": "@salt-ds/core",
+    "tags": [
+      "Anchor",
+      "Hyperlink"
+    ],
+    "when_to_use": [
+      "To provide navigation to a page on the same or different site.",
+      "To link to documents, email addresses or phone numbers.",
+      "To send users to a specific section on the same page.",
+      "To provide users with more detailed information or assistance e.g., terms and conditions, help sections or contact information."
+    ],
+    "when_not_to_use": [
+      "To trigger an action, such as submitting a form or opening a dialog. Instead, use [`Button`](../button).",
+      "Link text should be concise, no longer than a single sentence. This helps to keep the user interface clean, minimize distractions and maintain a clear visual hierarchy.",
+      "Do not overload sentences or pages with links.",
+      "Consider writing standalone links as calls-to-action and begin with a verb e.g., “Visit the help page”.",
+      "Write inline links as if they were part of the sentence.",
+      "Do not include the word “link” in the link text. Most screen readers say “link” before each link.",
+      "Link text should accurately describe the linked content. Link text that does not correctly reflect the destination or purpose can confuse or frustrate the user.",
+      "https://developer.chrome.com/docs/lighthouse/seo/link-text/",
+      "https://www.smashingmagazine.com/2012/06/links-should-never-say-click-here/",
+      "https://business.scope.org.uk/article/how-to-write-better-link-text-for-accessibility",
+      "https://www.nngroup.com/articles/duplicate-links/"
+    ],
+    "import_statement": "import { Link } from \"@salt-ds/core\";",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/tree/main/packages/core/src/link",
+    "related_components": [
+      {
+        "name": "Button",
+        "relationship": "similarTo"
+      }
+    ]
+  }
+}

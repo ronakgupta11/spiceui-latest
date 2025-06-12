@@ -1,0 +1,82 @@
+{
+  "component_name": "Carousel",
+  "metadata": {
+    "component_name": "Carousel",
+    "description": "`Carousel` groups small amounts of content into discrete slides, that are viewed in a linear sequence.",
+    "props": {
+      "defaultActiveSlideIndex": {
+        "type": "number",
+        "required": false,
+        "description": "The initial Index enables you to select the active slide in the carousel.\nOptional, default 0.",
+        "defaultValue": "0"
+      },
+      "activeSlideIndex": {
+        "type": "number",
+        "required": false,
+        "description": "Controlled index of active slide in the carousel."
+      },
+      "controlsPlacement": {
+        "type": "enum",
+        "required": false,
+        "description": "Set the placement of the CarouselControls relative to the CarouselSlider element. Defaults to `top`.",
+        "defaultValue": "top"
+      },
+      "visibleSlides": {
+        "type": "ResponsiveProp<number>",
+        "required": false,
+        "description": "Number of slides visible at a time.\nOptional, default 1."
+      }
+    },
+    "examples": [
+      {
+        "name": "Appearance",
+        "description": "Two different appearances are available for carousel: Bordered and Transparent.",
+        "code": "import { H2, H3, StackLayout, Text, useId } from \"@salt-ds/core\";\nimport {\n  Carousel,\n  CarouselControls,\n  CarouselSlide,\n  CarouselSlider,\n} from \"@salt-ds/lab\";\nimport clsx from \"clsx\";\nimport type { ReactElement } from \"react\";\nimport { sliderData } from \"./exampleData\";\nimport styles from \"./index.module.css\";\n\nfunction renderSlideContent(index: number) {\n  return (\n    <StackLayout gap={1}>\n      <H3 id={`slide-title-${index}`}>\n        Categorical bold background {index + 1}\n      </H3>\n      <Text>\n        Categorical colors are used for data visualization and other components\n        that support categories.\n      </Text>\n    </StackLayout>\n  );\n}\n\nconst renderMediaPlaceholder = (index: number) => (\n  <div\n    className={clsx(\n      styles.carouselImagePlaceholder,\n      styles[`carouselImagePlaceholder-${index + 1}`],\n    )}\n  />\n);\n\nexport const Appearance = (): ReactElement => {\n  return (\n    <StackLayout direction=\"row\" gap={6}>\n      <Carousel aria-label=\"Account overview bordered\">\n        <CarouselControls title={<H2>Bordered</H2>} />\n        <CarouselSlider>\n          {sliderData.map((slide, index) => {\n            const carousel1SlideId = useId();\n            return (\n              <CarouselSlide\n                appearance=\"bordered\"\n                key={carousel1SlideId}\n                aria-labelledby={`slide-title-${carousel1SlideId}`}\n                media={\n                  <img\n                    alt={`stock content to show in carousel slide ${index}`}\n                    className={clsx(styles.carouselImagePlaceholder)}\n                    src={slide.image}\n                  />\n                }\n                header={\n                  <H3 id={`slide-title-${carousel1SlideId}`}>{slide.title}</H3>\n                }\n              >\n                <Text>{slide.content}</Text>\n              </CarouselSlide>\n            );\n          })}\n        </CarouselSlider>\n      </Carousel>\n      <Carousel aria-label=\"Account overview\">\n        <CarouselControls title={<H2>Transparent</H2>} />\n        <CarouselSlider>\n          {sliderData.map((slide, index) => {\n            const carousel2SlideId = useId();\n            return (\n              <CarouselSlide\n                key={carousel2SlideId}\n                aria-labelledby={`slide-title-${carousel2SlideId}`}\n                media={\n                  <img\n                    alt={`stock content to show in carousel slide ${index}`}\n                    className={clsx(styles.carouselImagePlaceholder)}\n                    src={slide.image}\n                  />\n                }\n                header={\n                  <H3 id={`slide-title-${carousel2SlideId}`}>{slide.title}</H3>\n                }\n              >\n                <Text>{slide.content}</Text>\n              </CarouselSlide>\n            );\n          })}\n        </CarouselSlider>\n      </Carousel>\n    </StackLayout>\n  );\n};\n"
+      },
+      {
+        "name": "ControlledCarousel",
+        "description": "",
+        "code": "import { Button, H3, StackLayout, Text, useId } from \"@salt-ds/core\";\nimport { Carousel, CarouselSlide, CarouselSlider } from \"@salt-ds/lab\";\nimport clsx from \"clsx\";\nimport { type ReactElement, useState } from \"react\";\nimport { sliderData } from \"./exampleData\";\nimport styles from \"./index.module.css\";\n\nexport const ControlledCarousel = (): ReactElement => {\n  const [slide, setSlide] = useState<number>(0);\n  return (\n    <StackLayout>\n      <StackLayout gap={1} direction=\"row\" align=\"center\">\n        <Button onClick={() => setSlide(slide - 1)} disabled={slide === 0}>\n          Left\n        </Button>\n        <Button\n          onClick={() => setSlide(slide + 1)}\n          disabled={slide >= sliderData.length - 1}\n        >\n          Right\n        </Button>\n        <Text>Current slide: {slide + 1}</Text>\n      </StackLayout>\n      <Carousel aria-label=\"Account overview\" activeSlideIndex={slide}>\n        <CarouselSlider onSelectionChange={(_, index) => setSlide(index)}>\n          {sliderData.map((slide, index) => {\n            const slideId = useId();\n            return (\n              <CarouselSlide\n                key={slideId}\n                aria-labelledby={`slide-title-${slideId}`}\n                media={\n                  <img\n                    alt={`stock content to show in carousel slide ${index}`}\n                    className={clsx(styles.carouselImagePlaceholder)}\n                    src={slide.image}\n                  />\n                }\n                header={<H3 id={`slide-title-${slideId}`}>{slide.title}</H3>}\n              >\n                <Text>{slide.content}</Text>\n              </CarouselSlide>\n            );\n          })}\n        </CarouselSlider>\n      </Carousel>\n    </StackLayout>\n  );\n};\n"
+      },
+      {
+        "name": "ControlsAlignment",
+        "description": "",
+        "code": "import { H2, H3, StackLayout, Text, useId } from \"@salt-ds/core\";\nimport {\n  Carousel,\n  CarouselControls,\n  CarouselSlide,\n  CarouselSlider,\n} from \"@salt-ds/lab\";\nimport clsx from \"clsx\";\nimport type { ReactElement } from \"react\";\nimport { sliderData } from \"./exampleData\";\nimport styles from \"./index.module.css\";\n\nexport const ControlsAlignment = (): ReactElement => {\n  return (\n    <StackLayout gap={1}>\n      <H2 className={styles.carouselHeader}>Account overview</H2>\n      <Carousel aria-label=\"Account overview\" controlsPlacement=\"bottom\">\n        <CarouselControls />\n        <CarouselSlider>\n          {sliderData.map((slide, index) => {\n            const slideId = useId();\n            return (\n              <CarouselSlide\n                appearance=\"bordered\"\n                key={slideId}\n                aria-labelledby={`slide-title-${slideId}`}\n                media={\n                  <img\n                    alt={`stock content to show in carousel slide ${index}`}\n                    className={clsx(styles.carouselImagePlaceholder)}\n                    src={slide.image}\n                  />\n                }\n                header={<H3 id={`slide-title-${slideId}`}>{slide.title}</H3>}\n              >\n                <Text>{slide.content}</Text>\n              </CarouselSlide>\n            );\n          })}\n        </CarouselSlider>\n      </Carousel>\n    </StackLayout>\n  );\n};\n"
+      },
+      {
+        "name": "Default",
+        "description": "Use the default setting to allow users to navigate the carousel in single slide increments, moving either backward or forward through the sequence.",
+        "code": "import { H3, Text, useId } from \"@salt-ds/core\";\nimport {\n  Carousel,\n  CarouselControls,\n  CarouselSlide,\n  CarouselSlider,\n} from \"@salt-ds/lab\";\nimport clsx from \"clsx\";\nimport type { ReactElement } from \"react\";\nimport { sliderData } from \"./exampleData\";\nimport styles from \"./index.module.css\";\n\nexport const Default = (): ReactElement => {\n  return (\n    <Carousel aria-label=\"Account overview\">\n      <CarouselControls />\n      <CarouselSlider>\n        {sliderData.map((slide, index) => {\n          const slideId = useId();\n          return (\n            <CarouselSlide\n              key={slideId}\n              aria-labelledby={`slide-title-${slideId}`}\n              media={\n                <img\n                  alt={`stock content to show in carousel slide ${index}`}\n                  className={clsx(styles.carouselImagePlaceholder)}\n                  src={slide.image}\n                />\n              }\n              header={<H3 id={`slide-title-${slideId}`}>{slide.title}</H3>}\n            >\n              <Text>{slide.content}</Text>\n            </CarouselSlide>\n          );\n        })}\n      </CarouselSlider>\n    </Carousel>\n  );\n};\n"
+      },
+      {
+        "name": "MultipleSlides",
+        "description": "",
+        "code": "import { H3, Text, useId } from \"@salt-ds/core\";\nimport {\n  Carousel,\n  CarouselControls,\n  CarouselSlide,\n  CarouselSlider,\n} from \"@salt-ds/lab\";\nimport clsx from \"clsx\";\nimport type { ReactElement } from \"react\";\nimport { sliderData } from \"./exampleData\";\nimport styles from \"./index.module.css\";\n\nexport const MultipleSlides = (): ReactElement => {\n  return (\n    <Carousel visibleSlides={{ xs: 1, sm: 2 }} aria-label=\"Account overview\">\n      <CarouselControls />\n      <CarouselSlider>\n        {sliderData.map((slide, index) => {\n          const slideId = useId();\n          return (\n            <CarouselSlide\n              key={slideId}\n              aria-labelledby={`slide-title-${slideId}`}\n              media={\n                <img\n                  alt={`stock content to show in carousel slide ${index}`}\n                  className={clsx(styles.carouselImagePlaceholder)}\n                  src={slide.image}\n                />\n              }\n              header={<H3 id={`slide-title-${slideId}`}>{slide.title}</H3>}\n            >\n              <Text>{slide.content}</Text>\n            </CarouselSlide>\n          );\n        })}\n      </CarouselSlider>\n    </Carousel>\n  );\n};\n"
+      },
+      {
+        "name": "WithSlideActions",
+        "description": "",
+        "code": "import { H3, Link, Text, useId } from \"@salt-ds/core\";\nimport {\n  Carousel,\n  CarouselControls,\n  CarouselSlide,\n  CarouselSlider,\n} from \"@salt-ds/lab\";\nimport clsx from \"clsx\";\nimport type { ReactElement } from \"react\";\nimport { sliderData } from \"./exampleData\";\nimport styles from \"./index.module.css\";\n\nexport const WithSlideActions = (): ReactElement => {\n  return (\n    <Carousel visibleSlides={{ xs: 1, sm: 2 }} aria-label=\"Account overview\">\n      <CarouselControls />\n      <CarouselSlider>\n        {sliderData.map((slide, index) => {\n          const slideId = useId();\n          return (\n            <CarouselSlide\n              key={slideId}\n              appearance=\"bordered\"\n              aria-labelledby={`slide-title-${slideId}`}\n              media={\n                <img\n                  alt={`stock content to show in carousel slide ${index}`}\n                  className={clsx(styles.carouselImagePlaceholder)}\n                  src={slide.image}\n                />\n              }\n              header={<H3 id={`slide-title-${slideId}`}>{slide.title}</H3>}\n              actions={<Link href=\"#\">Usage examples</Link>}\n            >\n              <Text>{slide.content}</Text>\n            </CarouselSlide>\n          );\n        })}\n      </CarouselSlider>\n    </Carousel>\n  );\n};\n"
+      },
+      {
+        "name": "WithTitle",
+        "description": "",
+        "code": "import { H2, H3, Text, useId } from \"@salt-ds/core\";\nimport {\n  Carousel,\n  CarouselControls,\n  CarouselSlide,\n  CarouselSlider,\n} from \"@salt-ds/lab\";\nimport clsx from \"clsx\";\nimport type { ReactElement } from \"react\";\nimport { sliderData } from \"./exampleData\";\nimport styles from \"./index.module.css\";\n\nexport const WithTitle = (): ReactElement => {\n  return (\n    <Carousel aria-labelledby=\"carousel-title\">\n      <CarouselControls title={<H2 id=\"carousel-title\">Account overview</H2>} />\n      <CarouselSlider>\n        {sliderData.map((slide, index) => {\n          const slideId = useId();\n          return (\n            <CarouselSlide\n              key={slideId}\n              aria-labelledby={`slide-title-${slideId}`}\n              media={\n                <img\n                  alt={`stock content to show in carousel slide ${index}`}\n                  className={clsx(styles.carouselImagePlaceholder)}\n                  src={slide.image}\n                />\n              }\n              header={<H3 id={`slide-title-${slideId}`}>{slide.title}</H3>}\n            >\n              <Text>{slide.content}</Text>\n            </CarouselSlide>\n          );\n        })}\n      </CarouselSlider>\n    </Carousel>\n  );\n};\n"
+      }
+    ],
+    "category": "@salt-ds/lab",
+    "tags": [],
+    "when_to_use": [
+      "To enable more than one piece of content to occupy the same space.",
+      "To navigate small amounts content, that are viewed in a linear sequence.",
+      "To position information near the top of the viewable area."
+    ],
+    "when_not_to_use": [
+      "When content discovery and drawing attention is a priority for your product.",
+      "To display less than 2 or more than 5 pieces of content."
+    ],
+    "import_statement": "import {\n  Carousel,\n  CarouselControls,\n  CarouselSlider,\n  CarouselSlide,\n} from \"@salt-ds/lab\";",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/tree/main/packages/lab/src/carousel",
+    "related_components": []
+  }
+}

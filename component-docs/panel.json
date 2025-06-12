@@ -1,0 +1,51 @@
+{
+  "component_name": "Panel",
+  "metadata": {
+    "component_name": "Panel",
+    "description": "`Panel` is a background that organizes content in an application. It uses color to reflect the level of importance of content and drive visual hierarchy.",
+    "props": {
+      "variant": {
+        "type": "enum",
+        "required": false,
+        "description": "Styling variant; defaults to \"primary\".",
+        "defaultValue": "primary"
+      }
+    },
+    "examples": [
+      {
+        "name": "Primary",
+        "description": "",
+        "code": "import { FlexLayout, Panel } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Primary = (): ReactElement => (\n  <FlexLayout\n    style={{\n      width: \"90%\",\n      height: \"90%\",\n    }}\n  >\n    <Panel\n      style={{\n        display: \"flex\",\n        alignItems: \"center\",\n        justifyContent: \"center\",\n      }}\n    >\n      Example of a primary Panel\n    </Panel>\n  </FlexLayout>\n);\n"
+      },
+      {
+        "name": "Secondary",
+        "description": "Use the secondary variant as the background to color block less important content.",
+        "code": "import { FlexLayout, Panel } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Secondary = (): ReactElement => (\n  <FlexLayout\n    style={{\n      width: \"90%\",\n      height: \"90%\",\n    }}\n  >\n    <Panel\n      style={{\n        display: \"flex\",\n        alignItems: \"center\",\n        justifyContent: \"center\",\n      }}\n      variant=\"secondary\"\n    >\n      Example of a secondary Panel\n    </Panel>\n  </FlexLayout>\n);\n"
+      },
+      {
+        "name": "Tertiary",
+        "description": "Use the tertiary variant as an alternative background to the secondary variant or as an additional option to color block in a layout.",
+        "code": "import { FlexLayout, Panel } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Tertiary = (): ReactElement => (\n  <FlexLayout\n    style={{\n      width: \"90%\",\n      height: \"90%\",\n    }}\n  >\n    <Panel\n      style={{\n        display: \"flex\",\n        alignItems: \"center\",\n        justifyContent: \"center\",\n      }}\n      variant=\"tertiary\"\n    >\n      Example of a Tertiary Panel\n    </Panel>\n  </FlexLayout>\n);\n"
+      }
+    ],
+    "category": "@salt-ds/core",
+    "tags": [
+      "Container",
+      "Pane"
+    ],
+    "when_to_use": [
+      "To organize and divide the application into clear content areas.",
+      "To create visual hierarchy within the application layout.",
+      "With the [`BorderLayout`](/salt/components/border-layout/) component to define the main content regions of your application with responsive behavior."
+    ],
+    "when_not_to_use": [],
+    "import_statement": "import { Panel } from \"@salt-ds/core\";",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/core/src/panel",
+    "related_components": [
+      {
+        "name": "Card",
+        "relationship": "similarTo"
+      }
+    ]
+  }
+}

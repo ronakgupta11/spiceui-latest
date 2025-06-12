@@ -1,0 +1,24 @@
+{
+  "component_name": "Date Input",
+  "metadata": {
+    "component_name": "Date Input",
+    "description": "`DateInputSingle` and `DateInputRange` provides an editable field where users can enter a single date or a date range. Currently all date based controls, need to be wrapped in a [LocalizationProvider](/salt/components/localization-provider/examples)",
+    "props": {},
+    "examples": [],
+    "category": "@salt-ds/lab",
+    "tags": [
+      "DateInputSingle",
+      "DateInputRange"
+    ],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/lab/src/date-input",
+    "related_components": [
+      {
+        "name": "Input",
+        "relationship": "similarTo"
+      }
+    ]
+  }
+}

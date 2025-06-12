@@ -1,0 +1,28 @@
+{
+  "component_name": "List box",
+  "metadata": {
+    "component_name": "List box",
+    "description": "`ListBox` allows the user to select an item from an array of options. Selected items are visually distinct from nonselected items. To ensure efficient space usage, long lists of items are in a scrolling pane that can provide access to options not immediately visible to the user.",
+    "props": {},
+    "examples": [],
+    "category": "@salt-ds/core",
+    "tags": [
+      "Option List",
+      "Selection List"
+    ],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/lab/src/list-box",
+    "related_components": [
+      {
+        "name": "Combo box",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Dropdown",
+        "relationship": "similarTo"
+      }
+    ]
+  }
+}

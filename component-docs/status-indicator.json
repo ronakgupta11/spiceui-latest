@@ -1,0 +1,44 @@
+{
+  "component_name": "Status indicator",
+  "metadata": {
+    "component_name": "Status indicator",
+    "description": "`StatusIndicator` is a specialized icon that you can use to indicate a particular status (info, warning, error or success). You can use it on its own or within another component (e.g. `Tooltip`) to help convey a message.",
+    "props": {},
+    "examples": [],
+    "category": "@salt-ds/core",
+    "tags": [
+      "StatusIcon",
+      "Status"
+    ],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/core/src/status-indicator",
+    "related_components": [
+      {
+        "name": "Banner",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Dialog",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Icon",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Toast",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Tooltip",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Icon",
+        "relationship": "contains"
+      }
+    ]
+  }
+}

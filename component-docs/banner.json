@@ -1,0 +1,114 @@
+{
+  "component_name": "Banner",
+  "metadata": {
+    "component_name": "Banner",
+    "description": "`Banner` is a type of notification that displays a message or provides feedback related to the user’s current workflow, spanning the page or container horizontally. It can communicate new information, errors, warnings, or successful completion of a process or task.",
+    "props": {
+      "variant": {
+        "type": "enum",
+        "required": false,
+        "description": "Emphasize the styling by applying a background color: defaults to false",
+        "defaultValue": "primary"
+      },
+      "status": {
+        "type": "enum",
+        "required": false,
+        "description": "A string to determine the current state of the Banner",
+        "defaultValue": "info"
+      }
+    },
+    "examples": [
+      {
+        "name": "Error",
+        "description": "Use the error banner to communicate a critical issue preventing the user from completing a task, such as a system error or technical failure. The messaging should tell the user how to resolve it.\n\nAn error icon displays alongside a supporting message.",
+        "code": "import {\n  Banner,\n  BannerActions,\n  BannerContent,\n  Button,\n  StackLayout,\n  Text,\n} from \"@salt-ds/core\";\nimport { CloseIcon, RefreshIcon } from \"@salt-ds/icons\";\nimport type { ReactElement } from \"react\";\n\nexport const Error = (): ReactElement => (\n  <StackLayout gap={3} style={{ width: \"80%\" }}>\n    <Banner status=\"error\" role=\"alert\">\n      <BannerContent>\n        There was an error connecting to the server. Please click refresh to try\n        again.\n      </BannerContent>\n      <BannerActions>\n        <Button aria-label=\"refresh\" appearance=\"transparent\">\n          <RefreshIcon />\n        </Button>\n        <Button aria-label=\"close\" appearance=\"transparent\">\n          <CloseIcon />\n        </Button>\n      </BannerActions>\n    </Banner>\n    <Text styleAs=\"h1\">Header</Text>\n    <Text>\n      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod\n      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim\n      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea\n      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate\n      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat\n      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id\n      est laborum.\n    </Text>\n  </StackLayout>\n);\n"
+      },
+      {
+        "name": "Info",
+        "description": "Use the info banner when you need to display general information the user is unaware of, such as a link to updated terms and conditions.\n\nAn info icon displays alongside a supporting message.",
+        "code": "import {\n  Banner,\n  BannerActions,\n  BannerContent,\n  Button,\n  Link,\n  StackLayout,\n  Text,\n} from \"@salt-ds/core\";\nimport { CloseIcon } from \"@salt-ds/icons\";\nimport type { ReactElement } from \"react\";\n\nexport const Info = (): ReactElement => (\n  <StackLayout gap={3} style={{ width: \"80%\" }}>\n    <Banner>\n      <BannerContent>\n        There has been an update to the&nbsp;\n        <Link href=\"#\">Terms and Conditions</Link>.\n      </BannerContent>\n      <BannerActions>\n        <Button aria-label=\"close\" appearance=\"transparent\">\n          <CloseIcon />\n        </Button>\n      </BannerActions>\n    </Banner>\n    <Text styleAs=\"h1\">Header</Text>\n    <Text>\n      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod\n      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim\n      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea\n      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate\n      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat\n      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id\n      est laborum.\n    </Text>\n  </StackLayout>\n);\n"
+      },
+      {
+        "name": "Interactive",
+        "description": "The interactive banner displays information to the user, has at least one function allowing users to dismiss or resolve it, and can include additional interactive elements as needed (i.e., links, buttons).\n\nUse `BannerActions` to add actions such as close and refresh.\n\nA status icon displays alongside a supporting message.",
+        "code": "import {\n  Banner,\n  BannerActions,\n  BannerContent,\n  Button,\n  Link,\n} from \"@salt-ds/core\";\nimport { CloseIcon } from \"@salt-ds/icons\";\nimport type { ReactElement } from \"react\";\n\nexport const Interactive = (): ReactElement => (\n  <div style={{ width: \"80%\" }}>\n    <Banner status=\"warning\">\n      <BannerContent>\n        Unfortunately this release contains serious bugs. These have been fixed\n        in <Link href=\"./32.1.0\">v32.1.0</Link> so we recommend skipping this\n        release and upgrading directly to <Link href=\"./32.1.0\">v32.1.0</Link>\n        &nbsp; or later.\n      </BannerContent>\n      <BannerActions>\n        <Button aria-label=\"close\" appearance=\"transparent\">\n          <CloseIcon />\n        </Button>\n      </BannerActions>\n    </Banner>\n  </div>\n);\n"
+      },
+      {
+        "name": "MultilineBanners",
+        "description": "",
+        "code": "import {\n  Banner,\n  BannerContent,\n  Button,\n  FlowLayout,\n  Link,\n  StackLayout,\n  Text,\n} from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const MultilineBanners = (): ReactElement => (\n  <StackLayout style={{ width: \"80%\" }}>\n    <Banner status=\"error\">\n      <BannerContent>\n        <StackLayout gap={1}>\n          <Text>\n            <strong>Unable to process transaction</strong>\n          </Text>\n          <Text>\n            There was an error processing your transaction. Please check that\n            your payment details are correct and try again.\n          </Text>\n          <Link href=\"#\">Find out more</Link>\n        </StackLayout>\n      </BannerContent>\n    </Banner>\n    <Banner status=\"success\">\n      <BannerContent>\n        <StackLayout gap={1}>\n          <Text>\n            An invite has been sent to <strong>Person 1</strong>. Once they\n            accept, you will receive a notification.\n          </Text>\n          <FlowLayout gap={1}>\n            <Button appearance=\"transparent\">Cancel invite</Button>\n            <Button sentiment=\"neutral\">Resend invite</Button>\n          </FlowLayout>\n        </StackLayout>\n      </BannerContent>\n    </Banner>\n  </StackLayout>\n);\n"
+      },
+      {
+        "name": "SecondaryVariant",
+        "description": "",
+        "code": "import { Banner, BannerContent, Link, StackLayout } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const SecondaryVariant = (): ReactElement => (\n  <StackLayout>\n    <Banner variant=\"secondary\" status=\"info\">\n      <BannerContent>\n        There has been an update to the&nbsp;\n        <Link href=\"#\">Terms and Conditions</Link>.\n      </BannerContent>\n    </Banner>\n    <Banner variant=\"secondary\" status=\"error\">\n      <BannerContent>\n        There was an error connecting to the server. Please click refresh to try\n        again.\n      </BannerContent>\n    </Banner>\n    <Banner variant=\"secondary\" status=\"warning\">\n      <BannerContent>\n        Your connection is unstable. Please proceed with caution.\n      </BannerContent>\n    </Banner>\n    <Banner variant=\"secondary\" status=\"success\">\n      <BannerContent>\n        Your details have been updated successfully.\n      </BannerContent>\n    </Banner>\n  </StackLayout>\n);\n"
+      },
+      {
+        "name": "Static",
+        "description": "The static banner displays information to the user, has no interactive elements, and is nonfunctional.\n\nA status icon displays alongside a supporting message.",
+        "code": "import { Banner, BannerContent } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Static = (): ReactElement => (\n  <div style={{ width: \"80%\" }}>\n    <Banner status=\"warning\">\n      <BannerContent>\n        This component will be deprecated in version 32.0.2.\n      </BannerContent>\n    </Banner>\n  </div>\n);\n"
+      },
+      {
+        "name": "Success",
+        "description": "Use the success banner to confirm that a user's action related to their current task was successful.\n\nA success icon displays alongside a supporting message.",
+        "code": "import {\n  Banner,\n  BannerActions,\n  BannerContent,\n  Button,\n  StackLayout,\n  Text,\n} from \"@salt-ds/core\";\nimport { CloseIcon } from \"@salt-ds/icons\";\nimport type { ReactElement } from \"react\";\n\nexport const Success = (): ReactElement => (\n  <StackLayout gap={3} style={{ width: \"80%\" }}>\n    <Banner status=\"success\">\n      <BannerContent role=\"status\">\n        Your details have been updated successfully.\n      </BannerContent>\n      <BannerActions>\n        <Button aria-label=\"close\" appearance=\"transparent\">\n          <CloseIcon />\n        </Button>\n      </BannerActions>\n    </Banner>\n    <Text styleAs=\"h1\">Header</Text>\n    <Text>\n      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod\n      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim\n      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea\n      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate\n      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat\n      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id\n      est laborum.\n    </Text>\n  </StackLayout>\n);\n"
+      },
+      {
+        "name": "Warning",
+        "description": "Use the warning banner to inform users of an issue or potential issue related to their current task that won't prevent them from continuing the task, but may cause errors if they don't address it, such as a restriction due to entitlements or current system status.\n\nA warning icon displays alongside a supporting message.",
+        "code": "import {\n  Banner,\n  BannerActions,\n  BannerContent,\n  Button,\n  StackLayout,\n  Text,\n} from \"@salt-ds/core\";\nimport { CloseIcon } from \"@salt-ds/icons\";\nimport type { ReactElement } from \"react\";\n\nexport const Warning = (): ReactElement => (\n  <StackLayout gap={3} style={{ width: \"80%\" }}>\n    <Banner status=\"warning\">\n      <BannerContent role=\"status\">\n        Your connection is unstable. Please proceed with caution.\n      </BannerContent>\n      <BannerActions>\n        <Button aria-label=\"close\" appearance=\"transparent\">\n          <CloseIcon />\n        </Button>\n      </BannerActions>\n    </Banner>\n    <Text styleAs=\"h1\">Header</Text>\n    <Text>\n      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod\n      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim\n      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea\n      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate\n      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat\n      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id\n      est laborum.\n    </Text>\n  </StackLayout>\n);\n"
+      }
+    ],
+    "category": "@salt-ds/core",
+    "tags": [
+      "Alert",
+      "Application Message",
+      "Notification",
+      "Strip",
+      "System Message"
+    ],
+    "when_to_use": [
+      "To show a notification that applies to the user’s current task or workflow."
+    ],
+    "when_not_to_use": [
+      "To notify users of an event that has occurred in a peripheral application or workflow. Instead, use [`Toast`](../toast).",
+      "When a low priority event not requiring user feedback causes the notification. Instead, use [`Toast`](../toast)."
+    ],
+    "import_statement": "",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/core/src/banner",
+    "related_components": [
+      {
+        "name": "Content status",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Dialog",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Toast",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Tooltip",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Button",
+        "relationship": "contains"
+      },
+      {
+        "name": "Icon",
+        "relationship": "contains"
+      },
+      {
+        "name": "Link",
+        "relationship": "contains"
+      },
+      {
+        "name": "Status indicator",
+        "relationship": "contains"
+      }
+    ]
+  }
+}

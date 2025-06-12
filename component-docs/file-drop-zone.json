@@ -1,0 +1,33 @@
+{
+  "component_name": "File drop zone",
+  "metadata": {
+    "component_name": "File drop zone",
+    "description": "`FileDropZone` provides a target area for users to drag and drop files, such as documents or images, and automatically uploads them to the web application.",
+    "props": {},
+    "examples": [],
+    "category": "@salt-ds/core",
+    "tags": [
+      "File input",
+      "File selector",
+      "File upload",
+      "File uploader",
+      "Multi file upload",
+      "Upload",
+      "Uploader"
+    ],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/core/src/file-drop-zone",
+    "related_components": [
+      {
+        "name": "Button",
+        "relationship": "contains"
+      },
+      {
+        "name": "Icon",
+        "relationship": "contains"
+      }
+    ]
+  }
+}

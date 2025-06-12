@@ -1,0 +1,141 @@
+{
+  "component_name": "Input",
+  "metadata": {
+    "component_name": "Input",
+    "description": "`Input` provides an editable field where users can enter text and numeric values. It works best for short, freeform content and data entry.",
+    "props": {
+      "emptyReadOnlyMarker": {
+        "type": "string",
+        "required": false,
+        "description": "The marker to use in an empty read only Input.\nUse `''` to disable this feature. Defaults to '—'.",
+        "defaultValue": "—"
+      },
+      "endAdornment": {
+        "type": "ReactNode",
+        "required": false,
+        "description": "End adornment component"
+      },
+      "inputProps": {
+        "type": "Partial<InputHTMLAttributes<HTMLInputElement>> & DataAttributes",
+        "required": false,
+        "description": "[Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes) applied to the `input` element.",
+        "defaultValue": "{}"
+      },
+      "inputRef": {
+        "type": "Ref<HTMLInputElement>",
+        "required": false,
+        "description": "Optional ref for the input component"
+      },
+      "readOnly": {
+        "type": "boolean",
+        "required": false,
+        "description": "If `true`, the component is read only."
+      },
+      "startAdornment": {
+        "type": "ReactNode",
+        "required": false,
+        "description": "Start adornment component"
+      },
+      "textAlign": {
+        "type": "enum",
+        "required": false,
+        "description": "Alignment of text within container. Defaults to \"left\"",
+        "defaultValue": "left"
+      },
+      "validationStatus": {
+        "type": "enum",
+        "required": false,
+        "description": "Validation status."
+      },
+      "variant": {
+        "type": "enum",
+        "required": false,
+        "description": "Styling variant. Defaults to \"primary\".",
+        "defaultValue": "primary"
+      },
+      "bordered": {
+        "type": "boolean",
+        "required": false,
+        "description": "Styling variant with full border. Defaults to false",
+        "defaultValue": "false"
+      }
+    },
+    "examples": [
+      {
+        "name": "Bordered",
+        "description": "To style Input with a full border, set `bordered={true}`.\n\nWe recommend this styling when the field uses the same fill color as the background (i.e., a primary fill color on a primary background).",
+        "code": "import { FlowLayout, Input } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Bordered = (): ReactElement => (\n  <FlowLayout style={{ maxWidth: \"256px\" }}>\n    <Input bordered defaultValue=\"Value\" />\n    <Input bordered variant=\"secondary\" defaultValue=\"Value\" />\n  </FlowLayout>\n);\n"
+      },
+      {
+        "name": "ButtonAdornments",
+        "description": "",
+        "code": "import { Button, FlowLayout, Input } from \"@salt-ds/core\";\nimport {\n  CloseIcon,\n  FlagIcon,\n  NoteIcon,\n  RefreshIcon,\n  SendIcon,\n} from \"@salt-ds/icons\";\nimport type { ReactElement } from \"react\";\n\nexport const ButtonAdornments = (): ReactElement => (\n  <FlowLayout style={{ width: \"266px\" }}>\n    <Input\n      startAdornment={\n        <Button>\n          <NoteIcon />\n        </Button>\n      }\n      defaultValue=\"Value\"\n    />\n    <Input\n      endAdornment={\n        <Button sentiment=\"accented\">\n          <RefreshIcon />\n        </Button>\n      }\n      defaultValue=\"Value\"\n    />\n    <Input\n      startAdornment={\n        <>\n          <Button>\n            <SendIcon />\n          </Button>\n          <Button sentiment=\"accented\">\n            <FlagIcon />\n          </Button>\n        </>\n      }\n      defaultValue=\"Value\"\n    />\n    <Input\n      endAdornment={\n        <>\n          <Button appearance=\"transparent\">\n            <CloseIcon />\n          </Button>\n          <Button sentiment=\"accented\">\n            <FlagIcon />\n          </Button>\n        </>\n      }\n      defaultValue=\"Value\"\n    />\n    <Input\n      disabled\n      endAdornment={\n        <>\n          <Button disabled>\n            <SendIcon />\n          </Button>\n          <Button disabled appearance=\"transparent\">\n            <CloseIcon />\n          </Button>\n          <Button disabled sentiment=\"accented\">\n            <FlagIcon />\n          </Button>\n        </>\n      }\n      defaultValue=\"Value\"\n    />\n    <Input\n      readOnly\n      startAdornment={\n        <>\n          <Button disabled>\n            <SendIcon />\n          </Button>\n          <Button disabled appearance=\"transparent\">\n            <CloseIcon />\n          </Button>\n          <Button disabled sentiment=\"accented\">\n            <FlagIcon />\n          </Button>\n        </>\n      }\n      defaultValue=\"Value\"\n    />\n    <Input\n      disabled\n      startAdornment={\n        <>\n          <Button disabled>\n            <CloseIcon />\n          </Button>\n          <Button disabled appearance=\"transparent\">\n            <FlagIcon />\n          </Button>\n        </>\n      }\n      endAdornment={\n        <Button sentiment=\"accented\" disabled>\n          <SendIcon />\n        </Button>\n      }\n      defaultValue=\"Value\"\n    />\n  </FlowLayout>\n);\n"
+      },
+      {
+        "name": "Disabled",
+        "description": "You can disable the input, resulting in no action when the user interacts with it.",
+        "code": "import { Input } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Disabled = (): ReactElement => (\n  <Input defaultValue=\"Value\" disabled style={{ width: \"256px\" }} />\n);\n"
+      },
+      {
+        "name": "EmptyReadonlyMarker",
+        "description": "",
+        "code": "import { FlowLayout, Input } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const EmptyReadonlyMarker = (): ReactElement => (\n  <FlowLayout style={{ width: \"256px\" }}>\n    <Input readOnly />\n    <Input readOnly emptyReadOnlyMarker=\"*\" />\n  </FlowLayout>\n);\n"
+      },
+      {
+        "name": "Placeholder",
+        "description": "You can use a placeholder to prompt user input if there's no default value.\n\n#",
+        "code": "import { FlowLayout, Input } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Placeholder = (): ReactElement => (\n  <FlowLayout style={{ width: \"256px\" }}>\n    <Input placeholder={\"Enter a value\"} />\n    <Input disabled placeholder={\"Enter a value\"} />\n    <Input readOnly placeholder={\"Enter a value\"} />\n  </FlowLayout>\n);\n"
+      },
+      {
+        "name": "Primary",
+        "description": "`Input` comprises value text and a focus ring. The component is initially empty; once it has focus, it accepts text on a single line only.\n\nThe default variant for Input is \"primary.\"",
+        "code": "import { Input } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Primary = (): ReactElement => (\n  <Input defaultValue=\"Value\" style={{ width: \"256px\" }} />\n);\n"
+      },
+      {
+        "name": "Readonly",
+        "description": "",
+        "code": "import { Input } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Readonly = (): ReactElement => (\n  <Input defaultValue=\"Value\" style={{ width: \"256px\" }} readOnly />\n);\n"
+      },
+      {
+        "name": "Secondary",
+        "description": "`Input` has a \"secondary\" variant.\n\nFor recommendations on variant choice, see the [forms pattern](salt/patterns/forms).",
+        "code": "import { Input } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Secondary = (): ReactElement => (\n  <Input defaultValue=\"Value\" variant=\"secondary\" style={{ width: \"256px\" }} />\n);\n"
+      },
+      {
+        "name": "Spellcheck",
+        "description": "Turn on automatic spellchecking using `inputProps`.",
+        "code": "import { Input } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Spellcheck = (): ReactElement => (\n  <Input\n    defaultValue=\"Value\"\n    style={{ width: \"256px\" }}\n    inputProps={{ spellCheck: true }}\n  />\n);\n"
+      },
+      {
+        "name": "StaticAdornments",
+        "description": "",
+        "code": "import { FlowLayout, Input, Text } from \"@salt-ds/core\";\nimport {\n  CallIcon,\n  FilterClearIcon,\n  FilterIcon,\n  FlagIcon,\n} from \"@salt-ds/icons\";\nimport type { ReactElement } from \"react\";\n\nexport const StaticAdornments = (): ReactElement => (\n  <FlowLayout style={{ width: \"256px\" }}>\n    <Input startAdornment={<FilterIcon />} defaultValue=\"Value\" />\n    <Input\n      variant=\"secondary\"\n      startAdornment={\n        <>\n          <CallIcon />\n          <Text>+1</Text>\n        </>\n      }\n      defaultValue=\"Value\"\n    />\n    <Input endAdornment={<Text>USD</Text>} defaultValue=\"Value\" />\n    <Input\n      variant=\"secondary\"\n      startAdornment={<FlagIcon />}\n      endAdornment={\n        <>\n          <Text>%</Text>\n          <FilterClearIcon />\n        </>\n      }\n      defaultValue=\"Value\"\n    />\n  </FlowLayout>\n);\n"
+      },
+      {
+        "name": "TextAlignment",
+        "description": "",
+        "code": "import { FlowLayout, Input } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const TextAlignment = (): ReactElement => (\n  <FlowLayout style={{ maxWidth: \"256px\" }}>\n    <Input defaultValue=\"Value\" />\n    <Input textAlign=\"center\" defaultValue=\"Value\" />\n    <Input textAlign=\"right\" defaultValue=\"Value\" />\n  </FlowLayout>\n);\n"
+      },
+      {
+        "name": "Validation",
+        "description": "Input can show validation states (warning, success and error) with the prop `validationStatus`.\n\n#",
+        "code": "import { FlowLayout, Input } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Validation = (): ReactElement => (\n  <FlowLayout style={{ maxWidth: \"256px\" }}>\n    <Input defaultValue=\"Error value\" validationStatus=\"error\" />\n    <Input bordered defaultValue=\"Error value\" validationStatus=\"error\" />\n    <Input defaultValue=\"Warning value\" validationStatus=\"warning\" />\n    <Input bordered defaultValue=\"Warning value\" validationStatus=\"warning\" />\n    <Input defaultValue=\"Success value\" validationStatus=\"success\" />\n    <Input bordered defaultValue=\"Success value\" validationStatus=\"success\" />\n  </FlowLayout>\n);\n"
+      }
+    ],
+    "category": "@salt-ds/core",
+    "tags": [
+      "Text Field",
+      "Text Box"
+    ],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "import { Input } from \"@salt-ds/core\";",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/core/src/input",
+    "related_components": [
+      {
+        "name": "Multiline Input",
+        "relationship": "similarTo"
+      }
+    ]
+  }
+}

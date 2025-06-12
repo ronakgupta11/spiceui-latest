@@ -1,0 +1,26 @@
+{
+  "component_name": "Navigation item",
+  "metadata": {
+    "component_name": "Navigation item",
+    "description": "`NavigationItem` allows users to navigate between distinct applications and website pages.",
+    "props": {},
+    "examples": [],
+    "category": "@salt-ds/core",
+    "tags": [
+      "Nav Item",
+      "Link",
+      "App button",
+      "Header item"
+    ],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/core/src/navigation-item",
+    "related_components": [
+      {
+        "name": "Pill",
+        "relationship": "similarTo"
+      }
+    ]
+  }
+}

@@ -1,0 +1,234 @@
+{
+  "component_name": "Dropdown",
+  "metadata": {
+    "component_name": "Dropdown",
+    "description": "`Dropdown` allows the user to select from an overlayed vertical list of options. A selected value is displayed in the dropdown field. Dropdowns provide a screen space-efficient way of interacting with a list of selectable options.",
+    "props": {
+      "ListProps": {
+        "type": "Omit<ListProps<Item, Selection>, \"ListItem\" | \"itemToString\" | \"source\">",
+        "required": false,
+        "description": ""
+      },
+      "defaultIsOpen": {
+        "type": "boolean",
+        "required": false,
+        "description": ""
+      },
+      "disabled": {
+        "type": "boolean",
+        "required": false,
+        "description": ""
+      },
+      "fullWidth": {
+        "type": "boolean",
+        "required": false,
+        "description": ""
+      },
+      "isOpen": {
+        "type": "boolean",
+        "required": false,
+        "description": ""
+      },
+      "onKeyDown": {
+        "type": "(e: KeyboardEvent<HTMLElement>) => void",
+        "required": false,
+        "description": ""
+      },
+      "onOpenChange": {
+        "type": "(isOpen: boolean) => void",
+        "required": false,
+        "description": ""
+      },
+      "openOnFocus": {
+        "type": "boolean",
+        "required": false,
+        "description": ""
+      },
+      "placement": {
+        "type": "enum",
+        "required": false,
+        "description": ""
+      },
+      "popupWidth": {
+        "type": "number",
+        "required": false,
+        "description": ""
+      },
+      "triggerComponent": {
+        "type": "Element",
+        "required": false,
+        "description": ""
+      },
+      "width": {
+        "type": "string | number",
+        "required": false,
+        "description": ""
+      },
+      "disablePortal": {
+        "type": "boolean",
+        "required": false,
+        "description": "Disable the portal behavior.\nThe children stay within it's parent DOM hierarchy."
+      },
+      "container": {
+        "type": "Element | (() => Element)",
+        "required": false,
+        "description": "An HTML element, component instance, or function that returns either.\nThe `container` will have the portal children appended to it.\n\nBy default, it uses the body of the top-level document object,\nso it's simply `document.body` most of the time."
+      },
+      "ListItem": {
+        "type": "ListItemType<Item>",
+        "required": false,
+        "description": "The component used to render a ListItem instead of the default. This must itself render a ListItem,\nmust implement props that extend ListItemProps and must forward ListItem props to the ListItem."
+      },
+      "itemToString": {
+        "type": "(item: Item) => string",
+        "required": false,
+        "description": "Item `toString` function when list is not used declaratively and its items are objects\ninstead of strings. The string value is also used in tooltip when item text is truncated.\n\nIf omitted, component will look for a `label` property on the data object.\n@param item The item."
+      },
+      "source": {
+        "type": "readonly Item[]",
+        "required": false,
+        "description": ""
+      },
+      "defaultSelected": {
+        "type": "Selection extends SingleSelectionStrategy ? Item : Item[]",
+        "required": false,
+        "description": ""
+      },
+      "onSelect": {
+        "type": "SelectHandler<Item>",
+        "required": false,
+        "description": ""
+      },
+      "onSelectionChange": {
+        "type": "SelectionChangeHandler<Item, Selection>",
+        "required": false,
+        "description": ""
+      },
+      "selected": {
+        "type": "Selection extends SingleSelectionStrategy ? Item : Item[]",
+        "required": false,
+        "description": ""
+      },
+      "selectionStrategy": {
+        "type": "enum",
+        "required": false,
+        "description": ""
+      },
+      "ref": {
+        "type": "ForwardedRef<HTMLDivElement>",
+        "required": false,
+        "description": ""
+      }
+    },
+    "examples": [
+      {
+        "name": "Bordered",
+        "description": "To style `Dropdown` with a full border, set `bordered={true}`.\n\nWe recommend this styling when the field uses the same fill color as the background (i.e., a primary fill color on a primary background).",
+        "code": "import { Dropdown, Option, StackLayout } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\nimport { shortColorData } from \"./exampleData\";\n\nexport const Bordered = (): ReactElement => (\n  <StackLayout style={{ width: \"266px\" }}>\n    <Dropdown bordered>\n      {shortColorData.map((color) => (\n        <Option value={color} key={color} />\n      ))}\n    </Dropdown>\n    <Dropdown bordered variant=\"secondary\">\n      {shortColorData.map((color) => (\n        <Option value={color} key={color} />\n      ))}\n    </Dropdown>\n  </StackLayout>\n);\n"
+      },
+      {
+        "name": "ComplexOptions",
+        "description": "",
+        "code": "import {\n  Dropdown,\n  type DropdownProps,\n  Option,\n  StackLayout,\n  Text,\n} from \"@salt-ds/core\";\nimport { EditIcon, GuideClosedIcon, UserAdminIcon } from \"@salt-ds/icons\";\nimport { type ReactElement, useState } from \"react\";\n\ntype Permission = {\n  icon: JSX.Element;\n  name: string;\n  description: string;\n};\n\nconst permissions: Record<string, Permission> = {\n  read: {\n    icon: <GuideClosedIcon aria-hidden />,\n    name: \"Read\",\n    description: \"Read only\",\n  },\n  write: {\n    icon: <EditIcon aria-hidden />,\n    name: \"Write\",\n    description: \"Read and write only\",\n  },\n  admin: {\n    icon: <UserAdminIcon aria-hidden />,\n    name: \"Admin\",\n    description: \"Full access\",\n  },\n};\n\nexport const ComplexOptions = (): ReactElement => {\n  const [selected, setSelected] = useState<string[]>([]);\n\n  const handleSelectionChange: DropdownProps[\"onSelectionChange\"] = (\n    event,\n    newSelected,\n  ) => {\n    setSelected(newSelected);\n  };\n\n  const adornment = permissions[selected[0] ?? \"\"]?.icon || null;\n\n  return (\n    <Dropdown\n      selected={selected}\n      startAdornment={adornment}\n      onSelectionChange={handleSelectionChange}\n      style={{ width: \"133px\" }}\n      valueToString={(item) => permissions[item].name}\n    >\n      {Object.values(permissions).map(({ name, icon, description }) => (\n        <Option value={name.toLowerCase()} key={name.toLowerCase()}>\n          <StackLayout direction=\"row\" gap={1}>\n            {icon}\n            <StackLayout gap={0.5} align=\"start\">\n              <Text>{name}</Text>\n              <Text styleAs=\"label\" color=\"secondary\">\n                {description}\n              </Text>\n            </StackLayout>\n          </StackLayout>\n        </Option>\n      ))}\n    </Dropdown>\n  );\n};\n"
+      },
+      {
+        "name": "CustomValue",
+        "description": "",
+        "code": "import { Dropdown, type DropdownProps, Option } from \"@salt-ds/core\";\nimport { type ReactElement, useState } from \"react\";\nimport { shortColorData } from \"./exampleData\";\n\nexport const CustomValue = (): ReactElement => {\n  const [selected, setSelected] = useState<string[]>([]);\n\n  const handleSelectionChange: DropdownProps[\"onSelectionChange\"] = (\n    event,\n    newSelected,\n  ) => {\n    setSelected(newSelected);\n  };\n\n  return (\n    <Dropdown\n      selected={selected}\n      value={\n        selected.length < 2 ? selected[0] : `${selected.length} items selected`\n      }\n      onSelectionChange={handleSelectionChange}\n      multiselect\n      style={{ width: \"266px\" }}\n    >\n      {shortColorData.map((color) => (\n        <Option value={color} key={color} />\n      ))}\n    </Dropdown>\n  );\n};\n"
+      },
+      {
+        "name": "Default",
+        "description": "",
+        "code": "import { Dropdown, Option } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\nimport { shortColorData } from \"./exampleData\";\n\nexport const Default = (): ReactElement => {\n  return (\n    <Dropdown style={{ width: \"266px\" }}>\n      {shortColorData.map((color) => (\n        <Option value={color} key={color} />\n      ))}\n    </Dropdown>\n  );\n};\n"
+      },
+      {
+        "name": "Disabled",
+        "description": "You can disable the dropdown if required, for instance if the access to the options needs to be restricted based on the current context.\n\nUnlike read-only, the disabled state can change for the current user depending on context. Showing it in a disabled state allows the user to be aware of the presence of the control, without enabling access to its functionality temporarily.\n\nWhen `disabled={true}`, user will not be able to interact with dropdown. It does not receive focus on any interaction.",
+        "code": "import { Dropdown, Option } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\nimport { shortColorData } from \"./exampleData\";\n\nexport const Disabled = (): ReactElement => (\n  <Dropdown\n    defaultSelected={[\"California\"]}\n    disabled\n    style={{ width: \"266px\" }}\n  >\n    {shortColorData.map((color) => (\n      <Option value={color} key={color} />\n    ))}\n  </Dropdown>\n);\n"
+      },
+      {
+        "name": "DisabledOption",
+        "description": "",
+        "code": "import { Dropdown, Option } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\nimport { shortColorData } from \"./exampleData\";\n\nexport const DisabledOption = (): ReactElement => {\n  return (\n    <Dropdown style={{ width: \"266px\" }}>\n      {shortColorData.map((color) => (\n        <Option disabled={color === \"Baby blue\"} value={color} key={color} />\n      ))}\n    </Dropdown>\n  );\n};\n"
+      },
+      {
+        "name": "Grouped",
+        "description": "",
+        "code": "import { Dropdown, Option, OptionGroup } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\nimport { citiesWithCountries } from \"./exampleData\";\n\nexport const Grouped = (): ReactElement => {\n  const groupedOptions = citiesWithCountries.reduce(\n    (acc, option) => {\n      const country = option.country;\n      if (!acc[country]) {\n        acc[country] = [];\n      }\n      acc[country].push(option);\n      return acc;\n    },\n    {} as Record<string, typeof citiesWithCountries>,\n  );\n\n  return (\n    <Dropdown style={{ width: \"266px\" }}>\n      {Object.entries(groupedOptions).map(([country, options]) => (\n        <OptionGroup label={country} key={country}>\n          {options.map((option) => (\n            <Option value={option.value} key={option.value} />\n          ))}\n        </OptionGroup>\n      ))}\n    </Dropdown>\n  );\n};\n"
+      },
+      {
+        "name": "Multiselect",
+        "description": "",
+        "code": "import { Dropdown, Option } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\nimport { shortColorData } from \"./exampleData\";\n\nexport const Multiselect = (): ReactElement => {\n  return (\n    <Dropdown multiselect style={{ width: \"266px\" }}>\n      {shortColorData.map((color) => (\n        <Option value={color} key={color} />\n      ))}\n    </Dropdown>\n  );\n};\n"
+      },
+      {
+        "name": "ObjectValues",
+        "description": "",
+        "code": "import { Dropdown, Option } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\nimport { type LargeCity, largestCities } from \"./exampleData\";\n\n/**\n * type LargeCity = {\n *   name: string;\n *   countryCode: CountryCode;\n * }\n */\n\nexport const ObjectValues = (): ReactElement => {\n  return (\n    <Dropdown<LargeCity>\n      style={{ width: \"266px\" }}\n      valueToString={(city) => city.name}\n    >\n      {largestCities.map((city) => (\n        <Option value={city} key={city.name} />\n      ))}\n    </Dropdown>\n  );\n};\n"
+      },
+      {
+        "name": "Placeholder",
+        "description": "You can use a placeholder to prompt user input if no default value is provided.\n\n#",
+        "code": "import { Dropdown, Option } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\nimport { shortColorData } from \"./exampleData\";\n\nexport const Placeholder = (): ReactElement => {\n  return (\n    <Dropdown placeholder=\"Color\" style={{ width: \"266px\" }}>\n      {shortColorData.map((color) => (\n        <Option value={color} key={color} />\n      ))}\n    </Dropdown>\n  );\n};\n"
+      },
+      {
+        "name": "Readonly",
+        "description": "",
+        "code": "import { Dropdown, Option, StackLayout } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\nimport { shortColorData } from \"./exampleData\";\n\nexport const Readonly = (): ReactElement => (\n  <StackLayout>\n    <Dropdown\n      defaultSelected={[\"California\"]}\n      readOnly\n      style={{ width: \"266px\" }}\n    >\n      {shortColorData.map((color) => (\n        <Option value={color} key={color} />\n      ))}\n    </Dropdown>\n    <Dropdown readOnly style={{ width: \"266px\" }}>\n      {shortColorData.map((color) => (\n        <Option value={color} key={color} />\n      ))}\n    </Dropdown>\n  </StackLayout>\n);\n"
+      },
+      {
+        "name": "SelectAll",
+        "description": "",
+        "code": "import { Dropdown, type DropdownProps, Option } from \"@salt-ds/core\";\nimport { type ReactElement, useState } from \"react\";\nimport { shortColorData } from \"./exampleData\";\n\nexport const SelectAll = (): ReactElement => {\n  const [selected, setSelected] = useState<string[]>([]);\n  const allSelectedOptionValue = \"all\";\n\n  const handleSelectionChange: DropdownProps[\"onSelectionChange\"] = (\n    event,\n    newSelected,\n  ) => {\n    let newOptionsSelected = [...newSelected];\n    const allWasPreviousSelected = selected.includes(allSelectedOptionValue);\n    const allIsCurrentlySelected = newOptionsSelected.includes(\n      allSelectedOptionValue,\n    );\n\n    // If all was unselected\n    if (allWasPreviousSelected && !allIsCurrentlySelected) {\n      newOptionsSelected = [];\n      // If an option was unselected (-1 to not include \"all\")\n    } else if (\n      allWasPreviousSelected &&\n      newOptionsSelected.length - 1 !== shortColorData.length\n    ) {\n      newOptionsSelected = newOptionsSelected.filter(\n        (el) => el !== allSelectedOptionValue,\n      );\n      // If all was selected or all options are now selected\n    } else if (\n      allIsCurrentlySelected ||\n      (!allIsCurrentlySelected &&\n        newOptionsSelected.length === shortColorData.length)\n    ) {\n      newOptionsSelected = [allSelectedOptionValue, ...shortColorData];\n    }\n\n    setSelected(newOptionsSelected);\n  };\n\n  return (\n    <Dropdown\n      style={{ width: \"266px\" }}\n      selected={selected}\n      value={\n        selected.length < 2\n          ? selected[0]\n          : selected.includes(\"all\")\n            ? \"All Selected\"\n            : `${selected.length} items selected`\n      }\n      onSelectionChange={handleSelectionChange}\n      multiselect\n    >\n      <div>\n        <Option\n          style={{\n            borderBottom: \"var(--salt-separable-borderStyle)\",\n            borderWidth: \"var(--salt-size-border)\",\n            borderColor:\n              selected.includes(shortColorData[0]) ||\n              selected.includes(allSelectedOptionValue)\n                ? \"transparent\"\n                : \"var(--salt-separable-tertiary-borderColor)\",\n          }}\n          value={allSelectedOptionValue}\n        >\n          Select All\n        </Option>\n      </div>\n      {shortColorData.map((state) => (\n        <Option value={state} key={state} />\n      ))}\n    </Dropdown>\n  );\n};\n"
+      },
+      {
+        "name": "StartAdornment",
+        "description": "",
+        "code": "import { Dropdown, Option } from \"@salt-ds/core\";\nimport { LocationIcon } from \"@salt-ds/icons\";\nimport type { ReactElement } from \"react\";\nimport { largestCities } from \"./exampleData\";\n\nexport const StartAdornment = (): ReactElement => {\n  return (\n    <Dropdown startAdornment={<LocationIcon />} style={{ width: \"266px\" }}>\n      {largestCities.map(({ name }) => (\n        <Option value={name} key={name} />\n      ))}\n    </Dropdown>\n  );\n};\n"
+      },
+      {
+        "name": "Validation",
+        "description": "Dropdown can show validation states (warning, success, error) with the prop `validationStatus`.\n\n#",
+        "code": "import { Dropdown, Option, StackLayout } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\nimport { shortColorData } from \"./exampleData\";\n\nexport const Validation = (): ReactElement => (\n  <StackLayout style={{ width: \"266px\" }}>\n    <Dropdown validationStatus=\"error\">\n      {shortColorData.map((color) => (\n        <Option value={color} key={color} />\n      ))}\n    </Dropdown>\n    <Dropdown validationStatus=\"warning\">\n      {shortColorData.map((color) => (\n        <Option value={color} key={color} />\n      ))}\n    </Dropdown>\n    <Dropdown validationStatus=\"success\">\n      {shortColorData.map((color) => (\n        <Option value={color} key={color} />\n      ))}\n    </Dropdown>\n  </StackLayout>\n);\n"
+      },
+      {
+        "name": "Variants",
+        "description": "The component has two variants: `primary` and `secondary`. The primary variant is set by default. Set to secondary with `variant=”secondary”`.\n\nThe choice between primary and secondary variants should be considered alongside the background color it sits upon.\n\nTip: The [forms pattern](/salt/patterns/forms) provides further guidance on primary versus secondary control selection. `Dropdown` can be wrapped in a `FormField` when it’s displayed within a Form context. This provides functionality built into `FormField` for increased accessibility. For more information, refer to the [`FormField`](../form-field) guidance.",
+        "code": "import { Dropdown, Option, StackLayout } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\nimport { shortColorData } from \"./exampleData\";\n\nexport const Variants = (): ReactElement => (\n  <StackLayout>\n    <Dropdown style={{ width: \"266px\" }}>\n      {shortColorData.map((color) => (\n        <Option value={color} key={color} />\n      ))}\n    </Dropdown>\n    <Dropdown variant=\"secondary\" style={{ width: \"266px\" }}>\n      {shortColorData.map((color) => (\n        <Option value={color} key={color} />\n      ))}\n    </Dropdown>\n  </StackLayout>\n);\n"
+      },
+      {
+        "name": "WithFormField",
+        "description": "",
+        "code": "import {\n  Dropdown,\n  FormField,\n  FormFieldHelperText,\n  FormFieldLabel,\n  Option,\n} from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\nimport { shortColorData } from \"./exampleData\";\n\nexport const WithFormField = (): ReactElement => {\n  return (\n    <FormField style={{ width: \"266px\" }}>\n      <FormFieldLabel>Color</FormFieldLabel>\n      <Dropdown>\n        {shortColorData.map((color) => (\n          <Option value={color} key={color} />\n        ))}\n      </Dropdown>\n      <FormFieldHelperText>Pick a color</FormFieldHelperText>\n    </FormField>\n  );\n};\n"
+      }
+    ],
+    "category": "@salt-ds/core",
+    "tags": [
+      "Select",
+      "Picklist"
+    ],
+    "when_to_use": [
+      "When a user needs the ability to choose one value from a set of five to 10 options.",
+      "When only the selected value from a set of options needs to be visible once the selection is made."
+    ],
+    "when_not_to_use": [
+      "When you have more than 10 options and users would benefit from filtering to narrow down the available options. Instead, use [`ComboBox`](../combo-box).",
+      "When you have fewer than five options and need to one option to be selected. Instead, use [`RadioButtonGroup`](../button).",
+      "When you have fewer than five options and multiple selections are required, or possible. Instead, use [`CheckboxGroup`](../checkbox).",
+      "If you have a Boolean selection, for instance “on” or “off”. Instead, use [`Switch`](../switch).",
+      "When you have large number (>100) of list items, to prevent performance issues without virtualization, we strongly recommend adding a filter e.g. use a [`ComboBox`](../combo-box) instead."
+    ],
+    "import_statement": "import { Dropdown, Option, OptionGroup } from \"@salt-ds/core\";",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/core/src/dropdown",
+    "related_components": [
+      {
+        "name": "Checkbox",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Combo box",
+        "relationship": "similarTo"
+      }
+    ]
+  }
+}

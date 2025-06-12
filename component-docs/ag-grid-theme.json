@@ -1,0 +1,16 @@
+{
+  "component_name": "AG Grid theme",
+  "metadata": {
+    "component_name": "AG Grid theme",
+    "description": "AG Grid Theme is a package that adds Salt theme styles to AG Grid. The package contains CSS files only, and works with AG Grid from version 28 upwards which has CSS variable support. The examples provided below utilize AG Grid version 32.2.2.",
+    "props": {},
+    "examples": [],
+    "category": "@salt-ds/ag-grid-theme",
+    "tags": [],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/ag-grid-theme",
+    "related_components": []
+  }
+}

@@ -1,0 +1,7331 @@
+[
+  {
+    "component_name": "AccessibleIcon",
+    "import": "import { AccessibleIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "disability",
+      "wheelchair",
+      "support",
+      "wcag",
+      "screen reader",
+      "alt text",
+      "accessiblity",
+      "accessibility"
+    ],
+    "tags": [
+      "accessibility",
+      "disability",
+      "wheelchair",
+      "support",
+      "wcag",
+      "screen reader",
+      "alt text",
+      "accessiblity",
+      "accessibility",
+      "accessible"
+    ],
+    "when_to_use": []
+  },
+  {
+    "component_name": "AddIcon",
+    "import": "import { AddIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "create",
+      "plus",
+      "new",
+      "insert",
+      "add"
+    ],
+    "tags": [
+      "organize",
+      "create",
+      "plus",
+      "new",
+      "insert",
+      "add",
+      "add"
+    ],
+    "when_to_use": [
+      "Content organization",
+      "Data management",
+      "Layout controls"
+    ]
+  },
+  {
+    "component_name": "AddDocumentIcon",
+    "import": "import { AddDocumentIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "upload",
+      "file",
+      "generate",
+      "draft",
+      "create",
+      "paper"
+    ],
+    "tags": [
+      "documents",
+      "upload",
+      "file",
+      "generate",
+      "draft",
+      "create",
+      "paper",
+      "add-document"
+    ],
+    "when_to_use": [
+      "File management",
+      "Document operations",
+      "Content creation"
+    ]
+  },
+  {
+    "component_name": "ApiIcon",
+    "import": "import { ApiIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "connect",
+      "bracket",
+      "integrate",
+      "tag"
+    ],
+    "tags": [
+      "computing",
+      "connect",
+      "bracket",
+      "integrate",
+      "tag",
+      "api"
+    ],
+    "when_to_use": [
+      "Technical features",
+      "System status",
+      "Network operations"
+    ]
+  },
+  {
+    "component_name": "AppSwitcherIcon",
+    "import": "import { AppSwitcherIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "toggle",
+      "grid",
+      "navigation",
+      "launcher",
+      "tile"
+    ],
+    "tags": [
+      "actions",
+      "toggle",
+      "grid",
+      "navigation",
+      "launcher",
+      "tile",
+      "app-switcher"
+    ],
+    "when_to_use": [
+      "User interactions",
+      "Clickable elements",
+      "Interactive controls"
+    ]
+  },
+  {
+    "component_name": "ArrowDownIcon",
+    "import": "import { ArrowDownIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "scroll",
+      "triangle",
+      "navigation",
+      "expand",
+      "arrow down"
+    ],
+    "tags": [
+      "arrows & chevrons",
+      "scroll",
+      "triangle",
+      "navigation",
+      "expand",
+      "arrow down",
+      "arrow-down"
+    ],
+    "when_to_use": [
+      "Navigation",
+      "Direction indicators",
+      "Expand/collapse controls"
+    ]
+  },
+  {
+    "component_name": "ArrowLeftIcon",
+    "import": "import { ArrowLeftIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "back",
+      "triangle",
+      "navigation",
+      "previous",
+      "rewind",
+      "arrow left"
+    ],
+    "tags": [
+      "arrows & chevrons",
+      "back",
+      "triangle",
+      "navigation",
+      "previous",
+      "rewind",
+      "arrow left",
+      "arrow-left"
+    ],
+    "when_to_use": [
+      "Navigation",
+      "Direction indicators",
+      "Expand/collapse controls"
+    ]
+  },
+  {
+    "component_name": "ArrowRightIcon",
+    "import": "import { ArrowRightIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "next",
+      "triangle",
+      "navigation",
+      "forward",
+      "arrow right"
+    ],
+    "tags": [
+      "arrows & chevrons",
+      "next",
+      "triangle",
+      "navigation",
+      "forward",
+      "arrow right",
+      "arrow-right"
+    ],
+    "when_to_use": [
+      "Navigation",
+      "Direction indicators",
+      "Expand/collapse controls"
+    ]
+  },
+  {
+    "component_name": "ArrowUpIcon",
+    "import": "import { ArrowUpIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "scroll",
+      "triangle",
+      "navigation",
+      "collapse",
+      "arrow up"
+    ],
+    "tags": [
+      "arrows & chevrons",
+      "scroll",
+      "triangle",
+      "navigation",
+      "collapse",
+      "arrow up",
+      "arrow-up"
+    ],
+    "when_to_use": [
+      "Navigation",
+      "Direction indicators",
+      "Expand/collapse controls"
+    ]
+  },
+  {
+    "component_name": "AttachIcon",
+    "import": "import { AttachIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "connect",
+      "clip",
+      "upload",
+      "paperclip"
+    ],
+    "tags": [
+      "actions",
+      "connect",
+      "clip",
+      "upload",
+      "paperclip",
+      "attach"
+    ],
+    "when_to_use": [
+      "User interactions",
+      "Clickable elements",
+      "Interactive controls"
+    ]
+  },
+  {
+    "component_name": "BankIcon",
+    "import": "import { BankIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "finance",
+      "building",
+      "account",
+      "bank"
+    ],
+    "tags": [
+      "places",
+      "finance",
+      "building",
+      "account",
+      "bank",
+      "bank"
+    ],
+    "when_to_use": [
+      "Location indicators",
+      "Geographic features",
+      "Physical locations"
+    ]
+  },
+  {
+    "component_name": "BankCheckIcon",
+    "import": "import { BankCheckIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "finance",
+      "payment",
+      "cheque",
+      "check"
+    ],
+    "tags": [
+      "finance",
+      "finance",
+      "payment",
+      "cheque",
+      "check",
+      "bank-check"
+    ],
+    "when_to_use": [
+      "Financial operations",
+      "Transactions",
+      "Money management"
+    ]
+  },
+  {
+    "component_name": "BarChartIcon",
+    "import": "import { BarChartIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "analytics",
+      "data",
+      "statistic",
+      "bar chart"
+    ],
+    "tags": [
+      "data",
+      "analytics",
+      "data",
+      "statistic",
+      "bar chart",
+      "bar-chart"
+    ],
+    "when_to_use": [
+      "Data visualization",
+      "Analytics",
+      "Statistics"
+    ]
+  },
+  {
+    "component_name": "BatteryIcon",
+    "import": "import { BatteryIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "power",
+      "charge",
+      "energy",
+      "low",
+      "charging"
+    ],
+    "tags": [
+      "media",
+      "power",
+      "charge",
+      "energy",
+      "low",
+      "charging",
+      "battery"
+    ],
+    "when_to_use": [
+      "Audio/video controls",
+      "Playback features",
+      "Media management"
+    ]
+  },
+  {
+    "component_name": "BookmarkIcon",
+    "import": "import { BookmarkIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "save",
+      "ribbon",
+      "favorite",
+      "tag",
+      "favourite"
+    ],
+    "tags": [
+      "actions",
+      "save",
+      "ribbon",
+      "favorite",
+      "tag",
+      "favourite",
+      "bookmark"
+    ],
+    "when_to_use": [
+      "User interactions",
+      "Clickable elements",
+      "Interactive controls"
+    ]
+  },
+  {
+    "component_name": "BooleanIcon",
+    "import": "import { BooleanIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "toggle",
+      "switch",
+      "on",
+      "off"
+    ],
+    "tags": [
+      "data",
+      "toggle",
+      "switch",
+      "on",
+      "off",
+      "boolean"
+    ],
+    "when_to_use": [
+      "Data visualization",
+      "Analytics",
+      "Statistics"
+    ]
+  },
+  {
+    "component_name": "BrowserIcon",
+    "import": "import { BrowserIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "browse",
+      "window",
+      "web",
+      "internet",
+      "browser"
+    ],
+    "tags": [
+      "media",
+      "browse",
+      "window",
+      "web",
+      "internet",
+      "browser",
+      "browser"
+    ],
+    "when_to_use": [
+      "Audio/video controls",
+      "Playback features",
+      "Media management"
+    ]
+  },
+  {
+    "component_name": "BuildingIcon",
+    "import": "import { BuildingIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "property",
+      "location",
+      "office",
+      "apartment",
+      "buildings"
+    ],
+    "tags": [
+      "places",
+      "property",
+      "location",
+      "office",
+      "apartment",
+      "buildings",
+      "building"
+    ],
+    "when_to_use": [
+      "Location indicators",
+      "Geographic features",
+      "Physical locations"
+    ]
+  },
+  {
+    "component_name": "BuildingsIcon",
+    "import": "import { BuildingsIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "property",
+      "location",
+      "office",
+      "apartment",
+      "buildings"
+    ],
+    "tags": [
+      "places",
+      "property",
+      "location",
+      "office",
+      "apartment",
+      "buildings",
+      "buildings"
+    ],
+    "when_to_use": [
+      "Location indicators",
+      "Geographic features",
+      "Physical locations"
+    ]
+  },
+  {
+    "component_name": "BuildReportIcon",
+    "import": "import { BuildReportIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "suitcase",
+      "bag",
+      "portfolio",
+      "briefcase"
+    ],
+    "tags": [
+      "documents",
+      "suitcase",
+      "bag",
+      "portfolio",
+      "briefcase",
+      "build-report"
+    ],
+    "when_to_use": [
+      "File management",
+      "Document operations",
+      "Content creation"
+    ]
+  },
+  {
+    "component_name": "CalculatorIcon",
+    "import": "import { CalculatorIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "calculate",
+      "number",
+      "math",
+      "arithmetic",
+      "calculator"
+    ],
+    "tags": [
+      "actions",
+      "calculate",
+      "number",
+      "math",
+      "arithmetic",
+      "calculator",
+      "calculator"
+    ],
+    "when_to_use": [
+      "User interactions",
+      "Clickable elements",
+      "Interactive controls"
+    ]
+  },
+  {
+    "component_name": "CalendarIcon",
+    "import": "import { CalendarIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "schedule",
+      "date",
+      "planner",
+      "calendar",
+      "event"
+    ],
+    "tags": [
+      "actions",
+      "schedule",
+      "date",
+      "planner",
+      "calendar",
+      "event",
+      "calendar"
+    ],
+    "when_to_use": [
+      "User interactions",
+      "Clickable elements",
+      "Interactive controls"
+    ]
+  },
+  {
+    "component_name": "CallIcon",
+    "import": "import { CallIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "communicate",
+      "phone",
+      "contact",
+      "voice"
+    ],
+    "tags": [
+      "communication",
+      "communicate",
+      "phone",
+      "contact",
+      "voice",
+      "call"
+    ],
+    "when_to_use": [
+      "Messaging features",
+      "Contact information",
+      "Social interactions"
+    ]
+  },
+  {
+    "component_name": "CartIcon",
+    "import": "import { CartIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "purchase",
+      "basket",
+      "shopping",
+      "checkout",
+      "trolley",
+      "cart"
+    ],
+    "tags": [
+      "finance",
+      "purchase",
+      "basket",
+      "shopping",
+      "checkout",
+      "trolley",
+      "cart",
+      "cart"
+    ],
+    "when_to_use": [
+      "Financial operations",
+      "Transactions",
+      "Money management"
+    ]
+  },
+  {
+    "component_name": "ChatIcon",
+    "import": "import { ChatIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "communicate",
+      "bubble",
+      "message",
+      "talk",
+      "conversation",
+      "speech",
+      "speech bubble empty"
+    ],
+    "tags": [
+      "communication",
+      "communicate",
+      "bubble",
+      "message",
+      "talk",
+      "conversation",
+      "speech",
+      "speech bubble empty",
+      "chat"
+    ],
+    "when_to_use": [
+      "Messaging features",
+      "Contact information",
+      "Social interactions"
+    ]
+  },
+  {
+    "component_name": "ChatGroupIcon",
+    "import": "import { ChatGroupIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "communicate",
+      "bubble",
+      "message",
+      "talk",
+      "conversation",
+      "speech",
+      "chat bubble"
+    ],
+    "tags": [
+      "communication",
+      "communicate",
+      "bubble",
+      "message",
+      "talk",
+      "conversation",
+      "speech",
+      "chat bubble",
+      "chat-group"
+    ],
+    "when_to_use": [
+      "Messaging features",
+      "Contact information",
+      "Social interactions"
+    ]
+  },
+  {
+    "component_name": "ChattingIcon",
+    "import": "import { ChattingIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "communicate",
+      "bubble",
+      "message",
+      "speech",
+      "speech bubble"
+    ],
+    "tags": [
+      "communication",
+      "communicate",
+      "bubble",
+      "message",
+      "speech",
+      "speech bubble",
+      "chatting"
+    ],
+    "when_to_use": [
+      "Messaging features",
+      "Contact information",
+      "Social interactions"
+    ]
+  },
+  {
+    "component_name": "CheckmarkIcon",
+    "import": "import { CheckmarkIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "confirmation",
+      "tick",
+      "complete",
+      "verify",
+      "checkmark",
+      "check"
+    ],
+    "tags": [
+      "indicators",
+      "confirmation",
+      "tick",
+      "complete",
+      "verify",
+      "checkmark",
+      "check",
+      "checkmark"
+    ],
+    "when_to_use": [
+      "Status displays",
+      "Progress indicators",
+      "Alert messages"
+    ]
+  },
+  {
+    "component_name": "ChevronDownIcon",
+    "import": "import { ChevronDownIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "navigate",
+      "arrow",
+      "scroll",
+      "triangle",
+      "navigation",
+      "chevron down",
+      "chevron lg down"
+    ],
+    "tags": [
+      "arrows & chevrons",
+      "navigate",
+      "arrow",
+      "scroll",
+      "triangle",
+      "navigation",
+      "chevron down",
+      "chevron lg down",
+      "chevron-down"
+    ],
+    "when_to_use": [
+      "Navigation",
+      "Direction indicators",
+      "Expand/collapse controls"
+    ]
+  },
+  {
+    "component_name": "ChevronLeftIcon",
+    "import": "import { ChevronLeftIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "back",
+      "arrow",
+      "previous",
+      "triangle",
+      "navigation",
+      "chevron left",
+      "chevron lg left"
+    ],
+    "tags": [
+      "arrows & chevrons",
+      "back",
+      "arrow",
+      "previous",
+      "triangle",
+      "navigation",
+      "chevron left",
+      "chevron lg left",
+      "chevron-left"
+    ],
+    "when_to_use": [
+      "Navigation",
+      "Direction indicators",
+      "Expand/collapse controls"
+    ]
+  },
+  {
+    "component_name": "ChevronRightIcon",
+    "import": "import { ChevronRightIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "next",
+      "arrow",
+      "forward",
+      "triangle",
+      "navigation",
+      "chevron right",
+      "chevron lg down"
+    ],
+    "tags": [
+      "arrows & chevrons",
+      "next",
+      "arrow",
+      "forward",
+      "triangle",
+      "navigation",
+      "chevron right",
+      "chevron lg down",
+      "chevron-right"
+    ],
+    "when_to_use": [
+      "Navigation",
+      "Direction indicators",
+      "Expand/collapse controls"
+    ]
+  },
+  {
+    "component_name": "ChevronUpIcon",
+    "import": "import { ChevronUpIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "navigate",
+      "arrow",
+      "scroll",
+      "triangle",
+      "navigation",
+      "chevron up",
+      "chevron lg up"
+    ],
+    "tags": [
+      "arrows & chevrons",
+      "navigate",
+      "arrow",
+      "scroll",
+      "triangle",
+      "navigation",
+      "chevron up",
+      "chevron lg up",
+      "chevron-up"
+    ],
+    "when_to_use": [
+      "Navigation",
+      "Direction indicators",
+      "Expand/collapse controls"
+    ]
+  },
+  {
+    "component_name": "ClockIcon",
+    "import": "import { ClockIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "time",
+      "schedule",
+      "pending",
+      "clock waiting"
+    ],
+    "tags": [
+      "objects",
+      "time",
+      "schedule",
+      "pending",
+      "clock waiting",
+      "clock"
+    ],
+    "when_to_use": [
+      "Physical items",
+      "Real-world objects",
+      "Material things"
+    ]
+  },
+  {
+    "component_name": "CloneIcon",
+    "import": "import { CloneIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "duplicate",
+      "copy",
+      "create"
+    ],
+    "tags": [
+      "arrows & chevrons",
+      "duplicate",
+      "copy",
+      "create",
+      "clone"
+    ],
+    "when_to_use": [
+      "Navigation",
+      "Direction indicators",
+      "Expand/collapse controls"
+    ]
+  },
+  {
+    "component_name": "CloseIcon",
+    "import": "import { CloseIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "dismiss",
+      "x",
+      "status",
+      "cancel",
+      "shut",
+      "minus",
+      "exit",
+      "close"
+    ],
+    "tags": [
+      "actions",
+      "dismiss",
+      "x",
+      "status",
+      "cancel",
+      "shut",
+      "minus",
+      "exit",
+      "close",
+      "close"
+    ],
+    "when_to_use": [
+      "User interactions",
+      "Clickable elements",
+      "Interactive controls"
+    ]
+  },
+  {
+    "component_name": "ClosedcaptionIcon",
+    "import": "import { ClosedcaptionIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "accessibility",
+      "subtitles",
+      "support",
+      "alt text",
+      "accessible",
+      "media closed caption",
+      "closed caption"
+    ],
+    "tags": [
+      "media",
+      "accessibility",
+      "subtitles",
+      "support",
+      "alt text",
+      "accessible",
+      "media closed caption",
+      "closed caption",
+      "closedcaption"
+    ],
+    "when_to_use": [
+      "Audio/video controls",
+      "Playback features",
+      "Media management"
+    ]
+  },
+  {
+    "component_name": "ClosedcaptionDisabledIcon",
+    "import": "import { ClosedcaptionDisabledIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "accessibility",
+      "subtitles",
+      "support",
+      "alt text",
+      "accessible",
+      "off"
+    ],
+    "tags": [
+      "media",
+      "accessibility",
+      "subtitles",
+      "support",
+      "alt text",
+      "accessible",
+      "off",
+      "closedcaption-disabled"
+    ],
+    "when_to_use": [
+      "Audio/video controls",
+      "Playback features",
+      "Media management"
+    ]
+  },
+  {
+    "component_name": "CloudIcon",
+    "import": "import { CloudIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "storage",
+      "cloud",
+      "sync",
+      "internet",
+      "connect"
+    ],
+    "tags": [
+      "computing",
+      "storage",
+      "cloud",
+      "sync",
+      "internet",
+      "connect",
+      "cloud"
+    ],
+    "when_to_use": [
+      "Technical features",
+      "System status",
+      "Network operations"
+    ]
+  },
+  {
+    "component_name": "CloudDisabledIcon",
+    "import": "import { CloudDisabledIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "storage",
+      "cloud",
+      "sync",
+      "off",
+      "internet",
+      "connect"
+    ],
+    "tags": [
+      "computing",
+      "storage",
+      "cloud",
+      "sync",
+      "off",
+      "internet",
+      "connect",
+      "cloud-disabled"
+    ],
+    "when_to_use": [
+      "Technical features",
+      "System status",
+      "Network operations"
+    ]
+  },
+  {
+    "component_name": "CloudDownloadIcon",
+    "import": "import { CloudDownloadIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "storage",
+      "internet",
+      "connect"
+    ],
+    "tags": [
+      "computing",
+      "storage",
+      "internet",
+      "connect",
+      "cloud-download"
+    ],
+    "when_to_use": [
+      "Technical features",
+      "System status",
+      "Network operations"
+    ]
+  },
+  {
+    "component_name": "CloudSuccessIcon",
+    "import": "import { CloudSuccessIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "storage",
+      "tick",
+      "internet",
+      "connect"
+    ],
+    "tags": [
+      "computing",
+      "storage",
+      "tick",
+      "internet",
+      "connect",
+      "cloud-success"
+    ],
+    "when_to_use": [
+      "Technical features",
+      "System status",
+      "Network operations"
+    ]
+  },
+  {
+    "component_name": "CloudSyncIcon",
+    "import": "import { CloudSyncIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "storage",
+      "internet",
+      "connect",
+      "arrow"
+    ],
+    "tags": [
+      "computing",
+      "storage",
+      "internet",
+      "connect",
+      "arrow",
+      "cloud-sync"
+    ],
+    "when_to_use": [
+      "Technical features",
+      "System status",
+      "Network operations"
+    ]
+  },
+  {
+    "component_name": "CloudUploadIcon",
+    "import": "import { CloudUploadIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "storage",
+      "internet",
+      "connect",
+      "arrow"
+    ],
+    "tags": [
+      "computing",
+      "storage",
+      "internet",
+      "connect",
+      "arrow",
+      "cloud-upload"
+    ],
+    "when_to_use": [
+      "Technical features",
+      "System status",
+      "Network operations"
+    ]
+  },
+  {
+    "component_name": "CoffeeIcon",
+    "import": "import { CoffeeIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "cup",
+      "lifestyle",
+      "mug",
+      "caffeine"
+    ],
+    "tags": [
+      "objects",
+      "cup",
+      "lifestyle",
+      "mug",
+      "caffeine",
+      "coffee"
+    ],
+    "when_to_use": [
+      "Physical items",
+      "Real-world objects",
+      "Material things"
+    ]
+  },
+  {
+    "component_name": "CollapseIcon",
+    "import": "import { CollapseIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "minimize",
+      "arrow",
+      "hide",
+      "minus",
+      "triangle",
+      "close",
+      "media collapse"
+    ],
+    "tags": [
+      "arrows & chevrons",
+      "minimize",
+      "arrow",
+      "hide",
+      "minus",
+      "triangle",
+      "close",
+      "media collapse",
+      "collapse"
+    ],
+    "when_to_use": [
+      "Navigation",
+      "Direction indicators",
+      "Expand/collapse controls"
+    ]
+  },
+  {
+    "component_name": "CollapseAllIcon",
+    "import": "import { CollapseAllIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "minimize",
+      "arrow",
+      "hide",
+      "minus",
+      "triangle",
+      "close",
+      "media collapse"
+    ],
+    "tags": [
+      "arrows & chevrons",
+      "minimize",
+      "arrow",
+      "hide",
+      "minus",
+      "triangle",
+      "close",
+      "media collapse",
+      "collapse-all"
+    ],
+    "when_to_use": [
+      "Navigation",
+      "Direction indicators",
+      "Expand/collapse controls"
+    ]
+  },
+  {
+    "component_name": "ColumnChooserIcon",
+    "import": "import { ColumnChooserIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "layout",
+      "grid",
+      "organize",
+      "table",
+      "sheet"
+    ],
+    "tags": [
+      "organize",
+      "layout",
+      "grid",
+      "organize",
+      "table",
+      "sheet",
+      "column-chooser"
+    ],
+    "when_to_use": [
+      "Content organization",
+      "Data management",
+      "Layout controls"
+    ]
+  },
+  {
+    "component_name": "CommentaryIcon",
+    "import": "import { CommentaryIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "communicate",
+      "bubble",
+      "message",
+      "talk",
+      "conversation",
+      "speech",
+      "speech bubble chat"
+    ],
+    "tags": [
+      "communication",
+      "communicate",
+      "bubble",
+      "message",
+      "talk",
+      "conversation",
+      "speech",
+      "speech bubble chat",
+      "commentary"
+    ],
+    "when_to_use": [
+      "Messaging features",
+      "Contact information",
+      "Social interactions"
+    ]
+  },
+  {
+    "component_name": "CompassIcon",
+    "import": "import { CompassIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "navigate",
+      "explore",
+      "direction",
+      "compass"
+    ],
+    "tags": [
+      "objects",
+      "navigate",
+      "explore",
+      "direction",
+      "compass",
+      "compass"
+    ],
+    "when_to_use": [
+      "Physical items",
+      "Real-world objects",
+      "Material things"
+    ]
+  },
+  {
+    "component_name": "CookieIcon",
+    "import": "import { CookieIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "tracking",
+      "privacy",
+      "biscuit",
+      "cookie"
+    ],
+    "tags": [
+      "objects",
+      "tracking",
+      "privacy",
+      "biscuit",
+      "cookie",
+      "cookie"
+    ],
+    "when_to_use": [
+      "Physical items",
+      "Real-world objects",
+      "Material things"
+    ]
+  },
+  {
+    "component_name": "CopyIcon",
+    "import": "import { CopyIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "duplicate",
+      "page",
+      "clone",
+      "document",
+      "create",
+      "copy to clipboard"
+    ],
+    "tags": [
+      "actions",
+      "duplicate",
+      "page",
+      "clone",
+      "document",
+      "create",
+      "copy to clipboard",
+      "copy"
+    ],
+    "when_to_use": [
+      "User interactions",
+      "Clickable elements",
+      "Interactive controls"
+    ]
+  },
+  {
+    "component_name": "CreditCardIcon",
+    "import": "import { CreditCardIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "payment",
+      "transaction",
+      "bill",
+      "charge",
+      "finance",
+      "credit card"
+    ],
+    "tags": [
+      "finance",
+      "payment",
+      "transaction",
+      "bill",
+      "charge",
+      "finance",
+      "credit card",
+      "credit-card"
+    ],
+    "when_to_use": [
+      "Financial operations",
+      "Transactions",
+      "Money management"
+    ]
+  },
+  {
+    "component_name": "CropsIcon",
+    "import": "import { CropsIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "plant",
+      "agriculture",
+      "harvest",
+      "farm",
+      "grow",
+      "paperless"
+    ],
+    "tags": [
+      "places",
+      "plant",
+      "agriculture",
+      "harvest",
+      "farm",
+      "grow",
+      "paperless",
+      "crops"
+    ],
+    "when_to_use": [
+      "Location indicators",
+      "Geographic features",
+      "Physical locations"
+    ]
+  },
+  {
+    "component_name": "CsvIcon",
+    "import": "import { CsvIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "export",
+      "spreadsheet",
+      "file",
+      "excel",
+      "csv"
+    ],
+    "tags": [
+      "documents",
+      "export",
+      "spreadsheet",
+      "file",
+      "excel",
+      "csv",
+      "csv"
+    ],
+    "when_to_use": [
+      "File management",
+      "Document operations",
+      "Content creation"
+    ]
+  },
+  {
+    "component_name": "CutIcon",
+    "import": "import { CutIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "trim",
+      "scissor",
+      "edit",
+      "remove"
+    ],
+    "tags": [
+      "actions",
+      "trim",
+      "scissor",
+      "edit",
+      "remove",
+      "cut"
+    ],
+    "when_to_use": [
+      "User interactions",
+      "Clickable elements",
+      "Interactive controls"
+    ]
+  },
+  {
+    "component_name": "DarkIcon",
+    "import": "import { DarkIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "night",
+      "moon",
+      "theme",
+      "mode"
+    ],
+    "tags": [
+      "actions",
+      "night",
+      "moon",
+      "theme",
+      "mode",
+      "dark"
+    ],
+    "when_to_use": [
+      "User interactions",
+      "Clickable elements",
+      "Interactive controls"
+    ]
+  },
+  {
+    "component_name": "DashboardIcon",
+    "import": "import { DashboardIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "car gauge"
+    ],
+    "tags": [
+      "data",
+      "car gauge",
+      "dashboard"
+    ],
+    "when_to_use": [
+      "Data visualization",
+      "Analytics",
+      "Statistics"
+    ]
+  },
+  {
+    "component_name": "DatabaseIcon",
+    "import": "import { DatabaseIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "stack",
+      "backend"
+    ],
+    "tags": [
+      "computing",
+      "stack",
+      "backend",
+      "database"
+    ],
+    "when_to_use": [
+      "Technical features",
+      "System status",
+      "Network operations"
+    ]
+  },
+  {
+    "component_name": "DeleteIcon",
+    "import": "import { DeleteIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "remove",
+      "trash",
+      "discard",
+      "close",
+      "erase",
+      "bin",
+      "trash can"
+    ],
+    "tags": [
+      "actions",
+      "remove",
+      "trash",
+      "discard",
+      "close",
+      "erase",
+      "bin",
+      "trash can",
+      "delete"
+    ],
+    "when_to_use": [
+      "User interactions",
+      "Clickable elements",
+      "Interactive controls"
+    ]
+  },
+  {
+    "component_name": "DevicesIcon",
+    "import": "import { DevicesIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "screen",
+      "tech",
+      "equipment",
+      "monitor",
+      "devices"
+    ],
+    "tags": [
+      "media",
+      "screen",
+      "tech",
+      "equipment",
+      "monitor",
+      "devices",
+      "devices"
+    ],
+    "when_to_use": [
+      "Audio/video controls",
+      "Playback features",
+      "Media management"
+    ]
+  },
+  {
+    "component_name": "DiamondIcon",
+    "import": "import { DiamondIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "gem",
+      "premium",
+      "jewel",
+      "exclusive",
+      "diamond"
+    ],
+    "tags": [
+      "finance",
+      "gem",
+      "premium",
+      "jewel",
+      "exclusive",
+      "diamond",
+      "diamond"
+    ],
+    "when_to_use": [
+      "Financial operations",
+      "Transactions",
+      "Money management"
+    ]
+  },
+  {
+    "component_name": "DisplayIcon",
+    "import": "import { DisplayIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "display",
+      "screen",
+      "monitor",
+      "desktop"
+    ],
+    "tags": [
+      "media",
+      "display",
+      "screen",
+      "monitor",
+      "desktop",
+      "display"
+    ],
+    "when_to_use": [
+      "Audio/video controls",
+      "Playback features",
+      "Media management"
+    ]
+  },
+  {
+    "component_name": "DocumentIcon",
+    "import": "import { DocumentIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "page",
+      "file",
+      "paper",
+      "draft",
+      "create",
+      "document",
+      "view transcript"
+    ],
+    "tags": [
+      "documents",
+      "page",
+      "file",
+      "paper",
+      "draft",
+      "create",
+      "document",
+      "view transcript",
+      "document"
+    ],
+    "when_to_use": [
+      "File management",
+      "Document operations",
+      "Content creation"
+    ]
+  },
+  {
+    "component_name": "DoubleChevronDownIcon",
+    "import": "import { DoubleChevronDownIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "navigate",
+      "arrow",
+      "triangle",
+      "navigation"
+    ],
+    "tags": [
+      "arrows & chevrons",
+      "navigate",
+      "arrow",
+      "triangle",
+      "navigation",
+      "double-chevron-down"
+    ],
+    "when_to_use": [
+      "Navigation",
+      "Direction indicators",
+      "Expand/collapse controls"
+    ]
+  },
+  {
+    "component_name": "DoubleChevronLeftIcon",
+    "import": "import { DoubleChevronLeftIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "back",
+      "arrow",
+      "triangle",
+      "navigation",
+      "fast backward",
+      "double arrow left",
+      "chevron double lg left"
+    ],
+    "tags": [
+      "arrows & chevrons",
+      "back",
+      "arrow",
+      "triangle",
+      "navigation",
+      "fast backward",
+      "double arrow left",
+      "chevron double lg left",
+      "double-chevron-left"
+    ],
+    "when_to_use": [
+      "Navigation",
+      "Direction indicators",
+      "Expand/collapse controls"
+    ]
+  },
+  {
+    "component_name": "DoubleChevronRightIcon",
+    "import": "import { DoubleChevronRightIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "next",
+      "arrow",
+      "triangle",
+      "navigation",
+      "fast forward",
+      "double arrow right",
+      "chevron double lg right"
+    ],
+    "tags": [
+      "arrows & chevrons",
+      "next",
+      "arrow",
+      "triangle",
+      "navigation",
+      "fast forward",
+      "double arrow right",
+      "chevron double lg right",
+      "double-chevron-right"
+    ],
+    "when_to_use": [
+      "Navigation",
+      "Direction indicators",
+      "Expand/collapse controls"
+    ]
+  },
+  {
+    "component_name": "DoubleChevronUpIcon",
+    "import": "import { DoubleChevronUpIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "navigate",
+      "arrow",
+      "triangle",
+      "navigation"
+    ],
+    "tags": [
+      "arrows & chevrons",
+      "navigate",
+      "arrow",
+      "triangle",
+      "navigation",
+      "double-chevron-up"
+    ],
+    "when_to_use": [
+      "Navigation",
+      "Direction indicators",
+      "Expand/collapse controls"
+    ]
+  },
+  {
+    "component_name": "DownloadIcon",
+    "import": "import { DownloadIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "save",
+      "arrow",
+      "transfer",
+      "download"
+    ],
+    "tags": [
+      "arrows & chevrons",
+      "save",
+      "arrow",
+      "transfer",
+      "download",
+      "download"
+    ],
+    "when_to_use": [
+      "Navigation",
+      "Direction indicators",
+      "Expand/collapse controls"
+    ]
+  },
+  {
+    "component_name": "DragRowIcon",
+    "import": "import { DragRowIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "move",
+      "position",
+      "handle",
+      "reorder",
+      "drag indicator"
+    ],
+    "tags": [
+      "organize",
+      "move",
+      "position",
+      "handle",
+      "reorder",
+      "drag indicator",
+      "drag-row"
+    ],
+    "when_to_use": [
+      "Content organization",
+      "Data management",
+      "Layout controls"
+    ]
+  },
+  {
+    "component_name": "EditIcon",
+    "import": "import { EditIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "update",
+      "pencil",
+      "change",
+      "draw"
+    ],
+    "tags": [
+      "actions",
+      "update",
+      "pencil",
+      "change",
+      "draw",
+      "edit"
+    ],
+    "when_to_use": [
+      "User interactions",
+      "Clickable elements",
+      "Interactive controls"
+    ]
+  },
+  {
+    "component_name": "ErrorIcon",
+    "import": "import { ErrorIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "alert",
+      "stop",
+      "failure",
+      "crash",
+      "mistake",
+      "alert triangle",
+      "exclamation circle"
+    ],
+    "tags": [
+      "indicators",
+      "alert",
+      "stop",
+      "failure",
+      "crash",
+      "mistake",
+      "alert triangle",
+      "exclamation circle",
+      "error"
+    ],
+    "when_to_use": [
+      "Status displays",
+      "Progress indicators",
+      "Alert messages"
+    ]
+  },
+  {
+    "component_name": "ErrorExecuteIcon",
+    "import": "import { ErrorExecuteIcon } from \"@salt-ds/icons\";",
+    "synonym": [],
+    "tags": [
+      "indicators",
+      "error-execute"
+    ],
+    "when_to_use": [
+      "Status displays",
+      "Progress indicators",
+      "Alert messages"
+    ]
+  },
+  {
+    "component_name": "ExpandIcon",
+    "import": "import { ExpandIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "enlarge",
+      "arrow",
+      "size",
+      "triangle",
+      "maximize",
+      "reveal",
+      "media expand"
+    ],
+    "tags": [
+      "arrows & chevrons",
+      "enlarge",
+      "arrow",
+      "size",
+      "triangle",
+      "maximize",
+      "reveal",
+      "media expand",
+      "expand"
+    ],
+    "when_to_use": [
+      "Navigation",
+      "Direction indicators",
+      "Expand/collapse controls"
+    ]
+  },
+  {
+    "component_name": "ExpandAllIcon",
+    "import": "import { ExpandAllIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "enlarge",
+      "arrow",
+      "size",
+      "triangle",
+      "open"
+    ],
+    "tags": [
+      "arrows & chevrons",
+      "enlarge",
+      "arrow",
+      "size",
+      "triangle",
+      "open",
+      "expand-all"
+    ],
+    "when_to_use": [
+      "Navigation",
+      "Direction indicators",
+      "Expand/collapse controls"
+    ]
+  },
+  {
+    "component_name": "ExportIcon",
+    "import": "import { ExportIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "transfer",
+      "arrow",
+      "share",
+      "send"
+    ],
+    "tags": [
+      "arrows & chevrons",
+      "transfer",
+      "arrow",
+      "share",
+      "send",
+      "export"
+    ],
+    "when_to_use": [
+      "Navigation",
+      "Direction indicators",
+      "Expand/collapse controls"
+    ]
+  },
+  {
+    "component_name": "FavoriteIcon",
+    "import": "import { FavoriteIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "like",
+      "star",
+      "bookmark",
+      "save",
+      "favourite",
+      "star outline"
+    ],
+    "tags": [
+      "actions",
+      "like",
+      "star",
+      "bookmark",
+      "save",
+      "favourite",
+      "star outline",
+      "favorite"
+    ],
+    "when_to_use": [
+      "User interactions",
+      "Clickable elements",
+      "Interactive controls"
+    ]
+  },
+  {
+    "component_name": "FilterIcon",
+    "import": "import { FilterIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "refine",
+      "funnel",
+      "data"
+    ],
+    "tags": [
+      "organize",
+      "refine",
+      "funnel",
+      "data",
+      "filter"
+    ],
+    "when_to_use": [
+      "Content organization",
+      "Data management",
+      "Layout controls"
+    ]
+  },
+  {
+    "component_name": "FilterClearIcon",
+    "import": "import { FilterClearIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "funnel",
+      "data",
+      "x"
+    ],
+    "tags": [
+      "organize",
+      "funnel",
+      "data",
+      "x",
+      "filter-clear"
+    ],
+    "when_to_use": [
+      "Content organization",
+      "Data management",
+      "Layout controls"
+    ]
+  },
+  {
+    "component_name": "FlagIcon",
+    "import": "import { FlagIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "marker",
+      "report",
+      "flag"
+    ],
+    "tags": [
+      "actions",
+      "marker",
+      "report",
+      "flag",
+      "flag"
+    ],
+    "when_to_use": [
+      "User interactions",
+      "Clickable elements",
+      "Interactive controls"
+    ]
+  },
+  {
+    "component_name": "FolderClosedIcon",
+    "import": "import { FolderClosedIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "storage",
+      "file",
+      "archive",
+      "directory"
+    ],
+    "tags": [
+      "documents",
+      "storage",
+      "file",
+      "archive",
+      "directory",
+      "folder-closed"
+    ],
+    "when_to_use": [
+      "File management",
+      "Document operations",
+      "Content creation"
+    ]
+  },
+  {
+    "component_name": "FolderOpenIcon",
+    "import": "import { FolderOpenIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "storage",
+      "file",
+      "archive",
+      "access",
+      "directory"
+    ],
+    "tags": [
+      "documents",
+      "storage",
+      "file",
+      "archive",
+      "access",
+      "directory",
+      "folder-open"
+    ],
+    "when_to_use": [
+      "File management",
+      "Document operations",
+      "Content creation"
+    ]
+  },
+  {
+    "component_name": "Forward10Icon",
+    "import": "import { Forward10Icon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "skip",
+      "media",
+      "media fast forward 10 seconds",
+      "forward 10"
+    ],
+    "tags": [
+      "media",
+      "skip",
+      "media",
+      "media fast forward 10 seconds",
+      "forward 10",
+      "forward-10"
+    ],
+    "when_to_use": [
+      "Audio/video controls",
+      "Playback features",
+      "Media management"
+    ]
+  },
+  {
+    "component_name": "Forward15Icon",
+    "import": "import { Forward15Icon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "skip",
+      "media",
+      "media fast forward 15 seconds"
+    ],
+    "tags": [
+      "media",
+      "skip",
+      "media",
+      "media fast forward 15 seconds",
+      "forward-15"
+    ],
+    "when_to_use": [
+      "Audio/video controls",
+      "Playback features",
+      "Media management"
+    ]
+  },
+  {
+    "component_name": "Forward30Icon",
+    "import": "import { Forward30Icon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "skip",
+      "media"
+    ],
+    "tags": [
+      "media",
+      "skip",
+      "media",
+      "forward-30"
+    ],
+    "when_to_use": [
+      "Audio/video controls",
+      "Playback features",
+      "Media management"
+    ]
+  },
+  {
+    "component_name": "Forward5Icon",
+    "import": "import { Forward5Icon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "skip",
+      "media"
+    ],
+    "tags": [
+      "media",
+      "skip",
+      "media",
+      "forward-5"
+    ],
+    "when_to_use": [
+      "Audio/video controls",
+      "Playback features",
+      "Media management"
+    ]
+  },
+  {
+    "component_name": "GithubIcon",
+    "import": "import { GithubIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "commit",
+      "code",
+      "develop",
+      "repo"
+    ],
+    "tags": [
+      "logos",
+      "commit",
+      "code",
+      "develop",
+      "repo",
+      "github"
+    ],
+    "when_to_use": [
+      "Brand representation",
+      "External links",
+      "Platform identification"
+    ]
+  },
+  {
+    "component_name": "GlobeIcon",
+    "import": "import { GlobeIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "global",
+      "earth",
+      "international",
+      "world",
+      "globe"
+    ],
+    "tags": [
+      "places",
+      "global",
+      "earth",
+      "international",
+      "world",
+      "globe",
+      "globe"
+    ],
+    "when_to_use": [
+      "Location indicators",
+      "Geographic features",
+      "Physical locations"
+    ]
+  },
+  {
+    "component_name": "GridIcon",
+    "import": "import { GridIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "view",
+      "tile",
+      "layout"
+    ],
+    "tags": [
+      "organize",
+      "view",
+      "tile",
+      "layout",
+      "grid"
+    ],
+    "when_to_use": [
+      "Content organization",
+      "Data management",
+      "Layout controls"
+    ]
+  },
+  {
+    "component_name": "GroupIcon",
+    "import": "import { GroupIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "combine",
+      "organize",
+      "arrange"
+    ],
+    "tags": [
+      "organize",
+      "combine",
+      "organize",
+      "arrange",
+      "group"
+    ],
+    "when_to_use": [
+      "Content organization",
+      "Data management",
+      "Layout controls"
+    ]
+  },
+  {
+    "component_name": "GuideClosedIcon",
+    "import": "import { GuideClosedIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "help",
+      "book",
+      "manual",
+      "instructions",
+      "detail"
+    ],
+    "tags": [
+      "documents",
+      "help",
+      "book",
+      "manual",
+      "instructions",
+      "detail",
+      "guide-closed"
+    ],
+    "when_to_use": [
+      "File management",
+      "Document operations",
+      "Content creation"
+    ]
+  },
+  {
+    "component_name": "GuideOpenIcon",
+    "import": "import { GuideOpenIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "help",
+      "book",
+      "manual",
+      "instructions",
+      "detail",
+      "guide"
+    ],
+    "tags": [
+      "documents",
+      "help",
+      "book",
+      "manual",
+      "instructions",
+      "detail",
+      "guide",
+      "guide-open"
+    ],
+    "when_to_use": [
+      "File management",
+      "Document operations",
+      "Content creation"
+    ]
+  },
+  {
+    "component_name": "HeadphonesIcon",
+    "import": "import { HeadphonesIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "audio",
+      "sound",
+      "listen",
+      "headphone"
+    ],
+    "tags": [
+      "media",
+      "audio",
+      "sound",
+      "listen",
+      "headphone",
+      "headphones"
+    ],
+    "when_to_use": [
+      "Audio/video controls",
+      "Playback features",
+      "Media management"
+    ]
+  },
+  {
+    "component_name": "HeadphonesDisabledIcon",
+    "import": "import { HeadphonesDisabledIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "audio",
+      "sound",
+      "off",
+      "disabled",
+      "muted"
+    ],
+    "tags": [
+      "media",
+      "audio",
+      "sound",
+      "off",
+      "disabled",
+      "muted",
+      "headphones-disabled"
+    ],
+    "when_to_use": [
+      "Audio/video controls",
+      "Playback features",
+      "Media management"
+    ]
+  },
+  {
+    "component_name": "HelpIcon",
+    "import": "import { HelpIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "help",
+      "question",
+      "support",
+      "information",
+      "assist",
+      "question mark circle"
+    ],
+    "tags": [
+      "indicators",
+      "help",
+      "question",
+      "support",
+      "information",
+      "assist",
+      "question mark circle",
+      "help"
+    ],
+    "when_to_use": [
+      "Status displays",
+      "Progress indicators",
+      "Alert messages"
+    ]
+  },
+  {
+    "component_name": "HiddenIcon",
+    "import": "import { HiddenIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "visbility",
+      "eye",
+      "private",
+      "conceal",
+      "off",
+      "hide",
+      "eye off"
+    ],
+    "tags": [
+      "actions",
+      "visbility",
+      "eye",
+      "private",
+      "conceal",
+      "off",
+      "hide",
+      "eye off",
+      "hidden"
+    ],
+    "when_to_use": [
+      "User interactions",
+      "Clickable elements",
+      "Interactive controls"
+    ]
+  },
+  {
+    "component_name": "HistoryIcon",
+    "import": "import { HistoryIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "clock",
+      "time",
+      "archive",
+      "clock expiring",
+      "history"
+    ],
+    "tags": [
+      "arrows & chevrons",
+      "clock",
+      "time",
+      "archive",
+      "clock expiring",
+      "history",
+      "history"
+    ],
+    "when_to_use": [
+      "Navigation",
+      "Direction indicators",
+      "Expand/collapse controls"
+    ]
+  },
+  {
+    "component_name": "HomeIcon",
+    "import": "import { HomeIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "house",
+      "navigation",
+      "start"
+    ],
+    "tags": [
+      "places",
+      "house",
+      "navigation",
+      "start",
+      "home"
+    ],
+    "when_to_use": [
+      "Location indicators",
+      "Geographic features",
+      "Physical locations"
+    ]
+  },
+  {
+    "component_name": "HospitalIcon",
+    "import": "import { HospitalIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "facility",
+      "healthcare",
+      "medicine",
+      "medical",
+      "clinic"
+    ],
+    "tags": [
+      "places",
+      "facility",
+      "healthcare",
+      "medicine",
+      "medical",
+      "clinic",
+      "hospital"
+    ],
+    "when_to_use": [
+      "Location indicators",
+      "Geographic features",
+      "Physical locations"
+    ]
+  },
+  {
+    "component_name": "IconFigmaIcon",
+    "import": "import { IconFigmaIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "design",
+      "logo",
+      "application",
+      "tool"
+    ],
+    "tags": [
+      "logos",
+      "design",
+      "logo",
+      "application",
+      "tool",
+      "icon-figma"
+    ],
+    "when_to_use": [
+      "Brand representation",
+      "External links",
+      "Platform identification"
+    ]
+  },
+  {
+    "component_name": "ImageIcon",
+    "import": "import { ImageIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "preview",
+      "picture",
+      "media",
+      "photo",
+      "gallery"
+    ],
+    "tags": [
+      "documents",
+      "preview",
+      "picture",
+      "media",
+      "photo",
+      "gallery",
+      "image"
+    ],
+    "when_to_use": [
+      "File management",
+      "Document operations",
+      "Content creation"
+    ]
+  },
+  {
+    "component_name": "ImportIcon",
+    "import": "import { ImportIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "upload",
+      "arrow"
+    ],
+    "tags": [
+      "arrows & chevrons",
+      "upload",
+      "arrow",
+      "import"
+    ],
+    "when_to_use": [
+      "Navigation",
+      "Direction indicators",
+      "Expand/collapse controls"
+    ]
+  },
+  {
+    "component_name": "InboxIcon",
+    "import": "import { InboxIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "mail",
+      "tray",
+      "message",
+      "email",
+      "inbox"
+    ],
+    "tags": [
+      "communication",
+      "mail",
+      "tray",
+      "message",
+      "email",
+      "inbox",
+      "inbox"
+    ],
+    "when_to_use": [
+      "Messaging features",
+      "Contact information",
+      "Social interactions"
+    ]
+  },
+  {
+    "component_name": "InfoIcon",
+    "import": "import { InfoIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "help",
+      "information",
+      "support",
+      "assist",
+      "detail",
+      "info tip filled"
+    ],
+    "tags": [
+      "indicators",
+      "help",
+      "information",
+      "support",
+      "assist",
+      "detail",
+      "info tip filled",
+      "info"
+    ],
+    "when_to_use": [
+      "Status displays",
+      "Progress indicators",
+      "Alert messages"
+    ]
+  },
+  {
+    "component_name": "JigsawIcon",
+    "import": "import { JigsawIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "configure",
+      "puzzle",
+      "logic"
+    ],
+    "tags": [
+      "objects",
+      "configure",
+      "puzzle",
+      "logic",
+      "jigsaw"
+    ],
+    "when_to_use": [
+      "Physical items",
+      "Real-world objects",
+      "Material things"
+    ]
+  },
+  {
+    "component_name": "KeyIcon",
+    "import": "import { KeyIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "access",
+      "security",
+      "secure",
+      "grant",
+      "restrict",
+      "password",
+      "car key"
+    ],
+    "tags": [
+      "objects",
+      "access",
+      "security",
+      "secure",
+      "grant",
+      "restrict",
+      "password",
+      "car key",
+      "key"
+    ],
+    "when_to_use": [
+      "Physical items",
+      "Real-world objects",
+      "Material things"
+    ]
+  },
+  {
+    "component_name": "KeyBackspaceIcon",
+    "import": "import { KeyBackspaceIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "delete",
+      "x",
+      "keyboard",
+      "remove",
+      "arrow",
+      "erase"
+    ],
+    "tags": [
+      "accessibility",
+      "delete",
+      "x",
+      "keyboard",
+      "remove",
+      "arrow",
+      "erase",
+      "key-backspace"
+    ],
+    "when_to_use": []
+  },
+  {
+    "component_name": "KeyCapslockIcon",
+    "import": "import { KeyCapslockIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "arrow",
+      "keyboard",
+      "on",
+      "off"
+    ],
+    "tags": [
+      "accessibility",
+      "arrow",
+      "keyboard",
+      "on",
+      "off",
+      "key-capslock"
+    ],
+    "when_to_use": []
+  },
+  {
+    "component_name": "KeyCommandIcon",
+    "import": "import { KeyCommandIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "keyboard",
+      "shortcut"
+    ],
+    "tags": [
+      "accessibility",
+      "keyboard",
+      "shortcut",
+      "key-command"
+    ],
+    "when_to_use": []
+  },
+  {
+    "component_name": "KeyControlIcon",
+    "import": "import { KeyControlIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "arrow",
+      "keyboard",
+      "shortcut",
+      "ctrl"
+    ],
+    "tags": [
+      "accessibility",
+      "arrow",
+      "keyboard",
+      "shortcut",
+      "ctrl",
+      "key-control"
+    ],
+    "when_to_use": []
+  },
+  {
+    "component_name": "KeyEnterIcon",
+    "import": "import { KeyEnterIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "return",
+      "arrow",
+      "keyboard",
+      "submit"
+    ],
+    "tags": [
+      "accessibility",
+      "return",
+      "arrow",
+      "keyboard",
+      "submit",
+      "key-enter"
+    ],
+    "when_to_use": []
+  },
+  {
+    "component_name": "KeyOptionIcon",
+    "import": "import { KeyOptionIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "alt",
+      "keyboard",
+      "shortcut"
+    ],
+    "tags": [
+      "accessibility",
+      "alt",
+      "keyboard",
+      "shortcut",
+      "key-option"
+    ],
+    "when_to_use": []
+  },
+  {
+    "component_name": "KeyShiftIcon",
+    "import": "import { KeyShiftIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "arrow",
+      "keyboard"
+    ],
+    "tags": [
+      "accessibility",
+      "arrow",
+      "keyboard",
+      "key-shift"
+    ],
+    "when_to_use": []
+  },
+  {
+    "component_name": "KeyTabIcon",
+    "import": "import { KeyTabIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "indent",
+      "arrow",
+      "keyboard",
+      "shortcut"
+    ],
+    "tags": [
+      "accessibility",
+      "indent",
+      "arrow",
+      "keyboard",
+      "shortcut",
+      "key-tab"
+    ],
+    "when_to_use": []
+  },
+  {
+    "component_name": "LaptopIcon",
+    "import": "import { LaptopIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "screen",
+      "computer",
+      "device",
+      "laptop"
+    ],
+    "tags": [
+      "media",
+      "screen",
+      "computer",
+      "device",
+      "laptop",
+      "laptop"
+    ],
+    "when_to_use": [
+      "Audio/video controls",
+      "Playback features",
+      "Media management"
+    ]
+  },
+  {
+    "component_name": "LayersIcon",
+    "import": "import { LayersIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "arrange",
+      "stack",
+      "composition",
+      "expand"
+    ],
+    "tags": [
+      "organize",
+      "arrange",
+      "stack",
+      "composition",
+      "expand",
+      "layers"
+    ],
+    "when_to_use": [
+      "Content organization",
+      "Data management",
+      "Layout controls"
+    ]
+  },
+  {
+    "component_name": "LightIcon",
+    "import": "import { LightIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "brightness",
+      "sun",
+      "display",
+      "theme",
+      "contrast",
+      "mode"
+    ],
+    "tags": [
+      "actions",
+      "brightness",
+      "sun",
+      "display",
+      "theme",
+      "contrast",
+      "mode",
+      "light"
+    ],
+    "when_to_use": [
+      "User interactions",
+      "Clickable elements",
+      "Interactive controls"
+    ]
+  },
+  {
+    "component_name": "LineChartIcon",
+    "import": "import { LineChartIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "data",
+      "graph",
+      "analytics",
+      "statistic"
+    ],
+    "tags": [
+      "data",
+      "data",
+      "graph",
+      "analytics",
+      "statistic",
+      "line-chart"
+    ],
+    "when_to_use": [
+      "Data visualization",
+      "Analytics",
+      "Statistics"
+    ]
+  },
+  {
+    "component_name": "LinkedIcon",
+    "import": "import { LinkedIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "connect",
+      "chain",
+      "url",
+      "link"
+    ],
+    "tags": [
+      "actions",
+      "connect",
+      "chain",
+      "url",
+      "link",
+      "linked"
+    ],
+    "when_to_use": [
+      "User interactions",
+      "Clickable elements",
+      "Interactive controls"
+    ]
+  },
+  {
+    "component_name": "ListIcon",
+    "import": "import { ListIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "content",
+      "bulleted",
+      "item",
+      "notes",
+      "list"
+    ],
+    "tags": [
+      "organize",
+      "content",
+      "bulleted",
+      "item",
+      "notes",
+      "list",
+      "list"
+    ],
+    "when_to_use": [
+      "Content organization",
+      "Data management",
+      "Layout controls"
+    ]
+  },
+  {
+    "component_name": "LoaderIcon",
+    "import": "import { LoaderIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "loading",
+      "spinner",
+      "status",
+      "wait",
+      "progress"
+    ],
+    "tags": [
+      "indicators",
+      "loading",
+      "spinner",
+      "status",
+      "wait",
+      "progress",
+      "loader"
+    ],
+    "when_to_use": [
+      "Status displays",
+      "Progress indicators",
+      "Alert messages"
+    ]
+  },
+  {
+    "component_name": "LocationIcon",
+    "import": "import { LocationIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "place",
+      "pin",
+      "navigation",
+      "map",
+      "position",
+      "location"
+    ],
+    "tags": [
+      "actions",
+      "place",
+      "pin",
+      "navigation",
+      "map",
+      "position",
+      "location",
+      "location"
+    ],
+    "when_to_use": [
+      "User interactions",
+      "Clickable elements",
+      "Interactive controls"
+    ]
+  },
+  {
+    "component_name": "LockedIcon",
+    "import": "import { LockedIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "access",
+      "padlock",
+      "security",
+      "safety",
+      "restrict",
+      "secure",
+      "lock locked outline"
+    ],
+    "tags": [
+      "actions",
+      "access",
+      "padlock",
+      "security",
+      "safety",
+      "restrict",
+      "secure",
+      "lock locked outline",
+      "locked"
+    ],
+    "when_to_use": [
+      "User interactions",
+      "Clickable elements",
+      "Interactive controls"
+    ]
+  },
+  {
+    "component_name": "ManIcon",
+    "import": "import { ManIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "people",
+      "male",
+      "user",
+      "gender",
+      "person"
+    ],
+    "tags": [
+      "people",
+      "people",
+      "male",
+      "user",
+      "gender",
+      "person",
+      "man"
+    ],
+    "when_to_use": [
+      "User profiles",
+      "Personnel management",
+      "Social features"
+    ]
+  },
+  {
+    "component_name": "ManWomanIcon",
+    "import": "import { ManWomanIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "people",
+      "group",
+      "user",
+      "gender",
+      "bathroom",
+      "wc",
+      "restroom"
+    ],
+    "tags": [
+      "people",
+      "people",
+      "group",
+      "user",
+      "gender",
+      "bathroom",
+      "wc",
+      "restroom",
+      "man-woman"
+    ],
+    "when_to_use": [
+      "User profiles",
+      "Personnel management",
+      "Social features"
+    ]
+  },
+  {
+    "component_name": "MapIcon",
+    "import": "import { MapIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "direction",
+      "navigation",
+      "route"
+    ],
+    "tags": [
+      "objects",
+      "direction",
+      "navigation",
+      "route",
+      "map"
+    ],
+    "when_to_use": [
+      "Physical items",
+      "Real-world objects",
+      "Material things"
+    ]
+  },
+  {
+    "component_name": "MarkerIcon",
+    "import": "import { MarkerIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "sign",
+      "direction",
+      "navigation"
+    ],
+    "tags": [
+      "objects",
+      "sign",
+      "direction",
+      "navigation",
+      "marker"
+    ],
+    "when_to_use": [
+      "Physical items",
+      "Real-world objects",
+      "Material things"
+    ]
+  },
+  {
+    "component_name": "MaximizeIcon",
+    "import": "import { MaximizeIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "view",
+      "window",
+      "fullscreen",
+      "expand",
+      "enlarge"
+    ],
+    "tags": [
+      "organize",
+      "view",
+      "window",
+      "fullscreen",
+      "expand",
+      "enlarge",
+      "maximize"
+    ],
+    "when_to_use": [
+      "Content organization",
+      "Data management",
+      "Layout controls"
+    ]
+  },
+  {
+    "component_name": "MedicalKitIcon",
+    "import": "import { MedicalKitIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "first aid",
+      "healthcare",
+      "emergency"
+    ],
+    "tags": [
+      "objects",
+      "first aid",
+      "healthcare",
+      "emergency",
+      "medical-kit"
+    ],
+    "when_to_use": [
+      "Physical items",
+      "Real-world objects",
+      "Material things"
+    ]
+  },
+  {
+    "component_name": "MenuIcon",
+    "import": "import { MenuIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "settings",
+      "sidebar",
+      "navigation",
+      "expand",
+      "hamburger",
+      "hamburger menu"
+    ],
+    "tags": [
+      "actions",
+      "settings",
+      "sidebar",
+      "navigation",
+      "expand",
+      "hamburger",
+      "hamburger menu",
+      "menu"
+    ],
+    "when_to_use": [
+      "User interactions",
+      "Clickable elements",
+      "Interactive controls"
+    ]
+  },
+  {
+    "component_name": "MessageIcon",
+    "import": "import { MessageIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "communicate",
+      "envelope",
+      "email",
+      "read",
+      "unread"
+    ],
+    "tags": [
+      "communication",
+      "communicate",
+      "envelope",
+      "email",
+      "read",
+      "unread",
+      "message"
+    ],
+    "when_to_use": [
+      "Messaging features",
+      "Contact information",
+      "Social interactions"
+    ]
+  },
+  {
+    "component_name": "MicroMenuIcon",
+    "import": "import { MicroMenuIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "open",
+      "sidebar",
+      "navigation",
+      "expand",
+      "kebab",
+      "overflow",
+      "options"
+    ],
+    "tags": [
+      "actions",
+      "open",
+      "sidebar",
+      "navigation",
+      "expand",
+      "kebab",
+      "overflow",
+      "options",
+      "micro-menu"
+    ],
+    "when_to_use": [
+      "User interactions",
+      "Clickable elements",
+      "Interactive controls"
+    ]
+  },
+  {
+    "component_name": "MicrophoneIcon",
+    "import": "import { MicrophoneIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "audio",
+      "mic",
+      "sound",
+      "voice",
+      "on",
+      "record",
+      "microphone",
+      "podcast"
+    ],
+    "tags": [
+      "media",
+      "audio",
+      "mic",
+      "sound",
+      "voice",
+      "on",
+      "record",
+      "microphone",
+      "podcast",
+      "microphone"
+    ],
+    "when_to_use": [
+      "Audio/video controls",
+      "Playback features",
+      "Media management"
+    ]
+  },
+  {
+    "component_name": "MicrophoneDisabledIcon",
+    "import": "import { MicrophoneDisabledIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "mute",
+      "mic",
+      "sound",
+      "voice",
+      "off",
+      "record",
+      "audio",
+      "microphone off"
+    ],
+    "tags": [
+      "media",
+      "mute",
+      "mic",
+      "sound",
+      "voice",
+      "off",
+      "record",
+      "audio",
+      "microphone off",
+      "microphone-disabled"
+    ],
+    "when_to_use": [
+      "Audio/video controls",
+      "Playback features",
+      "Media management"
+    ]
+  },
+  {
+    "component_name": "MinimizeIcon",
+    "import": "import { MinimizeIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "collapse",
+      "dash",
+      "window"
+    ],
+    "tags": [
+      "organize",
+      "collapse",
+      "dash",
+      "window",
+      "minimize"
+    ],
+    "when_to_use": [
+      "Content organization",
+      "Data management",
+      "Layout controls"
+    ]
+  },
+  {
+    "component_name": "MobileIcon",
+    "import": "import { MobileIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "smartphone",
+      "device",
+      "responsive",
+      "cell",
+      "telephone",
+      "mobile"
+    ],
+    "tags": [
+      "media",
+      "smartphone",
+      "device",
+      "responsive",
+      "cell",
+      "telephone",
+      "mobile",
+      "mobile"
+    ],
+    "when_to_use": [
+      "Audio/video controls",
+      "Playback features",
+      "Media management"
+    ]
+  },
+  {
+    "component_name": "MouseIcon",
+    "import": "import { MouseIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "cursor",
+      "navigation",
+      "pointer",
+      "clicker",
+      "device"
+    ],
+    "tags": [
+      "media",
+      "cursor",
+      "navigation",
+      "pointer",
+      "clicker",
+      "device",
+      "mouse"
+    ],
+    "when_to_use": [
+      "Audio/video controls",
+      "Playback features",
+      "Media management"
+    ]
+  },
+  {
+    "component_name": "MoveAllIcon",
+    "import": "import { MoveAllIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "drag",
+      "arrow",
+      "position",
+      "relocate"
+    ],
+    "tags": [
+      "arrows & chevrons",
+      "drag",
+      "arrow",
+      "position",
+      "relocate",
+      "move-all"
+    ],
+    "when_to_use": [
+      "Navigation",
+      "Direction indicators",
+      "Expand/collapse controls"
+    ]
+  },
+  {
+    "component_name": "MoveHorizontalIcon",
+    "import": "import { MoveHorizontalIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "enlarge",
+      "arrow",
+      "size",
+      "maximize",
+      "reveal"
+    ],
+    "tags": [
+      "arrows & chevrons",
+      "enlarge",
+      "arrow",
+      "size",
+      "maximize",
+      "reveal",
+      "move-horizontal"
+    ],
+    "when_to_use": [
+      "Navigation",
+      "Direction indicators",
+      "Expand/collapse controls"
+    ]
+  },
+  {
+    "component_name": "MoveVerticalIcon",
+    "import": "import { MoveVerticalIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "enlarge",
+      "arrow",
+      "size",
+      "maximize",
+      "reveal"
+    ],
+    "tags": [
+      "arrows & chevrons",
+      "enlarge",
+      "arrow",
+      "size",
+      "maximize",
+      "reveal",
+      "move-vertical"
+    ],
+    "when_to_use": [
+      "Navigation",
+      "Direction indicators",
+      "Expand/collapse controls"
+    ]
+  },
+  {
+    "component_name": "MusicIcon",
+    "import": "import { MusicIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "audio",
+      "sound",
+      "play"
+    ],
+    "tags": [
+      "media",
+      "audio",
+      "sound",
+      "play",
+      "music"
+    ],
+    "when_to_use": [
+      "Audio/video controls",
+      "Playback features",
+      "Media management"
+    ]
+  },
+  {
+    "component_name": "MusicDisabledIcon",
+    "import": "import { MusicDisabledIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "audio",
+      "sound",
+      "off",
+      "disabled",
+      "muted"
+    ],
+    "tags": [
+      "media",
+      "audio",
+      "sound",
+      "off",
+      "disabled",
+      "muted",
+      "music-disabled"
+    ],
+    "when_to_use": [
+      "Audio/video controls",
+      "Playback features",
+      "Media management"
+    ]
+  },
+  {
+    "component_name": "NoteIcon",
+    "import": "import { NoteIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "reminder",
+      "paper",
+      "information",
+      "edit note"
+    ],
+    "tags": [
+      "documents",
+      "reminder",
+      "paper",
+      "information",
+      "edit note",
+      "note"
+    ],
+    "when_to_use": [
+      "File management",
+      "Document operations",
+      "Content creation"
+    ]
+  },
+  {
+    "component_name": "NotificationIcon",
+    "import": "import { NotificationIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "alert",
+      "bell",
+      "reminder",
+      "ping"
+    ],
+    "tags": [
+      "actions",
+      "alert",
+      "bell",
+      "reminder",
+      "ping",
+      "notification"
+    ],
+    "when_to_use": [
+      "User interactions",
+      "Clickable elements",
+      "Interactive controls"
+    ]
+  },
+  {
+    "component_name": "NotificationReadIcon",
+    "import": "import { NotificationReadIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "alert",
+      "bell",
+      "reminder",
+      "seen",
+      "tick"
+    ],
+    "tags": [
+      "actions",
+      "alert",
+      "bell",
+      "reminder",
+      "seen",
+      "tick",
+      "notification-read"
+    ],
+    "when_to_use": [
+      "User interactions",
+      "Clickable elements",
+      "Interactive controls"
+    ]
+  },
+  {
+    "component_name": "OverflowMenuIcon",
+    "import": "import { OverflowMenuIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "open",
+      "dots",
+      "navigation",
+      "expand",
+      "kebab",
+      "options"
+    ],
+    "tags": [
+      "actions",
+      "open",
+      "dots",
+      "navigation",
+      "expand",
+      "kebab",
+      "options",
+      "overflow-menu"
+    ],
+    "when_to_use": [
+      "User interactions",
+      "Clickable elements",
+      "Interactive controls"
+    ]
+  },
+  {
+    "component_name": "PasteIcon",
+    "import": "import { PasteIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "insert",
+      "clipboard",
+      "copy"
+    ],
+    "tags": [
+      "actions",
+      "insert",
+      "clipboard",
+      "copy",
+      "paste"
+    ],
+    "when_to_use": [
+      "User interactions",
+      "Clickable elements",
+      "Interactive controls"
+    ]
+  },
+  {
+    "component_name": "PauseIcon",
+    "import": "import { PauseIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "audio",
+      "sound",
+      "start",
+      "stop",
+      "media pause"
+    ],
+    "tags": [
+      "media",
+      "audio",
+      "sound",
+      "start",
+      "stop",
+      "media pause",
+      "pause"
+    ],
+    "when_to_use": [
+      "Audio/video controls",
+      "Playback features",
+      "Media management"
+    ]
+  },
+  {
+    "component_name": "PdfIcon",
+    "import": "import { PdfIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "download",
+      "file",
+      "export",
+      "document",
+      "convert",
+      "format",
+      "pdf icon"
+    ],
+    "tags": [
+      "documents",
+      "download",
+      "file",
+      "export",
+      "document",
+      "convert",
+      "format",
+      "pdf icon",
+      "pdf"
+    ],
+    "when_to_use": [
+      "File management",
+      "Document operations",
+      "Content creation"
+    ]
+  },
+  {
+    "component_name": "PicnicIcon",
+    "import": "import { PicnicIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "tree",
+      "outdoors",
+      "camping",
+      "forest"
+    ],
+    "tags": [
+      "places",
+      "tree",
+      "outdoors",
+      "camping",
+      "forest",
+      "picnic"
+    ],
+    "when_to_use": [
+      "Location indicators",
+      "Geographic features",
+      "Physical locations"
+    ]
+  },
+  {
+    "component_name": "PinIcon",
+    "import": "import { PinIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "save",
+      "tack",
+      "location",
+      "favorite",
+      "favourite",
+      "mark",
+      "push pin"
+    ],
+    "tags": [
+      "actions",
+      "save",
+      "tack",
+      "location",
+      "favorite",
+      "favourite",
+      "mark",
+      "push pin",
+      "pin"
+    ],
+    "when_to_use": [
+      "User interactions",
+      "Clickable elements",
+      "Interactive controls"
+    ]
+  },
+  {
+    "component_name": "PivotIcon",
+    "import": "import { PivotIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "data",
+      "arrow",
+      "table",
+      "rotate",
+      "transform"
+    ],
+    "tags": [
+      "arrows & chevrons",
+      "data",
+      "arrow",
+      "table",
+      "rotate",
+      "transform",
+      "pivot"
+    ],
+    "when_to_use": [
+      "Navigation",
+      "Direction indicators",
+      "Expand/collapse controls"
+    ]
+  },
+  {
+    "component_name": "PlaceInIcon",
+    "import": "import { PlaceInIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "insert",
+      "arrow",
+      "action",
+      "container",
+      "move"
+    ],
+    "tags": [
+      "arrows & chevrons",
+      "insert",
+      "arrow",
+      "action",
+      "container",
+      "move",
+      "place-in"
+    ],
+    "when_to_use": [
+      "Navigation",
+      "Direction indicators",
+      "Expand/collapse controls"
+    ]
+  },
+  {
+    "component_name": "PlayIcon",
+    "import": "import { PlayIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "audio",
+      "arrow",
+      "sound",
+      "triangle",
+      "media",
+      "start",
+      "stop",
+      "resume",
+      "media play",
+      "play sm"
+    ],
+    "tags": [
+      "media",
+      "audio",
+      "arrow",
+      "sound",
+      "triangle",
+      "media",
+      "start",
+      "stop",
+      "resume",
+      "media play",
+      "play sm",
+      "play"
+    ],
+    "when_to_use": [
+      "Audio/video controls",
+      "Playback features",
+      "Media management"
+    ]
+  },
+  {
+    "component_name": "PotFoodIcon",
+    "import": "import { PotFoodIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "cooking",
+      "bowl",
+      "meal",
+      "dish"
+    ],
+    "tags": [
+      "objects",
+      "cooking",
+      "bowl",
+      "meal",
+      "dish",
+      "pot-food"
+    ],
+    "when_to_use": [
+      "Physical items",
+      "Real-world objects",
+      "Material things"
+    ]
+  },
+  {
+    "component_name": "PresentationIcon",
+    "import": "import { PresentationIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "display",
+      "meeting",
+      "slideshow",
+      "deck",
+      "presentation"
+    ],
+    "tags": [
+      "media",
+      "display",
+      "meeting",
+      "slideshow",
+      "deck",
+      "presentation",
+      "presentation"
+    ],
+    "when_to_use": [
+      "Audio/video controls",
+      "Playback features",
+      "Media management"
+    ]
+  },
+  {
+    "component_name": "PriceLadderIcon",
+    "import": "import { PriceLadderIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "trade",
+      "finance",
+      "bid",
+      "ask",
+      "trading"
+    ],
+    "tags": [
+      "finance",
+      "trade",
+      "finance",
+      "bid",
+      "ask",
+      "trading",
+      "price-ladder"
+    ],
+    "when_to_use": [
+      "Financial operations",
+      "Transactions",
+      "Money management"
+    ]
+  },
+  {
+    "component_name": "PrintIcon",
+    "import": "import { PrintIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "printer",
+      "document",
+      "scan",
+      "print"
+    ],
+    "tags": [
+      "actions",
+      "printer",
+      "document",
+      "scan",
+      "print",
+      "print"
+    ],
+    "when_to_use": [
+      "User interactions",
+      "Clickable elements",
+      "Interactive controls"
+    ]
+  },
+  {
+    "component_name": "ProgressCancelledIcon",
+    "import": "import { ProgressCancelledIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "dismiss",
+      "x",
+      "status",
+      "cancel",
+      "shut",
+      "minus",
+      "exit"
+    ],
+    "tags": [
+      "indicators",
+      "dismiss",
+      "x",
+      "status",
+      "cancel",
+      "shut",
+      "minus",
+      "exit",
+      "progress-cancelled"
+    ],
+    "when_to_use": [
+      "Status displays",
+      "Progress indicators",
+      "Alert messages"
+    ]
+  },
+  {
+    "component_name": "ProgressClosedIcon",
+    "import": "import { ProgressClosedIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "status",
+      "complete"
+    ],
+    "tags": [
+      "indicators",
+      "status",
+      "complete",
+      "progress-closed"
+    ],
+    "when_to_use": [
+      "Status displays",
+      "Progress indicators",
+      "Alert messages"
+    ]
+  },
+  {
+    "component_name": "ProgressCompleteIcon",
+    "import": "import { ProgressCompleteIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "finished",
+      "circle checkmark",
+      "status",
+      "tick",
+      "done",
+      "complete",
+      "check circle"
+    ],
+    "tags": [
+      "indicators",
+      "finished",
+      "circle checkmark",
+      "status",
+      "tick",
+      "done",
+      "complete",
+      "check circle",
+      "progress-complete"
+    ],
+    "when_to_use": [
+      "Status displays",
+      "Progress indicators",
+      "Alert messages"
+    ]
+  },
+  {
+    "component_name": "ProgressDraftIcon",
+    "import": "import { ProgressDraftIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "circle",
+      "status",
+      "edit",
+      "incomplete"
+    ],
+    "tags": [
+      "indicators",
+      "circle",
+      "status",
+      "edit",
+      "incomplete",
+      "progress-draft"
+    ],
+    "when_to_use": [
+      "Status displays",
+      "Progress indicators",
+      "Alert messages"
+    ]
+  },
+  {
+    "component_name": "ProgressInprogressIcon",
+    "import": "import { ProgressInprogressIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "pending",
+      "circle",
+      "status",
+      "work in progress",
+      "wip"
+    ],
+    "tags": [
+      "indicators",
+      "pending",
+      "circle",
+      "status",
+      "work in progress",
+      "wip",
+      "progress-inprogress"
+    ],
+    "when_to_use": [
+      "Status displays",
+      "Progress indicators",
+      "Alert messages"
+    ]
+  },
+  {
+    "component_name": "ProgressOnholdIcon",
+    "import": "import { ProgressOnholdIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "audio",
+      "circle pause",
+      "status",
+      "sound",
+      "start",
+      "stop"
+    ],
+    "tags": [
+      "indicators",
+      "audio",
+      "circle pause",
+      "status",
+      "sound",
+      "start",
+      "stop",
+      "progress-onhold"
+    ],
+    "when_to_use": [
+      "Status displays",
+      "Progress indicators",
+      "Alert messages"
+    ]
+  },
+  {
+    "component_name": "ProgressPendingIcon",
+    "import": "import { ProgressPendingIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "circle clock",
+      "status",
+      "time",
+      "wait",
+      "queue"
+    ],
+    "tags": [
+      "indicators",
+      "circle clock",
+      "status",
+      "time",
+      "wait",
+      "queue",
+      "progress-pending"
+    ],
+    "when_to_use": [
+      "Status displays",
+      "Progress indicators",
+      "Alert messages"
+    ]
+  },
+  {
+    "component_name": "ProgressRejectedIcon",
+    "import": "import { ProgressRejectedIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "status",
+      "denied",
+      "failed"
+    ],
+    "tags": [
+      "indicators",
+      "status",
+      "denied",
+      "failed",
+      "progress-rejected"
+    ],
+    "when_to_use": [
+      "Status displays",
+      "Progress indicators",
+      "Alert messages"
+    ]
+  },
+  {
+    "component_name": "ProgressTodoIcon",
+    "import": "import { ProgressTodoIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "pending",
+      "status",
+      "work in progress",
+      "wip",
+      "incomplete"
+    ],
+    "tags": [
+      "indicators",
+      "pending",
+      "status",
+      "work in progress",
+      "wip",
+      "incomplete",
+      "progress-todo"
+    ],
+    "when_to_use": [
+      "Status displays",
+      "Progress indicators",
+      "Alert messages"
+    ]
+  },
+  {
+    "component_name": "ProtectionIcon",
+    "import": "import { ProtectionIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "access",
+      "shield",
+      "security",
+      "guard",
+      "defense",
+      "breach"
+    ],
+    "tags": [
+      "objects",
+      "access",
+      "shield",
+      "security",
+      "guard",
+      "defense",
+      "breach",
+      "protection"
+    ],
+    "when_to_use": [
+      "Physical items",
+      "Real-world objects",
+      "Material things"
+    ]
+  },
+  {
+    "component_name": "ReceiptIcon",
+    "import": "import { ReceiptIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "transaction",
+      "finance",
+      "bill",
+      "charge",
+      "invoice",
+      "digital receipt"
+    ],
+    "tags": [
+      "finance",
+      "transaction",
+      "finance",
+      "bill",
+      "charge",
+      "invoice",
+      "digital receipt",
+      "receipt"
+    ],
+    "when_to_use": [
+      "Financial operations",
+      "Transactions",
+      "Money management"
+    ]
+  },
+  {
+    "component_name": "RedoIcon",
+    "import": "import { RedoIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "repeat",
+      "arrow",
+      "action",
+      "refresh",
+      "forward",
+      "sync"
+    ],
+    "tags": [
+      "arrows & chevrons",
+      "repeat",
+      "arrow",
+      "action",
+      "refresh",
+      "forward",
+      "sync",
+      "redo"
+    ],
+    "when_to_use": [
+      "Navigation",
+      "Direction indicators",
+      "Expand/collapse controls"
+    ]
+  },
+  {
+    "component_name": "RefreshIcon",
+    "import": "import { RefreshIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "reload",
+      "arrow",
+      "action",
+      "redo",
+      "repeat",
+      "forward",
+      "sync",
+      "refresh"
+    ],
+    "tags": [
+      "arrows & chevrons",
+      "reload",
+      "arrow",
+      "action",
+      "redo",
+      "repeat",
+      "forward",
+      "sync",
+      "refresh",
+      "refresh"
+    ],
+    "when_to_use": [
+      "Navigation",
+      "Direction indicators",
+      "Expand/collapse controls"
+    ]
+  },
+  {
+    "component_name": "RemoveIcon",
+    "import": "import { RemoveIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "close",
+      "minus",
+      "action",
+      "delete",
+      "discard",
+      "clear",
+      "erase",
+      "dash"
+    ],
+    "tags": [
+      "organize",
+      "close",
+      "minus",
+      "action",
+      "delete",
+      "discard",
+      "clear",
+      "erase",
+      "dash",
+      "remove"
+    ],
+    "when_to_use": [
+      "Content organization",
+      "Data management",
+      "Layout controls"
+    ]
+  },
+  {
+    "component_name": "RemoveDocumentIcon",
+    "import": "import { RemoveDocumentIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "page",
+      "action",
+      "delete",
+      "discard",
+      "minus",
+      "clear"
+    ],
+    "tags": [
+      "documents",
+      "page",
+      "action",
+      "delete",
+      "discard",
+      "minus",
+      "clear",
+      "remove-document"
+    ],
+    "when_to_use": [
+      "File management",
+      "Document operations",
+      "Content creation"
+    ]
+  },
+  {
+    "component_name": "Replay10Icon",
+    "import": "import { Replay10Icon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "back",
+      "arrow",
+      "audio",
+      "video",
+      "media rewind 10 seconds",
+      "rewind 10"
+    ],
+    "tags": [
+      "media",
+      "back",
+      "arrow",
+      "audio",
+      "video",
+      "media rewind 10 seconds",
+      "rewind 10",
+      "replay-10"
+    ],
+    "when_to_use": [
+      "Audio/video controls",
+      "Playback features",
+      "Media management"
+    ]
+  },
+  {
+    "component_name": "Replay15Icon",
+    "import": "import { Replay15Icon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "back",
+      "arrow",
+      "audio",
+      "video",
+      "media rewind 15 seconds"
+    ],
+    "tags": [
+      "media",
+      "back",
+      "arrow",
+      "audio",
+      "video",
+      "media rewind 15 seconds",
+      "replay-15"
+    ],
+    "when_to_use": [
+      "Audio/video controls",
+      "Playback features",
+      "Media management"
+    ]
+  },
+  {
+    "component_name": "Replay30Icon",
+    "import": "import { Replay30Icon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "back",
+      "arrow",
+      "audio",
+      "video"
+    ],
+    "tags": [
+      "media",
+      "back",
+      "arrow",
+      "audio",
+      "video",
+      "replay-30"
+    ],
+    "when_to_use": [
+      "Audio/video controls",
+      "Playback features",
+      "Media management"
+    ]
+  },
+  {
+    "component_name": "Replay5Icon",
+    "import": "import { Replay5Icon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "back",
+      "arrow",
+      "audio",
+      "video"
+    ],
+    "tags": [
+      "media",
+      "back",
+      "arrow",
+      "audio",
+      "video",
+      "replay-5"
+    ],
+    "when_to_use": [
+      "Audio/video controls",
+      "Playback features",
+      "Media management"
+    ]
+  },
+  {
+    "component_name": "RestoreIcon",
+    "import": "import { RestoreIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "recover",
+      "window",
+      "revert",
+      "reset"
+    ],
+    "tags": [
+      "arrows & chevrons",
+      "recover",
+      "window",
+      "revert",
+      "reset",
+      "restore"
+    ],
+    "when_to_use": [
+      "Navigation",
+      "Direction indicators",
+      "Expand/collapse controls"
+    ]
+  },
+  {
+    "component_name": "RunReportIcon",
+    "import": "import { RunReportIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "generate",
+      "page",
+      "action",
+      "document",
+      "analytics",
+      "data"
+    ],
+    "tags": [
+      "documents",
+      "generate",
+      "page",
+      "action",
+      "document",
+      "analytics",
+      "data",
+      "run-report"
+    ],
+    "when_to_use": [
+      "File management",
+      "Document operations",
+      "Content creation"
+    ]
+  },
+  {
+    "component_name": "SaltShakerIcon",
+    "import": "import { SaltShakerIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "bottle",
+      "kitchen",
+      "spice"
+    ],
+    "tags": [
+      "objects",
+      "bottle",
+      "kitchen",
+      "spice",
+      "salt-shaker"
+    ],
+    "when_to_use": [
+      "Physical items",
+      "Real-world objects",
+      "Material things"
+    ]
+  },
+  {
+    "component_name": "SaveIcon",
+    "import": "import { SaveIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "store",
+      "disk",
+      "storage",
+      "archive"
+    ],
+    "tags": [
+      "actions",
+      "store",
+      "disk",
+      "storage",
+      "archive",
+      "save"
+    ],
+    "when_to_use": [
+      "User interactions",
+      "Clickable elements",
+      "Interactive controls"
+    ]
+  },
+  {
+    "component_name": "ScalesIcon",
+    "import": "import { ScalesIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "balance",
+      "weight",
+      "measure",
+      "legal"
+    ],
+    "tags": [
+      "objects",
+      "balance",
+      "weight",
+      "measure",
+      "legal",
+      "scales"
+    ],
+    "when_to_use": [
+      "Physical items",
+      "Real-world objects",
+      "Material things"
+    ]
+  },
+  {
+    "component_name": "ScheduleTimeIcon",
+    "import": "import { ScheduleTimeIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "plan",
+      "clock",
+      "calendar",
+      "page",
+      "document"
+    ],
+    "tags": [
+      "documents",
+      "plan",
+      "clock",
+      "calendar",
+      "page",
+      "document",
+      "schedule-time"
+    ],
+    "when_to_use": [
+      "File management",
+      "Document operations",
+      "Content creation"
+    ]
+  },
+  {
+    "component_name": "SearchIcon",
+    "import": "import { SearchIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "lookup",
+      "magnifier",
+      "discover",
+      "find",
+      "magnifying glass",
+      "search"
+    ],
+    "tags": [
+      "actions",
+      "lookup",
+      "magnifier",
+      "discover",
+      "find",
+      "magnifying glass",
+      "search",
+      "search"
+    ],
+    "when_to_use": [
+      "User interactions",
+      "Clickable elements",
+      "Interactive controls"
+    ]
+  },
+  {
+    "component_name": "SemanticDissatisfiedIcon",
+    "import": "import { SemanticDissatisfiedIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "unhappy",
+      "sad face",
+      "feedback",
+      "unsatisfied",
+      "sentiment"
+    ],
+    "tags": [
+      "people",
+      "unhappy",
+      "sad face",
+      "feedback",
+      "unsatisfied",
+      "sentiment",
+      "semantic-dissatisfied"
+    ],
+    "when_to_use": [
+      "User profiles",
+      "Personnel management",
+      "Social features"
+    ]
+  },
+  {
+    "component_name": "SemanticNeutralIcon",
+    "import": "import { SemanticNeutralIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "face",
+      "feedback",
+      "sentiment"
+    ],
+    "tags": [
+      "people",
+      "face",
+      "feedback",
+      "sentiment",
+      "semantic-neutral"
+    ],
+    "when_to_use": [
+      "User profiles",
+      "Personnel management",
+      "Social features"
+    ]
+  },
+  {
+    "component_name": "SemanticSatisfiedIcon",
+    "import": "import { SemanticSatisfiedIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "happy",
+      "smiley face",
+      "feedback",
+      "sentiment"
+    ],
+    "tags": [
+      "people",
+      "happy",
+      "smiley face",
+      "feedback",
+      "sentiment",
+      "semantic-satisfied"
+    ],
+    "when_to_use": [
+      "User profiles",
+      "Personnel management",
+      "Social features"
+    ]
+  },
+  {
+    "component_name": "SemanticVeryDissatisfiedIcon",
+    "import": "import { SemanticVeryDissatisfiedIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "upset",
+      "angry face",
+      "feedback",
+      "unsatisfied",
+      "sentiment"
+    ],
+    "tags": [
+      "people",
+      "upset",
+      "angry face",
+      "feedback",
+      "unsatisfied",
+      "sentiment",
+      "semantic-very-dissatisfied"
+    ],
+    "when_to_use": [
+      "User profiles",
+      "Personnel management",
+      "Social features"
+    ]
+  },
+  {
+    "component_name": "SemanticVerySatisfiedIcon",
+    "import": "import { SemanticVerySatisfiedIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "happy",
+      "smiley face",
+      "feedback",
+      "sentiment"
+    ],
+    "tags": [
+      "people",
+      "happy",
+      "smiley face",
+      "feedback",
+      "sentiment",
+      "semantic-very-satisfied"
+    ],
+    "when_to_use": [
+      "User profiles",
+      "Personnel management",
+      "Social features"
+    ]
+  },
+  {
+    "component_name": "SendIcon",
+    "import": "import { SendIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "deliver",
+      "mail",
+      "action",
+      "email",
+      "location navigate outlined"
+    ],
+    "tags": [
+      "communication",
+      "deliver",
+      "mail",
+      "action",
+      "email",
+      "location navigate outlined",
+      "send"
+    ],
+    "when_to_use": [
+      "Messaging features",
+      "Contact information",
+      "Social interactions"
+    ]
+  },
+  {
+    "component_name": "SettingsIcon",
+    "import": "import { SettingsIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "preferences",
+      "gear",
+      "configuration",
+      "options",
+      "controls",
+      "settings"
+    ],
+    "tags": [
+      "actions",
+      "preferences",
+      "gear",
+      "configuration",
+      "options",
+      "controls",
+      "settings",
+      "settings"
+    ],
+    "when_to_use": [
+      "User interactions",
+      "Clickable elements",
+      "Interactive controls"
+    ]
+  },
+  {
+    "component_name": "ShareIcon",
+    "import": "import { ShareIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "send",
+      "nodes",
+      "action",
+      "deliver",
+      "forward",
+      "socials",
+      "share"
+    ],
+    "tags": [
+      "communication",
+      "send",
+      "nodes",
+      "action",
+      "deliver",
+      "forward",
+      "socials",
+      "share",
+      "share"
+    ],
+    "when_to_use": [
+      "Messaging features",
+      "Contact information",
+      "Social interactions"
+    ]
+  },
+  {
+    "component_name": "SignalIcon",
+    "import": "import { SignalIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "connection",
+      "bars",
+      "network",
+      "connectivity",
+      "wifi"
+    ],
+    "tags": [
+      "computing",
+      "connection",
+      "bars",
+      "network",
+      "connectivity",
+      "wifi",
+      "signal"
+    ],
+    "when_to_use": [
+      "Technical features",
+      "System status",
+      "Network operations"
+    ]
+  },
+  {
+    "component_name": "SignpostIcon",
+    "import": "import { SignpostIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "direction",
+      "label",
+      "navigation",
+      "marker",
+      "guide"
+    ],
+    "tags": [
+      "objects",
+      "direction",
+      "label",
+      "navigation",
+      "marker",
+      "guide",
+      "signpost"
+    ],
+    "when_to_use": [
+      "Physical items",
+      "Real-world objects",
+      "Material things"
+    ]
+  },
+  {
+    "component_name": "SortableAlphaIcon",
+    "import": "import { SortableAlphaIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "alphabetical",
+      "arrow",
+      "organize",
+      "order"
+    ],
+    "tags": [
+      "organize",
+      "alphabetical",
+      "arrow",
+      "organize",
+      "order",
+      "sortable-alpha"
+    ],
+    "when_to_use": [
+      "Content organization",
+      "Data management",
+      "Layout controls"
+    ]
+  },
+  {
+    "component_name": "SortableNumIcon",
+    "import": "import { SortableNumIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "numerical",
+      "arrow",
+      "organize",
+      "order",
+      "number"
+    ],
+    "tags": [
+      "organize",
+      "numerical",
+      "arrow",
+      "organize",
+      "order",
+      "number",
+      "sortable-num"
+    ],
+    "when_to_use": [
+      "Content organization",
+      "Data management",
+      "Layout controls"
+    ]
+  },
+  {
+    "component_name": "SortAlphaAscendIcon",
+    "import": "import { SortAlphaAscendIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "ascending",
+      "arrow",
+      "organize",
+      "order",
+      "alphabetical"
+    ],
+    "tags": [
+      "organize",
+      "ascending",
+      "arrow",
+      "organize",
+      "order",
+      "alphabetical",
+      "sort-alpha-ascend"
+    ],
+    "when_to_use": [
+      "Content organization",
+      "Data management",
+      "Layout controls"
+    ]
+  },
+  {
+    "component_name": "SortAlphaDescendIcon",
+    "import": "import { SortAlphaDescendIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "descending",
+      "arrow",
+      "organize",
+      "order",
+      "alphabetical"
+    ],
+    "tags": [
+      "organize",
+      "descending",
+      "arrow",
+      "organize",
+      "order",
+      "alphabetical",
+      "sort-alpha-descend"
+    ],
+    "when_to_use": [
+      "Content organization",
+      "Data management",
+      "Layout controls"
+    ]
+  },
+  {
+    "component_name": "SortAscendIcon",
+    "import": "import { SortAscendIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "ascending",
+      "arrow",
+      "organize",
+      "order"
+    ],
+    "tags": [
+      "organize",
+      "ascending",
+      "arrow",
+      "organize",
+      "order",
+      "sort-ascend"
+    ],
+    "when_to_use": [
+      "Content organization",
+      "Data management",
+      "Layout controls"
+    ]
+  },
+  {
+    "component_name": "SortDescendIcon",
+    "import": "import { SortDescendIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "descending",
+      "arrow",
+      "organize",
+      "order"
+    ],
+    "tags": [
+      "organize",
+      "descending",
+      "arrow",
+      "organize",
+      "order",
+      "sort-descend"
+    ],
+    "when_to_use": [
+      "Content organization",
+      "Data management",
+      "Layout controls"
+    ]
+  },
+  {
+    "component_name": "SortNumAscendIcon",
+    "import": "import { SortNumAscendIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "ascending",
+      "arrow",
+      "organize",
+      "order",
+      "number"
+    ],
+    "tags": [
+      "organize",
+      "ascending",
+      "arrow",
+      "organize",
+      "order",
+      "number",
+      "sort-num-ascend"
+    ],
+    "when_to_use": [
+      "Content organization",
+      "Data management",
+      "Layout controls"
+    ]
+  },
+  {
+    "component_name": "SortNumDescendIcon",
+    "import": "import { SortNumDescendIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "descending",
+      "arrow",
+      "organize",
+      "order",
+      "number"
+    ],
+    "tags": [
+      "organize",
+      "descending",
+      "arrow",
+      "organize",
+      "order",
+      "number",
+      "sort-num-descend"
+    ],
+    "when_to_use": [
+      "Content organization",
+      "Data management",
+      "Layout controls"
+    ]
+  },
+  {
+    "component_name": "SparkleIcon",
+    "import": "import { SparkleIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "ai",
+      "artificial intelligence",
+      "generative",
+      "new",
+      "featured"
+    ],
+    "tags": [
+      "computing",
+      "ai",
+      "artificial intelligence",
+      "generative",
+      "new",
+      "featured",
+      "sparkle"
+    ],
+    "when_to_use": [
+      "Technical features",
+      "System status",
+      "Network operations"
+    ]
+  },
+  {
+    "component_name": "StackoverflowIcon",
+    "import": "import { StackoverflowIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "logo",
+      "platform",
+      "application",
+      "community",
+      "forum"
+    ],
+    "tags": [
+      "logos",
+      "logo",
+      "platform",
+      "application",
+      "community",
+      "forum",
+      "stackoverflow"
+    ],
+    "when_to_use": [
+      "Brand representation",
+      "External links",
+      "Platform identification"
+    ]
+  },
+  {
+    "component_name": "StepActiveIcon",
+    "import": "import { StepActiveIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "progress",
+      "circle fill",
+      "status",
+      "work in progress",
+      "wip"
+    ],
+    "tags": [
+      "indicators",
+      "progress",
+      "circle fill",
+      "status",
+      "work in progress",
+      "wip",
+      "step-active"
+    ],
+    "when_to_use": [
+      "Status displays",
+      "Progress indicators",
+      "Alert messages"
+    ]
+  },
+  {
+    "component_name": "StepDefaultIcon",
+    "import": "import { StepDefaultIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "progress",
+      "circle",
+      "status",
+      "incomplete",
+      "pending"
+    ],
+    "tags": [
+      "indicators",
+      "progress",
+      "circle",
+      "status",
+      "incomplete",
+      "pending",
+      "step-default"
+    ],
+    "when_to_use": [
+      "Status displays",
+      "Progress indicators",
+      "Alert messages"
+    ]
+  },
+  {
+    "component_name": "StethoscopeIcon",
+    "import": "import { StethoscopeIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "healthcare",
+      "medicine",
+      "medical",
+      "clinic",
+      "doctor",
+      "stethoscope"
+    ],
+    "tags": [
+      "objects",
+      "healthcare",
+      "medicine",
+      "medical",
+      "clinic",
+      "doctor",
+      "stethoscope",
+      "stethoscope"
+    ],
+    "when_to_use": [
+      "Physical items",
+      "Real-world objects",
+      "Material things"
+    ]
+  },
+  {
+    "component_name": "StorageIcon",
+    "import": "import { StorageIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "save",
+      "drawer",
+      "archive",
+      "box",
+      "full"
+    ],
+    "tags": [
+      "objects",
+      "save",
+      "drawer",
+      "archive",
+      "box",
+      "full",
+      "storage"
+    ],
+    "when_to_use": [
+      "Physical items",
+      "Real-world objects",
+      "Material things"
+    ]
+  },
+  {
+    "component_name": "StorefrontIcon",
+    "import": "import { StorefrontIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "shop",
+      "building",
+      "retail",
+      "business",
+      "commerce",
+      "storefront"
+    ],
+    "tags": [
+      "places",
+      "shop",
+      "building",
+      "retail",
+      "business",
+      "commerce",
+      "storefront",
+      "storefront"
+    ],
+    "when_to_use": [
+      "Location indicators",
+      "Geographic features",
+      "Physical locations"
+    ]
+  },
+  {
+    "component_name": "StringNumberIcon",
+    "import": "import { StringNumberIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "value",
+      "number",
+      "data",
+      "code"
+    ],
+    "tags": [
+      "data",
+      "value",
+      "number",
+      "data",
+      "code",
+      "string-number"
+    ],
+    "when_to_use": [
+      "Data visualization",
+      "Analytics",
+      "Statistics"
+    ]
+  },
+  {
+    "component_name": "StringTextIcon",
+    "import": "import { StringTextIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "value",
+      "letter",
+      "data"
+    ],
+    "tags": [
+      "data",
+      "value",
+      "letter",
+      "data",
+      "string-text"
+    ],
+    "when_to_use": [
+      "Data visualization",
+      "Analytics",
+      "Statistics"
+    ]
+  },
+  {
+    "component_name": "SuccessCircleIcon",
+    "import": "import { SuccessCircleIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "complete",
+      "circle checkmark",
+      "status",
+      "confirmation",
+      "done",
+      "approve",
+      "tick",
+      "checkmark filled"
+    ],
+    "tags": [
+      "indicators",
+      "complete",
+      "circle checkmark",
+      "status",
+      "confirmation",
+      "done",
+      "approve",
+      "tick",
+      "checkmark filled",
+      "success-circle"
+    ],
+    "when_to_use": [
+      "Status displays",
+      "Progress indicators",
+      "Alert messages"
+    ]
+  },
+  {
+    "component_name": "SumIcon",
+    "import": "import { SumIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "calculate",
+      "sigma",
+      "math",
+      "total",
+      "aggregate"
+    ],
+    "tags": [
+      "organize",
+      "calculate",
+      "sigma",
+      "math",
+      "total",
+      "aggregate",
+      "sum"
+    ],
+    "when_to_use": [
+      "Content organization",
+      "Data management",
+      "Layout controls"
+    ]
+  },
+  {
+    "component_name": "SwapIcon",
+    "import": "import { SwapIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "switch",
+      "arrow",
+      "action",
+      "flip",
+      "replace",
+      "exchange"
+    ],
+    "tags": [
+      "arrows & chevrons",
+      "switch",
+      "arrow",
+      "action",
+      "flip",
+      "replace",
+      "exchange",
+      "swap"
+    ],
+    "when_to_use": [
+      "Navigation",
+      "Direction indicators",
+      "Expand/collapse controls"
+    ]
+  },
+  {
+    "component_name": "SymphonyIcon",
+    "import": "import { SymphonyIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "communicate",
+      "platform",
+      "application",
+      "message",
+      "chat"
+    ],
+    "tags": [
+      "logos",
+      "communicate",
+      "platform",
+      "application",
+      "message",
+      "chat",
+      "symphony"
+    ],
+    "when_to_use": [
+      "Brand representation",
+      "External links",
+      "Platform identification"
+    ]
+  },
+  {
+    "component_name": "SyncIcon",
+    "import": "import { SyncIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "update",
+      "arrow",
+      "acton",
+      "refresh",
+      "clear",
+      "pending"
+    ],
+    "tags": [
+      "arrows & chevrons",
+      "update",
+      "arrow",
+      "acton",
+      "refresh",
+      "clear",
+      "pending",
+      "sync"
+    ],
+    "when_to_use": [
+      "Navigation",
+      "Direction indicators",
+      "Expand/collapse controls"
+    ]
+  },
+  {
+    "component_name": "TagIcon",
+    "import": "import { TagIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "label",
+      "metadata",
+      "filter",
+      "category"
+    ],
+    "tags": [
+      "actions",
+      "label",
+      "metadata",
+      "filter",
+      "category",
+      "tag"
+    ],
+    "when_to_use": [
+      "User interactions",
+      "Clickable elements",
+      "Interactive controls"
+    ]
+  },
+  {
+    "component_name": "TagClearIcon",
+    "import": "import { TagClearIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "remove",
+      "x label",
+      "metadata",
+      "filter",
+      "category",
+      "cancel"
+    ],
+    "tags": [
+      "actions",
+      "remove",
+      "x label",
+      "metadata",
+      "filter",
+      "category",
+      "cancel",
+      "tag-clear"
+    ],
+    "when_to_use": [
+      "User interactions",
+      "Clickable elements",
+      "Interactive controls"
+    ]
+  },
+  {
+    "component_name": "TailsIcon",
+    "import": "import { TailsIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "fox",
+      "animal",
+      "nature",
+      "wildlife"
+    ],
+    "tags": [
+      "objects",
+      "fox",
+      "animal",
+      "nature",
+      "wildlife",
+      "tails"
+    ],
+    "when_to_use": [
+      "Physical items",
+      "Real-world objects",
+      "Material things"
+    ]
+  },
+  {
+    "component_name": "TargetIcon",
+    "import": "import { TargetIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "focus",
+      "bullseye",
+      "goal",
+      "target",
+      "objective"
+    ],
+    "tags": [
+      "actions",
+      "focus",
+      "bullseye",
+      "goal",
+      "target",
+      "objective",
+      "target"
+    ],
+    "when_to_use": [
+      "User interactions",
+      "Clickable elements",
+      "Interactive controls"
+    ]
+  },
+  {
+    "component_name": "TearOutIcon",
+    "import": "import { TearOutIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "link",
+      "arrow",
+      "action",
+      "window",
+      "open",
+      "new window",
+      "to the link"
+    ],
+    "tags": [
+      "arrows & chevrons",
+      "link",
+      "arrow",
+      "action",
+      "window",
+      "open",
+      "new window",
+      "to the link",
+      "tear-out"
+    ],
+    "when_to_use": [
+      "Navigation",
+      "Direction indicators",
+      "Expand/collapse controls"
+    ]
+  },
+  {
+    "component_name": "ThumbsDownIcon",
+    "import": "import { ThumbsDownIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "negative",
+      "dislike",
+      "feedback",
+      "unsatisfied",
+      "sentiment",
+      "thumbs down"
+    ],
+    "tags": [
+      "actions",
+      "negative",
+      "dislike",
+      "feedback",
+      "unsatisfied",
+      "sentiment",
+      "thumbs down",
+      "thumbs-down"
+    ],
+    "when_to_use": [
+      "User interactions",
+      "Clickable elements",
+      "Interactive controls"
+    ]
+  },
+  {
+    "component_name": "ThumbsUpIcon",
+    "import": "import { ThumbsUpIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "postive",
+      "like",
+      "feedback",
+      "satisfied",
+      "sentiment",
+      "thumbs up"
+    ],
+    "tags": [
+      "actions",
+      "postive",
+      "like",
+      "feedback",
+      "satisfied",
+      "sentiment",
+      "thumbs up",
+      "thumbs-up"
+    ],
+    "when_to_use": [
+      "User interactions",
+      "Clickable elements",
+      "Interactive controls"
+    ]
+  },
+  {
+    "component_name": "ToteIcon",
+    "import": "import { ToteIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "purchase",
+      "bag",
+      "shopping",
+      "cart"
+    ],
+    "tags": [
+      "objects",
+      "purchase",
+      "bag",
+      "shopping",
+      "cart",
+      "tote"
+    ],
+    "when_to_use": [
+      "Physical items",
+      "Real-world objects",
+      "Material things"
+    ]
+  },
+  {
+    "component_name": "TreeIcon",
+    "import": "import { TreeIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "hierarchy",
+      "directory",
+      "structure"
+    ],
+    "tags": [
+      "actions",
+      "hierarchy",
+      "directory",
+      "structure",
+      "tree"
+    ],
+    "when_to_use": [
+      "User interactions",
+      "Clickable elements",
+      "Interactive controls"
+    ]
+  },
+  {
+    "component_name": "TriangleDownIcon",
+    "import": "import { TriangleDownIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "scroll",
+      "triangle",
+      "navigation",
+      "dropdown",
+      "collapse",
+      "expand",
+      "caret down"
+    ],
+    "tags": [
+      "arrows & chevrons",
+      "scroll",
+      "triangle",
+      "navigation",
+      "dropdown",
+      "collapse",
+      "expand",
+      "caret down",
+      "triangle-down"
+    ],
+    "when_to_use": [
+      "Navigation",
+      "Direction indicators",
+      "Expand/collapse controls"
+    ]
+  },
+  {
+    "component_name": "TriangleLeftIcon",
+    "import": "import { TriangleLeftIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "back",
+      "triangle",
+      "navigation",
+      "previous",
+      "return",
+      "caret left"
+    ],
+    "tags": [
+      "arrows & chevrons",
+      "back",
+      "triangle",
+      "navigation",
+      "previous",
+      "return",
+      "caret left",
+      "triangle-left"
+    ],
+    "when_to_use": [
+      "Navigation",
+      "Direction indicators",
+      "Expand/collapse controls"
+    ]
+  },
+  {
+    "component_name": "TriangleRightIcon",
+    "import": "import { TriangleRightIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "next",
+      "triangle",
+      "navigation",
+      "forward",
+      "caret right"
+    ],
+    "tags": [
+      "arrows & chevrons",
+      "next",
+      "triangle",
+      "navigation",
+      "forward",
+      "caret right",
+      "triangle-right"
+    ],
+    "when_to_use": [
+      "Navigation",
+      "Direction indicators",
+      "Expand/collapse controls"
+    ]
+  },
+  {
+    "component_name": "TriangleRightDownIcon",
+    "import": "import { TriangleRightDownIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "triangle",
+      "navigation"
+    ],
+    "tags": [
+      "arrows & chevrons",
+      "triangle",
+      "navigation",
+      "triangle-right-down"
+    ],
+    "when_to_use": [
+      "Navigation",
+      "Direction indicators",
+      "Expand/collapse controls"
+    ]
+  },
+  {
+    "component_name": "TriangleUpIcon",
+    "import": "import { TriangleUpIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "scroll",
+      "triangle",
+      "navigation",
+      "expand",
+      "collapse",
+      "caret up"
+    ],
+    "tags": [
+      "arrows & chevrons",
+      "scroll",
+      "triangle",
+      "navigation",
+      "expand",
+      "collapse",
+      "caret up",
+      "triangle-up"
+    ],
+    "when_to_use": [
+      "Navigation",
+      "Direction indicators",
+      "Expand/collapse controls"
+    ]
+  },
+  {
+    "component_name": "TypeIcon",
+    "import": "import { TypeIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "format",
+      "textbox",
+      "typography",
+      "font"
+    ],
+    "tags": [
+      "actions",
+      "format",
+      "textbox",
+      "typography",
+      "font",
+      "type"
+    ],
+    "when_to_use": [
+      "User interactions",
+      "Clickable elements",
+      "Interactive controls"
+    ]
+  },
+  {
+    "component_name": "UndoIcon",
+    "import": "import { UndoIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "revert",
+      "arrow",
+      "action",
+      "refresh",
+      "clear"
+    ],
+    "tags": [
+      "arrows & chevrons",
+      "revert",
+      "arrow",
+      "action",
+      "refresh",
+      "clear",
+      "undo"
+    ],
+    "when_to_use": [
+      "Navigation",
+      "Direction indicators",
+      "Expand/collapse controls"
+    ]
+  },
+  {
+    "component_name": "UngroupIcon",
+    "import": "import { UngroupIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "detach",
+      "arrange",
+      "disassemble"
+    ],
+    "tags": [
+      "organize",
+      "detach",
+      "arrange",
+      "disassemble",
+      "ungroup"
+    ],
+    "when_to_use": [
+      "Content organization",
+      "Data management",
+      "Layout controls"
+    ]
+  },
+  {
+    "component_name": "UniversalAccessIcon",
+    "import": "import { UniversalAccessIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "inclusive",
+      "support",
+      "accessibility",
+      "wcag"
+    ],
+    "tags": [
+      "accessibility",
+      "inclusive",
+      "support",
+      "accessibility",
+      "wcag",
+      "universal-access"
+    ],
+    "when_to_use": []
+  },
+  {
+    "component_name": "UnlinkedIcon",
+    "import": "import { UnlinkedIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "detach",
+      "connection",
+      "hyperlink",
+      "unlink"
+    ],
+    "tags": [
+      "actions",
+      "detach",
+      "connection",
+      "hyperlink",
+      "unlink",
+      "unlinked"
+    ],
+    "when_to_use": [
+      "User interactions",
+      "Clickable elements",
+      "Interactive controls"
+    ]
+  },
+  {
+    "component_name": "UnlockedIcon",
+    "import": "import { UnlockedIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "access",
+      "padlock",
+      "security",
+      "open",
+      "permission",
+      "lock unlocked"
+    ],
+    "tags": [
+      "actions",
+      "access",
+      "padlock",
+      "security",
+      "open",
+      "permission",
+      "lock unlocked",
+      "unlocked"
+    ],
+    "when_to_use": [
+      "User interactions",
+      "Clickable elements",
+      "Interactive controls"
+    ]
+  },
+  {
+    "component_name": "UploadIcon",
+    "import": "import { UploadIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "import",
+      "arrow",
+      "transfer",
+      "share",
+      "upload",
+      "back to top"
+    ],
+    "tags": [
+      "arrows & chevrons",
+      "import",
+      "arrow",
+      "transfer",
+      "share",
+      "upload",
+      "back to top",
+      "upload"
+    ],
+    "when_to_use": [
+      "Navigation",
+      "Direction indicators",
+      "Expand/collapse controls"
+    ]
+  },
+  {
+    "component_name": "UrgencyCriticalIcon",
+    "import": "import { UrgencyCriticalIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "alert",
+      "arrow",
+      "priority",
+      "chevron"
+    ],
+    "tags": [
+      "indicators",
+      "alert",
+      "arrow",
+      "priority",
+      "chevron",
+      "urgency-critical"
+    ],
+    "when_to_use": [
+      "Status displays",
+      "Progress indicators",
+      "Alert messages"
+    ]
+  },
+  {
+    "component_name": "UrgencyHighIcon",
+    "import": "import { UrgencyHighIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "alert",
+      "arrow",
+      "priority",
+      "chevron"
+    ],
+    "tags": [
+      "indicators",
+      "alert",
+      "arrow",
+      "priority",
+      "chevron",
+      "urgency-high"
+    ],
+    "when_to_use": [
+      "Status displays",
+      "Progress indicators",
+      "Alert messages"
+    ]
+  },
+  {
+    "component_name": "UrgencyLowIcon",
+    "import": "import { UrgencyLowIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "alert",
+      "arrow",
+      "priority",
+      "chevron",
+      "chevron wide up"
+    ],
+    "tags": [
+      "indicators",
+      "alert",
+      "arrow",
+      "priority",
+      "chevron",
+      "chevron wide up",
+      "urgency-low"
+    ],
+    "when_to_use": [
+      "Status displays",
+      "Progress indicators",
+      "Alert messages"
+    ]
+  },
+  {
+    "component_name": "UrgencyMediumIcon",
+    "import": "import { UrgencyMediumIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "alert",
+      "arrow",
+      "priority",
+      "chevron"
+    ],
+    "tags": [
+      "indicators",
+      "alert",
+      "arrow",
+      "priority",
+      "chevron",
+      "urgency-medium"
+    ],
+    "when_to_use": [
+      "Status displays",
+      "Progress indicators",
+      "Alert messages"
+    ]
+  },
+  {
+    "component_name": "UrgencyNoneIcon",
+    "import": "import { UrgencyNoneIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "alert",
+      "dash",
+      "priority"
+    ],
+    "tags": [
+      "indicators",
+      "alert",
+      "dash",
+      "priority",
+      "urgency-none"
+    ],
+    "when_to_use": [
+      "Status displays",
+      "Progress indicators",
+      "Alert messages"
+    ]
+  },
+  {
+    "component_name": "UserIcon",
+    "import": "import { UserIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "avatar",
+      "profile",
+      "account",
+      "identity",
+      "people profile"
+    ],
+    "tags": [
+      "people",
+      "avatar",
+      "profile",
+      "account",
+      "identity",
+      "people profile",
+      "user"
+    ],
+    "when_to_use": [
+      "User profiles",
+      "Personnel management",
+      "Social features"
+    ]
+  },
+  {
+    "component_name": "UserAdminIcon",
+    "import": "import { UserAdminIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "avatar",
+      "shield",
+      "admin",
+      "access",
+      "people protection"
+    ],
+    "tags": [
+      "people",
+      "avatar",
+      "shield",
+      "admin",
+      "access",
+      "people protection",
+      "user-admin"
+    ],
+    "when_to_use": [
+      "User profiles",
+      "Personnel management",
+      "Social features"
+    ]
+  },
+  {
+    "component_name": "UserBadgeIcon",
+    "import": "import { UserBadgeIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "avatar",
+      "profile",
+      "account",
+      "identity",
+      "people profile"
+    ],
+    "tags": [
+      "people",
+      "avatar",
+      "profile",
+      "account",
+      "identity",
+      "people profile",
+      "user-badge"
+    ],
+    "when_to_use": [
+      "User profiles",
+      "Personnel management",
+      "Social features"
+    ]
+  },
+  {
+    "component_name": "UserGroupIcon",
+    "import": "import { UserGroupIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "avatar",
+      "people",
+      "team",
+      "profile",
+      "organization",
+      "people group"
+    ],
+    "tags": [
+      "people",
+      "avatar",
+      "people",
+      "team",
+      "profile",
+      "organization",
+      "people group",
+      "user-group"
+    ],
+    "when_to_use": [
+      "User profiles",
+      "Personnel management",
+      "Social features"
+    ]
+  },
+  {
+    "component_name": "UtensilsIcon",
+    "import": "import { UtensilsIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "dining",
+      "cutlery",
+      "food",
+      "tool",
+      "kitchen",
+      "cook"
+    ],
+    "tags": [
+      "objects",
+      "dining",
+      "cutlery",
+      "food",
+      "tool",
+      "kitchen",
+      "cook",
+      "utensils"
+    ],
+    "when_to_use": [
+      "Physical items",
+      "Real-world objects",
+      "Material things"
+    ]
+  },
+  {
+    "component_name": "VideoIcon",
+    "import": "import { VideoIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "stream",
+      "camera",
+      "media",
+      "film",
+      "media video",
+      "video"
+    ],
+    "tags": [
+      "media",
+      "stream",
+      "camera",
+      "media",
+      "film",
+      "media video",
+      "video",
+      "video"
+    ],
+    "when_to_use": [
+      "Audio/video controls",
+      "Playback features",
+      "Media management"
+    ]
+  },
+  {
+    "component_name": "VideoDisabledIcon",
+    "import": "import { VideoDisabledIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "stream",
+      "camera",
+      "media",
+      "film",
+      "off",
+      "media video off"
+    ],
+    "tags": [
+      "media",
+      "stream",
+      "camera",
+      "media",
+      "film",
+      "off",
+      "media video off",
+      "video-disabled"
+    ],
+    "when_to_use": [
+      "Audio/video controls",
+      "Playback features",
+      "Media management"
+    ]
+  },
+  {
+    "component_name": "VisibleIcon",
+    "import": "import { VisibleIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "view",
+      "eye",
+      "visibility",
+      "active",
+      "on"
+    ],
+    "tags": [
+      "actions",
+      "view",
+      "eye",
+      "visibility",
+      "active",
+      "on",
+      "visible"
+    ],
+    "when_to_use": [
+      "User interactions",
+      "Clickable elements",
+      "Interactive controls"
+    ]
+  },
+  {
+    "component_name": "VolumeDownIcon",
+    "import": "import { VolumeDownIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "quiet",
+      "speaker",
+      "audio",
+      "sound",
+      "media volume low"
+    ],
+    "tags": [
+      "media",
+      "quiet",
+      "speaker",
+      "audio",
+      "sound",
+      "media volume low",
+      "volume-down"
+    ],
+    "when_to_use": [
+      "Audio/video controls",
+      "Playback features",
+      "Media management"
+    ]
+  },
+  {
+    "component_name": "VolumeOffIcon",
+    "import": "import { VolumeOffIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "mute",
+      "x speaker",
+      "audio",
+      "disable",
+      "off",
+      "media volume mute"
+    ],
+    "tags": [
+      "media",
+      "mute",
+      "x speaker",
+      "audio",
+      "disable",
+      "off",
+      "media volume mute",
+      "volume-off"
+    ],
+    "when_to_use": [
+      "Audio/video controls",
+      "Playback features",
+      "Media management"
+    ]
+  },
+  {
+    "component_name": "VolumeUpIcon",
+    "import": "import { VolumeUpIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "loud",
+      "speaker",
+      "audio",
+      "sound",
+      "start",
+      "stop",
+      "media volume high",
+      "volume"
+    ],
+    "tags": [
+      "media",
+      "loud",
+      "speaker",
+      "audio",
+      "sound",
+      "start",
+      "stop",
+      "media volume high",
+      "volume",
+      "volume-up"
+    ],
+    "when_to_use": [
+      "Audio/video controls",
+      "Playback features",
+      "Media management"
+    ]
+  },
+  {
+    "component_name": "WarningIcon",
+    "import": "import { WarningIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "warning sign",
+      "triangle",
+      "alert",
+      "caution",
+      "danger",
+      "alert triangle"
+    ],
+    "tags": [
+      "indicators",
+      "warning sign",
+      "triangle",
+      "alert",
+      "caution",
+      "danger",
+      "alert triangle",
+      "warning"
+    ],
+    "when_to_use": [
+      "Status displays",
+      "Progress indicators",
+      "Alert messages"
+    ]
+  },
+  {
+    "component_name": "WatchIcon",
+    "import": "import { WatchIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "track",
+      "wrist",
+      "time"
+    ],
+    "tags": [
+      "objects",
+      "track",
+      "wrist",
+      "time",
+      "watch"
+    ],
+    "when_to_use": [
+      "Physical items",
+      "Real-world objects",
+      "Material things"
+    ]
+  },
+  {
+    "component_name": "WaveformIcon",
+    "import": "import { WaveformIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "sound",
+      "waveform",
+      "audio"
+    ],
+    "tags": [
+      "media",
+      "sound",
+      "waveform",
+      "audio",
+      "waveform"
+    ],
+    "when_to_use": [
+      "Audio/video controls",
+      "Playback features",
+      "Media management"
+    ]
+  },
+  {
+    "component_name": "WeightIcon",
+    "import": "import { WeightIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "measure",
+      "finance",
+      "scale",
+      "balance"
+    ],
+    "tags": [
+      "objects",
+      "measure",
+      "finance",
+      "scale",
+      "balance",
+      "weight"
+    ],
+    "when_to_use": [
+      "Physical items",
+      "Real-world objects",
+      "Material things"
+    ]
+  },
+  {
+    "component_name": "WifiIcon",
+    "import": "import { WifiIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "internet",
+      "signal",
+      "network",
+      "connection",
+      "online",
+      "wifi"
+    ],
+    "tags": [
+      "computing",
+      "internet",
+      "signal",
+      "network",
+      "connection",
+      "online",
+      "wifi",
+      "wifi"
+    ],
+    "when_to_use": [
+      "Technical features",
+      "System status",
+      "Network operations"
+    ]
+  },
+  {
+    "component_name": "WifiDisabledIcon",
+    "import": "import { WifiDisabledIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "internet",
+      "signal",
+      "network",
+      "connection",
+      "offline",
+      "wifi off"
+    ],
+    "tags": [
+      "computing",
+      "internet",
+      "signal",
+      "network",
+      "connection",
+      "offline",
+      "wifi off",
+      "wifi-disabled"
+    ],
+    "when_to_use": [
+      "Technical features",
+      "System status",
+      "Network operations"
+    ]
+  },
+  {
+    "component_name": "WomanIcon",
+    "import": "import { WomanIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "female",
+      "person",
+      "gender"
+    ],
+    "tags": [
+      "people",
+      "female",
+      "person",
+      "gender",
+      "woman"
+    ],
+    "when_to_use": [
+      "User profiles",
+      "Personnel management",
+      "Social features"
+    ]
+  },
+  {
+    "component_name": "WoodlandIcon",
+    "import": "import { WoodlandIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "tree",
+      "nature",
+      "forest",
+      "outdoor",
+      "wildlife"
+    ],
+    "tags": [
+      "places",
+      "tree",
+      "nature",
+      "forest",
+      "outdoor",
+      "wildlife",
+      "woodland"
+    ],
+    "when_to_use": [
+      "Location indicators",
+      "Geographic features",
+      "Physical locations"
+    ]
+  },
+  {
+    "component_name": "XlsIcon",
+    "import": "import { XlsIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "convert",
+      "document",
+      "export",
+      "file",
+      "excel"
+    ],
+    "tags": [
+      "documents",
+      "convert",
+      "document",
+      "export",
+      "file",
+      "excel",
+      "xls"
+    ],
+    "when_to_use": [
+      "File management",
+      "Document operations",
+      "Content creation"
+    ]
+  },
+  {
+    "component_name": "ZipIcon",
+    "import": "import { ZipIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "compress",
+      "document",
+      "export",
+      "file"
+    ],
+    "tags": [
+      "documents",
+      "compress",
+      "document",
+      "export",
+      "file",
+      "zip"
+    ],
+    "when_to_use": [
+      "File management",
+      "Document operations",
+      "Content creation"
+    ]
+  },
+  {
+    "component_name": "LightbulbIcon",
+    "import": "import { LightbulbIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "idea",
+      "brightness",
+      "on",
+      "off",
+      "insight",
+      "inspiration",
+      "illuminate",
+      "dim",
+      "ico lightbulb"
+    ],
+    "tags": [
+      "objects",
+      "idea",
+      "brightness",
+      "on",
+      "off",
+      "insight",
+      "inspiration",
+      "illuminate",
+      "dim",
+      "ico lightbulb",
+      "lightbulb"
+    ],
+    "when_to_use": [
+      "Physical items",
+      "Real-world objects",
+      "Material things"
+    ]
+  },
+  {
+    "component_name": "GrowthIcon",
+    "import": "import { GrowthIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "increase",
+      "arrow",
+      "data",
+      "graph",
+      "rise",
+      "ico growth"
+    ],
+    "tags": [
+      "data",
+      "increase",
+      "arrow",
+      "data",
+      "graph",
+      "rise",
+      "ico growth",
+      "growth"
+    ],
+    "when_to_use": [
+      "Data visualization",
+      "Analytics",
+      "Statistics"
+    ]
+  },
+  {
+    "component_name": "SummarizeIcon",
+    "import": "import { SummarizeIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "document",
+      "report",
+      "summary",
+      "artificial intelligence",
+      "ai"
+    ],
+    "tags": [
+      "organize",
+      "document",
+      "report",
+      "summary",
+      "artificial intelligence",
+      "ai",
+      "summarize"
+    ],
+    "when_to_use": [
+      "Content organization",
+      "Data management",
+      "Layout controls"
+    ]
+  },
+  {
+    "component_name": "CompareIcon",
+    "import": "import { CompareIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "comparison",
+      "analysis",
+      "contrast",
+      "evaluate"
+    ],
+    "tags": [
+      "organize",
+      "comparison",
+      "analysis",
+      "contrast",
+      "evaluate",
+      "compare"
+    ],
+    "when_to_use": [
+      "Content organization",
+      "Data management",
+      "Layout controls"
+    ]
+  },
+  {
+    "component_name": "SortIcon",
+    "import": "import { SortIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "organise",
+      "arrow",
+      "list",
+      "ascending",
+      "descending"
+    ],
+    "tags": [
+      "organize",
+      "organise",
+      "arrow",
+      "list",
+      "ascending",
+      "descending",
+      "sort"
+    ],
+    "when_to_use": [
+      "Content organization",
+      "Data management",
+      "Layout controls"
+    ]
+  },
+  {
+    "component_name": "SlideIcon",
+    "import": "import { SlideIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "toggle",
+      "control",
+      "slider",
+      "switch"
+    ],
+    "tags": [
+      "organize",
+      "toggle",
+      "control",
+      "slider",
+      "switch",
+      "slide"
+    ],
+    "when_to_use": [
+      "Content organization",
+      "Data management",
+      "Layout controls"
+    ]
+  },
+  {
+    "component_name": "AddToGridIcon",
+    "import": "import { AddToGridIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "insert",
+      "layout"
+    ],
+    "tags": [
+      "organize",
+      "insert",
+      "layout",
+      "add-to-grid"
+    ],
+    "when_to_use": [
+      "Content organization",
+      "Data management",
+      "Layout controls"
+    ]
+  },
+  {
+    "component_name": "DocumentSearchIcon",
+    "import": "import { DocumentSearchIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "lookup",
+      "magnifier",
+      "discover",
+      "view",
+      "find",
+      "magnifying glass",
+      "ico overview"
+    ],
+    "tags": [
+      "documents",
+      "lookup",
+      "magnifier",
+      "discover",
+      "view",
+      "find",
+      "magnifying glass",
+      "ico overview",
+      "document-search"
+    ],
+    "when_to_use": [
+      "File management",
+      "Document operations",
+      "Content creation"
+    ]
+  },
+  {
+    "component_name": "SparkleRefreshIcon",
+    "import": "import { SparkleRefreshIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "renew",
+      "ai",
+      "llm",
+      "artificial intelligence"
+    ],
+    "tags": [
+      "computing",
+      "renew",
+      "ai",
+      "llm",
+      "artificial intelligence",
+      "sparkle-refresh"
+    ],
+    "when_to_use": [
+      "Technical features",
+      "System status",
+      "Network operations"
+    ]
+  },
+  {
+    "component_name": "WorkflowIcon",
+    "import": "import { WorkflowIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "nodes",
+      "process",
+      "sequence"
+    ],
+    "tags": [
+      "organize",
+      "nodes",
+      "process",
+      "sequence",
+      "workflow"
+    ],
+    "when_to_use": [
+      "Content organization",
+      "Data management",
+      "Layout controls"
+    ]
+  },
+  {
+    "component_name": "DatasetIcon",
+    "import": "import { DatasetIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "stack",
+      "data"
+    ],
+    "tags": [
+      "computing",
+      "stack",
+      "data",
+      "dataset"
+    ],
+    "when_to_use": [
+      "Technical features",
+      "System status",
+      "Network operations"
+    ]
+  },
+  {
+    "component_name": "DatasetManagerIcon",
+    "import": "import { DatasetManagerIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "stack",
+      "data"
+    ],
+    "tags": [
+      "people",
+      "stack",
+      "data",
+      "dataset-manager"
+    ],
+    "when_to_use": [
+      "User profiles",
+      "Personnel management",
+      "Social features"
+    ]
+  },
+  {
+    "component_name": "HierarchyIcon",
+    "import": "import { HierarchyIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "structure",
+      "tree",
+      "organisation",
+      "nested",
+      "levels"
+    ],
+    "tags": [
+      "organize",
+      "structure",
+      "tree",
+      "organisation",
+      "nested",
+      "levels",
+      "hierarchy"
+    ],
+    "when_to_use": [
+      "Content organization",
+      "Data management",
+      "Layout controls"
+    ]
+  },
+  {
+    "component_name": "PieChartIcon",
+    "import": "import { PieChartIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "breakdown",
+      "graph",
+      "segment",
+      "analytics",
+      "ico chart pie"
+    ],
+    "tags": [
+      "data",
+      "breakdown",
+      "graph",
+      "segment",
+      "analytics",
+      "ico chart pie",
+      "pie-chart"
+    ],
+    "when_to_use": [
+      "Data visualization",
+      "Analytics",
+      "Statistics"
+    ]
+  },
+  {
+    "component_name": "PolicyIcon",
+    "import": "import { PolicyIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "rule",
+      "document",
+      "compliance",
+      "certificate",
+      "verified",
+      "certified"
+    ],
+    "tags": [
+      "documents",
+      "rule",
+      "document",
+      "compliance",
+      "certificate",
+      "verified",
+      "certified",
+      "policy"
+    ],
+    "when_to_use": [
+      "File management",
+      "Document operations",
+      "Content creation"
+    ]
+  },
+  {
+    "component_name": "IndentIcon",
+    "import": "import { IndentIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "shift",
+      "arrow",
+      "text",
+      "tab"
+    ],
+    "tags": [
+      "organize",
+      "shift",
+      "arrow",
+      "text",
+      "tab",
+      "indent"
+    ],
+    "when_to_use": [
+      "Content organization",
+      "Data management",
+      "Layout controls"
+    ]
+  },
+  {
+    "component_name": "OutdentIcon",
+    "import": "import { OutdentIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "shift",
+      "arrow",
+      "text",
+      "tab"
+    ],
+    "tags": [
+      "organize",
+      "shift",
+      "arrow",
+      "text",
+      "tab",
+      "outdent"
+    ],
+    "when_to_use": [
+      "Content organization",
+      "Data management",
+      "Layout controls"
+    ]
+  },
+  {
+    "component_name": "HandshakeIcon",
+    "import": "import { HandshakeIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "agreement",
+      "hands",
+      "deal",
+      "partnership",
+      "greeting"
+    ],
+    "tags": [
+      "communication",
+      "agreement",
+      "hands",
+      "deal",
+      "partnership",
+      "greeting",
+      "handshake"
+    ],
+    "when_to_use": [
+      "Messaging features",
+      "Contact information",
+      "Social interactions"
+    ]
+  },
+  {
+    "component_name": "AnnouncementIcon",
+    "import": "import { AnnouncementIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "notify",
+      "loudspeaker",
+      "broadcast",
+      "megaphone",
+      "update"
+    ],
+    "tags": [
+      "communication",
+      "notify",
+      "loudspeaker",
+      "broadcast",
+      "megaphone",
+      "update",
+      "announcement"
+    ],
+    "when_to_use": [
+      "Messaging features",
+      "Contact information",
+      "Social interactions"
+    ]
+  },
+  {
+    "component_name": "UserSearchIcon",
+    "import": "import { UserSearchIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "find",
+      "magnifier"
+    ],
+    "tags": [
+      "people",
+      "find",
+      "magnifier",
+      "user-search"
+    ],
+    "when_to_use": [
+      "User profiles",
+      "Personnel management",
+      "Social features"
+    ]
+  },
+  {
+    "component_name": "AddUserIcon",
+    "import": "import { AddUserIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "invite",
+      "plus",
+      "new",
+      "content",
+      "onboarding"
+    ],
+    "tags": [
+      "people",
+      "invite",
+      "plus",
+      "new",
+      "content",
+      "onboarding",
+      "add-user"
+    ],
+    "when_to_use": [
+      "User profiles",
+      "Personnel management",
+      "Social features"
+    ]
+  },
+  {
+    "component_name": "RemoveUserIcon",
+    "import": "import { RemoveUserIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "delete",
+      "minus",
+      "offboarding"
+    ],
+    "tags": [
+      "people",
+      "delete",
+      "minus",
+      "offboarding",
+      "remove-user"
+    ],
+    "when_to_use": [
+      "User profiles",
+      "Personnel management",
+      "Social features"
+    ]
+  },
+  {
+    "component_name": "SignatureIcon",
+    "import": "import { SignatureIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "sign",
+      "pen",
+      "write",
+      "autograph",
+      "agreement",
+      "deal"
+    ],
+    "tags": [
+      "actions",
+      "sign",
+      "pen",
+      "write",
+      "autograph",
+      "agreement",
+      "deal",
+      "signature"
+    ],
+    "when_to_use": [
+      "User interactions",
+      "Clickable elements",
+      "Interactive controls"
+    ]
+  },
+  {
+    "component_name": "FirstIcon",
+    "import": "import { FirstIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "start",
+      "beginning"
+    ],
+    "tags": [
+      "arrows & chevrons",
+      "start",
+      "beginning",
+      "first"
+    ],
+    "when_to_use": [
+      "Navigation",
+      "Direction indicators",
+      "Expand/collapse controls"
+    ]
+  },
+  {
+    "component_name": "LastIcon",
+    "import": "import { LastIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "end"
+    ],
+    "tags": [
+      "arrows & chevrons",
+      "end",
+      "last"
+    ],
+    "when_to_use": [
+      "Navigation",
+      "Direction indicators",
+      "Expand/collapse controls"
+    ]
+  },
+  {
+    "component_name": "SchoolIcon",
+    "import": "import { SchoolIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "learn",
+      "grad cap",
+      "education",
+      "university",
+      "college",
+      "academy",
+      "academic",
+      "graduate"
+    ],
+    "tags": [
+      "objects",
+      "learn",
+      "grad cap",
+      "education",
+      "university",
+      "college",
+      "academy",
+      "academic",
+      "graduate",
+      "school"
+    ],
+    "when_to_use": [
+      "Physical items",
+      "Real-world objects",
+      "Material things"
+    ]
+  },
+  {
+    "component_name": "LinkedinIcon",
+    "import": "import { LinkedinIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "social",
+      "logo",
+      "network",
+      "ico logo linkedin",
+      "linkedin"
+    ],
+    "tags": [
+      "logos",
+      "social",
+      "logo",
+      "network",
+      "ico logo linkedin",
+      "linkedin",
+      "linkedin"
+    ],
+    "when_to_use": [
+      "Brand representation",
+      "External links",
+      "Platform identification"
+    ]
+  },
+  {
+    "component_name": "MaintenanceIcon",
+    "import": "import { MaintenanceIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "fix",
+      "wrench",
+      "repair",
+      "tool",
+      "build",
+      "spanner"
+    ],
+    "tags": [
+      "actions",
+      "fix",
+      "wrench",
+      "repair",
+      "tool",
+      "build",
+      "spanner",
+      "maintenance"
+    ],
+    "when_to_use": [
+      "User interactions",
+      "Clickable elements",
+      "Interactive controls"
+    ]
+  },
+  {
+    "component_name": "UrgencyOnTimeIcon",
+    "import": "import { UrgencyOnTimeIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "status"
+    ],
+    "tags": [
+      "indicators",
+      "status",
+      "urgency-onTime"
+    ],
+    "when_to_use": [
+      "Status displays",
+      "Progress indicators",
+      "Alert messages"
+    ]
+  },
+  {
+    "component_name": "FeedbackIcon",
+    "import": "import { FeedbackIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "comment",
+      "review",
+      "user",
+      "analysis"
+    ],
+    "tags": [
+      "communication",
+      "comment",
+      "review",
+      "user",
+      "analysis",
+      "feedback"
+    ],
+    "when_to_use": [
+      "Messaging features",
+      "Contact information",
+      "Social interactions"
+    ]
+  },
+  {
+    "component_name": "HolidayIcon",
+    "import": "import { HolidayIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "trip",
+      "beach",
+      "island",
+      "vacation",
+      "break"
+    ],
+    "tags": [
+      "places",
+      "trip",
+      "beach",
+      "island",
+      "vacation",
+      "break",
+      "holiday"
+    ],
+    "when_to_use": [
+      "Location indicators",
+      "Geographic features",
+      "Physical locations"
+    ]
+  },
+  {
+    "component_name": "TravelIcon",
+    "import": "import { TravelIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "journey",
+      "suitcase",
+      "holiday",
+      "luggage",
+      "baggage",
+      "vacation",
+      "ico suitcase checked"
+    ],
+    "tags": [
+      "objects",
+      "journey",
+      "suitcase",
+      "holiday",
+      "luggage",
+      "baggage",
+      "vacation",
+      "ico suitcase checked",
+      "travel"
+    ],
+    "when_to_use": [
+      "Physical items",
+      "Real-world objects",
+      "Material things"
+    ]
+  },
+  {
+    "component_name": "CurrencyIcon",
+    "import": "import { CurrencyIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "money",
+      "coin",
+      "finance",
+      "dollar",
+      "ico currency usd circle"
+    ],
+    "tags": [
+      "finance",
+      "money",
+      "coin",
+      "finance",
+      "dollar",
+      "ico currency usd circle",
+      "currency"
+    ],
+    "when_to_use": [
+      "Financial operations",
+      "Transactions",
+      "Money management"
+    ]
+  },
+  {
+    "component_name": "CurrencyExchangeIcon",
+    "import": "import { CurrencyExchangeIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "money",
+      "finance",
+      "dollar",
+      "ico lending"
+    ],
+    "tags": [
+      "finance",
+      "money",
+      "finance",
+      "dollar",
+      "ico lending",
+      "currency-exchange"
+    ],
+    "when_to_use": [
+      "Financial operations",
+      "Transactions",
+      "Money management"
+    ]
+  },
+  {
+    "component_name": "LikeIcon",
+    "import": "import { LikeIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "heart",
+      "love",
+      "favorite",
+      "favourite",
+      "ico like outlined"
+    ],
+    "tags": [
+      "actions",
+      "heart",
+      "love",
+      "favorite",
+      "favourite",
+      "ico like outlined",
+      "like"
+    ],
+    "when_to_use": [
+      "User interactions",
+      "Clickable elements",
+      "Interactive controls"
+    ]
+  },
+  {
+    "component_name": "MagicWandIcon",
+    "import": "import { MagicWandIcon } from \"@salt-ds/icons\";",
+    "synonym": [
+      "clean up",
+      "tool",
+      "transform",
+      "effect"
+    ],
+    "tags": [
+      "objects",
+      "clean up",
+      "tool",
+      "transform",
+      "effect",
+      "magic-wand"
+    ],
+    "when_to_use": [
+      "Physical items",
+      "Real-world objects",
+      "Material things"
+    ]
+  }
+]

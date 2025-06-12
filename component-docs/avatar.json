@@ -1,0 +1,85 @@
+{
+  "component_name": "Avatar",
+  "metadata": {
+    "component_name": "Avatar",
+    "description": "`Avatar` is a graphical element which you can use to represent a person, group, entity or communication channel.",
+    "props": {
+      "name": {
+        "type": "string",
+        "required": false,
+        "description": "The name that Avatar represents."
+      },
+      "nameToInitials": {
+        "type": "NameToInitials",
+        "required": false,
+        "description": "Defines the function that gets initials. Default is capital first letter of each separate word in name.\nIf a function is not passed or returns undefined, Avatar will default to Icon.",
+        "defaultValue": "(name?: string) =>\n  name\n    ?.split(\" \")\n    .slice(0, 2)\n    .map((n) => n[0])\n    .join(\"\")\n    .toUpperCase()"
+      },
+      "src": {
+        "type": "string",
+        "required": false,
+        "description": "Image src of Avatar."
+      },
+      "size": {
+        "type": "number",
+        "required": false,
+        "description": "Multiplier for the base avatar.",
+        "defaultValue": "2"
+      },
+      "fallbackIcon": {
+        "type": "ReactNode",
+        "required": false,
+        "description": "Icon to be used as a default item. Defaults to `UserIcon`."
+      },
+      "color": {
+        "type": "enum",
+        "required": false,
+        "description": "Changes Avatar's color.",
+        "defaultValue": "accent"
+      }
+    },
+    "examples": [
+      {
+        "name": "Categories",
+        "description": "The `color` prop can be used to change Avatar's background to one of the 20 [categorical colors](/salt/foundations/color#categorical).",
+        "code": "import { Avatar, GridLayout } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nfunction nameToCategory(name?: string) {\n  return name?.replace(\"Category \", \"\") ?? \"\";\n}\n\nexport const Categories = (): ReactElement => {\n  return (\n    <GridLayout columns={5}>\n      <Avatar\n        name=\"Category 1\"\n        color=\"category-1\"\n        nameToInitials={nameToCategory}\n      />\n      <Avatar\n        name=\"Category 2\"\n        color=\"category-2\"\n        nameToInitials={nameToCategory}\n      />\n      <Avatar\n        name=\"Category 3\"\n        color=\"category-3\"\n        nameToInitials={nameToCategory}\n      />\n      <Avatar\n        name=\"Category 4\"\n        color=\"category-4\"\n        nameToInitials={nameToCategory}\n      />\n      <Avatar\n        name=\"Category 5\"\n        color=\"category-5\"\n        nameToInitials={nameToCategory}\n      />\n      <Avatar\n        name=\"Category 6\"\n        color=\"category-6\"\n        nameToInitials={nameToCategory}\n      />\n      <Avatar\n        name=\"Category 7\"\n        color=\"category-7\"\n        nameToInitials={nameToCategory}\n      />\n      <Avatar\n        name=\"Category 8\"\n        color=\"category-8\"\n        nameToInitials={nameToCategory}\n      />\n      <Avatar\n        name=\"Category 9\"\n        color=\"category-9\"\n        nameToInitials={nameToCategory}\n      />\n      <Avatar\n        name=\"Category 10\"\n        color=\"category-10\"\n        nameToInitials={nameToCategory}\n      />\n      <Avatar\n        name=\"Category 11\"\n        color=\"category-11\"\n        nameToInitials={nameToCategory}\n      />\n      <Avatar\n        name=\"Category 12\"\n        color=\"category-12\"\n        nameToInitials={nameToCategory}\n      />\n      <Avatar\n        name=\"Category 13\"\n        color=\"category-13\"\n        nameToInitials={nameToCategory}\n      />\n      <Avatar\n        name=\"Category 14\"\n        color=\"category-14\"\n        nameToInitials={nameToCategory}\n      />\n      <Avatar\n        name=\"Category 15\"\n        color=\"category-15\"\n        nameToInitials={nameToCategory}\n      />\n      <Avatar\n        name=\"Category 16\"\n        color=\"category-16\"\n        nameToInitials={nameToCategory}\n      />\n      <Avatar\n        name=\"Category 17\"\n        color=\"category-17\"\n        nameToInitials={nameToCategory}\n      />\n      <Avatar\n        name=\"Category 18\"\n        color=\"category-18\"\n        nameToInitials={nameToCategory}\n      />\n      <Avatar\n        name=\"Category 19\"\n        color=\"category-19\"\n        nameToInitials={nameToCategory}\n      />\n      <Avatar\n        name=\"Category 20\"\n        color=\"category-20\"\n        nameToInitials={nameToCategory}\n      />\n    </GridLayout>\n  );\n};\n"
+      },
+      {
+        "name": "CustomFallbackIcon",
+        "description": "",
+        "code": "import { Avatar } from \"@salt-ds/core\";\nimport { WomanIcon } from \"@salt-ds/icons\";\nimport type { ReactElement } from \"react\";\n\nexport const CustomFallbackIcon = (): ReactElement => {\n  return <Avatar aria-label=\"Woman Avatar\" fallbackIcon={<WomanIcon />} />;\n};\n"
+      },
+      {
+        "name": "Image",
+        "description": "You can pass an image as the avatar image using the `src` prop.\n\nYou can also pass a custom image or SVG as the child of the component. Note that for images passed as children, you'll also need to handle the fallback logic.",
+        "code": "import { Avatar } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Image = (): ReactElement => {\n  return <Avatar name=\"Alex Brailescu\" src={\"/img/examples/avatar.png\"} />;\n};\n"
+      },
+      {
+        "name": "Initials",
+        "description": "If a photo is not available, the avatar will fall back to initials or an icon:\n\n- You can use initials when a photo is unavailable, but profile information is.\n- Use an icon when neither a photo nor profile information is available.",
+        "code": "import { Avatar } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Initials = (): ReactElement => {\n  return <Avatar name=\"Alex Brailescu\" />;\n};\n"
+      },
+      {
+        "name": "Sizes",
+        "description": "You can use the `size` prop to modify the avatar size. Each avatar variant has a default size across all four densities, equal to the [size foundation](/salt/foundations/size) `size-base`: 20px (HD), 28px (MD), 36px (LD), and 44px (TD). The size property acts as a multiplier of the base size.",
+        "code": "import { Avatar, FlowLayout, Label, StackLayout } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nconst sizes = [1, 2, 4] as const;\n\nexport const Sizes = (): ReactElement => {\n  return (\n    <FlowLayout gap={7} align=\"end\">\n      {sizes.map((size) => (\n        <StackLayout key={size} align=\"center\">\n          <Avatar key={size} size={size} />\n          <Label>Size: {size}x</Label>\n        </StackLayout>\n      ))}\n    </FlowLayout>\n  );\n};\n"
+      }
+    ],
+    "category": "@salt-ds/core",
+    "tags": [
+      "Faces",
+      "Profile Picture",
+      "User Photo"
+    ],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/core/src/avatar",
+    "related_components": [
+      {
+        "name": "Country symbol",
+        "relationship": "similarTo"
+      }
+    ]
+  }
+}

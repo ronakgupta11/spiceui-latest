@@ -1,0 +1,103 @@
+{
+  "component_name": "Spinner",
+  "metadata": {
+    "component_name": "Spinner",
+    "description": "`Spinner` is a visual representation of a process taking an indeterminate time to complete. Triggers include automated system processes, a user action or an indicator of content loading. Displaying a spinner reassures the user that the system is still working, especially when the operation takes longer than one second.",
+    "props": {
+      "announcerInterval": {
+        "type": "number",
+        "required": false,
+        "description": "Determines the interval on which the component will continue to announce the aria-label. Defaults to 5000ms (5s)",
+        "defaultValue": "5000"
+      },
+      "announcerTimeout": {
+        "type": "number",
+        "required": false,
+        "description": "* Determines the interval after which the component will stop announcing the aria-label. Defaults to 20000ms (20s)",
+        "defaultValue": "20000"
+      },
+      "className": {
+        "type": "string",
+        "required": false,
+        "description": "The className(s) of the component"
+      },
+      "completionAnnouncement": {
+        "type": "string",
+        "required": false,
+        "description": "Determines the message to be announced by the component when it unmounts. Set to null if not needed.",
+        "defaultValue": "`finished ${ariaLabel}`"
+      },
+      "disableAnnouncer": {
+        "type": "boolean",
+        "required": false,
+        "description": "If true, built in aria announcer will be inactive"
+      },
+      "role": {
+        "type": "string",
+        "required": false,
+        "description": "The prop for the role attribute of the component",
+        "defaultValue": "img"
+      },
+      "size": {
+        "type": "enum",
+        "required": false,
+        "description": "Determines the size of the spinner. Must be one of: 'default', 'large', 'small', 'medium'.",
+        "defaultValue": "medium"
+      },
+      "id": {
+        "type": "string",
+        "required": false,
+        "description": "The ids of the SvgSpinner components"
+      }
+    },
+    "examples": [
+      {
+        "name": "Large",
+        "description": "The large spinner is useful for full-screen loading experiences.\n\nFor the large size, set the `size` prop to `”large”`.",
+        "code": "import { Spinner } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Large = (): ReactElement => (\n  <Spinner aria-label=\"loading\" role=\"status\" size=\"large\" />\n);\n"
+      },
+      {
+        "name": "Loading",
+        "description": "Center the spinner in the middle of a page or content that's loading.",
+        "code": "import { Button, Spinner, StackLayout, Text } from \"@salt-ds/core\";\nimport { type ReactElement, useEffect, useState } from \"react\";\n\nconst LOADING_DELAY = 2000;\n\nexport const Loading = (): ReactElement => {\n  const [isLoading, setIsLoading] = useState<boolean>(true);\n\n  useEffect(() => {\n    setTimeout(() => {\n      setIsLoading(false);\n    }, LOADING_DELAY);\n  }, []);\n\n  return isLoading ? (\n    <StackLayout align=\"center\">\n      <Text>Please wait for the action to complete</Text>\n      <Spinner size=\"large\" aria-label=\"loading\" role=\"status\" />\n    </StackLayout>\n  ) : (\n    <StackLayout align=\"center\">\n      <Text>Action Complete</Text>\n      <Button\n        sentiment=\"accented\"\n        onClick={() => {\n          setIsLoading(true);\n          setTimeout(() => {\n            setIsLoading(false);\n          }, LOADING_DELAY);\n        }}\n      >\n        Reload\n      </Button>\n    </StackLayout>\n  );\n};\n"
+      },
+      {
+        "name": "LoadingPartial",
+        "description": "",
+        "code": "import {\n  Button,\n  FlexLayout,\n  GridItem,\n  GridLayout,\n  Spinner,\n  StackLayout,\n} from \"@salt-ds/core\";\nimport cx from \"classnames\";\nimport {\n  type ComponentPropsWithoutRef,\n  type ReactElement,\n  useEffect,\n  useState,\n} from \"react\";\n\nimport styles from \"./LoadingPartial.module.css\";\n\nconst LOADING_DELAY = 2000;\n\ntype LoadingItemProps = ComponentPropsWithoutRef<typeof GridItem> & {\n  isLoading: boolean;\n};\n\nconst LoadingItem = ({\n  children,\n  className,\n  isLoading,\n  ...rest\n}: LoadingItemProps) => {\n  return (\n    <GridItem\n      {...rest}\n      className={cx(className, styles.loadingItem, {\n        [styles.loading]: isLoading,\n        [styles.loaded]: !isLoading,\n      })}\n    >\n      <FlexLayout align=\"center\" justify=\"center\">\n        {children}\n      </FlexLayout>\n    </GridItem>\n  );\n};\n\nexport const LoadingPartial = (): ReactElement => {\n  const [isLoading, setIsLoading] = useState<boolean>(true);\n\n  useEffect(() => {\n    setTimeout(() => {\n      setIsLoading(false);\n    }, LOADING_DELAY);\n  }, []);\n\n  return (\n    <StackLayout align=\"stretch\">\n      <GridLayout columns={4} rows={3} gap={1} className={styles.loadingGrid}>\n        <LoadingItem isLoading={isLoading} colSpan={2} rowSpan={2}>\n          {isLoading ? <Spinner aria-label=\"loading\" role=\"status\" /> : 1}\n        </LoadingItem>\n        <LoadingItem isLoading={false} colSpan={1} rowSpan={1}>\n          2\n        </LoadingItem>\n        <LoadingItem isLoading={false} colSpan={1} rowSpan={1}>\n          3\n        </LoadingItem>\n        <LoadingItem isLoading={false} colSpan={2} rowSpan={1}>\n          4\n        </LoadingItem>\n        <LoadingItem isLoading={false} colSpan={1} rowSpan={1}>\n          5\n        </LoadingItem>\n        <LoadingItem isLoading={false} colSpan={1} rowSpan={1}>\n          6\n        </LoadingItem>\n        <LoadingItem isLoading={false} colSpan={2} rowSpan={1}>\n          7\n        </LoadingItem>\n      </GridLayout>\n      <Button\n        sentiment=\"accented\"\n        onClick={() => {\n          if (!isLoading) {\n            setIsLoading(true);\n            setTimeout(() => {\n              setIsLoading(false);\n            }, LOADING_DELAY);\n          }\n        }}\n        disabled={isLoading}\n      >\n        Reload Panel\n      </Button>\n    </StackLayout>\n  );\n};\n"
+      },
+      {
+        "name": "Medium",
+        "description": "",
+        "code": "import { Spinner } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Medium = (): ReactElement => (\n  <Spinner aria-label=\"loading\" role=\"status\" size=\"medium\" />\n);\n"
+      },
+      {
+        "name": "Small",
+        "description": "The small spinner is used for embedding in individual components (e.g., button or input) that require dynamic loading experiences.\n\nFor the small size set the `size` prop to `\"small\"`.",
+        "code": "import { Spinner } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Small = (): ReactElement => (\n  <Spinner aria-label=\"loading\" role=\"status\" size=\"small\" />\n);\n"
+      }
+    ],
+    "category": "@salt-ds/core",
+    "tags": [
+      "Loader",
+      "Loading",
+      "Progress"
+    ],
+    "when_to_use": [
+      "To indicate that content is loading and reassure the user that the system is still working.",
+      "For actions that you expect will take 1–9 seconds to load or for processes that will take an indeterminate amount of time to complete."
+    ],
+    "when_not_to_use": [
+      "For actions that will run for a determinable length of time. Instead, use [`Progress`](/salt/components/progress).",
+      "For a process that is taking longer than 10 seconds to complete, as this is the point at which any attempt for a system to respond should finish, and a status message should display instead. For further guidance, view the [Salt duration foundation](/salt/foundations/duration)."
+    ],
+    "import_statement": "import { Spinner } from \"@salt-ds/core\";",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/core/src/spinner",
+    "related_components": [
+      {
+        "name": "Progress",
+        "relationship": "similarTo"
+      }
+    ]
+  }
+}

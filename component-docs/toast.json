@@ -1,0 +1,107 @@
+{
+  "component_name": "Toast",
+  "metadata": {
+    "component_name": "Toast",
+    "description": "`Toast` displays a small pop-up notification that provides short feedback in response to a user action or system event related to a workflow or application outside the user’s current focus. It can communicate new information, errors, warnings or successful completion of a process or task.",
+    "props": {
+      "status": {
+        "type": "enum",
+        "required": false,
+        "description": "A string to determine the current state of the Toast."
+      },
+      "icon": {
+        "type": "ReactElement<IconProps, string | JSXElementConstructor<any>>",
+        "required": false,
+        "description": "(Optional) if provided, this icon component will be used instead of the status icon"
+      }
+    },
+    "examples": [
+      {
+        "name": "CustomIcon",
+        "description": "",
+        "code": "import { Button, Text, Toast, ToastContent } from \"@salt-ds/core\";\nimport {\n  CloseIcon,\n  ErrorIcon,\n  InfoIcon,\n  StepSuccessIcon,\n  WarningIcon,\n} from \"@salt-ds/icons\";\nimport type { ReactElement } from \"react\";\n\nexport const CustomIcon = (): ReactElement => (\n  <div style={{ display: \"flex\", flexDirection: \"column\" }}>\n    <Toast\n      style={{ width: 260 }}\n      icon={<InfoIcon aria-label=\"info\" />}\n      status={\"info\"}\n    >\n      <ToastContent>\n        <Text>\n          <strong>Info with Custom Icon</strong>\n        </Text>\n        <div>Filters have been cleared</div>\n      </ToastContent>\n      <Button appearance=\"transparent\">\n        <CloseIcon />\n      </Button>\n    </Toast>\n    <Toast\n      style={{ width: 260 }}\n      icon={<StepSuccessIcon aria-label=\"success\" />}\n      status={\"success\"}\n    >\n      <ToastContent>\n        <Text>\n          <strong>Success with Custom Icon</strong>\n        </Text>\n        <div>The world is connected</div>\n      </ToastContent>\n      <Button appearance=\"transparent\">\n        <CloseIcon />\n      </Button>\n    </Toast>\n    <Toast\n      style={{ width: 260 }}\n      icon={<WarningIcon aria-label=\"warning\" />}\n      status={\"warning\"}\n    >\n      <ToastContent>\n        <Text>\n          <strong>Warning with Custom Icon</strong>\n        </Text>\n        <div>There is not enough seasoning</div>\n      </ToastContent>\n      <Button appearance=\"transparent\">\n        <CloseIcon />\n      </Button>\n    </Toast>\n    <Toast\n      style={{ width: 260 }}\n      icon={<ErrorIcon aria-label=\"error\" />}\n      status={\"error\"}\n    >\n      <ToastContent>\n        <Text>\n          <strong>Error with Custom Icon</strong>\n        </Text>\n        <div>There is a wild animal here</div>\n      </ToastContent>\n      <Button appearance=\"transparent\">\n        <CloseIcon />\n      </Button>\n    </Toast>\n  </div>\n);\n"
+      },
+      {
+        "name": "Default",
+        "description": "",
+        "code": "import { Button, Link, Text, Toast, ToastContent } from \"@salt-ds/core\";\nimport { CloseIcon } from \"@salt-ds/icons\";\nimport type { ReactElement } from \"react\";\n\nexport const Default = (): ReactElement => (\n  <Toast>\n    <ToastContent>\n      <Text>\n        Updated to latest version of Salt. See&nbsp;\n        <Link href=\"https://github.com/jpmorganchase/salt-ds/releases\">\n          what's new\n        </Link>\n        .\n      </Text>\n    </ToastContent>\n    <Button appearance=\"transparent\" aria-label=\"Dismiss\">\n      <CloseIcon aria-hidden />\n    </Button>\n  </Toast>\n);\n"
+      },
+      {
+        "name": "Error",
+        "description": "",
+        "code": "import { Button, Text, Toast, ToastContent } from \"@salt-ds/core\";\nimport { CloseIcon } from \"@salt-ds/icons\";\nimport type { ReactElement } from \"react\";\n\nexport const Error = (): ReactElement => (\n  <Toast status=\"error\" style={{ width: 260 }}>\n    <ToastContent>\n      <Text>\n        <strong>A system error occurred</strong>\n      </Text>\n      <div>The connection timed out and failed to retrieve data.</div>\n    </ToastContent>\n    <Button appearance=\"transparent\" aria-label=\"Dismiss\">\n      <CloseIcon aria-hidden />\n    </Button>\n  </Toast>\n);\n"
+      },
+      {
+        "name": "Info",
+        "description": "",
+        "code": "import { Button, Text, Toast, ToastContent } from \"@salt-ds/core\";\nimport { CloseIcon } from \"@salt-ds/icons\";\nimport type { ReactElement } from \"react\";\n\nexport const Info = (): ReactElement => (\n  <Toast status=\"info\" style={{ width: 260 }}>\n    <ToastContent>\n      <Text>\n        <strong>File update</strong>\n      </Text>\n      <div>A new version of this file is available with 37 updates. </div>\n    </ToastContent>\n    <Button appearance=\"transparent\" aria-label=\"Dismiss\">\n      <CloseIcon aria-hidden />\n    </Button>\n  </Toast>\n);\n"
+      },
+      {
+        "name": "Success",
+        "description": "",
+        "code": "import { Button, Text, Toast, ToastContent } from \"@salt-ds/core\";\nimport { CloseIcon } from \"@salt-ds/icons\";\nimport type { ReactElement } from \"react\";\n\nexport const Success = (): ReactElement => (\n  <Toast status=\"success\" style={{ width: 260 }}>\n    <ToastContent>\n      <Text>\n        <strong>File uploaded</strong>\n      </Text>\n      <div>\n        The project file has been successfully uploaded to the shared drive.\n      </div>\n    </ToastContent>\n    <Button appearance=\"transparent\" aria-label=\"Dismiss\">\n      <CloseIcon aria-hidden />\n    </Button>\n  </Toast>\n);\n"
+      },
+      {
+        "name": "ToastGroupBottom",
+        "description": "",
+        "code": "import { Button, StackLayout } from \"@salt-ds/core\";\nimport { ToastGroup } from \"@salt-ds/lab\";\nimport { Fragment, type ReactNode, useState } from \"react\";\n\nimport {\n  ErrorToast,\n  InfoToast,\n  SuccessToast,\n  WarningToast,\n} from \"./ToastsExamples\";\n\ntype ToastEntryType = {\n  timestamp: number;\n  content: ReactNode;\n};\n\nexport const ToastGroupBottom = () => {\n  const [toasts, setToasts] = useState<ToastEntryType[]>([]);\n\n  const addInfoToast = () => {\n    setToasts([{ timestamp: Date.now(), content: <InfoToast /> }, ...toasts]);\n  };\n\n  const addErrorToast = () => {\n    setToasts([{ timestamp: Date.now(), content: <ErrorToast /> }, ...toasts]);\n  };\n  const addWarningToast = () => {\n    setToasts([\n      { timestamp: Date.now(), content: <WarningToast /> },\n      ...toasts,\n    ]);\n  };\n  const addSuccessToast = () => {\n    setToasts([\n      { timestamp: Date.now(), content: <SuccessToast /> },\n      ...toasts,\n    ]);\n  };\n\n  return (\n    <>\n      <StackLayout style={{ maxWidth: 250 }}>\n        <Button onClick={addInfoToast}>Add info toast</Button>\n        <Button onClick={addErrorToast}>Add error toast</Button>\n        <Button onClick={addWarningToast}>Add warning toast</Button>\n        <Button onClick={addSuccessToast}>Add success toast</Button>\n      </StackLayout>\n      <ToastGroup placement=\"bottom-right\" style={{ marginTop: 50 }}>\n        {toasts\n          ?.sort((a, b) => b.timestamp - a.timestamp)\n          .map(({ content, timestamp }) => (\n            <Fragment key={timestamp}>{content}</Fragment>\n          ))}\n      </ToastGroup>\n    </>\n  );\n};\n"
+      },
+      {
+        "name": "ToastGroupTop",
+        "description": "",
+        "code": "import { Button, StackLayout } from \"@salt-ds/core\";\nimport { ToastGroup } from \"@salt-ds/lab\";\nimport { Fragment, type ReactNode, useState } from \"react\";\n\nimport {\n  ErrorToast,\n  InfoToast,\n  SuccessToast,\n  WarningToast,\n} from \"./ToastsExamples\";\n\ntype ToastEntryType = {\n  timestamp: number;\n  content: ReactNode;\n};\n\nexport const ToastGroupTop = () => {\n  const [toasts, setToasts] = useState<ToastEntryType[]>([]);\n\n  const addInfoToast = () => {\n    setToasts([{ timestamp: Date.now(), content: <InfoToast /> }, ...toasts]);\n  };\n\n  const addErrorToast = () => {\n    setToasts([{ timestamp: Date.now(), content: <ErrorToast /> }, ...toasts]);\n  };\n  const addWarningToast = () => {\n    setToasts([\n      { timestamp: Date.now(), content: <WarningToast /> },\n      ...toasts,\n    ]);\n  };\n  const addSuccessToast = () => {\n    setToasts([\n      { timestamp: Date.now(), content: <SuccessToast /> },\n      ...toasts,\n    ]);\n  };\n\n  return (\n    <>\n      <StackLayout style={{ maxWidth: 250 }}>\n        <Button onClick={addInfoToast}>Add info toast</Button>\n        <Button onClick={addErrorToast}>Add error toast</Button>\n        <Button onClick={addWarningToast}>Add warning toast</Button>\n        <Button onClick={addSuccessToast}>Add success toast</Button>\n      </StackLayout>\n      <ToastGroup placement=\"top-right\" style={{ marginTop: 50 }}>\n        {toasts\n          ?.sort((a, b) => b.timestamp - a.timestamp)\n          .map(({ content, timestamp }) => (\n            <Fragment key={timestamp}>{content}</Fragment>\n          ))}\n      </ToastGroup>\n    </>\n  );\n};\n"
+      },
+      {
+        "name": "ToastsExamples",
+        "description": "",
+        "code": "import { Button, FlowLayout, Text, Toast, ToastContent } from \"@salt-ds/core\";\nimport { CloseIcon } from \"@salt-ds/icons\";\nimport { useState } from \"react\";\n\nexport const InfoToast = () => {\n  const [open, setOpen] = useState<boolean>(true);\n  const closeToast = () => {\n    setOpen(false);\n  };\n  return open ? (\n    <Toast status=\"info\">\n      <ToastContent>\n        <Text>\n          <strong>File update</strong>\n        </Text>\n        <div>A new version of this file is available with 37 updates.</div>\n      </ToastContent>\n      <Button\n        aria-label=\"Dismiss\"\n        appearance=\"transparent\"\n        onClick={closeToast}\n      >\n        <CloseIcon aria-hidden />\n      </Button>\n    </Toast>\n  ) : (\n    <></>\n  );\n};\n\nexport const ErrorToast = () => {\n  const [open, setOpen] = useState<boolean>(true);\n  const closeToast = () => {\n    setOpen(false);\n  };\n  return open ? (\n    <Toast status=\"error\">\n      <ToastContent>\n        <div>\n          <Text>\n            <strong>A system error occurred</strong>\n          </Text>\n          <div>The connection timed out and failed to retrieve data.</div>\n        </div>\n        <FlowLayout\n          gap={1}\n          justify=\"end\"\n          style={{ marginTop: \"var(--salt-spacing-100)\" }}\n        >\n          <Button onClick={closeToast}>Dismiss</Button>\n          <Button sentiment=\"accented\">Try again</Button>\n        </FlowLayout>\n      </ToastContent>\n    </Toast>\n  ) : (\n    <></>\n  );\n};\n\nexport const WarningToast = () => {\n  const [open, setOpen] = useState<boolean>(true);\n  const closeToast = () => {\n    setOpen(false);\n  };\n  return open ? (\n    <Toast status=\"warning\">\n      <ToastContent>\n        <div>\n          <Text>\n            <strong>File access</strong>\n          </Text>\n          <div>Viewers of this file can see comments and suggestions.</div>\n        </div>\n        <FlowLayout gap={1} style={{ marginTop: \"var(--salt-spacing-100)\" }}>\n          <Button sentiment=\"accented\" style={{ width: \"100%\" }}>\n            Edit permissions\n          </Button>\n          <Button onClick={closeToast} style={{ width: \"100%\" }}>\n            Dismiss\n          </Button>\n        </FlowLayout>\n      </ToastContent>\n    </Toast>\n  ) : (\n    <></>\n  );\n};\n\nexport const SuccessToast = () => {\n  const [open, setOpen] = useState<boolean>(true);\n  const closeToast = () => {\n    setOpen(false);\n  };\n  return open ? (\n    <Toast status=\"success\">\n      <ToastContent>\n        <Text>\n          <strong>File uploaded</strong>\n        </Text>\n        <div>\n          The project file has been successfully uploaded to the shared drive.\n        </div>\n      </ToastContent>\n      <Button\n        aria-label=\"Dismiss\"\n        appearance=\"transparent\"\n        onClick={closeToast}\n      >\n        <CloseIcon aria-hidden />\n      </Button>\n    </Toast>\n  ) : (\n    <></>\n  );\n};\n"
+      },
+      {
+        "name": "Warning",
+        "description": "",
+        "code": "import { Button, Text, Toast, ToastContent } from \"@salt-ds/core\";\nimport { CloseIcon } from \"@salt-ds/icons\";\nimport type { ReactElement } from \"react\";\n\nexport const Warning = (): ReactElement => (\n  <Toast status=\"warning\" style={{ width: 260 }}>\n    <ToastContent>\n      <Text>\n        <strong>File access</strong>\n      </Text>\n      <div>Viewers of this file can see comments and suggestions. </div>\n    </ToastContent>\n    <Button appearance=\"transparent\" aria-label=\"Dismiss\">\n      <CloseIcon aria-hidden />\n    </Button>\n  </Toast>\n);\n"
+      }
+    ],
+    "category": "@salt-ds/core",
+    "tags": [
+      "Alert",
+      "Notification",
+      "Pop-up",
+      "Snackbar"
+    ],
+    "when_to_use": [
+      "To notify users of an event that’s occurred in a peripheral application or workflow. The user should notice the toasts without disrupting their experience or requiring immediate action.",
+      "To communicate low-priority information caused by events. Toasts usually don’t require feedback from the user.",
+      "To communicate information from a workflow external to the user’s current task or view. Toasts are in an unintrusive location on an interface.",
+      "To show system-generated alerts, independent of the user’s actions. These toasts are persistent and must allow the user to either take action or dismiss them. Toasts can contain customizable content, such as actionable buttons."
+    ],
+    "when_not_to_use": [
+      "To show a notification that applies to the user’s current task. Instead, use [`Banner`](../banner). `Banner` sits either on the top of a page or component or inline and usually addresses issues inside the user’s current content area.",
+      "When the notification requires immediate action and relates to the user’s current task. Instead, use [`Dialog`](../dialog) to interrupt the user's workflow."
+    ],
+    "import_statement": "import { Toast, ToastContent } from \"@salt-ds/core\";",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/core/src/toast",
+    "related_components": [
+      {
+        "name": "Banner",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Content status",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Dialog",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Button",
+        "relationship": "contains"
+      },
+      {
+        "name": "Icon",
+        "relationship": "contains"
+      }
+    ]
+  }
+}

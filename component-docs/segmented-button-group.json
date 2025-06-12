@@ -1,0 +1,24 @@
+{
+  "component_name": "Segmented button group",
+  "metadata": {
+    "component_name": "Segmented button group",
+    "description": "`SegmentedButtonGroup` is a component that displays a list of actionable buttons, flush with separators.",
+    "props": {},
+    "examples": [],
+    "category": "@salt-ds/core",
+    "tags": [
+      "Split Button",
+      "Button Group"
+    ],
+    "when_to_use": [],
+    "when_not_to_use": [],
+    "import_statement": "",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/core/src/segmented-button-group",
+    "related_components": [
+      {
+        "name": "Button",
+        "relationship": "contains"
+      }
+    ]
+  }
+}

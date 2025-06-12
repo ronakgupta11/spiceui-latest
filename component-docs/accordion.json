@@ -1,0 +1,117 @@
+{
+  "component_name": "Accordion",
+  "metadata": {
+    "component_name": "Accordion",
+    "description": "`Accordion` displays a panel that the user can expand or collapse to show or hide content and control the complexity of a given view.",
+    "props": {
+      "value": {
+        "type": "string",
+        "required": true,
+        "description": "AccordionGroup value."
+      },
+      "expanded": {
+        "type": "boolean",
+        "required": false,
+        "description": "Whether the accordion is expanded."
+      },
+      "defaultExpanded": {
+        "type": "boolean",
+        "required": false,
+        "description": "Whether the accordion is expanded by default."
+      },
+      "indicatorSide": {
+        "type": "enum",
+        "required": false,
+        "description": "Side to align the Accordion's indicator. Defaults to `left`."
+      },
+      "onToggle": {
+        "type": "(event: SyntheticEvent<HTMLButtonElement, Event>) => void",
+        "required": false,
+        "description": "Callback fired when the accordion is toggled."
+      },
+      "disabled": {
+        "type": "boolean",
+        "required": false,
+        "description": "Whether the accordion is disabled."
+      },
+      "status": {
+        "type": "enum",
+        "required": false,
+        "description": "The status of the accordion."
+      }
+    },
+    "examples": [
+      {
+        "name": "AdditionalLabels",
+        "description": "",
+        "code": "import {\n  Accordion,\n  AccordionGroup,\n  AccordionHeader,\n  AccordionPanel,\n  Checkbox,\n  CheckboxGroup,\n  FormField,\n  FormFieldLabel,\n  SplitLayout,\n  StackLayout,\n  Text,\n} from \"@salt-ds/core\";\nimport { type ChangeEvent, type ReactElement, useState } from \"react\";\n\nconst accounts = [\n  { name: \"Account 1\", number: \"8736\" },\n  { name: \"Account 2\", number: \"2564\" },\n];\n\nconst features = [\n  {\n    name: \"Domestic wires\",\n    id: \"domestic_wires\",\n    description: \"Initiate wire transfers to another bank\",\n  },\n  {\n    name: \"Account transfers\",\n    id: \"account_transfers\",\n    description: \"Move money within your accounts\",\n  },\n];\n\nexport const AdditionalLabels = (): ReactElement => {\n  const [state, setState] = useState<Record<string, string[]>>({\n    domestic_wires: [],\n    account_transfers: [],\n  });\n\n  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {\n    const value = event.target.value;\n    const name = event.target.name;\n\n    setState((prev) => ({\n      ...prev,\n      [name]: prev[name].includes(value)\n        ? prev[name].filter((account) => account !== value)\n        : [...prev[name], value],\n    }));\n  };\n\n  return (\n    <div style={{ width: \"80%\", height: \"100%\" }}>\n      <AccordionGroup>\n        {Object.values(features).map(({ name, description, id }) => (\n          <Accordion value={id} key={id}>\n            <AccordionHeader>\n              <StackLayout gap={0.5}>\n                <SplitLayout\n                  align=\"baseline\"\n                  startItem={\n                    <Text>\n                      <strong>{name}</strong>\n                    </Text>\n                  }\n                  endItem={\n                    <Text styleAs=\"label\" color=\"secondary\">\n                      {state[id].length} of {accounts.length} accounts\n                    </Text>\n                  }\n                />\n                <Text styleAs=\"label\" color=\"secondary\">\n                  {description}\n                </Text>\n              </StackLayout>\n            </AccordionHeader>\n            <AccordionPanel>\n              <FormField>\n                <FormFieldLabel>Accounts for this service</FormFieldLabel>\n                <CheckboxGroup\n                  checkedValues={state[id]}\n                  onChange={handleChange}\n                  direction=\"horizontal\"\n                >\n                  {accounts.map(({ name, number }) => (\n                    <Checkbox\n                      label={`${name} (...${number})`}\n                      name={id}\n                      value={number}\n                      key={number}\n                    />\n                  ))}\n                </CheckboxGroup>\n              </FormField>\n            </AccordionPanel>\n          </Accordion>\n        ))}\n      </AccordionGroup>\n    </div>\n  );\n};\n"
+      },
+      {
+        "name": "Default",
+        "description": "By default, `Accordion` is a single element the user can expand or collapse to show or hide content within a panel.",
+        "code": "import {\n  Accordion,\n  AccordionHeader,\n  AccordionPanel,\n  FlowLayout,\n  FormField,\n  FormFieldLabel,\n  Input,\n} from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Default = (): ReactElement => (\n  <div style={{ width: \"80%\", height: \"100%\" }}>\n    <Accordion value=\"accordion-example\">\n      <AccordionHeader>Internal form</AccordionHeader>\n      <AccordionPanel>\n        <FlowLayout>\n          Please fill out the following details.\n          <FormField labelPlacement=\"left\">\n            <FormFieldLabel>Disclosure ID</FormFieldLabel>\n            <Input />\n          </FormField>\n          <FormField labelPlacement=\"left\">\n            <FormFieldLabel>Email</FormFieldLabel>\n            <Input />\n          </FormField>\n          <FormField labelPlacement=\"left\">\n            <FormFieldLabel>Justification</FormFieldLabel>\n            <Input />\n          </FormField>\n        </FlowLayout>\n      </AccordionPanel>\n    </Accordion>\n  </div>\n);\n"
+      },
+      {
+        "name": "Disabled",
+        "description": "Use the `disabled` prop to disable an accordion. The user can't expand, collapse or focus a disabled accordion.",
+        "code": "import {\n  Accordion,\n  AccordionGroup,\n  AccordionHeader,\n  AccordionPanel,\n  FlowLayout,\n  FormField,\n  FormFieldLabel,\n  Input,\n} from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Disabled = (): ReactElement => (\n  <div style={{ width: \"80%\", height: \"100%\" }}>\n    <AccordionGroup>\n      {Array.from({ length: 3 }, (_, i) => i + 1).map((i) => (\n        <Accordion\n          value={`accordion-${i}`}\n          key={`accordion-${i}`}\n          disabled={i === 2}\n        >\n          <AccordionHeader>Internal form</AccordionHeader>\n          <AccordionPanel>\n            <FlowLayout>\n              Please fill out the following details.\n              <FormField labelPlacement=\"left\">\n                <FormFieldLabel>Disclosure ID</FormFieldLabel>\n                <Input />\n              </FormField>\n              <FormField labelPlacement=\"left\">\n                <FormFieldLabel>Email</FormFieldLabel>\n                <Input />\n              </FormField>\n              <FormField labelPlacement=\"left\">\n                <FormFieldLabel>Justification</FormFieldLabel>\n                <Input />\n              </FormField>\n            </FlowLayout>\n          </AccordionPanel>\n        </Accordion>\n      ))}\n    </AccordionGroup>\n  </div>\n);\n"
+      },
+      {
+        "name": "ExclusiveGroup",
+        "description": "",
+        "code": "import {\n  Accordion,\n  AccordionGroup,\n  AccordionHeader,\n  AccordionPanel,\n  FlowLayout,\n  FormField,\n  FormFieldLabel,\n  Input,\n} from \"@salt-ds/core\";\nimport { type ReactElement, type SyntheticEvent, useState } from \"react\";\n\nexport const ExclusiveGroup = (): ReactElement => {\n  const [expanded, setExpanded] = useState<string>(\"\");\n\n  const onChange = (event: SyntheticEvent<HTMLButtonElement>) => {\n    const value = event.currentTarget.value;\n    setExpanded((old) => (old === value ? \"\" : value));\n  };\n\n  return (\n    <div style={{ width: \"80%\", height: \"100%\" }}>\n      <AccordionGroup>\n        {Array.from({ length: 3 }, (_, i) => i + 1).map((i) => (\n          <Accordion\n            value={`accordion-${i}`}\n            expanded={expanded === `accordion-${i}`}\n            onToggle={onChange}\n            key={`accordion-${i}`}\n          >\n            <AccordionHeader>Internal form</AccordionHeader>\n            <AccordionPanel>\n              <FlowLayout>\n                Please fill out the following details.\n                <FormField labelPlacement=\"left\">\n                  <FormFieldLabel>Disclosure ID</FormFieldLabel>\n                  <Input />\n                </FormField>\n                <FormField labelPlacement=\"left\">\n                  <FormFieldLabel>Email</FormFieldLabel>\n                  <Input />\n                </FormField>\n                <FormField labelPlacement=\"left\">\n                  <FormFieldLabel>Justification</FormFieldLabel>\n                  <Input />\n                </FormField>\n              </FlowLayout>\n            </AccordionPanel>\n          </Accordion>\n        ))}\n      </AccordionGroup>\n    </div>\n  );\n};\n"
+      },
+      {
+        "name": "ExpandAll",
+        "description": "",
+        "code": "import {\n  Accordion,\n  AccordionGroup,\n  AccordionHeader,\n  AccordionPanel,\n  Button,\n  FlowLayout,\n  FormField,\n  FormFieldLabel,\n  Input,\n  StackLayout,\n} from \"@salt-ds/core\";\nimport { CollapseAllIcon, ExpandAllIcon } from \"@salt-ds/icons\";\nimport { type ReactElement, useState } from \"react\";\n\nconst accordions = Array.from({ length: 3 }, (_, i) => i + 1);\n\nexport const ExpandAll = (): ReactElement => {\n  const [expanded, setExpanded] = useState<number[]>([]);\n\n  const handleAccordionToggle = (value: number) => {\n    setExpanded((prev) =>\n      prev.includes(value)\n        ? prev.filter((v) => v !== value)\n        : prev.concat(value),\n    );\n  };\n\n  const handleExpandAll = () => {\n    setExpanded(accordions);\n  };\n\n  const handleCollapseAll = () => {\n    setExpanded([]);\n  };\n\n  return (\n    <StackLayout\n      gap={3}\n      style={{ height: \"100%\", paddingInline: \"var(--salt-spacing-300)\" }}\n    >\n      <FlowLayout gap={1}>\n        <Button onClick={handleExpandAll}>\n          <ExpandAllIcon aria-hidden /> Expand All\n        </Button>\n        <Button onClick={handleCollapseAll}>\n          <CollapseAllIcon aria-hidden /> Collapse All\n        </Button>\n      </FlowLayout>\n\n      <AccordionGroup>\n        {accordions.map((i) => (\n          <Accordion\n            key={`accordion-${i}`}\n            value={`accordion-${i}`}\n            expanded={expanded.includes(i)}\n            onToggle={() => handleAccordionToggle(i)}\n            indicatorSide=\"right\"\n          >\n            <AccordionHeader>Internal form</AccordionHeader>\n            <AccordionPanel>\n              <FlowLayout>\n                Please fill out the following details.\n                <FormField labelPlacement=\"left\">\n                  <FormFieldLabel>Disclosure ID</FormFieldLabel>\n                  <Input />\n                </FormField>\n                <FormField labelPlacement=\"left\">\n                  <FormFieldLabel>Email</FormFieldLabel>\n                  <Input />\n                </FormField>\n                <FormField labelPlacement=\"left\">\n                  <FormFieldLabel>Justification</FormFieldLabel>\n                  <Input />\n                </FormField>\n              </FlowLayout>\n            </AccordionPanel>\n          </Accordion>\n        ))}\n      </AccordionGroup>\n    </StackLayout>\n  );\n};\n"
+      },
+      {
+        "name": "Group",
+        "description": "",
+        "code": "import {\n  Accordion,\n  AccordionGroup,\n  AccordionHeader,\n  AccordionPanel,\n  FlowLayout,\n  FormField,\n  FormFieldLabel,\n  Input,\n} from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Group = (): ReactElement => (\n  <div style={{ width: \"80%\", height: \"100%\" }}>\n    <AccordionGroup>\n      {Array.from({ length: 3 }, (_, i) => i + 1).map((i) => (\n        <Accordion value={`accordion-${i}`} key={`accordion-${i}`}>\n          <AccordionHeader>Internal form</AccordionHeader>\n          <AccordionPanel>\n            <FlowLayout>\n              Please fill out the following details.\n              <FormField labelPlacement=\"left\">\n                <FormFieldLabel>Disclosure ID</FormFieldLabel>\n                <Input />\n              </FormField>\n              <FormField labelPlacement=\"left\">\n                <FormFieldLabel>Email</FormFieldLabel>\n                <Input />\n              </FormField>\n              <FormField labelPlacement=\"left\">\n                <FormFieldLabel>Justification</FormFieldLabel>\n                <Input />\n              </FormField>\n            </FlowLayout>\n          </AccordionPanel>\n        </Accordion>\n      ))}\n    </AccordionGroup>\n  </div>\n);\n"
+      },
+      {
+        "name": "IndicatorSide",
+        "description": "",
+        "code": "import {\n  Accordion,\n  AccordionGroup,\n  AccordionHeader,\n  AccordionPanel,\n  FlowLayout,\n  FormField,\n  FormFieldLabel,\n  Input,\n} from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const IndicatorSide = (): ReactElement => {\n  return (\n    <div style={{ width: \"80%\", height: \"100%\" }}>\n      <AccordionGroup>\n        <Accordion value=\"accordion-example\" indicatorSide=\"right\">\n          <AccordionHeader>Internal form</AccordionHeader>\n          <AccordionPanel>\n            <FlowLayout>\n              Please fill out the following details.\n              <FormField labelPlacement=\"left\">\n                <FormFieldLabel>Disclosure ID</FormFieldLabel>\n                <Input />\n              </FormField>\n              <FormField labelPlacement=\"left\">\n                <FormFieldLabel>Email</FormFieldLabel>\n                <Input />\n              </FormField>\n              <FormField labelPlacement=\"left\">\n                <FormFieldLabel>Justification</FormFieldLabel>\n                <Input />\n              </FormField>\n            </FlowLayout>\n          </AccordionPanel>\n        </Accordion>\n        <Accordion\n          value=\"accordion-example\"\n          status=\"warning\"\n          indicatorSide=\"right\"\n        >\n          <AccordionHeader>Internal form</AccordionHeader>\n          <AccordionPanel>\n            <FlowLayout>\n              Please fill out the following details.\n              <FormField labelPlacement=\"left\">\n                <FormFieldLabel>Disclosure ID</FormFieldLabel>\n                <Input />\n              </FormField>\n              <FormField labelPlacement=\"left\">\n                <FormFieldLabel>Email</FormFieldLabel>\n                <Input />\n              </FormField>\n              <FormField labelPlacement=\"left\">\n                <FormFieldLabel>Justification</FormFieldLabel>\n                <Input />\n              </FormField>\n            </FlowLayout>\n          </AccordionPanel>\n        </Accordion>\n      </AccordionGroup>\n    </div>\n  );\n};\n"
+      },
+      {
+        "name": "InlineBadge",
+        "description": "",
+        "code": "import {\n  Accordion,\n  AccordionHeader,\n  AccordionPanel,\n  Badge,\n  FlexLayout,\n  FlowLayout,\n  FormField,\n  FormFieldLabel as FormLabel,\n  Input,\n  SplitLayout,\n} from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const InlineBadge = (): ReactElement => (\n  <FlexLayout style={{ width: \"80%\", height: \"100%\" }}>\n    <Accordion value=\"accordion-example\">\n      <AccordionHeader>\n        <SplitLayout\n          align=\"baseline\"\n          startItem=\"Internal form\"\n          endItem={<Badge value={\"NEW\"} />}\n        />\n      </AccordionHeader>\n      <AccordionPanel>\n        <FlowLayout>\n          Please fill out the following details.\n          <FormField labelPlacement=\"left\">\n            <FormLabel>Disclosure ID</FormLabel>\n            <Input />\n          </FormField>\n          <FormField labelPlacement=\"left\">\n            <FormLabel>Email</FormLabel>\n            <Input />\n          </FormField>\n          <FormField labelPlacement=\"left\">\n            <FormLabel>Justification</FormLabel>\n            <Input />\n          </FormField>\n        </FlowLayout>\n      </AccordionPanel>\n    </Accordion>\n  </FlexLayout>\n);\n"
+      },
+      {
+        "name": "Status",
+        "description": "You can set a status of \"error\", \"warning\" or \"success\" for an accordion to indicate the type of content it contains.",
+        "code": "import {\n  Accordion,\n  AccordionGroup,\n  AccordionHeader,\n  AccordionPanel,\n  type AccordionProps,\n  FlowLayout,\n  FormField,\n  FormFieldLabel as FormLabel,\n  Input,\n} from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nconst statuses: AccordionProps[\"status\"][] = [\n  undefined,\n  \"error\",\n  \"warning\",\n  \"success\",\n];\n\nexport const Status = (): ReactElement => (\n  <div style={{ width: \"80%\", height: \"100%\" }}>\n    <AccordionGroup>\n      {Array.from({ length: 3 }, (_, i) => i + 1).map((i) => (\n        <Accordion\n          value={`accordion-${i}`}\n          key={`accordion-${i}`}\n          status={statuses[i]}\n        >\n          <AccordionHeader>Internal form</AccordionHeader>\n          <AccordionPanel>\n            <FlowLayout>\n              Please fill out the following details.\n              <FormField labelPlacement=\"left\">\n                <FormLabel>Disclosure ID</FormLabel>\n                <Input />\n              </FormField>\n              <FormField labelPlacement=\"left\">\n                <FormLabel>Email</FormLabel>\n                <Input />\n              </FormField>\n              <FormField labelPlacement=\"left\">\n                <FormLabel>Justification</FormLabel>\n                <Input />\n              </FormField>\n            </FlowLayout>\n          </AccordionPanel>\n        </Accordion>\n      ))}\n    </AccordionGroup>\n  </div>\n);\n"
+      }
+    ],
+    "category": "@salt-ds/core",
+    "tags": [
+      "Collapsible panel",
+      "Concertina",
+      "Expansion panel"
+    ],
+    "when_to_use": [
+      "To organize related content within expandable groups/categories/sections.",
+      "To reduce scrolling or overall page length when displaying content in full isn't critical.",
+      "When you can't display all the content at once due to restricted screen space."
+    ],
+    "when_not_to_use": [
+      "To replace grouped rows with grids."
+    ],
+    "import_statement": "import {\n  Accordion,\n  AccordionGroup,\n  AccordionHeader,\n  AccordionPanel,\n} from \"@salt-ds/core\";",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/core/src/accordion",
+    "related_components": [
+      {
+        "name": "Icon",
+        "relationship": "contains"
+      },
+      {
+        "name": "Status indicator",
+        "relationship": "contains"
+      }
+    ]
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "component_name": "Button",
+  "metadata": {
+    "component_name": "Button",
+    "description": "`Button` is an interactive component that allows the user to execute an action. Button comes in three distinct appearances: solid, bordered, and transparent. These styles provide greater choice and flexibility for establishing hierarchy and affordance within a UI. You can display a button with or without a text description or icon.",
+    "props": {
+      "disabled": {
+        "type": "boolean",
+        "required": false,
+        "description": "If `true`, the button will be disabled."
+      },
+      "focusableWhenDisabled": {
+        "type": "boolean",
+        "required": false,
+        "description": "If `true`, the button will be focusable when disabled."
+      },
+      "variant": {
+        "type": "enum",
+        "required": false,
+        "description": "The variant to use. Options are 'primary', 'secondary' and 'cta'.\n'primary' is the default value.\n@deprecated Use `appearance` and `sentiment` instead.\n\n| variant     | appearance    | sentiment   |\n| ----------- | ------------- | ----------- |\n| `cta`       | `solid`       | `accented`  |\n| `primary`   | `solid`       | `neutral`   |\n| `secondary` | `transparent` | `neutral`   |",
+        "defaultValue": "primary"
+      },
+      "appearance": {
+        "type": "enum",
+        "required": false,
+        "description": "The appearance of the button. Options are 'solid', 'bordered', and 'transparent'.\n'solid' is the default value.\n@since 1.36.0."
+      },
+      "sentiment": {
+        "type": "enum",
+        "required": false,
+        "description": "The sentiment of the button. Options are 'accented', 'neutral', 'positive', 'negative' and 'caution'.\n'neutral' is the default value.\n@since 1.36.0."
+      },
+      "loading": {
+        "type": "boolean",
+        "required": false,
+        "description": "If `true`, the button will be in a loading state. This allows a spinner to be nested inside the button.\n@since 1.38.0."
+      },
+      "loadingAnnouncement": {
+        "type": "string",
+        "required": false,
+        "description": "Text to be announced by screen readers, intended to be used in conjunction with the `loading` prop.\n@since 1.38.0."
+      }
+    },
+    "examples": [
+      {
+        "name": "Accented",
+        "description": "The accented button is the main button set for your UI. It is typically used for the core actions in your workflow. Three different appearances are available based on the prominence required for the actions.",
+        "code": "import { Button } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Accented = (): ReactElement => (\n  <>\n    <Button sentiment=\"accented\" appearance=\"solid\">\n      Solid\n    </Button>\n    <Button sentiment=\"accented\" appearance=\"bordered\">\n      Bordered\n    </Button>\n    <Button sentiment=\"accented\" appearance=\"transparent\">\n      Transparent\n    </Button>\n  </>\n);\n"
+      },
+      {
+        "name": "Deprecated",
+        "description": "",
+        "code": "import { Button, Code, GridItem, GridLayout } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Deprecated = (): ReactElement => (\n  <GridLayout columns={2}>\n    <GridItem verticalAlignment=\"center\">\n      <Code>variant=\"cta\"</Code>\n    </GridItem>\n    <GridItem>\n      <Button sentiment=\"accented\">Solid Accented</Button>\n    </GridItem>\n    <GridItem verticalAlignment=\"center\">\n      <Code>variant=\"primary\"</Code>\n    </GridItem>\n    <GridItem>\n      <Button sentiment=\"neutral\">Solid Neutral</Button>\n    </GridItem>\n    <GridItem verticalAlignment=\"center\">\n      <Code>variant=\"secondary\"</Code>\n    </GridItem>\n    <GridItem>\n      <Button appearance=\"transparent\">Transparent Neutral</Button>\n    </GridItem>\n  </GridLayout>\n);\n"
+      },
+      {
+        "name": "Disabled",
+        "description": "Use the disabled state for a button that the user can’t press.\n\nA button with the prop `disabled={true}` will suppress all functionality.",
+        "code": "import { Button, FlowLayout, StackLayout } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Disabled = (): ReactElement => (\n  <StackLayout gap={3}>\n    <FlowLayout>\n      <Button appearance=\"solid\" sentiment=\"positive\" disabled>\n        Solid\n      </Button>\n      <Button appearance=\"bordered\" sentiment=\"positive\" disabled>\n        Bordered\n      </Button>\n      <Button appearance=\"transparent\" sentiment=\"positive\" disabled>\n        Transparent\n      </Button>\n    </FlowLayout>\n    <FlowLayout>\n      <Button appearance=\"solid\" sentiment=\"accented\" disabled>\n        Solid\n      </Button>\n      <Button appearance=\"bordered\" sentiment=\"accented\" disabled>\n        Bordered\n      </Button>\n      <Button appearance=\"transparent\" sentiment=\"accented\" disabled>\n        Transparent\n      </Button>\n    </FlowLayout>\n    <FlowLayout>\n      <Button appearance=\"solid\" sentiment=\"neutral\" disabled>\n        Solid\n      </Button>\n      <Button appearance=\"bordered\" sentiment=\"neutral\" disabled>\n        Bordered\n      </Button>\n      <Button appearance=\"transparent\" sentiment=\"neutral\" disabled>\n        Transparent\n      </Button>\n    </FlowLayout>\n    <FlowLayout>\n      <Button appearance=\"solid\" sentiment=\"caution\" disabled>\n        Solid\n      </Button>\n      <Button appearance=\"bordered\" sentiment=\"caution\" disabled>\n        Bordered\n      </Button>\n      <Button appearance=\"transparent\" sentiment=\"caution\" disabled>\n        Transparent\n      </Button>\n    </FlowLayout>\n    <FlowLayout>\n      <Button appearance=\"solid\" sentiment=\"negative\" disabled>\n        Solid\n      </Button>\n      <Button appearance=\"bordered\" sentiment=\"negative\" disabled>\n        Bordered\n      </Button>\n      <Button appearance=\"transparent\" sentiment=\"negative\" disabled>\n        Transparent\n      </Button>\n    </FlowLayout>\n  </StackLayout>\n);\n"
+      },
+      {
+        "name": "FocusableWhenDisabled",
+        "description": "",
+        "code": "import { Button } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const FocusableWhenDisabled = (): ReactElement => (\n  <Button appearance=\"solid\" disabled focusableWhenDisabled>\n    Focusable when disabled\n  </Button>\n);\n"
+      },
+      {
+        "name": "FullWidth",
+        "description": "",
+        "code": "import { Button, StackLayout } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const FullWidth = (): ReactElement => (\n  <StackLayout style={{ width: \"400px\" }}>\n    <Button sentiment=\"accented\" appearance=\"solid\">\n      Solid\n    </Button>\n    <Button sentiment=\"accented\" appearance=\"bordered\">\n      Bordered\n    </Button>\n    <Button sentiment=\"accented\" appearance=\"transparent\">\n      Transparent\n    </Button>\n  </StackLayout>\n);\n"
+      },
+      {
+        "name": "IconAndText",
+        "description": "",
+        "code": "import { Button, FlowLayout, StackLayout } from \"@salt-ds/core\";\nimport {\n  ChevronRightIcon,\n  ExpandAllIcon,\n  PrintIcon,\n  SendIcon,\n  ShareIcon,\n  UploadIcon,\n} from \"@salt-ds/icons\";\nimport type { ReactElement } from \"react\";\n\nexport const IconAndText = (): ReactElement => (\n  <StackLayout gap={3}>\n    <FlowLayout>\n      <Button appearance=\"solid\" sentiment=\"accented\">\n        <UploadIcon aria-hidden /> Upload\n      </Button>\n      <Button appearance=\"bordered\" sentiment=\"accented\">\n        <PrintIcon aria-hidden /> Print\n      </Button>\n      <Button appearance=\"transparent\" sentiment=\"accented\">\n        <ShareIcon aria-hidden /> Share\n      </Button>\n    </FlowLayout>\n    <FlowLayout>\n      <Button appearance=\"solid\" sentiment=\"accented\">\n        Open <ChevronRightIcon aria-hidden />\n      </Button>\n      <Button appearance=\"bordered\" sentiment=\"accented\">\n        Expand All <ExpandAllIcon aria-hidden />\n      </Button>\n      <Button appearance=\"transparent\" sentiment=\"accented\">\n        Send <SendIcon aria-hidden />\n      </Button>\n    </FlowLayout>\n  </StackLayout>\n);\n"
+      },
+      {
+        "name": "IconOnly",
+        "description": "",
+        "code": "import { Button, FlowLayout, Tooltip } from \"@salt-ds/core\";\nimport { PrintIcon, SearchIcon, ShareIcon } from \"@salt-ds/icons\";\nimport type { ReactElement } from \"react\";\n\nexport const IconOnly = (): ReactElement => (\n  <FlowLayout>\n    <Tooltip placement=\"top\" content=\"Search document\">\n      <Button\n        appearance=\"solid\"\n        sentiment=\"accented\"\n        aria-label=\"Search document\"\n      >\n        <SearchIcon />\n      </Button>\n    </Tooltip>\n    <Tooltip placement=\"top\" content=\"Print document\">\n      <Button\n        appearance=\"bordered\"\n        sentiment=\"accented\"\n        aria-label=\"Print document\"\n      >\n        <PrintIcon />\n      </Button>\n    </Tooltip>\n    <Tooltip placement=\"top\" content=\"Share document\">\n      <Button\n        appearance=\"transparent\"\n        sentiment=\"accented\"\n        aria-label=\"Share document\"\n      >\n        <ShareIcon />\n      </Button>\n    </Tooltip>\n  </FlowLayout>\n);\n"
+      },
+      {
+        "name": "Loading",
+        "description": "Use the loading state for a button that indicates that an action is happening, but the user must wait for it to complete. This is useful for actions that take some time to process, such as submitting a form or loading data.\n\nA button with the prop `loading={true}` will display a spinner to indicate that the action is in progress.\n\n#",
+        "code": "import { Button } from \"@salt-ds/core\";\nimport { useState } from \"react\";\n\nfunction fetchPDFDocument() {\n  return new Promise((resolve) => {\n    setTimeout(() => {\n      return resolve({});\n    }, 2000);\n  });\n}\n\nexport function Loading() {\n  const [loading, setLoading] = useState(false);\n  const [loadingAnnouncement, setLoadingAnnouncement] = useState(\"\");\n\n  async function handleClick() {\n    setLoading(true);\n    setLoadingAnnouncement(\"Downloading\");\n\n    await fetchPDFDocument().then(() => {\n      setLoading(false);\n      setLoadingAnnouncement(\"\");\n    });\n  }\n\n  return (\n    <Button\n      loading={loading}\n      loadingAnnouncement={loadingAnnouncement}\n      onClick={handleClick}\n    >\n      Download PDF\n    </Button>\n  );\n}\n"
+      },
+      {
+        "name": "Neutral",
+        "description": "The neutral button is ideal for routine, non-urgent actions or tasks that require less visual prominence on the page. The neutral solid button can also be used as an alternative to the accented bordered button for secondary actions that need to stand out more.",
+        "code": "import { Button } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Neutral = (): ReactElement => (\n  <>\n    <Button sentiment=\"neutral\" appearance=\"solid\">\n      Solid\n    </Button>\n    <Button sentiment=\"neutral\" appearance=\"bordered\">\n      Bordered\n    </Button>\n    <Button sentiment=\"neutral\" appearance=\"transparent\">\n      Transparent\n    </Button>\n  </>\n);\n"
+      },
+      {
+        "name": "Sentiment",
+        "description": "",
+        "code": "import { Button, GridItem, GridLayout, Label } from \"@salt-ds/core\";\nimport type { ReactElement } from \"react\";\n\nexport const Sentiment = (): ReactElement => (\n  <GridLayout\n    columns=\"min-content auto auto auto\"\n    gap={3}\n    style={{ alignItems: \"center\" }}\n  >\n    <GridItem />\n\n    <GridItem horizontalAlignment=\"center\">\n      <Label>Solid</Label>\n    </GridItem>\n    <GridItem horizontalAlignment=\"center\">\n      <Label>Bordered</Label>\n    </GridItem>\n    <GridItem horizontalAlignment=\"center\">\n      <Label>Transparent</Label>\n    </GridItem>\n\n    <Label>Positive</Label>\n\n    <Button appearance=\"solid\" sentiment=\"positive\">\n      Button\n    </Button>\n    <Button appearance=\"bordered\" sentiment=\"positive\">\n      Button\n    </Button>\n    <Button appearance=\"transparent\" sentiment=\"positive\">\n      Button\n    </Button>\n\n    <Label>Caution</Label>\n\n    <Button appearance=\"solid\" sentiment=\"caution\">\n      Button\n    </Button>\n    <Button appearance=\"bordered\" sentiment=\"caution\">\n      Button\n    </Button>\n    <Button appearance=\"transparent\" sentiment=\"caution\">\n      Button\n    </Button>\n\n    <Label>Negative</Label>\n\n    <Button appearance=\"solid\" sentiment=\"negative\">\n      Button\n    </Button>\n    <Button appearance=\"bordered\" sentiment=\"negative\">\n      Button\n    </Button>\n    <Button appearance=\"transparent\" sentiment=\"negative\">\n      Button\n    </Button>\n  </GridLayout>\n);\n"
+      }
+    ],
+    "category": "@salt-ds/core",
+    "tags": [
+      "Action",
+      "UI action"
+    ],
+    "when_to_use": [],
+    "when_not_to_use": [
+      "Always style button text in all caps for prominence. This avoids confusion with body text or general writing.",
+      "Never use ampersand (&) in button text to save space.",
+      "Always use verbs that emphasize the action the button carries out. For example, use **Create** instead of **Ok** to create a profile, or **Save**/**Discard** instead of **Yes**/**No** to save changes.",
+      "Be succinct. Avoid having more than two or three words in a button label.",
+      "Button Pattern (https://www.w3.org/WAI/ARIA/apg/patterns/button/) W3C"
+    ],
+    "import_statement": "import { Button } from \"@salt-ds/core\";",
+    "source_code_url": "https://github.com/jpmorganchase/salt-ds/blob/main/packages/core/src/button",
+    "related_components": [
+      {
+        "name": "Link",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Pill",
+        "relationship": "similarTo"
+      },
+      {
+        "name": "Icon",
+        "relationship": "contains"
+      },
+      {
+        "name": "Status indicator",
+        "relationship": "contains"
+      }
+    ]
+  }
+}
