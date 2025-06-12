@@ -19,6 +19,7 @@ import LoadingSteps from './components/LoadingSteps';
 import { Message, SessionState } from './types';
 import { generateCode, modifyCode } from './utils/api';
 import SimpleCodePreview from './components/SimpleCodePreviewer';
+import CloseIcon from '@mui/icons-material/Close';
 
 export type AppProps = {};
 
@@ -42,65 +43,77 @@ const App: React.FC<AppProps> = () => {
     available_components: []
   });
   const [loadingStep, setLoadingStep] = useState(0);
+  const [uploadedImage, setUploadedImage] = useState<string | null>(null);
+  const [view, setView] = useState<'upload' | 'loading' | 'chat'>('upload');
 
   const handleImageUpload = useCallback(async (file: File) => {
     const reader = new FileReader();
-    reader.onload = async (e) => {
+    reader.onload = (e) => {
       const base64Image = e.target?.result as string;
+      setUploadedImage(base64Image);
       setSessionState(prev => ({
         ...prev,
         image: base64Image,
-        isLoading: true,
         error: null
       }));
-      setLoadingStep(0);
-
-      try {
-        // Start code generation in parallel
-        const codeGenerationPromise = generateCode(base64Image);
-        
-        // Handle the first three steps with 10-second intervals
-        for (let step = 0; step < 3; step++) {
-          await new Promise(resolve => 
-            setTimeout(() => {
-              setLoadingStep(step);
-              resolve(true);
-            }, 10000)
-          );
-        }
-        
-        // Move to the final step
-        setLoadingStep(3);
-        
-        // Wait for code generation to complete
-        const response = await codeGenerationPromise;
-        
-        setSessionState(prev => ({
-          ...prev,
-          isLoading: false,
-          generatedCode: response.output_data.generated_files["src/App.tsx"] || "",
-          componentTree: response.componentTree,
-          available_components: response.output_data.detailed_components || [],
-          messages: [
-            ...prev.messages,
-            {
-              id: Date.now().toString(),
-              content: 'I\'ve analyzed your UI image and generated the React code.',
-              role: 'assistant',
-              timestamp: new Date()
-            }
-          ]
-        }));
-      } catch (error) {
-        setSessionState(prev => ({
-          ...prev,
-          isLoading: false,
-          error: 'Failed to generate code. Please try again.'
-        }));
-      }
+      setView('upload');
     };
     reader.readAsDataURL(file);
   }, []);
+
+  const handleGenerateCode = useCallback(async () => {
+    if (!sessionState.image) return;
+    setSessionState(prev => ({
+      ...prev,
+      isLoading: true,
+      error: null
+    }));
+    setLoadingStep(0);
+    setView('loading');
+
+    try {
+      const codeGenerationPromise = generateCode(sessionState.image);
+
+      const loadingDurations = [3000, 5000, 8000]; // 3s, 5s, 8s
+      for (let step = 0; step < 3; step++) {
+        await new Promise(resolve =>
+          setTimeout(() => {
+            setLoadingStep(step);
+            resolve(true);
+          }, loadingDurations[step])
+        );
+      }
+
+      setLoadingStep(3);
+
+      const response = await codeGenerationPromise;
+
+      setSessionState(prev => ({
+        ...prev,
+        isLoading: false,
+        generatedCode: response.output_data.generated_files["src/App.tsx"] || "",
+        componentTree: response.componentTree,
+        available_components: response.output_data.detailed_components || [],
+        messages: [
+          ...prev.messages,
+          {
+            id: Date.now().toString(),
+            content: 'I\'ve analyzed your UI image and generated the React code.',
+            role: 'assistant',
+            timestamp: new Date()
+          }
+        ]
+      }));
+      setView('chat');
+    } catch (error) {
+      setSessionState(prev => ({
+        ...prev,
+        isLoading: false,
+        error: 'Failed to generate code. Please try again.'
+      }));
+      setView('upload');
+    }
+  }, [sessionState.image]);
 
   const handleSendMessage = useCallback(async (message: string) => {
     if (!sessionState.image) return;
@@ -182,6 +195,8 @@ const App: React.FC<AppProps> = () => {
       error: null,
       available_components: []
     });
+    setUploadedImage(null);
+    setView('upload');
   }, []);
 
   return (
@@ -280,14 +295,64 @@ const App: React.FC<AppProps> = () => {
           )}
         </Box>
 
-        {!sessionState.image ? (
+        {view === 'upload' ? (
           <Box sx={{ maxWidth: 600, mx: 'auto' }}>
-            <ImageUploader
-              onImageUpload={handleImageUpload}
-              isLoading={sessionState.isLoading}
-            />
+            {!uploadedImage ? (
+              <ImageUploader
+                onImageUpload={handleImageUpload}
+                isLoading={sessionState.isLoading}
+              />
+            ) : (
+              <Box sx={{ mt: 2, textAlign: 'center', position: 'relative', display: 'inline-block' }}>
+                <img
+                  src={uploadedImage}
+                  alt="Uploaded preview"
+                  style={{
+                    maxWidth: '100%',
+                    maxHeight: 300,
+                    borderRadius: 8,
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+                  }}
+                />
+                <IconButton
+                  size="small"
+                  onClick={() => {
+                    setUploadedImage(null);
+                    setSessionState(prev => ({
+                      ...prev,
+                      image: null
+                    }));
+                  }}
+                  sx={{
+                    position: 'absolute',
+                    top: 8,
+                    right: 8,
+                    background: 'rgba(255,255,255,0.8)',
+                    '&:hover': { background: 'rgba(255,255,255,1)' }
+                  }}
+                >
+                  <CloseIcon />
+                </IconButton>
+                <Box sx={{ mt: 2 }}>
+                  <button
+                    onClick={handleGenerateCode}
+                    style={{
+                      padding: '10px 24px',
+                      fontSize: '1rem',
+                      background: '#2196f3',
+                      color: '#fff',
+                      border: 'none',
+                      borderRadius: 4,
+                      cursor: 'pointer'
+                    }}
+                  >
+                    Generate Code
+                  </button>
+                </Box>
+              </Box>
+            )}
           </Box>
-        ) : sessionState.isLoading ? (
+        ) : view === 'loading' ? (
           <LoadingSteps currentStep={loadingStep} />
         ) : (
           <Box sx={{ display: 'flex', gap: 2, height: 'calc(100vh - 103px)' }}>
