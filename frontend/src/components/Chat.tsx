@@ -107,47 +107,67 @@ const Chat: React.FC<ChatProps> = ({ messages, onSendMessage, isLoading, uploade
                   maxWidth: 'calc(100% - 40px)'
                 }}
               >
-                {message.role === 'assistant' && uploadedImage && message.content.includes('analyzed your UI image') && (
-                  <Box
-                    sx={{
-                      mb: 1.5,
-                      width: '100%',
-                      height: 125,
-                      borderRadius: 1,
-                      overflow: 'hidden',
-                      border: '1px solid',
-                      borderColor: 'divider',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      bgcolor: 'grey.50'
-                    }}
-                  >
-                    <img
-                      src={uploadedImage}
-                      alt="Uploaded UI"
-                      style={{
-                        width: '100%',
-                        height: '100%',
-                        objectFit: 'contain'
-                      }}
-                    />
-                  </Box>
-                )}
-                <Typography variant="body1" sx={{ whiteSpace: 'pre-wrap' }}>
-                  {message.content}
-                </Typography>
-                <Typography 
-                  variant="caption" 
-                  color="textSecondary"
-                  sx={{ 
-                    display: 'block',
-                    mt: 0.5,
-                    textAlign: message.role === 'user' ? 'right' : 'left'
-                  }}
-                >
-                  {new Date(message.timestamp).toLocaleTimeString()}
-                </Typography>
+{message.content === '...' ? (
+  <Box
+    sx={{
+      p: 1.5,
+      borderRadius: 2,
+      bgcolor: 'grey.50',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: 60,
+      height: 40
+    }}
+  >
+    <CircularProgress size={16} thickness={5} />
+  </Box>
+) : (
+  <>
+    {message.role === 'assistant' && uploadedImage && message.content.includes('analyzed your UI image') && (
+      <Box
+        sx={{
+          mb: 1.5,
+          width: '100%',
+          height: 125,
+          borderRadius: 1,
+          overflow: 'hidden',
+          border: '1px solid',
+          borderColor: 'divider',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          bgcolor: 'grey.50'
+        }}
+      >
+        <img
+          src={uploadedImage}
+          alt="Uploaded UI"
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'contain'
+          }}
+        />
+      </Box>
+    )}
+    <Typography variant="body1" sx={{ whiteSpace: 'pre-wrap' }}>
+      {message.content}
+    </Typography>
+    <Typography
+      variant="caption"
+      color="textSecondary"
+      sx={{
+        display: 'block',
+        mt: 0.5,
+        textAlign: message.role === 'user' ? 'right' : 'left'
+      }}
+    >
+      {new Date(message.timestamp).toLocaleTimeString()}
+    </Typography>
+  </>
+)}
+
               </Paper>
             </Box>
           </ListItem>

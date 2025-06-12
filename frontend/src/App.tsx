@@ -111,17 +111,23 @@ const App: React.FC<AppProps> = () => {
       role: 'user',
       timestamp: new Date()
     };
-
+    const loadingMessage: Message = {
+      id: (Date.now() + 1).toString(),
+      content: '...',
+      role: 'assistant',
+      timestamp: new Date()
+    };
+    const updatedMessages = [...sessionState.messages, newMessage, loadingMessage];
     const newMessages = [...sessionState.messages, newMessage];
     setSessionState(prev => ({
       ...prev,
-      messages: newMessages
+      messages: updatedMessages
     }));
 
-    setSessionState(prev => ({
-      ...prev,
-      messages: newMessages
-    }));
+    // setSessionState(prev => ({
+    //   ...prev,
+    //   messages: newMessages
+    // }));
 
     try {
       const response = await modifyCode(
@@ -135,7 +141,7 @@ const App: React.FC<AppProps> = () => {
         generatedCode: response.modified_files['src/App.tsx'],
         componentTree: response.changes,
         messages: [
-          ...prev.messages,
+          ...prev.messages.filter(msg => msg.id !== loadingMessage.id),
           {
             id: (Date.now() + 1).toString(),
             content: response.explanation || 'I\'ve updated the code based on your request.',
