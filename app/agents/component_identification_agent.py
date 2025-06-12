@@ -103,7 +103,6 @@ You can only use components from these packages:
 6. Use `Avatar` only for profile/user images.
 7. Ensure deep nesting reflects hierarchy and grouping in the visual UI.
 8. For each component, evaluate if its children require a layout wrapper. If they do, choose the appropriate layout component to ensure proper rendering and structure.
-9. Always return sizing values in pixels (px) for spacing and gap and other layout properties.
 
 ---
 
@@ -115,6 +114,7 @@ You can only use components from these packages:
 - Only include properties relevant to the component.
 - All layout-related props must go inside `props` of the layout component.
 - Do NOT use `layoutProps` as a separate object.
+- You MUST always return sizing values in pixels (px) for spacing, size (for icons and other elements), and gap and other layout properties.
 
 ---
 
@@ -149,7 +149,7 @@ Respond **only** with strict JSON of the following structure:
 "styleAs": "\"code\" | \"h1\" | \"h2\" | \"h3\" | \"h4\" | \"label\" | \"display1\" | \"display2\" | \"display3\" | \"display4\" | \"notation\" | \"action\"",
 "color": "\"error\" | \"warning\" | \"success\" | \"info\" | \"primary\" | \"secondary\" | \"inherit\" | \"white\" | \"black\" | \"red\" "",
 "size": "string",
-"icon": "ArrowUpIcon | SystemIcon | OtherSaltIcon",
+"icon": "ArrowUpIcon| InfoIcon | OtherSaltIcon",
 "percent": "number"
 },
 "children": [ ... ]

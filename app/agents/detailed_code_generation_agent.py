@@ -17,7 +17,7 @@ class GeneratedCode(BaseModel):
 
 class DetailedCodeGenerationAgent(BaseAgent[GeneratedCode]):
     def __init__(self):
-        super().__init__("detailed_code_generation_agent", model_name="gpt-4")
+        super().__init__("detailed_code_generation_agent", model_name="gpt-4o")
         self.set_output_parser(PydanticOutputParser(pydantic_object=GeneratedCode))
 
     def validate_input(self, state: AgentState) -> bool:
@@ -108,14 +108,15 @@ Your job is to:
 4. Apply correct props, layout rules, spacing (in 8px units), and semantic structure.
 5. Output only the final `App` component JSX code, including `export default function App` — no markdown, explanations, or commentary.
 
-You MUST:
+Rules you must follow:
 - Think through the hierarchy, layout, and available component props before writing JSX.
-- Apply layout primitives like `FlexLayout`, `StackLayout`, `GridLayout` instead of generic wrappers.
+- You MUST apply layout primitives like `FlexLayout`, `StackLayout`, `GridLayout` instead of generic wrappers like `div`.
 - Use child JSX (e.g., `<Text>hello</Text>`) rather than props like `text="hello"` unless the API explicitly requires it.
 - Leverage component-specific props effectively to enhance functionality and visual appeal.
-- Apply spacing via `padding`, `margin`, `gap` using 8px units (`gap=4` = 32px).
+- Apply spacing via `padding`, `margin`, `gap` using 8px units (`gap=4` = 32px) and floor it to nearest integer.
+- You MUST always return sizing values in integers for size (for icons and other elements) using 8px units and floor it to nearest integer (e.g., `size=4` = 32px).
 - Group and deduplicate imports by SaltDS package (e.g., `@salt-ds/core`, `@salt-ds/icons`).
-- Ensure all components used in the JSX are correctly imported.
+- Ensure all components used in the JSX are correctly imported from the given import statements in the `Available Components` or `Available Icons` section do not invent or assume import statements.
 - Ensure functional correctness, hierarchy fidelity, and visual layout match.
 - Do not guess — use only the components, icons, and layout options explicitly provided.
 

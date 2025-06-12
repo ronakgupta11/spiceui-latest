@@ -145,6 +145,38 @@ class StaticComponentMappingAgent(BaseAgent[StaticComponentMapping]):
                 return self._component_cache[component_type]
 
             logger.info(f"Searching for component details: {component_type}")
+            
+            # First try exact match by component name
+            results = self.vector_store.collection.get(
+                where={"component_name": component_type},
+                include=["metadatas", "documents"]
+            )
+            
+            if results and results['ids']:
+                logger.info(f"Found exact match for component: {component_type}")
+                metadata = results['metadatas'][0]
+                full_metadata = json.loads(results['documents'][0])
+                
+                # Parse JSON strings for list fields
+                tags = json.loads(metadata.get('tags', '[]')) if isinstance(metadata.get('tags'), str) else metadata.get('tags', [])
+                when_to_use = json.loads(metadata.get('when_to_use', '[]')) if isinstance(metadata.get('when_to_use'), str) else metadata.get('when_to_use', [])
+                props = json.loads(metadata.get('props', '{}')) if isinstance(metadata.get('props'), str) else metadata.get('props', {})
+                
+                component = DetailedComponent(
+                    name=metadata.get("component_name", "Unknown"),
+                    import_statement=metadata.get("import_statement") or "",
+                    description=metadata.get("description") or "",
+                    category=metadata.get("category") or "Uncategorized",
+                    props=self.parse_component_props(props),
+                    when_to_use=when_to_use,
+                    tags=tags
+                )
+                
+                self._component_cache[component_type] = component
+                return component
+            
+            # If no exact match, fall back to semantic search
+            logger.info(f"No exact match found, trying semantic search for: {component_type}")
             matches = self.vector_store.search_components(component_type, n_results=1)
             if not matches:
                 logger.warning(f"No matches found for component: {component_type}")
@@ -158,14 +190,19 @@ class StaticComponentMappingAgent(BaseAgent[StaticComponentMapping]):
                 logger.warning(f"No metadata found for component: {component_type}")
                 return None
 
+            # Parse JSON strings for list fields
+            tags = json.loads(metadata.get('tags', '[]')) if isinstance(metadata.get('tags'), str) else metadata.get('tags', [])
+            when_to_use = json.loads(metadata.get('when_to_use', '[]')) if isinstance(metadata.get('when_to_use'), str) else metadata.get('when_to_use', [])
+            props = json.loads(metadata.get('props', '{}')) if isinstance(metadata.get('props'), str) else metadata.get('props', {})
+
             component = DetailedComponent(
                 name=metadata.get("component_name", "Unknown"),
                 import_statement=metadata.get("import_statement") or "",
                 description=metadata.get("description") or "",
                 category=metadata.get("category") or "Uncategorized",
-                props=self.parse_component_props(metadata.get("props", {})),
-                when_to_use=metadata.get("when_to_use", []),
-                tags=metadata.get("tags", [])
+                props=self.parse_component_props(props),
+                when_to_use=when_to_use,
+                tags=tags
             )
 
             self._component_cache[component_type] = component
