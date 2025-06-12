@@ -112,14 +112,20 @@ const App: React.FC<AppProps> = () => {
       timestamp: new Date()
     };
 
+    const newMessages = [...sessionState.messages, newMessage];
     setSessionState(prev => ({
       ...prev,
-      messages: [...prev.messages, newMessage]
+      messages: newMessages
+    }));
+
+    setSessionState(prev => ({
+      ...prev,
+      messages: newMessages
     }));
 
     try {
       const response = await modifyCode(
-        sessionState.messages,
+        newMessages,
         { 'src/App.tsx': sessionState.generatedCode || '' },
         sessionState.available_components
       );

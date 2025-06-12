@@ -4,6 +4,21 @@ from app.agents.base_agent import BaseAgent
 from app.utils.chroma_vector_store import ComponentVectorStore
 from langchain.output_parsers import PydanticOutputParser
 import json
+import logging
+import sys
+
+# Set up logging with more detailed configuration
+logging.basicConfig(
+    level=logging.DEBUG,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.StreamHandler(sys.stdout)
+    ]
+)
+logger = logging.getLogger(__name__)
+
+# Ensure the logger is set to DEBUG level
+logger.setLevel(logging.DEBUG)
 
 class ChatMessage(BaseModel):
     role: str = Field(..., description="Role of the message sender (user/assistant)")
@@ -25,13 +40,17 @@ class ModifiedCodeResponse(BaseModel):
 
 class ChatBasedCodeModificationAgent(BaseAgent[ModifiedCodeResponse]):
     def __init__(self):
-        super().__init__("chat_based_code_modification_agent", model_name="gpt-4-turbo-preview")
+        super().__init__("chat_based_code_modification_agent", model_name="gpt-4o")
         self.set_output_parser(PydanticOutputParser(pydantic_object=ModifiedCodeResponse))
         self.vector_store = ComponentVectorStore()
+        logger.info("ChatBasedCodeModificationAgent initialized")
 
     def build_prompt(self, request: CodeModificationRequest) -> str:
-        latest_message = request.chat_history[0]
-        return f"""
+        latest_message = request.chat_history[-1]
+        logger.info("Building prompt with latest message")
+        logger.debug("Latest message: %s", latest_message.dict())
+        
+        prompt = f"""
 You are a code modification agent helping to improve React code based on user feedback.
 
 ## Current Code
@@ -66,13 +85,20 @@ You are a code modification agent helping to improve React code based on user fe
   "remaining_chat_history": []
 }}
 """.strip()
+        
+        logger.debug("Generated prompt: %s", prompt)
+        return prompt
 
     async def modify_code(self, request: CodeModificationRequest) -> ModifiedCodeResponse:
         """
         Modify code based on the user's request and chat history.
         This is the main entry point for the API.
         """
+        logger.info("Starting code modification")
+        logger.debug("Request details: %s", request.dict())
+        
         if not request.chat_history:
+            logger.warning("No chat messages provided")
             return ModifiedCodeResponse(
                 files=request.current_code,
                 changes=[],
@@ -83,10 +109,14 @@ You are a code modification agent helping to improve React code based on user fe
 
         try:
             prompt = self.build_prompt(request)
+            logger.info("Calling LLM with prompt")
             response = await self._call_llm(prompt)
+            logger.debug("Received LLM response: %s", response.dict())
+            
             response.remaining_chat_history = request.chat_history[1:]
             return response
         except Exception as e:
+            logger.error("Error during code modification: %s", str(e), exc_info=True)
             # Return a structured error response instead of raising
             return ModifiedCodeResponse(
                 files=request.current_code,
