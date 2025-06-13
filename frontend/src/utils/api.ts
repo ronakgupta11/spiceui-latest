@@ -1,6 +1,8 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:8000/api/v1';
+// Use Vite's import.meta.env for environment variables
+const API_BASE_URL = 'http://ec2-13-200-253-23.ap-south-1.compute.amazonaws.com:8000/api/v1';
+// console.log('API_BASE_URL',process.env.REACT_APP_API_URL);
 
 export const generateCode = async (imageData: string) => {
   try {
